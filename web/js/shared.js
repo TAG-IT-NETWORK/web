@@ -1142,30 +1142,97 @@
       });
     });
 
-// Wallet Connection
+// ═══════════════════════════════════════════════════════════════
+    // WALLET CONNECTION (Phase 8: Web3 Enhancements)
+    // ═══════════════════════════════════════════════════════════════
+
     // Wallet State
     let walletConnected = false;
     let walletAddress = null;
     let currentNetwork = null;
-    
-    // Network names
+    let connectedWalletType = null; // 'metamask', 'walletconnect', 'coinbase'
+
+    // Network configurations (Sepolia prioritized over deprecated Goerli)
     const networks = {
-      1: { name: 'Ethereum', class: 'mainnet' },
-      5: { name: 'Goerli', class: '' },
-      11155111: { name: 'Sepolia', class: '' },
-      137: { name: 'Polygon', class: 'mainnet' },
-      80001: { name: 'Mumbai', class: '' },
-      42161: { name: 'Arbitrum', class: 'mainnet' },
-      10: { name: 'Optimism', class: 'mainnet' },
-      8453: { name: 'Base', class: 'mainnet' },
-      84532: { name: 'Base Sepolia', class: '' }
+      1: { name: 'Ethereum', symbol: 'ETH', class: 'mainnet', rpc: 'https://eth.llamarpc.com', explorer: 'https://etherscan.io' },
+      11155111: { name: 'Sepolia', symbol: 'ETH', class: 'testnet', rpc: 'https://rpc.sepolia.org', explorer: 'https://sepolia.etherscan.io' },
+      17000: { name: 'Holesky', symbol: 'ETH', class: 'testnet', rpc: 'https://ethereum-holesky.publicnode.com', explorer: 'https://holesky.etherscan.io' },
+      137: { name: 'Polygon', symbol: 'MATIC', class: 'mainnet', rpc: 'https://polygon-rpc.com', explorer: 'https://polygonscan.com' },
+      80002: { name: 'Amoy', symbol: 'MATIC', class: 'testnet', rpc: 'https://rpc-amoy.polygon.technology', explorer: 'https://amoy.polygonscan.com' },
+      42161: { name: 'Arbitrum', symbol: 'ETH', class: 'mainnet', rpc: 'https://arb1.arbitrum.io/rpc', explorer: 'https://arbiscan.io' },
+      421614: { name: 'Arbitrum Sepolia', symbol: 'ETH', class: 'testnet', rpc: 'https://sepolia-rollup.arbitrum.io/rpc', explorer: 'https://sepolia.arbiscan.io' },
+      10: { name: 'Optimism', symbol: 'ETH', class: 'mainnet', rpc: 'https://mainnet.optimism.io', explorer: 'https://optimistic.etherscan.io' },
+      11155420: { name: 'OP Sepolia', symbol: 'ETH', class: 'testnet', rpc: 'https://sepolia.optimism.io', explorer: 'https://sepolia-optimism.etherscan.io' },
+      8453: { name: 'Base', symbol: 'ETH', class: 'mainnet', rpc: 'https://mainnet.base.org', explorer: 'https://basescan.org' },
+      84532: { name: 'Base Sepolia', symbol: 'ETH', class: 'testnet', rpc: 'https://sepolia.base.org', explorer: 'https://sepolia.basescan.org' }
+    };
+
+    // Recommended network for TAG IT (Sepolia for testnet phase)
+    const RECOMMENDED_NETWORK = 11155111; // Sepolia
+
+    // Storage keys
+    const STORAGE_KEYS = {
+      connected: 'tagit_wallet_connected',
+      address: 'tagit_wallet_address',
+      network: 'tagit_wallet_network',
+      type: 'tagit_wallet_type'
     };
     
     // Truncate address
     function truncateAddress(address) {
       return address.slice(0, 6) + '...' + address.slice(-4);
     }
-    
+
+    // Save wallet state to localStorage
+    function saveWalletState() {
+      if (walletConnected && walletAddress) {
+        localStorage.setItem(STORAGE_KEYS.connected, 'true');
+        localStorage.setItem(STORAGE_KEYS.address, walletAddress);
+        localStorage.setItem(STORAGE_KEYS.network, currentNetwork?.toString() || '');
+        localStorage.setItem(STORAGE_KEYS.type, connectedWalletType || '');
+      } else {
+        clearWalletState();
+      }
+    }
+
+    // Clear wallet state from localStorage
+    function clearWalletState() {
+      localStorage.removeItem(STORAGE_KEYS.connected);
+      localStorage.removeItem(STORAGE_KEYS.address);
+      localStorage.removeItem(STORAGE_KEYS.network);
+      localStorage.removeItem(STORAGE_KEYS.type);
+    }
+
+    // Restore wallet state from localStorage
+    async function restoreWalletState() {
+      const wasConnected = localStorage.getItem(STORAGE_KEYS.connected) === 'true';
+      const savedAddress = localStorage.getItem(STORAGE_KEYS.address);
+      const savedType = localStorage.getItem(STORAGE_KEYS.type);
+
+      if (!wasConnected || !savedAddress || !savedType) return;
+
+      // Only auto-reconnect for MetaMask (it persists connection)
+      if (savedType === 'metamask' && typeof window.ethereum !== 'undefined') {
+        try {
+          const accounts = await window.ethereum.request({ method: 'eth_accounts' });
+          if (accounts.length > 0 && accounts[0].toLowerCase() === savedAddress.toLowerCase()) {
+            const chainId = await window.ethereum.request({ method: 'eth_chainId' });
+            walletAddress = accounts[0];
+            currentNetwork = parseInt(chainId, 16);
+            walletConnected = true;
+            connectedWalletType = 'metamask';
+            updateNavButton();
+            console.log('Wallet session restored');
+          } else {
+            clearWalletState();
+          }
+        } catch (e) {
+          console.log('Could not restore wallet session:', e);
+          clearWalletState();
+        }
+      }
+    }
+
     // Handle wallet button click
     function handleWalletClick() {
       if (walletConnected) {
@@ -1174,6 +1241,7 @@
         document.getElementById('walletConnectedState').style.display = 'block';
         document.getElementById('fullAddress').textContent = walletAddress;
         updateNetworkDisplay();
+        updateNetworkSelector();
       } else {
         // Show connect options
         document.getElementById('walletConnectState').style.display = 'block';
@@ -1182,72 +1250,159 @@
       document.getElementById('walletModal').classList.add('active');
       document.body.style.overflow = 'hidden';
     }
-    
+
     // Close wallet modal
     function closeWalletModal() {
       document.getElementById('walletModal').classList.remove('active');
       document.body.style.overflow = '';
     }
-    
+
     // Update network display
     function updateNetworkDisplay() {
       const networkInfo = document.getElementById('networkInfo');
+      if (!networkInfo) return;
+
       if (currentNetwork && networks[currentNetwork]) {
         const net = networks[currentNetwork];
-        const isTestnet = !net.class;
-        networkInfo.innerHTML = `<span class="network-badge ${net.class}">${net.name}${isTestnet ? ' Testnet' : ''}</span>`;
+        const isTestnet = net.class === 'testnet';
+        const isRecommended = currentNetwork === RECOMMENDED_NETWORK;
+        networkInfo.innerHTML = `
+          <span class="network-badge ${net.class}${isRecommended ? ' recommended' : ''}">${net.name}</span>
+          ${isRecommended ? '<span class="network-recommended-tag">Recommended</span>' : ''}
+        `;
       } else if (currentNetwork) {
-        networkInfo.innerHTML = `<span class="network-badge">Chain ${currentNetwork}</span>`;
+        networkInfo.innerHTML = `<span class="network-badge unknown">Chain ${currentNetwork}</span>`;
       }
     }
-    
+
+    // Update network selector dropdown
+    function updateNetworkSelector() {
+      const selector = document.getElementById('networkSelector');
+      if (!selector) return;
+
+      const mainnetNetworks = Object.entries(networks).filter(([_, n]) => n.class === 'mainnet');
+      const testnetNetworks = Object.entries(networks).filter(([_, n]) => n.class === 'testnet');
+
+      selector.innerHTML = `
+        <optgroup label="Testnets (Recommended for now)">
+          ${testnetNetworks.map(([id, net]) => `
+            <option value="${id}" ${parseInt(id) === currentNetwork ? 'selected' : ''}>
+              ${net.name}${parseInt(id) === RECOMMENDED_NETWORK ? ' ★' : ''}
+            </option>
+          `).join('')}
+        </optgroup>
+        <optgroup label="Mainnets">
+          ${mainnetNetworks.map(([id, net]) => `
+            <option value="${id}" ${parseInt(id) === currentNetwork ? 'selected' : ''}>
+              ${net.name}
+            </option>
+          `).join('')}
+        </optgroup>
+      `;
+    }
+
+    // Switch network
+    async function switchNetwork(chainId) {
+      if (!window.ethereum) return;
+
+      const hexChainId = '0x' + chainId.toString(16);
+      const network = networks[chainId];
+
+      try {
+        await window.ethereum.request({
+          method: 'wallet_switchEthereumChain',
+          params: [{ chainId: hexChainId }]
+        });
+        showToast(`Switched to ${network?.name || 'network'}`, 'success');
+      } catch (switchError) {
+        // Network not added, try to add it
+        if (switchError.code === 4902 && network) {
+          try {
+            await window.ethereum.request({
+              method: 'wallet_addEthereumChain',
+              params: [{
+                chainId: hexChainId,
+                chainName: network.name,
+                nativeCurrency: {
+                  name: network.symbol,
+                  symbol: network.symbol,
+                  decimals: 18
+                },
+                rpcUrls: [network.rpc],
+                blockExplorerUrls: [network.explorer]
+              }]
+            });
+            showToast(`Added and switched to ${network.name}`, 'success');
+          } catch (addError) {
+            console.error('Failed to add network:', addError);
+            showToast('Failed to add network', 'error');
+          }
+        } else {
+          console.error('Failed to switch network:', switchError);
+          showToast('Failed to switch network', 'error');
+        }
+      }
+    }
+
     // Update nav button
     function updateNavButton() {
       const btn = document.getElementById('connectWalletBtn');
+      if (!btn) return;
+
       if (walletConnected && walletAddress) {
         const net = networks[currentNetwork];
-        const isTestnet = net && !net.class;
+        const isTestnet = net && net.class === 'testnet';
         btn.classList.add('connected');
         btn.innerHTML = `
-          <span class="wallet-dot"></span>
+          <span class="wallet-dot ${net?.class || ''}"></span>
           <span class="wallet-address">${truncateAddress(walletAddress)}</span>
-          ${isTestnet ? `<span class="network-badge">${net ? net.name : 'Testnet'}</span>` : ''}
+          ${isTestnet ? `<span class="network-badge mini ${net.class}">${net.name}</span>` : ''}
         `;
       } else {
         btn.classList.remove('connected');
         btn.innerHTML = 'Connect Wallet';
       }
     }
-    
+
     // Connect MetaMask
     async function connectMetaMask() {
       if (typeof window.ethereum === 'undefined') {
-        alert('MetaMask is not installed. Please install MetaMask to connect your wallet.');
+        showToast('MetaMask not installed', 'warning');
         window.open('https://metamask.io/download/', '_blank');
         return;
       }
-      
+
       try {
+        showToast('Connecting to MetaMask...', 'info');
+
         // Request account access
-        const accounts = await window.ethereum.request({ 
-          method: 'eth_requestAccounts' 
+        const accounts = await window.ethereum.request({
+          method: 'eth_requestAccounts'
         });
-        
+
         // Get network
-        const chainId = await window.ethereum.request({ 
-          method: 'eth_chainId' 
+        const chainId = await window.ethereum.request({
+          method: 'eth_chainId'
         });
-        
+
         walletAddress = accounts[0];
         currentNetwork = parseInt(chainId, 16);
         walletConnected = true;
-        
+        connectedWalletType = 'metamask';
+
+        saveWalletState();
         updateNavButton();
         closeWalletModal();
-        
-        // Show success message
-        showToast('Wallet connected successfully!');
-        
+
+        showToast('Wallet connected successfully!', 'success');
+
+        // Suggest switching to recommended network if not on it
+        if (currentNetwork !== RECOMMENDED_NETWORK) {
+          setTimeout(() => {
+            showNetworkSuggestion();
+          }, 1000);
+        }
+
       } catch (error) {
         console.error('Connection error:', error);
         if (error.code === 4001) {
@@ -1257,38 +1412,178 @@
         }
       }
     }
-    
+
+    // Connect WalletConnect (via QR code / deep link)
+    async function connectWalletConnect() {
+      // WalletConnect v2 requires a project ID - show info modal
+      showToast('WalletConnect requires mobile wallet app', 'info');
+
+      // For now, show instructions. Full WalletConnect would require their SDK
+      const modal = document.createElement('div');
+      modal.className = 'wc-info-modal';
+      modal.innerHTML = `
+        <div class="wc-info-content">
+          <h4>WalletConnect</h4>
+          <p>To use WalletConnect:</p>
+          <ol>
+            <li>Open your mobile wallet (Trust, Rainbow, etc.)</li>
+            <li>Look for "WalletConnect" or QR scanner</li>
+            <li>Scan the QR code when prompted</li>
+          </ol>
+          <p class="wc-note">Full WalletConnect integration coming soon!</p>
+          <button onclick="this.parentElement.parentElement.remove()">Got it</button>
+        </div>
+      `;
+      modal.style.cssText = `
+        position: fixed; inset: 0; background: rgba(0,0,0,0.8);
+        display: flex; align-items: center; justify-content: center; z-index: 100001;
+      `;
+      modal.querySelector('.wc-info-content').style.cssText = `
+        background: var(--bg-secondary, #1a1a2e); padding: 24px; border-radius: 16px;
+        max-width: 320px; text-align: center; color: var(--text-primary, #fff);
+      `;
+      modal.querySelector('button').style.cssText = `
+        margin-top: 16px; padding: 10px 24px; background: var(--primary, #00D4FF);
+        border: none; border-radius: 8px; cursor: pointer; font-weight: 600;
+      `;
+      document.body.appendChild(modal);
+      modal.onclick = (e) => { if (e.target === modal) modal.remove(); };
+    }
+
+    // Connect Coinbase Wallet
+    async function connectCoinbase() {
+      // Check if Coinbase Wallet extension is available
+      const isCoinbaseWallet = window.ethereum?.isCoinbaseWallet ||
+                               window.coinbaseWalletExtension;
+
+      if (isCoinbaseWallet || window.ethereum?.providers?.find(p => p.isCoinbaseWallet)) {
+        // Get Coinbase provider
+        let provider = window.ethereum;
+        if (window.ethereum?.providers) {
+          provider = window.ethereum.providers.find(p => p.isCoinbaseWallet) || window.ethereum;
+        }
+
+        try {
+          showToast('Connecting to Coinbase Wallet...', 'info');
+
+          const accounts = await provider.request({ method: 'eth_requestAccounts' });
+          const chainId = await provider.request({ method: 'eth_chainId' });
+
+          walletAddress = accounts[0];
+          currentNetwork = parseInt(chainId, 16);
+          walletConnected = true;
+          connectedWalletType = 'coinbase';
+
+          saveWalletState();
+          updateNavButton();
+          closeWalletModal();
+
+          showToast('Coinbase Wallet connected!', 'success');
+        } catch (error) {
+          console.error('Coinbase connection error:', error);
+          showToast('Failed to connect Coinbase Wallet', 'error');
+        }
+      } else {
+        // No Coinbase extension - show download link
+        showToast('Coinbase Wallet not detected', 'warning');
+        window.open('https://www.coinbase.com/wallet/downloads', '_blank');
+      }
+    }
+
+    // Show network suggestion toast
+    function showNetworkSuggestion() {
+      const net = networks[RECOMMENDED_NETWORK];
+      const toast = document.createElement('div');
+      toast.className = 'network-suggestion-toast';
+      toast.innerHTML = `
+        <span>Switch to ${net.name} (recommended)?</span>
+        <button onclick="switchNetwork(${RECOMMENDED_NETWORK}); this.parentElement.remove();">Switch</button>
+        <button onclick="this.parentElement.remove();" class="dismiss">×</button>
+      `;
+      toast.style.cssText = `
+        position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+        display: flex; align-items: center; gap: 12px; padding: 14px 20px;
+        background: rgba(0, 212, 255, 0.15); border: 1px solid rgba(0, 212, 255, 0.3);
+        color: #00D4FF; border-radius: 100px; font-size: 14px; z-index: 100000;
+      `;
+      toast.querySelectorAll('button').forEach(btn => {
+        btn.style.cssText = `
+          background: ${btn.classList.contains('dismiss') ? 'transparent' : 'var(--primary, #00D4FF)'};
+          border: ${btn.classList.contains('dismiss') ? 'none' : '1px solid transparent'};
+          color: ${btn.classList.contains('dismiss') ? '#888' : '#000'}; padding: 6px 14px;
+          border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 13px;
+        `;
+      });
+      document.body.appendChild(toast);
+      setTimeout(() => toast.remove(), 10000);
+    }
+
     // Disconnect wallet
     function disconnectWallet() {
       walletConnected = false;
       walletAddress = null;
       currentNetwork = null;
+      connectedWalletType = null;
+      clearWalletState();
       updateNavButton();
       closeWalletModal();
-      showToast('Wallet disconnected');
+      showToast('Wallet disconnected', 'info');
+    }
+
+    // Copy address to clipboard
+    function copyAddress() {
+      if (walletAddress) {
+        navigator.clipboard.writeText(walletAddress).then(() => {
+          showToast('Address copied!', 'success');
+        });
+      }
+    }
+
+    // Open block explorer
+    function openExplorer() {
+      if (walletAddress && currentNetwork && networks[currentNetwork]) {
+        const url = `${networks[currentNetwork].explorer}/address/${walletAddress}`;
+        window.open(url, '_blank');
+      }
     }
     
-    // Toast notification
+    // Toast notification with multiple types
     function showToast(message, type = 'success') {
+      // Remove any existing toasts
+      document.querySelectorAll('.tagit-toast').forEach(t => t.remove());
+
+      const colors = {
+        success: { bg: 'rgba(0, 255, 136, 0.15)', border: 'rgba(0, 255, 136, 0.3)', text: '#00FF88', icon: '✓' },
+        error: { bg: 'rgba(255, 71, 87, 0.15)', border: 'rgba(255, 71, 87, 0.3)', text: '#FF4757', icon: '✕' },
+        warning: { bg: 'rgba(255, 171, 0, 0.15)', border: 'rgba(255, 171, 0, 0.3)', text: '#FFAB00', icon: '⚠' },
+        info: { bg: 'rgba(0, 212, 255, 0.15)', border: 'rgba(0, 212, 255, 0.3)', text: '#00D4FF', icon: 'ℹ' }
+      };
+      const c = colors[type] || colors.info;
+
       const toast = document.createElement('div');
+      toast.className = 'tagit-toast';
+      toast.innerHTML = `<span class="toast-icon">${c.icon}</span> ${message}`;
       toast.style.cssText = `
         position: fixed;
         bottom: 24px;
         left: 50%;
         transform: translateX(-50%);
         padding: 14px 28px;
-        background: ${type === 'success' ? 'rgba(0, 255, 136, 0.15)' : 'rgba(255, 71, 87, 0.15)'};
-        border: 1px solid ${type === 'success' ? 'var(--green-30)' : 'rgba(255, 71, 87, 0.3)'};
-        color: ${type === 'success' ? '#00FF88' : '#FF4757'};
+        background: ${c.bg};
+        border: 1px solid ${c.border};
+        color: ${c.text};
         border-radius: 100px;
         font-size: 14px;
         font-weight: 500;
         z-index: 100000;
         animation: toastIn 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        backdrop-filter: blur(10px);
       `;
-      toast.textContent = message;
       document.body.appendChild(toast);
-      
+
       setTimeout(() => {
         toast.style.animation = 'toastOut 0.3s ease forwards';
         setTimeout(() => toast.remove(), 300);
@@ -1316,38 +1611,48 @@
           disconnectWallet();
         } else {
           walletAddress = accounts[0];
+          saveWalletState();
           updateNavButton();
-          showToast('Account changed');
+          showToast('Account changed', 'info');
         }
       });
-      
+
       window.ethereum.on('chainChanged', (chainId) => {
         currentNetwork = parseInt(chainId, 16);
+        saveWalletState();
         updateNavButton();
-        showToast(`Switched to ${networks[currentNetwork]?.name || 'Chain ' + currentNetwork}`);
+        const netName = networks[currentNetwork]?.name || 'Chain ' + currentNetwork;
+        showToast(`Switched to ${netName}`, 'info');
       });
     }
-    
+
     // Close modal on overlay click
-    document.getElementById('walletModal').addEventListener('click', (e) => {
-      if (e.target.id === 'walletModal') {
-        closeWalletModal();
-      }
-    });
-    
+    const walletModalEl = document.getElementById('walletModal');
+    if (walletModalEl) {
+      walletModalEl.addEventListener('click', (e) => {
+        if (e.target.id === 'walletModal') {
+          closeWalletModal();
+        }
+      });
+    }
+
     // Close modal on Escape
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && document.getElementById('walletModal').classList.contains('active')) {
+      const modal = document.getElementById('walletModal');
+      if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
         closeWalletModal();
       }
     });
 
     // ═══════════════════════════════════════════════════════════════
-    // BACK TO TOP BUTTON
+    // INITIALIZATION
     // ═══════════════════════════════════════════════════════════════
     document.addEventListener('DOMContentLoaded', () => {
+      // Restore wallet connection if previously connected
+      restoreWalletState();
+
+      // Back to top button
       const backToTopBtn = document.getElementById('backToTop');
-      
       if (backToTopBtn) {
         window.addEventListener('scroll', () => {
           if (window.scrollY > 500) {
@@ -1356,9 +1661,17 @@
             backToTopBtn.classList.remove('visible');
           }
         });
-        
+
         backToTopBtn.addEventListener('click', () => {
           window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
+      // Network selector change handler
+      const networkSelector = document.getElementById('networkSelector');
+      if (networkSelector) {
+        networkSelector.addEventListener('change', (e) => {
+          switchNetwork(parseInt(e.target.value));
         });
       }
     });

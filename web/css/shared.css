@@ -762,6 +762,192 @@
       background: rgba(255, 71, 87, 0.2);
     }
 
+    .wallet-disconnect-btn svg {
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+
+    /* Enhanced Wallet Modal - Phase 8 */
+    .wallet-option-arrow {
+      margin-left: auto;
+      color: var(--muted-gray);
+      font-size: 18px;
+      transition: transform 0.2s ease;
+    }
+
+    .wallet-option:hover .wallet-option-arrow {
+      transform: translateX(4px);
+      color: var(--electric-blue);
+    }
+
+    .wallet-modal-note {
+      font-size: 11px;
+      color: var(--muted-gray);
+      text-align: center;
+      margin-top: 16px;
+      opacity: 0.7;
+    }
+
+    .address-container {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(10, 14, 20, 0.6);
+      border-radius: 12px;
+      padding: 12px 16px;
+      margin: 16px 0;
+    }
+
+    .address-container .address-full {
+      flex: 1;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      color: var(--electric-blue);
+      word-break: break-all;
+      background: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .address-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .action-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--muted-gray);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+
+    .action-btn:hover {
+      background: var(--blue-10);
+      border-color: var(--blue-30);
+      color: var(--electric-blue);
+    }
+
+    .network-info-container {
+      margin-bottom: 16px;
+    }
+
+    .network-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .network-badge.mainnet {
+      background: rgba(0, 255, 136, 0.1);
+      border: 1px solid rgba(0, 255, 136, 0.3);
+      color: var(--circuit-green);
+    }
+
+    .network-badge.testnet {
+      background: rgba(255, 171, 0, 0.1);
+      border: 1px solid rgba(255, 171, 0, 0.3);
+      color: #FFAB00;
+    }
+
+    .network-badge.unknown {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--muted-gray);
+    }
+
+    .network-badge.mini {
+      padding: 3px 8px;
+      font-size: 10px;
+      margin-left: 4px;
+    }
+
+    .network-badge.recommended {
+      animation: pulse-glow 2s infinite;
+    }
+
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.3); }
+      50% { box-shadow: 0 0 10px 2px rgba(0, 212, 255, 0.2); }
+    }
+
+    .network-recommended-tag {
+      font-size: 10px;
+      color: var(--circuit-green);
+      margin-left: 8px;
+    }
+
+    .network-switch-section {
+      margin: 20px 0;
+      text-align: left;
+    }
+
+    .network-switch-section label {
+      display: block;
+      font-size: 12px;
+      color: var(--muted-gray);
+      margin-bottom: 8px;
+    }
+
+    .network-selector {
+      width: 100%;
+      padding: 12px 16px;
+      background: rgba(10, 14, 20, 0.6);
+      border: 1px solid var(--blue-20);
+      border-radius: 10px;
+      color: var(--neutral-white);
+      font-size: 14px;
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2300D4FF' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      transition: all 0.2s ease;
+    }
+
+    .network-selector:hover,
+    .network-selector:focus {
+      border-color: var(--electric-blue);
+      outline: none;
+    }
+
+    .network-selector option,
+    .network-selector optgroup {
+      background: var(--deep-carbon);
+      color: var(--neutral-white);
+    }
+
+    .wallet-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--circuit-green);
+      animation: dot-pulse 2s infinite;
+    }
+
+    .wallet-dot.testnet {
+      background: #FFAB00;
+    }
+
+    .wallet-dot.mainnet {
+      background: var(--circuit-green);
+    }
+
+    @keyframes dot-pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
     /* Mobile Nav */
     .nav-mobile-toggle {
       display: none;

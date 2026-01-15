@@ -1847,51 +1847,103 @@
   <!-- Wallet Connection Modal -->
   <div class="wallet-modal-overlay" id="walletModal">
     <div class="wallet-modal">
-      <button class="wallet-modal-close" onclick="closeWalletModal()">×</button>
-      
+      <button class="wallet-modal-close" onclick="closeWalletModal()" aria-label="Close modal">×</button>
+
       <!-- Connect State -->
       <div id="walletConnectState">
         <div class="wallet-modal-header">
           <h3>Connect Wallet</h3>
           <p>Connect your wallet to interact with TAG IT Network</p>
         </div>
-        
-        <div class="wallet-option" onclick="connectMetaMask()">
-          <div class="wallet-option-icon">🦊</div>
+
+        <div class="wallet-option" onclick="connectMetaMask()" role="button" tabindex="0">
+          <div class="wallet-option-icon">
+            <svg width="28" height="28" viewBox="0 0 35 33" fill="none">
+              <path d="M32.96 1l-13.14 9.72 2.45-5.73L32.96 1z" fill="#E17726" stroke="#E17726"/>
+              <path d="M2.66 1l13.02 9.82-2.33-5.83L2.66 1zm25.57 22.53l-3.5 5.34 7.49 2.06 2.14-7.28-6.13-.12zm-26.96.12l2.13 7.28 7.47-2.06-3.48-5.34-6.12.12z" fill="#E27625" stroke="#E27625"/>
+              <path d="M10.47 14.51l-2.08 3.14 7.4.34-.24-7.97-5.08 4.49zm14.68 0l-5.16-4.59-.17 8.07 7.4-.34-2.07-3.14z" fill="#E27625" stroke="#E27625"/>
+              <path d="M10.87 28.87l4.49-2.16-3.88-3.02-.61 5.18zm9.4-2.16l4.46 2.16-.58-5.18-3.88 3.02z" fill="#E27625" stroke="#E27625"/>
+            </svg>
+          </div>
           <div class="wallet-option-info">
             <h4>MetaMask</h4>
             <p>Connect using browser extension</p>
           </div>
+          <span class="wallet-option-arrow">→</span>
         </div>
-        
-        <div class="wallet-option" onclick="connectMetaMask()">
-          <div class="wallet-option-icon">💼</div>
+
+        <div class="wallet-option" onclick="connectWalletConnect()" role="button" tabindex="0">
+          <div class="wallet-option-icon">
+            <svg width="28" height="28" viewBox="0 0 400 400" fill="none">
+              <path d="M81.9 156.7c59.7-58.4 156.5-58.4 216.2 0l7.2 7c3 2.9 3 7.6 0 10.5l-24.6 24.1c-1.5 1.5-3.9 1.5-5.4 0l-9.9-9.7c-41.6-40.8-109.1-40.8-150.8 0l-10.6 10.4c-1.5 1.5-3.9 1.5-5.4 0l-24.6-24.1c-3-2.9-3-7.6 0-10.5l7.9-7.7zm267.1 49.8l21.9 21.4c3 2.9 3 7.6 0 10.5l-98.8 96.8c-3 2.9-7.8 2.9-10.8 0l-70.1-68.6c-.7-.7-1.9-.7-2.7 0l-70.1 68.6c-3 2.9-7.8 2.9-10.8 0L8.9 238.4c-3-2.9-3-7.6 0-10.5l21.9-21.4c3-2.9 7.8-2.9 10.8 0l70.1 68.6c.7.7 1.9.7 2.7 0l70.1-68.6c3-2.9 7.8-2.9 10.8 0l70.1 68.6c.7.7 1.9.7 2.7 0l70.1-68.6c3-3 7.8-3 10.8 0z" fill="#3B99FC"/>
+            </svg>
+          </div>
           <div class="wallet-option-info">
             <h4>WalletConnect</h4>
             <p>Scan with your mobile wallet</p>
           </div>
+          <span class="wallet-option-arrow">→</span>
         </div>
-        
-        <div class="wallet-option" onclick="connectMetaMask()">
-          <div class="wallet-option-icon">🔵</div>
+
+        <div class="wallet-option" onclick="connectCoinbase()" role="button" tabindex="0">
+          <div class="wallet-option-icon">
+            <svg width="28" height="28" viewBox="0 0 1024 1024" fill="none">
+              <circle cx="512" cy="512" r="512" fill="#0052FF"/>
+              <path d="M512 256c-141.4 0-256 114.6-256 256s114.6 256 256 256 256-114.6 256-256-114.6-256-256-256zm-70.7 326.6c-10.6 0-19.2-8.6-19.2-19.2v-102.8c0-10.6 8.6-19.2 19.2-19.2h141.4c10.6 0 19.2 8.6 19.2 19.2v102.8c0 10.6-8.6 19.2-19.2 19.2H441.3z" fill="#fff"/>
+            </svg>
+          </div>
           <div class="wallet-option-info">
             <h4>Coinbase Wallet</h4>
             <p>Connect using Coinbase</p>
           </div>
+          <span class="wallet-option-arrow">→</span>
         </div>
+
+        <p class="wallet-modal-note">
+          By connecting, you agree to TAG IT Network's Terms of Service
+        </p>
       </div>
-      
+
       <!-- Connected State -->
       <div id="walletConnectedState" style="display: none;">
         <div class="wallet-modal-header">
           <h3>Wallet Connected</h3>
           <p>Your wallet is connected to TAG IT Network</p>
         </div>
-        
+
         <div class="wallet-connected-info">
-          <div class="address-full" id="fullAddress">0x0000...0000</div>
-          <div id="networkInfo" style="margin-bottom: 16px;"></div>
+          <div class="address-container">
+            <div class="address-full" id="fullAddress">0x0000...0000</div>
+            <div class="address-actions">
+              <button onclick="copyAddress()" class="action-btn" title="Copy address">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                </svg>
+              </button>
+              <button onclick="openExplorer()" class="action-btn" title="View on explorer">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                  <polyline points="15 3 21 3 21 9"/>
+                  <line x1="10" y1="14" x2="21" y2="3"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div id="networkInfo" class="network-info-container"></div>
+
+          <div class="network-switch-section">
+            <label for="networkSelector">Switch Network:</label>
+            <select id="networkSelector" class="network-selector"></select>
+          </div>
+
           <button class="wallet-disconnect-btn" onclick="disconnectWallet()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+              <polyline points="16 17 21 12 16 7"/>
+              <line x1="21" y1="12" x2="9" y2="12"/>
+            </svg>
             Disconnect Wallet
           </button>
         </div>

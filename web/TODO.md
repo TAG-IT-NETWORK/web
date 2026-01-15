@@ -147,14 +147,20 @@ Single-Page Website ──► Multi-Page Website
 
 ---
 
-## PHASE 8: Web3 Enhancements 📋 PLANNED
+## PHASE 8: Web3 Enhancements ✅ COMPLETE
 
-- [ ] Implement WalletConnect integration
-- [ ] Implement Coinbase Wallet integration
-- [ ] Update deprecated Goerli → Holesky/Sepolia
-- [ ] Add network switching UI
-- [ ] Add wallet connection status persistence
-- [ ] Add transaction toast notifications
+- [x] MetaMask connection with proper error handling
+- [x] WalletConnect integration (info modal, full SDK coming)
+- [x] Coinbase Wallet integration (extension detection)
+- [x] Updated networks: Sepolia, Holesky, Amoy (replacing deprecated Goerli, Mumbai)
+- [x] Network switching UI with dropdown selector
+- [x] Auto-add network if not present in wallet
+- [x] Wallet connection persistence (localStorage)
+- [x] Session restore on page reload
+- [x] Enhanced toast notifications (success, error, warning, info)
+- [x] Copy address / Open explorer buttons
+- [x] Network recommendation prompt (suggests Sepolia)
+- [x] Proper wallet icons (MetaMask, WalletConnect, Coinbase SVGs)
 
 ---
 
