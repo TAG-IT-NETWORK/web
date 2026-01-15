@@ -29,6 +29,16 @@
   <link rel="stylesheet" href="/css/shared.css">
 </head>
 <body>
+  <!-- Skip to main content link for keyboard users -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Noscript fallback -->
+  <noscript>
+    <div class="noscript-message">
+      This website requires JavaScript for some features. Core content is still accessible.
+    </div>
+  </noscript>
+
   <div class="cyber-grid-overlay"></div>
 
   <!-- Navigation -->
@@ -48,7 +58,7 @@
       <a href="/about">About</a>
     </div>
     <button class="nav-cta" id="connectWalletBtn" onclick="handleWalletClick()">Connect Wallet</button>
-    <div class="nav-mobile-toggle" id="mobileToggle"><span></span><span></span><span></span></div>
+    <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </nav>
 
   <div class="mobile-menu-overlay" id="mobileOverlay"></div>
@@ -62,6 +72,7 @@
     <button class="mobile-cta" onclick="handleWalletClick()">Connect Wallet</button>
   </div>
 
+  <main id="main-content">
   <!-- Hero -->
   <section class="page-hero">
     <div class="token-icon-wrapper">
@@ -259,6 +270,7 @@
       </div>
     </div>
   </section>
+  </main>
 
   <!-- Footer -->
   <footer class="footer">

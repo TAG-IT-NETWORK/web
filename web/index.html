@@ -40,6 +40,16 @@
   <link rel="stylesheet" href="/css/shared.css">
 </head>
 <body>
+  <!-- Skip to main content link for keyboard users -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Noscript fallback -->
+  <noscript>
+    <div class="noscript-message">
+      This website requires JavaScript for animations and wallet features. Core content is still accessible.
+    </div>
+  </noscript>
+
   <!-- Global Cyber Grid Background -->
   <div class="cyber-grid-overlay"></div>
   
@@ -91,11 +101,11 @@
       Connect Wallet
     </button>
     
-    <div class="nav-mobile-toggle" id="mobileToggle">
+    <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
       <span></span>
       <span></span>
       <span></span>
-    </div>
+    </button>
   </nav>
   
   <!-- Mobile Menu -->
@@ -113,6 +123,7 @@
   <!-- ═══════════════════════════════════════════════════════════════
        HERO SECTION
        ═══════════════════════════════════════════════════════════════ -->
+  <main id="main-content">
   <section id="hero">
     <!-- Grid Background -->
     <div class="grid-bg"></div>
@@ -1568,6 +1579,8 @@
     </div>
   </section>
   
+  </main>
+
   <!-- ═══════════════════════════════════════════════════════════════
        FOOTER
        ═══════════════════════════════════════════════════════════════ -->

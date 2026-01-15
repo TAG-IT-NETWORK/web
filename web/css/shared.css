@@ -96,6 +96,93 @@
       scroll-behavior: smooth;
       scroll-padding-top: 100px; /* Account for fixed nav height */
     }
+
+    /* ═══════════════════════════════════════════════════════════════
+       ACCESSIBILITY
+       ═══════════════════════════════════════════════════════════════ */
+
+    /* Skip to main content link */
+    .skip-link {
+      position: fixed;
+      top: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10000;
+      background: var(--electric-blue);
+      color: var(--deep-carbon);
+      padding: 12px 24px;
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      text-decoration: none;
+      transition: top 0.3s ease;
+    }
+
+    .skip-link:focus {
+      top: 16px;
+      outline: 3px solid var(--circuit-green);
+      outline-offset: 2px;
+    }
+
+    /* Focus visible styles for keyboard navigation */
+    :focus-visible {
+      outline: 2px solid var(--electric-blue);
+      outline-offset: 3px;
+    }
+
+    /* Remove focus outline for mouse users */
+    :focus:not(:focus-visible) {
+      outline: none;
+    }
+
+    /* Enhanced focus for buttons and interactive elements */
+    button:focus-visible,
+    a:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible,
+    select:focus-visible {
+      outline: 2px solid var(--electric-blue);
+      outline-offset: 3px;
+      box-shadow: 0 0 0 4px rgba(0, 212, 255, 0.2);
+    }
+
+    /* Screen reader only utility */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* Reduced motion for users who prefer it */
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    /* Noscript message styling */
+    .noscript-message {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: var(--warning-amber);
+      color: var(--deep-carbon);
+      padding: 16px;
+      text-align: center;
+      font-weight: 600;
+      z-index: 10001;
+    }
     
     /* ═══════════════════════════════════════════════════════════════
        LOADING SCREEN
