@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solutions — TAG IT Network</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="TAG IT Network industry solutions - Blockchain-powered authentication for retail, agriculture, healthcare, manufacturing, defense, and government sectors.">
+  <meta name="keywords" content="blockchain authentication, supply chain, anti-counterfeiting, NFC, retail, healthcare, agriculture, manufacturing">
+  <meta name="author" content="TAG IT Network">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tagit.network/solutions">
+  <meta property="og:title" content="Solutions — TAG IT Network">
+  <meta property="og:description" content="Blockchain-powered authentication solutions for every industry.">
+  <meta property="og:image" content="https://tagit.network/assets/images/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Solutions — TAG IT Network">
+  <meta name="twitter:description" content="Blockchain-powered authentication solutions for every industry.">
+  <meta name="twitter:image" content="https://tagit.network/assets/images/og-image.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/tagit_logo.png">
+  <link rel="apple-touch-icon" href="/assets/images/tagit_logo.png">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/css/shared.css">
+</head>
+<body>
+  <!-- Global Cyber Grid Background -->
+  <div class="cyber-grid-overlay"></div>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <a href="/" class="logo">
+      <div class="logo-icon">
+        <img src="/assets/images/tagit_logo.png" alt="TAG IT Network Logo" class="logo-img">
+      </div>
+      <span>TAG IT Network</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="/#features">Features</a>
+      <a href="/solutions" class="active">Solutions</a>
+      <a href="/technology">Technology</a>
+      <a href="/tokenomics">Tokenomics</a>
+      <a href="/docs">Docs</a>
+      <a href="/about">About</a>
+    </div>
+
+    <button class="nav-cta" id="connectWalletBtn" onclick="handleWalletClick()">
+      Connect Wallet
+    </button>
+
+    <div class="nav-mobile-toggle" id="mobileToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/#features">Features</a>
+    <a href="/solutions" class="active">Solutions</a>
+    <a href="/technology">Technology</a>
+    <a href="/tokenomics">Tokenomics</a>
+    <a href="/docs">Docs</a>
+    <a href="/about">About</a>
+    <button class="mobile-cta" onclick="handleWalletClick()">Connect Wallet</button>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="page-hero">
+    <div class="page-hero-content">
+      <span class="section-label">
+        <span class="label-icon">◈</span>
+        Industry Solutions
+      </span>
+      <h1 class="page-hero-title">
+        Authentication for <span class="highlight">Every Sector</span>
+      </h1>
+      <p class="page-hero-subtitle">
+        Blockchain-powered product verification and supply chain transparency across industries.
+        One platform, infinite possibilities.
+      </p>
+    </div>
+  </section>
+
+  <!-- Solutions Grid -->
+  <section id="solutions-grid">
+    <div class="solutions-grid">
+
+      <!-- Retail & Consumer Goods -->
+      <div class="solution-card fade-in">
+        <div class="solution-icon" style="--accent: var(--electric-blue);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+        </div>
+        <h3>Retail & Consumer Goods</h3>
+        <p class="solution-description">Protect brands and consumers with instant authentication.</p>
+        <ul class="solution-features">
+          <li>Luxury goods authentication</li>
+          <li>Anti-counterfeiting protection</li>
+          <li>Supply chain transparency</li>
+          <li>Customer engagement via NFC</li>
+          <li>Warranty verification</li>
+        </ul>
+        <div class="solution-stat">
+          <span class="stat-number">$500B+</span>
+          <span class="stat-label">Annual counterfeit market</span>
+        </div>
+      </div>
+
+      <!-- Agriculture -->
+      <div class="solution-card fade-in stagger-1">
+        <div class="solution-icon" style="--accent: var(--circuit-green);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2a10 10 0 0 1 10 10c0 5.52-4.48 10-10 10S2 17.52 2 12"/>
+            <path d="M12 2v10l4 4"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+        </div>
+        <h3>Agriculture</h3>
+        <p class="solution-description">Farm-to-table traceability for food safety and trust.</p>
+        <ul class="solution-features">
+          <li>Farm-to-table traceability</li>
+          <li>Organic certification verification</li>
+          <li>Pesticide/chemical tracking</li>
+          <li>Harvest date verification</li>
+          <li>Geographic origin proof</li>
+        </ul>
+        <div class="solution-stat">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Origin traceability</span>
+        </div>
+      </div>
+
+      <!-- Healthcare -->
+      <div class="solution-card fade-in stagger-2">
+        <div class="solution-icon" style="--accent: var(--danger-red);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+          </svg>
+        </div>
+        <h3>Healthcare</h3>
+        <p class="solution-description">Ensure patient safety with verified pharmaceuticals.</p>
+        <ul class="solution-features">
+          <li>Pharmaceutical authentication</li>
+          <li>Medical device tracking</li>
+          <li>Prescription verification</li>
+          <li>Recall management</li>
+          <li>Cold chain monitoring</li>
+        </ul>
+        <div class="solution-stat">
+          <span class="stat-number">1M+</span>
+          <span class="stat-label">Lives at risk from fake drugs</span>
+        </div>
+      </div>
+
+      <!-- Manufacturing -->
+      <div class="solution-card fade-in stagger-3">
+        <div class="solution-icon" style="--accent: var(--warning-amber);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M2 20h20"/>
+            <path d="M5 20V8l7-5 7 5v12"/>
+            <path d="M9 20v-6h6v6"/>
+          </svg>
+        </div>
+        <h3>Manufacturing</h3>
+        <p class="solution-description">Track parts and ensure quality across the supply chain.</p>
+        <ul class="solution-features">
+          <li>Parts provenance tracking</li>
+          <li>Quality control verification</li>
+          <li>Warranty management</li>
+          <li>Counterfeit prevention</li>
+          <li>Compliance documentation</li>
+        </ul>
+        <div class="solution-stat">
+          <span class="stat-number">24/7</span>
+          <span class="stat-label">Real-time tracking</span>
+        </div>
+      </div>
+
+      <!-- Military & Defense -->
+      <div class="solution-card fade-in stagger-4">
+        <div class="solution-icon" style="--accent: var(--neon-purple);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <h3>Military & Defense</h3>
+        <p class="solution-description">Secure equipment tracking with classified-grade verification.</p>
+        <ul class="solution-features">
+          <li>Equipment lifecycle tracking</li>
+          <li>Classified asset management</li>
+          <li>Chain of custody verification</li>
+          <li>Secure decommissioning</li>
+          <li>Tamper-evident sealing</li>
+        </ul>
+        <div class="solution-stat">
+          <span class="stat-number">Zero</span>
+          <span class="stat-label">Tolerance for compromise</span>
+        </div>
+      </div>
+
+      <!-- Government -->
+      <div class="solution-card fade-in stagger-5">
+        <div class="solution-icon" style="--accent: var(--electric-blue);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 21h18"/>
+            <path d="M5 21V7l7-4 7 4v14"/>
+            <path d="M9 21v-6h6v6"/>
+            <path d="M10 10h4"/>
+          </svg>
+        </div>
+        <h3>Government</h3>
+        <p class="solution-description">Transparent public asset management and document verification.</p>
+        <ul class="solution-features">
+          <li>Document authentication</li>
+          <li>Asset tracking</li>
+          <li>Regulatory compliance</li>
+          <li>Public records verification</li>
+          <li>Cross-agency coordination</li>
+        </ul>
+        <div class="solution-stat">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Audit trail transparency</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section id="how-it-works" class="text-center">
+    <span class="section-label">
+      <span class="label-icon">⚡</span>
+      How It Works
+    </span>
+    <h2 class="section-title">Three Steps to Verified Trust</h2>
+
+    <div class="steps-grid">
+      <div class="step-card fade-in">
+        <div class="step-number">01</div>
+        <h3>Tag</h3>
+        <p>Embed NFC chips in products during manufacturing. Each chip is cryptographically bound to a unique digital twin on the blockchain.</p>
+      </div>
+
+      <div class="step-card fade-in stagger-1">
+        <div class="step-number">02</div>
+        <h3>Track</h3>
+        <p>Monitor products through every stage of the supply chain. Each scan creates an immutable record of custody and location.</p>
+      </div>
+
+      <div class="step-card fade-in stagger-2">
+        <div class="step-number">03</div>
+        <h3>Trust</h3>
+        <p>Consumers verify authenticity with a simple tap. Instant proof of origin, ownership history, and product integrity.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section id="solutions-cta" class="cta-section">
+    <div class="cta-content">
+      <h2>Ready to implement TAG IT in your industry?</h2>
+      <p>Contact our team to discuss your specific use case and get started with a pilot program.</p>
+      <div class="button-group">
+        <a href="/about#contact" class="btn btn-primary">Contact Us</a>
+        <a href="/technology" class="btn btn-secondary">View Technology</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-column footer-brand">
+        <div class="logo">
+          <div class="logo-icon">
+            <img src="/assets/images/tagit_logo.png" alt="TAG IT Network Logo" class="logo-img">
+          </div>
+          <span>TAG IT Network</span>
+        </div>
+        <p>Blockchain-powered product authentication for the modern world.</p>
+      </div>
+
+      <div class="footer-column">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="/#features">Features</a></li>
+          <li><a href="/solutions">Solutions</a></li>
+          <li><a href="/technology">Technology</a></li>
+          <li><a href="/tokenomics">Tokenomics</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="/docs">Documentation</a></li>
+          <li><a href="/docs#api">API Reference</a></li>
+          <li><a href="#">Whitepaper</a></li>
+          <li><a href="#">GitHub</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/about#roadmap">Roadmap</a></li>
+          <li><a href="/about#contact">Contact</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 TAG IT Network. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Wallet Modal -->
+  <div class="wallet-modal-overlay" id="walletModal">
+    <div class="wallet-modal">
+      <div id="walletConnectState">
+        <div class="wallet-modal-header">
+          <h3>Connect Wallet</h3>
+          <p>Choose your preferred wallet</p>
+        </div>
+        <div class="wallet-option" onclick="connectMetaMask()">
+          <div class="wallet-option-icon">🦊</div>
+          <div class="wallet-option-info">
+            <h4>MetaMask</h4>
+            <p>Connect using browser extension</p>
+          </div>
+        </div>
+        <div class="wallet-option" onclick="alert('WalletConnect coming soon!')">
+          <div class="wallet-option-icon">🔗</div>
+          <div class="wallet-option-info">
+            <h4>WalletConnect</h4>
+            <p>Scan with mobile wallet</p>
+          </div>
+        </div>
+        <div class="wallet-option" onclick="alert('Coinbase Wallet coming soon!')">
+          <div class="wallet-option-icon">💰</div>
+          <div class="wallet-option-info">
+            <h4>Coinbase Wallet</h4>
+            <p>Connect using Coinbase</p>
+          </div>
+        </div>
+      </div>
+      <div id="walletConnectedState" style="display: none;">
+        <div class="wallet-modal-header">
+          <h3>Wallet Connected</h3>
+          <p>Manage your connection</p>
+        </div>
+        <div class="wallet-connected-info">
+          <div id="networkInfo"></div>
+          <div class="address-full" id="fullAddress"></div>
+          <button class="wallet-disconnect-btn" onclick="disconnectWallet()">
+            Disconnect Wallet
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- Scripts -->
+  <script src="/js/shared.js"></script>
+
+  <style>
+    /* Page-specific styles */
+    .page-hero {
+      padding: 160px 48px 80px;
+      text-align: center;
+      position: relative;
+      background: radial-gradient(ellipse at center top, var(--blue-10) 0%, transparent 50%);
+    }
+
+    .page-hero-title {
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 24px;
+    }
+
+    .page-hero-subtitle {
+      font-size: 18px;
+      color: var(--muted-gray);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .solutions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 32px;
+      padding: 0 48px 100px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .solution-card {
+      background: var(--carbon-gray);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 16px;
+      padding: 32px;
+      transition: all 0.3s ease;
+    }
+
+    .solution-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--blue-30);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+
+    .solution-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 12px;
+      background: rgba(0,212,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      color: var(--accent, var(--electric-blue));
+    }
+
+    .solution-icon svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .solution-card h3 {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .solution-description {
+      color: var(--muted-gray);
+      margin-bottom: 20px;
+      font-size: 15px;
+    }
+
+    .solution-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 24px 0;
+    }
+
+    .solution-features li {
+      padding: 8px 0;
+      padding-left: 24px;
+      position: relative;
+      color: var(--neutral-white);
+      font-size: 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .solution-features li:before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--circuit-green);
+    }
+
+    .solution-features li:last-child {
+      border-bottom: none;
+    }
+
+    .solution-stat {
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .stat-number {
+      display: block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--electric-blue);
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--muted-gray);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Steps */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      max-width: 1000px;
+      margin: 48px auto 0;
+      padding: 0 48px;
+    }
+
+    .step-card {
+      background: var(--carbon-gray);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 16px;
+      padding: 32px;
+      text-align: left;
+    }
+
+    .step-number {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--blue-30);
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .step-card h3 {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    .step-card p {
+      color: var(--muted-gray);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* CTA */
+    .cta-section {
+      padding: 100px 48px;
+      text-align: center;
+      background: linear-gradient(180deg, transparent, var(--blue-5), transparent);
+    }
+
+    .cta-content h2 {
+      font-size: 36px;
+      margin-bottom: 16px;
+    }
+
+    .cta-content p {
+      color: var(--muted-gray);
+      margin-bottom: 32px;
+      font-size: 18px;
+    }
+
+    /* Active nav state */
+    .nav-links a.active {
+      color: var(--electric-blue);
+    }
+
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      .page-hero {
+        padding: 120px 24px 60px;
+      }
+      .solutions-grid {
+        padding: 0 24px 60px;
+        grid-template-columns: 1fr;
+      }
+      .steps-grid {
+        padding: 0 24px;
+      }
+      .cta-section {
+        padding: 60px 24px;
+      }
+    }
+  </style>
+</body>
+</html>

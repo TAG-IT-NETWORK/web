@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tokenomics — TAG IT Network</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <meta name="description" content="$TAGIT Token - Powering the authentication economy. Learn about tokenomics, staking, governance, and DAO structure.">
+  <meta name="keywords" content="TAGIT token, tokenomics, DAO, governance, staking, cryptocurrency, blockchain">
+  <meta name="author" content="TAG IT Network">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tagit.network/tokenomics">
+  <meta property="og:title" content="Tokenomics — TAG IT Network">
+  <meta property="og:description" content="$TAGIT Token - Powering the authentication economy.">
+  <meta property="og:image" content="https://tagit.network/assets/images/og-image.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tokenomics — TAG IT Network">
+  <meta name="twitter:image" content="https://tagit.network/assets/images/og-image.png">
+
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/tagit_logo.png">
+  <link rel="apple-touch-icon" href="/assets/images/tagit_logo.png">
+  <link rel="stylesheet" href="/css/shared.css">
+</head>
+<body>
+  <div class="cyber-grid-overlay"></div>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <a href="/" class="logo">
+      <div class="logo-icon">
+        <img src="/assets/images/tagit_logo.png" alt="TAG IT Network Logo" class="logo-img">
+      </div>
+      <span>TAG IT Network</span>
+    </a>
+    <div class="nav-links">
+      <a href="/#features">Features</a>
+      <a href="/solutions">Solutions</a>
+      <a href="/technology">Technology</a>
+      <a href="/tokenomics" class="active">Tokenomics</a>
+      <a href="/docs">Docs</a>
+      <a href="/about">About</a>
+    </div>
+    <button class="nav-cta" id="connectWalletBtn" onclick="handleWalletClick()">Connect Wallet</button>
+    <div class="nav-mobile-toggle" id="mobileToggle"><span></span><span></span><span></span></div>
+  </nav>
+
+  <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/#features">Features</a>
+    <a href="/solutions">Solutions</a>
+    <a href="/technology">Technology</a>
+    <a href="/tokenomics" class="active">Tokenomics</a>
+    <a href="/docs">Docs</a>
+    <a href="/about">About</a>
+    <button class="mobile-cta" onclick="handleWalletClick()">Connect Wallet</button>
+  </div>
+
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="token-icon-wrapper">
+      <div class="token-icon">
+        <span>$TAGIT</span>
+      </div>
+    </div>
+    <h1 class="page-hero-title">
+      <span class="highlight">$TAGIT</span> Token
+    </h1>
+    <p class="page-hero-subtitle">
+      Powering the authentication economy. Stake, govern, and participate in the future of product verification.
+    </p>
+  </section>
+
+  <!-- Token Overview -->
+  <section class="token-overview">
+    <div class="overview-grid">
+      <div class="overview-card fade-in">
+        <span class="overview-label">Token Name</span>
+        <span class="overview-value">TAGIT</span>
+      </div>
+      <div class="overview-card fade-in stagger-1">
+        <span class="overview-label">Network</span>
+        <span class="overview-value">TAG IT L2</span>
+      </div>
+      <div class="overview-card fade-in stagger-2">
+        <span class="overview-label">Type</span>
+        <span class="overview-value">Utility + Governance</span>
+      </div>
+      <div class="overview-card fade-in stagger-3">
+        <span class="overview-label">Total Supply</span>
+        <span class="overview-value">1,000,000,000</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Token Utility -->
+  <section class="token-utility">
+    <div class="section-header text-center">
+      <span class="section-label"><span class="label-icon">⚡</span> Token Utility</span>
+      <h2 class="section-title">Four Pillars of Value</h2>
+    </div>
+
+    <div class="utility-grid">
+      <div class="utility-card fade-in">
+        <div class="utility-icon">💸</div>
+        <h3>Transaction Fees</h3>
+        <p>Pay for all lifecycle operations on the network. Mint, bind, activate, claim, and verify products using $TAGIT.</p>
+        <ul>
+          <li>Discounted rates for stakers</li>
+          <li>Bulk operation pricing</li>
+          <li>Enterprise packages</li>
+        </ul>
+      </div>
+
+      <div class="utility-card fade-in stagger-1">
+        <div class="utility-icon">📈</div>
+        <h3>Staking Rewards</h3>
+        <p>Stake $TAGIT to earn a share of protocol fees. Higher stakes unlock additional platform benefits.</p>
+        <ul>
+          <li>Earn protocol revenue</li>
+          <li>Validator node eligibility</li>
+          <li>Boosted governance power</li>
+        </ul>
+      </div>
+
+      <div class="utility-card fade-in stagger-2">
+        <div class="utility-icon">🗳</div>
+        <h3>Governance Power</h3>
+        <p>Shape the future of TAG IT Network. Vote on protocol upgrades, fee structures, and treasury allocation.</p>
+        <ul>
+          <li>Proposal creation rights</li>
+          <li>Multi-house DAO voting</li>
+          <li>Timelock protections</li>
+        </ul>
+      </div>
+
+      <div class="utility-card fade-in stagger-3">
+        <div class="utility-icon">🔑</div>
+        <h3>Access Control</h3>
+        <p>Unlock premium features and capabilities through the BIDGES badge system.</p>
+        <ul>
+          <li>Premium API access</li>
+          <li>Advanced analytics</li>
+          <li>Priority support</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- DAO Governance -->
+  <section class="dao-section">
+    <div class="section-header text-center">
+      <span class="section-label"><span class="label-icon">🏛</span> DAO Governance</span>
+      <h2 class="section-title">Multi-House Structure</h2>
+      <p class="section-subtitle">Balanced representation ensures all stakeholders have a voice in protocol governance.</p>
+    </div>
+
+    <div class="dao-houses">
+      <div class="house-card fade-in">
+        <div class="house-icon">👥</div>
+        <h3>House of Users</h3>
+        <p>Consumer and brand representatives who use the verification system daily.</p>
+        <span class="house-power">25% voting power</span>
+      </div>
+
+      <div class="house-card fade-in stagger-1">
+        <div class="house-icon">💻</div>
+        <h3>House of Developers</h3>
+        <p>Engineers and builders who contribute to the protocol's technical evolution.</p>
+        <span class="house-power">25% voting power</span>
+      </div>
+
+      <div class="house-card fade-in stagger-2">
+        <div class="house-icon">🖥</div>
+        <h3>House of Validators</h3>
+        <p>Node operators who secure the network and process transactions.</p>
+        <span class="house-power">25% voting power</span>
+      </div>
+
+      <div class="house-card fade-in stagger-3">
+        <div class="house-icon">⚖️</div>
+        <h3>Council of Arbitrators</h3>
+        <p>Elected judges who resolve disputes and flag investigations.</p>
+        <span class="house-power">25% voting power</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Token Distribution -->
+  <section class="distribution-section">
+    <div class="section-header text-center">
+      <span class="section-label"><span class="label-icon">📊</span> Distribution</span>
+      <h2 class="section-title">Token Allocation</h2>
+    </div>
+
+    <div class="distribution-chart">
+      <div class="chart-visual">
+        <div class="chart-bar" style="--width: 35%; --color: var(--electric-blue);" data-label="Community Treasury" data-value="35%"></div>
+        <div class="chart-bar" style="--width: 25%; --color: var(--circuit-green);" data-label="Ecosystem Development" data-value="25%"></div>
+        <div class="chart-bar" style="--width: 20%; --color: var(--neon-purple);" data-label="Team & Advisors" data-value="20%"></div>
+        <div class="chart-bar" style="--width: 15%; --color: var(--warning-amber);" data-label="Public Sale" data-value="15%"></div>
+        <div class="chart-bar" style="--width: 5%; --color: var(--danger-red);" data-label="Initial Liquidity" data-value="5%"></div>
+      </div>
+      <div class="chart-legend">
+        <div class="legend-item"><span class="legend-color" style="background: var(--electric-blue);"></span> Community Treasury (35%)</div>
+        <div class="legend-item"><span class="legend-color" style="background: var(--circuit-green);"></span> Ecosystem Development (25%)</div>
+        <div class="legend-item"><span class="legend-color" style="background: var(--neon-purple);"></span> Team & Advisors (20%)</div>
+        <div class="legend-item"><span class="legend-color" style="background: var(--warning-amber);"></span> Public Sale (15%)</div>
+        <div class="legend-item"><span class="legend-color" style="background: var(--danger-red);"></span> Initial Liquidity (5%)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Early Holders -->
+  <section class="early-holders">
+    <div class="section-header text-center">
+      <span class="section-label"><span class="label-icon">🌟</span> Early Supporters</span>
+      <h2 class="section-title">Genesis Benefits</h2>
+    </div>
+
+    <div class="benefits-grid">
+      <div class="benefit-item fade-in">
+        <span class="benefit-icon">🎖</span>
+        <h4>Genesis NFT Badge</h4>
+        <p>Exclusive non-transferable badge marking founding status</p>
+      </div>
+      <div class="benefit-item fade-in stagger-1">
+        <span class="benefit-icon">⚡</span>
+        <h4>Boosted Voting</h4>
+        <p>1.5x governance power for early participants</p>
+      </div>
+      <div class="benefit-item fade-in stagger-2">
+        <span class="benefit-icon">💰</span>
+        <h4>Revenue Share</h4>
+        <p>Eligible for protocol fee distribution</p>
+      </div>
+      <div class="benefit-item fade-in stagger-3">
+        <span class="benefit-icon">🚀</span>
+        <h4>Priority Access</h4>
+        <p>First access to new features and API endpoints</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-content">
+      <h2>Ready to join the DAO?</h2>
+      <p>Get on the waitlist for early access to $TAGIT token and governance participation.</p>
+      <div class="button-group">
+        <a href="#" class="btn btn-primary">Join Waitlist</a>
+        <a href="#" class="btn btn-secondary">Read Whitepaper</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-column footer-brand">
+        <div class="logo">
+          <div class="logo-icon"><img src="/assets/images/tagit_logo.png" alt="TAG IT Network Logo" class="logo-img"></div>
+          <span>TAG IT Network</span>
+        </div>
+        <p>Blockchain-powered product authentication for the modern world.</p>
+      </div>
+      <div class="footer-column">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="/#features">Features</a></li>
+          <li><a href="/solutions">Solutions</a></li>
+          <li><a href="/technology">Technology</a></li>
+          <li><a href="/tokenomics">Tokenomics</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="/docs">Documentation</a></li>
+          <li><a href="/docs#api">API Reference</a></li>
+          <li><a href="#">Whitepaper</a></li>
+          <li><a href="#">GitHub</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/about#roadmap">Roadmap</a></li>
+          <li><a href="/about#contact">Contact</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 TAG IT Network. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Wallet Modal -->
+  <div class="wallet-modal-overlay" id="walletModal">
+    <div class="wallet-modal">
+      <div id="walletConnectState">
+        <div class="wallet-modal-header"><h3>Connect Wallet</h3><p>Choose your preferred wallet</p></div>
+        <div class="wallet-option" onclick="connectMetaMask()">
+          <div class="wallet-option-icon">🦊</div>
+          <div class="wallet-option-info"><h4>MetaMask</h4><p>Connect using browser extension</p></div>
+        </div>
+        <div class="wallet-option" onclick="alert('Coming soon!')">
+          <div class="wallet-option-icon">🔗</div>
+          <div class="wallet-option-info"><h4>WalletConnect</h4><p>Scan with mobile wallet</p></div>
+        </div>
+      </div>
+      <div id="walletConnectedState" style="display: none;">
+        <div class="wallet-modal-header"><h3>Wallet Connected</h3></div>
+        <div class="wallet-connected-info">
+          <div id="networkInfo"></div>
+          <div class="address-full" id="fullAddress"></div>
+          <button class="wallet-disconnect-btn" onclick="disconnectWallet()">Disconnect</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg>
+  </button>
+
+  <script src="/js/shared.js"></script>
+
+  <style>
+    .page-hero {
+      padding: 160px 48px 80px;
+      text-align: center;
+      background: radial-gradient(ellipse at center top, var(--green-10) 0%, transparent 50%);
+    }
+    .page-hero-title { font-size: clamp(36px, 5vw, 56px); font-weight: 700; margin-bottom: 24px; }
+    .page-hero-subtitle { font-size: 18px; color: var(--muted-gray); max-width: 600px; margin: 0 auto; }
+
+    .token-icon-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 32px;
+    }
+    .token-icon {
+      width: 120px;
+      height: 120px;
+      background: linear-gradient(135deg, var(--electric-blue), var(--circuit-green));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--deep-carbon);
+      animation: tokenFloat 3s ease-in-out infinite;
+      box-shadow: 0 0 60px var(--green-40);
+    }
+    @keyframes tokenFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .token-overview {
+      padding: 0 48px 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+    }
+    .overview-card {
+      background: var(--carbon-gray);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+    }
+    .overview-label {
+      display: block;
+      font-size: 12px;
+      color: var(--muted-gray);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+    }
+    .overview-value {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--electric-blue);
+    }
+
+    .token-utility, .dao-section, .distribution-section, .early-holders {
+      padding: 80px 48px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .utility-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .utility-card {
+      background: var(--carbon-gray);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 16px;
+      padding: 32px;
+      transition: all 0.3s ease;
+    }
+    .utility-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--blue-30);
+    }
+    .utility-icon {
+      font-size: 40px;
+      margin-bottom: 16px;
+    }
+    .utility-card h3 {
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+    .utility-card p {
+      color: var(--muted-gray);
+      margin-bottom: 16px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .utility-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .utility-card li {
+      padding: 8px 0;
+      padding-left: 20px;
+      position: relative;
+      font-size: 14px;
+      color: var(--neutral-white);
+    }
+    .utility-card li:before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--circuit-green);
+    }
+
+    .dao-houses {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .house-card {
+      background: var(--carbon-gray);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+    }
+    .house-icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+    .house-card h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+    .house-card p {
+      color: var(--muted-gray);
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+    .house-power {
+      display: inline-block;
+      padding: 6px 12px;
+      background: var(--blue-10);
+      border: 1px solid var(--blue-30);
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--electric-blue);
+    }
+
+    .distribution-chart {
+      max-width: 800px;
+      margin: 48px auto 0;
+    }
+    .chart-visual {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .chart-bar {
+      height: 40px;
+      background: var(--color);
+      border-radius: 8px;
+      width: var(--width);
+      display: flex;
+      align-items: center;
+      padding-left: 16px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--deep-carbon);
+      transition: transform 0.3s ease;
+    }
+    .chart-bar:hover {
+      transform: scaleX(1.02);
+    }
+    .chart-bar::after {
+      content: attr(data-value);
+      margin-left: auto;
+      padding-right: 16px;
+    }
+    .chart-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 24px;
+      justify-content: center;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--muted-gray);
+    }
+    .legend-color {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .benefit-item {
+      background: var(--carbon-gray);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+    }
+    .benefit-icon {
+      font-size: 32px;
+      display: block;
+      margin-bottom: 12px;
+    }
+    .benefit-item h4 {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+    .benefit-item p {
+      font-size: 13px;
+      color: var(--muted-gray);
+      margin: 0;
+    }
+
+    .cta-section {
+      padding: 100px 48px;
+      text-align: center;
+      background: linear-gradient(180deg, transparent, var(--green-5), transparent);
+    }
+    .cta-content h2 { font-size: 36px; margin-bottom: 16px; }
+    .cta-content p { color: var(--muted-gray); margin-bottom: 32px; font-size: 18px; }
+
+    .nav-links a.active { color: var(--electric-blue); }
+    .nav-links a.active::after { width: 100%; }
+
+    @media (max-width: 768px) {
+      .page-hero, .token-overview, .token-utility, .dao-section, .distribution-section, .early-holders, .cta-section {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+      .chart-bar {
+        font-size: 12px;
+        height: 32px;
+      }
+    }
+  </style>
+</body>
+</html>
