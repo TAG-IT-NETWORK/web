@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technology — TAG IT Network</title>
+
+  <!-- Performance: Preconnect to external origins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="TAG IT Network technology stack - NFC, blockchain, and AI powering the ORACULS platform for product authentication and supply chain verification.">
+  <meta name="keywords" content="NFC authentication, blockchain technology, digital twins, ORACULS, smart contracts, supply chain">
+  <meta name="author" content="TAG IT Network">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tagit.network/technology">
+  <meta property="og:title" content="Technology — TAG IT Network">
+  <meta property="og:description" content="The technology stack powering blockchain product authentication.">
+  <meta property="og:image" content="https://tagit.network/assets/images/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Technology — TAG IT Network">
+  <meta name="twitter:description" content="The technology stack powering blockchain product authentication.">
+  <meta name="twitter:image" content="https://tagit.network/assets/images/og-image.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/tagit_logo.png">
+  <link rel="apple-touch-icon" href="/assets/images/tagit_logo.png">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/css/shared.css">
+</head>
+<body>
+  <!-- Skip to main content link for keyboard users -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Noscript fallback -->
+  <noscript>
+    <div class="noscript-message">
+      This website requires JavaScript for some features. Core content is still accessible.
+    </div>
+  </noscript>
+
+  <!-- Global Cyber Grid Background -->
+  <div class="cyber-grid-overlay"></div>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <a href="/" class="logo">
+      <div class="logo-icon">
+        <img src="/assets/images/tagit_logo.png" alt="TAG IT Network Logo" class="logo-img" loading="lazy" width="40" height="40">
+      </div>
+      <span>TAG IT Network</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="/#features">Features</a>
+      <a href="/solutions">Solutions</a>
+      <a href="/technology" class="active">Technology</a>
+      <a href="/tokenomics">Tokenomics</a>
+      <a href="/docs">Docs</a>
+      <a href="/about">About</a>
+    </div>
+
+    <button class="nav-cta" id="connectWalletBtn" onclick="handleWalletClick()">
+      Connect Wallet
+    </button>
+
+    <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/#features">Features</a>
+    <a href="/solutions">Solutions</a>
+    <a href="/technology" class="active">Technology</a>
+    <a href="/tokenomics">Tokenomics</a>
+    <a href="/docs">Docs</a>
+    <a href="/about">About</a>
+    <button class="mobile-cta" onclick="handleWalletClick()">Connect Wallet</button>
+  </div>
+
+  <main id="main-content">
+  <!-- Hero Section -->
+  <section class="page-hero">
+    <div class="page-hero-content">
+      <span class="section-label">
+        <span class="label-icon">⚙</span>
+        Technology
+      </span>
+      <h1 class="page-hero-title">
+        Seven Stages of <span class="highlight">Verified Trust</span>
+      </h1>
+      <p class="page-hero-subtitle">
+        Every product goes through a complete lifecycle, each stage recorded immutably on-chain.
+      </p>
+    </div>
+  </section>
+
+  <!-- Visual Life Cycle Overview -->
+  <section id="lifecycle-visual" class="tech-section lifecycle-visual-section">
+    <div class="lifecycle-container scale-in">
+      <div class="lifecycle-stage mint" data-stage="mint">
+        <div class="icon">🪙</div>
+        <div class="name">Mint</div>
+      </div>
+      <div class="lifecycle-arrow">→</div>
+
+      <div class="lifecycle-stage bind" data-stage="bind">
+        <div class="icon">🔗</div>
+        <div class="name">Bind</div>
+      </div>
+      <div class="lifecycle-arrow">→</div>
+
+      <div class="lifecycle-stage activate" data-stage="activate">
+        <div class="icon">⚡</div>
+        <div class="name">Activate</div>
+      </div>
+      <div class="lifecycle-arrow">→</div>
+
+      <div class="lifecycle-stage claim" data-stage="claim">
+        <div class="icon">✋</div>
+        <div class="name">Claim</div>
+      </div>
+      <div class="lifecycle-arrow">→</div>
+
+      <div class="lifecycle-stage flag" data-stage="flag">
+        <div class="icon">🚩</div>
+        <div class="name">Flag</div>
+      </div>
+      <div class="lifecycle-arrow">→</div>
+
+      <div class="lifecycle-stage resolve" data-stage="resolve">
+        <div class="icon">⚖️</div>
+        <div class="name">Resolve</div>
+      </div>
+      <div class="lifecycle-arrow">→</div>
+
+      <div class="lifecycle-stage recycle" data-stage="recycle">
+        <div class="icon">♻️</div>
+        <div class="name">Recycle</div>
+      </div>
+    </div>
+
+    <!-- Explanation Panel -->
+    <div class="lifecycle-explanation" id="lifecycleExplanation">
+      <div class="explanation-header">
+        <span class="explanation-icon" id="explanationIcon"></span>
+        <span class="explanation-headline" id="explanationHeadline"></span>
+      </div>
+      <p class="explanation-vibe" id="explanationVibe"></p>
+      <p class="explanation-desc" id="explanationDesc"></p>
+      <div class="explanation-tech" id="explanationTech"></div>
+    </div>
+  </section>
+
+  <!-- ORACULS Stack Section -->
+  <section id="architecture" class="tech-section oraculs-section">
+    <div class="section-header text-center">
+      <span class="section-label">
+        <span class="label-icon">⚙</span>
+        Technical Architecture
+      </span>
+      <h2 class="section-title">The <span class="highlight">ORACULS</span> Stack</h2>
+      <p class="oraculs-subtitle">Oracle-Augmented Chain for Universal Logistics Security</p>
+    </div>
+
+    <div class="stack-wrapper">
+      <div class="stack-layers">
+        <!-- Layer 01: Applications -->
+        <div class="stack-layer applications fade-in" data-layer="applications">
+          <div class="layer-header">
+            <div class="layer-indicator">01</div>
+            <div class="layer-content">
+              <div class="layer-name">Applications Layer</div>
+              <div class="layer-desc">User-facing apps and partner integrations</div>
+            </div>
+            <div class="layer-tags">
+              <span class="component-tag">ORACULAR App</span>
+              <span class="component-tag">Admin Console</span>
+              <span class="component-tag">Partner Portal</span>
+              <span class="component-tag">SDK</span>
+            </div>
+            <span class="expand-indicator-layer">▼</span>
+          </div>
+          <div class="layer-expanded-content">
+            <div class="layer-divider"></div>
+            <div class="component-grid">
+              <div class="component-card">
+                <h4>ORACULAR App</h4>
+                <p class="component-desc">Mobile NFC scanner for consumers and field teams</p>
+                <span class="component-tech">React Native</span>
+              </div>
+              <div class="component-card">
+                <h4>Admin Console</h4>
+                <p class="component-desc">Internal dashboard for operations and analytics</p>
+                <span class="component-tech">Next.js 14</span>
+              </div>
+              <div class="component-card">
+                <h4>Partner Portal</h4>
+                <p class="component-desc">B2B portal with BIDGES authentication</p>
+                <span class="component-tech">Next.js + BIDGES</span>
+              </div>
+              <div class="component-card">
+                <h4>SDK</h4>
+                <p class="component-desc">Developer integrations for custom apps</p>
+                <span class="component-tech">TS / Kotlin / Swift</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Layer 02: Gateway -->
+        <div class="stack-layer gateway fade-in stagger-1" data-layer="gateway">
+          <div class="layer-header">
+            <div class="layer-indicator">02</div>
+            <div class="layer-content">
+              <div class="layer-name">Gateway Layer</div>
+              <div class="layer-desc">API routing, authentication, and AI orchestration</div>
+            </div>
+            <div class="layer-tags">
+              <span class="component-tag">tagit-services</span>
+              <span class="component-tag">Auth</span>
+              <span class="component-tag">Verification</span>
+              <span class="component-tag">AI Engine</span>
+            </div>
+            <span class="expand-indicator-layer">▼</span>
+          </div>
+          <div class="layer-expanded-content">
+            <div class="layer-divider"></div>
+            <div class="component-grid">
+              <div class="component-card">
+                <h4>tagit-services</h4>
+                <p class="component-desc">Backend APIs + AI orchestration layer</p>
+                <span class="component-tech">/api/v1/*</span>
+              </div>
+              <div class="component-card">
+                <h4>Auth Service</h4>
+                <p class="component-desc">JWT tokens + BIDGES badge verification</p>
+                <span class="component-tech">/auth/*</span>
+              </div>
+              <div class="component-card">
+                <h4>Verification</h4>
+                <p class="component-desc">NFC challenge-response protocol</p>
+                <span class="component-tech">/verify/*</span>
+              </div>
+              <div class="component-card">
+                <h4>AI Orchestrator</h4>
+                <p class="component-desc">Anomaly detection and fraud prevention</p>
+                <span class="component-tech">/ai/*</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Layer 03: Ledger -->
+        <div class="stack-layer ledger fade-in stagger-2" data-layer="ledger">
+          <div class="layer-header">
+            <div class="layer-indicator">03</div>
+            <div class="layer-content">
+              <div class="layer-name">Ledger Layer</div>
+              <div class="layer-desc">TAGIT L2 blockchain with smart contracts</div>
+            </div>
+            <div class="layer-tags">
+              <span class="component-tag">OP Stack</span>
+              <span class="component-tag">EigenDA</span>
+              <span class="component-tag">6 Contracts</span>
+            </div>
+            <span class="expand-indicator-layer">▼</span>
+          </div>
+          <div class="layer-expanded-content">
+            <div class="layer-divider"></div>
+            <div class="ledger-metrics">
+              <span class="ledger-metric">~2s blocks</span>
+              <span class="ledger-metric">~2,000 TPS</span>
+              <span class="ledger-metric">~$0.001/tx</span>
+              <span class="ledger-metric">OP Stack</span>
+            </div>
+            <div class="contracts-grid">
+              <div class="contract-card">
+                <h4>TAGITCore</h4>
+                <p>Asset NFT + Lifecycle</p>
+              </div>
+              <div class="contract-card">
+                <h4>TAGITAccess</h4>
+                <p>BIDGES badges</p>
+              </div>
+              <div class="contract-card">
+                <h4>TAGITRecovery</h4>
+                <p>AIRP disputes</p>
+              </div>
+              <div class="contract-card">
+                <h4>TAGITGovernor</h4>
+                <p>Multi-house DAO</p>
+              </div>
+              <div class="contract-card">
+                <h4>TAGITTreasury</h4>
+                <p>Fund management</p>
+              </div>
+              <div class="contract-card">
+                <h4>TAGITPrograms</h4>
+                <p>Rewards + Recalls</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Layer 04: Settlement -->
+        <div class="stack-layer settlement fade-in stagger-3" data-layer="settlement">
+          <div class="layer-header">
+            <div class="layer-indicator">04</div>
+            <div class="layer-content">
+              <div class="layer-name">Settlement Layer</div>
+              <div class="layer-desc">Final settlement and cross-chain interoperability</div>
+            </div>
+            <div class="layer-tags">
+              <span class="component-tag">Ethereum L1</span>
+              <span class="component-tag">EigenDA</span>
+              <span class="component-tag">Chainlink CCIP</span>
+              <span class="component-tag">Private Chain</span>
+            </div>
+            <span class="expand-indicator-layer">▼</span>
+          </div>
+          <div class="layer-expanded-content">
+            <div class="layer-divider"></div>
+            <div class="component-grid">
+              <div class="component-card">
+                <h4>Ethereum L1</h4>
+                <p class="component-desc">Final settlement with full L1 security</p>
+                <span class="component-tech">State roots + fraud proofs</span>
+              </div>
+              <div class="component-card">
+                <h4>EigenDA</h4>
+                <p class="component-desc">Data availability layer, ~10x cheaper</p>
+                <span class="component-tech">Restaked security</span>
+              </div>
+              <div class="component-card">
+                <h4>Chainlink CCIP</h4>
+                <p class="component-desc">Cross-chain messaging and transfers</p>
+                <span class="component-tech">ETH, Polygon, Arbitrum, Optimism</span>
+              </div>
+              <div class="component-card">
+                <h4>Private Chain</h4>
+                <p class="component-desc">Gov/military classified data isolation</p>
+                <span class="component-tech">Hyperledger Besu</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Performance Metrics Bar -->
+    <div class="performance-metrics fade-in">
+      <div class="metric-item">
+        <div class="metric-value">~2</div>
+        <div class="metric-label">Second Block Time</div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-value">~2,000</div>
+        <div class="metric-label">Transactions/sec</div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-value">~$0.001</div>
+        <div class="metric-label">Cost per Verification</div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-value">7 days</div>
+        <div class="metric-label">L1 Finality</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NFC Section -->
+  <section id="nfc" class="tech-section alt-bg">
+    <div class="two-column">
+      <div class="column-content fade-in-left">
+        <span class="section-label">
+          <span class="label-icon">📡</span>
+          NFC Authentication
+        </span>
+        <h2 class="section-title">Tap to Verify</h2>
+        <p>Each TAG IT enabled product contains a cryptographically secured NFC chip. A simple tap with any smartphone instantly verifies authenticity.</p>
+
+        <ul class="feature-list">
+          <li>
+            <span class="feature-icon">🔐</span>
+            <div>
+              <strong>Cryptographic Security</strong>
+              <p>Each chip contains unique cryptographic keys that cannot be cloned or tampered with.</p>
+            </div>
+          </li>
+          <li>
+            <span class="feature-icon">⚡</span>
+            <div>
+              <strong>Instant Verification</strong>
+              <p>Results in under 2 seconds. No app download required for basic verification.</p>
+            </div>
+          </li>
+          <li>
+            <span class="feature-icon">🛡</span>
+            <div>
+              <strong>Tamper Detection</strong>
+              <p>Physical tampering attempts are detected and logged on-chain automatically.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="column-visual fade-in-right">
+        <div class="nfc-visual">
+          <div class="phone-mockup">
+            <div class="phone-screen">
+              <div class="verify-animation">
+                <div class="nfc-waves">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <div class="verify-result">
+                  <span class="checkmark">✓</span>
+                  <span class="verify-text">Verified Authentic</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Digital Twins Section -->
+  <section id="digital-twins" class="tech-section">
+    <div class="section-header text-center">
+      <span class="section-label">
+        <span class="label-icon">🪞</span>
+        Digital Twins
+      </span>
+      <h2 class="section-title">Every Product, Uniquely Represented</h2>
+      <p class="section-subtitle">Digital twins are NFTs that mirror physical products, storing their complete history on-chain.</p>
+    </div>
+
+    <div class="twins-grid">
+      <div class="twin-card fade-in">
+        <h3>On-Chain Data</h3>
+        <ul>
+          <li>Unique token ID</li>
+          <li>Current owner address</li>
+          <li>Lifecycle state</li>
+          <li>Verification count</li>
+          <li>Flag/dispute status</li>
+        </ul>
+      </div>
+      <div class="twin-card fade-in stagger-1">
+        <h3>Off-Chain Metadata</h3>
+        <ul>
+          <li>Product specifications</li>
+          <li>Manufacturing details</li>
+          <li>Images & documents</li>
+          <li>Extended attributes</li>
+          <li>AI analysis results</li>
+        </ul>
+      </div>
+      <div class="twin-card fade-in stagger-2">
+        <h3>Benefits</h3>
+        <ul>
+          <li>Immutable ownership history</li>
+          <li>Transferable warranties</li>
+          <li>Resale verification</li>
+          <li>Insurance integration</li>
+          <li>Regulatory compliance</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section id="tech-cta" class="cta-section">
+    <div class="cta-content">
+      <h2>Ready to integrate?</h2>
+      <p>Explore our documentation or contact our team to start building with TAG IT.</p>
+      <div class="button-group">
+        <a href="/docs" class="btn btn-primary">View Documentation</a>
+        <a href="/about#contact" class="btn btn-secondary">Contact Team</a>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon">
+            <img src="/assets/images/tagit_logo.png" alt="TAG IT Network Logo" class="logo-img" loading="lazy" width="40" height="40">
+          </div>
+          <span>TAG IT Network</span>
+        </div>
+        <p>Blockchain-powered product authentication for the modern world.</p>
+      </div>
+
+      <div class="footer-column">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#lifecycle">Life Cycle</a></li>
+          <li><a href="/solutions">Solutions</a></li>
+          <li><a href="/technology">Technology</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="https://github.com/TAG-IT-NETWORK/tagit-docs" target="_blank" rel="noopener">Documentation</a></li>
+          <li><a href="https://github.com/TAG-IT-NETWORK/tagit-docs" target="_blank" rel="noopener">API Reference</a></li>
+          <li><a href="https://github.com/TAG-IT-NETWORK/tagit-docs" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://www.youtube.com/@TAGITNetwork" target="_blank" rel="noopener">YouTube</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#" class="legal-trigger" data-modal="privacy">Privacy Policy</a></li>
+          <li><a href="#" class="legal-trigger" data-modal="terms">Terms of Service</a></li>
+          <li><a href="#" class="legal-trigger" data-modal="cookie">Cookie Policy</a></li>
+          <li><a href="#" id="contactModalTrigger">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 TAG IT Network. All rights reserved.</p>
+      <div class="footer-socials">
+        <a href="https://x.com/TAGITNETWORK" target="_blank" rel="noopener" title="Twitter/X">𝕏</a>
+        <a href="https://www.linkedin.com/company/106815890" target="_blank" rel="noopener" title="LinkedIn">in</a>
+        <a href="https://www.youtube.com/@TAGITNetwork" target="_blank" rel="noopener" title="YouTube">▶</a>
+        <a href="https://github.com/TAG-IT-NETWORK/tagit-docs" target="_blank" rel="noopener" title="GitHub">⌘</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Wallet Modal -->
+  <div class="wallet-modal-overlay" id="walletModal">
+    <div class="wallet-modal">
+      <div id="walletConnectState">
+        <div class="wallet-modal-header">
+          <h3>Connect Wallet</h3>
+          <p>Choose your preferred wallet</p>
+        </div>
+        <div class="wallet-option" onclick="connectMetaMask()">
+          <div class="wallet-option-icon">🦊</div>
+          <div class="wallet-option-info">
+            <h4>MetaMask</h4>
+            <p>Connect using browser extension</p>
+          </div>
+        </div>
+        <div class="wallet-option" onclick="alert('WalletConnect coming soon!')">
+          <div class="wallet-option-icon">🔗</div>
+          <div class="wallet-option-info">
+            <h4>WalletConnect</h4>
+            <p>Scan with mobile wallet</p>
+          </div>
+        </div>
+      </div>
+      <div id="walletConnectedState" style="display: none;">
+        <div class="wallet-modal-header">
+          <h3>Wallet Connected</h3>
+        </div>
+        <div class="wallet-connected-info">
+          <div id="networkInfo"></div>
+          <div class="address-full" id="fullAddress"></div>
+          <button class="wallet-disconnect-btn" onclick="disconnectWallet()">Disconnect</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg>
+  </button>
+
+  <!-- Scripts -->
+  <script src="/js/shared.js" defer></script>
+
+  <style>
+    /* Page-specific styles */
+    .page-hero {
+      padding: 160px 48px 80px;
+      text-align: center;
+      position: relative;
+      background: radial-gradient(ellipse at center top, var(--purple-10) 0%, transparent 50%);
+    }
+
+    .page-hero-title {
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 24px;
+    }
+
+    .page-hero-subtitle {
+      font-size: 18px;
+      color: var(--muted-gray);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .tech-section {
+      padding: 100px 48px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .lifecycle-visual-section {
+      padding-top: 40px;
+      padding-bottom: 60px;
+    }
+
+    .alt-bg {
+      background: linear-gradient(180deg, var(--carbon-gray) 0%, var(--deep-carbon) 100%);
+      max-width: 100%;
+      padding-left: 48px;
+      padding-right: 48px;
+    }
+
+    /* ORACULS Stack */
+    .oraculs-section {
+      padding-top: 80px;
+    }
+
+    .oraculs-subtitle {
+      color: var(--muted-gray);
+      font-size: 16px;
+      margin-top: 8px;
+      font-style: italic;
+    }
+
+    .stack-wrapper {
+      margin-top: 48px;
+      position: relative;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .stack-layers {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .stack-layer {
+      background: var(--carbon-gray);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .stack-layer:hover {
+      border-color: rgba(255,255,255,0.1);
+    }
+
+    .stack-layer.applications { border-left: 3px solid var(--electric-blue); }
+    .stack-layer.gateway { border-left: 3px solid var(--neon-purple); }
+    .stack-layer.ledger { border-left: 3px solid var(--circuit-green); }
+    .stack-layer.settlement { border-left: 3px solid var(--warning-amber); }
+
+    .layer-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 24px;
+      cursor: pointer;
+    }
+
+    .layer-indicator {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .stack-layer.applications .layer-indicator { background: var(--blue-10); color: var(--electric-blue); }
+    .stack-layer.gateway .layer-indicator { background: var(--purple-10); color: var(--neon-purple); }
+    .stack-layer.ledger .layer-indicator { background: var(--green-10); color: var(--circuit-green); }
+    .stack-layer.settlement .layer-indicator { background: rgba(255,165,2,0.1); color: var(--warning-amber); }
+
+    .layer-header .layer-content {
+      flex: 1;
+      display: block;
+    }
+
+    .layer-name {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .layer-desc {
+      font-size: 14px;
+      color: var(--muted-gray);
+    }
+
+    .layer-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .component-tag {
+      background: var(--deep-carbon);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--muted-gray);
+    }
+
+    .expand-indicator-layer {
+      color: var(--muted-gray);
+      font-size: 12px;
+      transition: transform 0.3s ease;
+    }
+
+    .stack-layer.expanded .expand-indicator-layer {
+      transform: rotate(180deg);
+    }
+
+    .layer-expanded-content {
+      display: none;
+      padding: 0 24px 24px;
+    }
+
+    .stack-layer.expanded .layer-expanded-content {
+      display: block;
+    }
+
+    .layer-divider {
+      height: 1px;
+      background: rgba(255,255,255,0.05);
+      margin-bottom: 20px;
+    }
+
+    .component-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .component-card {
+      background: var(--deep-carbon);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .component-card h4 {
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+
+    .component-desc {
+      font-size: 13px;
+      color: var(--muted-gray);
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+
+    .component-tech {
+      font-size: 11px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--electric-blue);
+      background: var(--blue-10);
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
+    .ledger-metrics {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .ledger-metric {
+      background: var(--deep-carbon);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--circuit-green);
+    }
+
+    .contracts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 12px;
+    }
+
+    .contract-card {
+      background: var(--deep-carbon);
+      border: 1px solid var(--green-10);
+      border-radius: 8px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .contract-card h4 {
+      font-size: 13px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--circuit-green);
+      margin-bottom: 4px;
+    }
+
+    .contract-card p {
+      font-size: 11px;
+      color: var(--muted-gray);
+      margin: 0;
+    }
+
+    /* Performance Metrics */
+    .performance-metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+      padding: 32px;
+      background: var(--carbon-gray);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 16px;
+    }
+
+    .metric-item {
+      text-align: center;
+    }
+
+    .metric-item .metric-value {
+      font-size: 32px;
+      font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--electric-blue);
+      margin-bottom: 8px;
+    }
+
+    .metric-item .metric-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted-gray);
+    }
+
+    /* Two column */
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 32px;
+    }
+
+    .feature-list li {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .feature-icon {
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+
+    .feature-list strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .feature-list p {
+      color: var(--muted-gray);
+      font-size: 14px;
+      margin: 0;
+    }
+
+    /* NFC Visual */
+    .nfc-visual {
+      display: flex;
+      justify-content: center;
+    }
+
+    .phone-mockup {
+      width: 280px;
+      height: 500px;
+      background: #1a1a1a;
+      border-radius: 40px;
+      padding: 16px;
+      border: 3px solid #333;
+    }
+
+    .phone-screen {
+      width: 100%;
+      height: 100%;
+      background: var(--deep-carbon);
+      border-radius: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .verify-animation {
+      text-align: center;
+    }
+
+    .nfc-waves {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 24px;
+    }
+
+    .nfc-waves span {
+      position: absolute;
+      inset: 0;
+      border: 2px solid var(--circuit-green);
+      border-radius: 50%;
+      animation: nfcPulse 2s ease-out infinite;
+    }
+
+    .nfc-waves span:nth-child(2) { animation-delay: 0.5s; }
+    .nfc-waves span:nth-child(3) { animation-delay: 1s; }
+
+    @keyframes nfcPulse {
+      0% { transform: scale(0.5); opacity: 1; }
+      100% { transform: scale(1.5); opacity: 0; }
+    }
+
+    .checkmark {
+      display: block;
+      font-size: 48px;
+      color: var(--circuit-green);
+      margin-bottom: 8px;
+    }
+
+    .verify-text {
+      color: var(--circuit-green);
+      font-weight: 600;
+    }
+
+    /* Twins grid */
+    .twins-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .twin-card {
+      background: var(--carbon-gray);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 16px;
+      padding: 32px;
+    }
+
+    .twin-card h3 {
+      margin-bottom: 16px;
+      font-size: 18px;
+    }
+
+    .twin-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .twin-card li {
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      color: var(--muted-gray);
+      font-size: 14px;
+    }
+
+    .twin-card li:last-child {
+      border-bottom: none;
+    }
+
+    /* CTA */
+    .cta-section {
+      padding: 100px 48px;
+      text-align: center;
+      background: linear-gradient(180deg, transparent, var(--purple-5), transparent);
+    }
+
+    .cta-content h2 {
+      font-size: 36px;
+      margin-bottom: 16px;
+    }
+
+    .cta-content p {
+      color: var(--muted-gray);
+      margin-bottom: 32px;
+      font-size: 18px;
+    }
+
+    /* Active nav */
+    .nav-links a.active {
+      color: var(--electric-blue);
+    }
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    @media (max-width: 1024px) {
+      .two-column {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .page-hero, .tech-section, .cta-section {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+      .layer-header {
+        flex-wrap: wrap;
+      }
+      .layer-tags {
+        width: 100%;
+        margin-top: 12px;
+      }
+      .performance-metrics {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .metric-item .metric-value {
+        font-size: 24px;
+      }
+    }
+  </style>
+
+  <script>
+    // Stack layer expand/collapse
+    document.querySelectorAll('.stack-layer').forEach(layer => {
+      layer.querySelector('.layer-header').addEventListener('click', () => {
+        layer.classList.toggle('expanded');
+      });
+    });
+  </script>
+</body>
+</html>

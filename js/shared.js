@@ -27,8 +27,9 @@
     window.addEventListener('load', () => {
       setTimeout(() => {
         // Hide loading screen
-        document.getElementById('loadingScreen').classList.add('hidden');
-        
+        const loadingScreen = document.getElementById('loadingScreen');
+        if (loadingScreen) loadingScreen.classList.add('hidden');
+
         // Trigger hero reveal animations
         setTimeout(() => {
           document.querySelectorAll('.hero-reveal').forEach(el => {
@@ -136,21 +137,23 @@
     const mobileOverlay = document.getElementById('mobileOverlay');
     
     function toggleMobileMenu() {
-      mobileToggle.classList.toggle('active');
-      mobileMenu.classList.toggle('active');
-      mobileOverlay.classList.toggle('active');
-      document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+      if (mobileToggle) mobileToggle.classList.toggle('active');
+      if (mobileMenu) mobileMenu.classList.toggle('active');
+      if (mobileOverlay) mobileOverlay.classList.toggle('active');
+      document.body.style.overflow = (mobileMenu && mobileMenu.classList.contains('active')) ? 'hidden' : '';
     }
-    
-    mobileToggle.addEventListener('click', toggleMobileMenu);
-    mobileOverlay.addEventListener('click', toggleMobileMenu);
-    
+
+    if (mobileToggle) mobileToggle.addEventListener('click', toggleMobileMenu);
+    if (mobileOverlay) mobileOverlay.addEventListener('click', toggleMobileMenu);
+
     // Close menu when clicking a link
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        toggleMobileMenu();
+    if (mobileMenu) {
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          toggleMobileMenu();
+        });
       });
-    });
+    }
 
     // ═══════════════════════════════════════════════════════════════
     // SECURITY DIAGRAM INTERACTIVITY
@@ -323,6 +326,20 @@
           'Disaster relief supply distribution'
         ],
         lifecycle: ['MINT', 'BIND', 'ACTIVATE', 'CLAIM', 'FLAG', 'RESOLVE']
+      },
+      manufacturing: {
+        icon: '🏭',
+        title: 'Manufacturing',
+        tagline: '"Track parts and ensure quality across the supply chain."',
+        description: 'TAG IT Network enables manufacturers to embed NFC-linked digital twins into components at the point of production. Track every part from raw material to finished product, ensuring quality control, warranty compliance, and counterfeit prevention across the entire supply chain.',
+        useCases: [
+          'Parts provenance tracking (automotive, aerospace, electronics)',
+          'Quality control verification at each production stage',
+          'Warranty management and registration via NFC tap',
+          'Counterfeit prevention for spare parts and components',
+          'Compliance documentation for regulatory audits'
+        ],
+        lifecycle: ['MINT', 'BIND', 'ACTIVATE', 'CLAIM', 'FLAG', 'RESOLVE']
       }
     };
 
@@ -356,20 +373,23 @@
     }
     
     function closeSolutionModal() {
-      solutionOverlay.classList.remove('active');
-      solutionModal.classList.remove('active');
+      if (solutionOverlay) solutionOverlay.classList.remove('active');
+      if (solutionModal) solutionModal.classList.remove('active');
       document.body.style.overflow = '';
       solutionCards.forEach(card => card.classList.remove('dimmed'));
     }
     
-    solutionCards.forEach(card => {
-      card.addEventListener('click', () => {
-        openSolutionModal(card.dataset.sector);
+    // Only attach event listeners if solution elements exist
+    if (solutionCards.length > 0 && solutionModal) {
+      solutionCards.forEach(card => {
+        card.addEventListener('click', () => {
+          openSolutionModal(card.dataset.sector);
+        });
       });
-    });
-    
-    modalClose.addEventListener('click', closeSolutionModal);
-    solutionOverlay.addEventListener('click', closeSolutionModal);
+
+      if (modalClose) modalClose.addEventListener('click', closeSolutionModal);
+      if (solutionOverlay) solutionOverlay.addEventListener('click', closeSolutionModal);
+    }
     
     // Escape key handler moved to end of JS (after all functions defined)
 
@@ -461,7 +481,7 @@
     }
 
     function closeLifecycleExplanation() {
-      lifecycleExplanation.classList.remove('active');
+      if (lifecycleExplanation) lifecycleExplanation.classList.remove('active');
       lifecycleStages.forEach(s => s.classList.remove('active'));
       activeStage = null;
     }
@@ -488,17 +508,19 @@
 
     // Swipe down to close on mobile
     let touchStartY = 0;
-    lifecycleExplanation.addEventListener('touchstart', (e) => {
-      touchStartY = e.touches[0].clientY;
-    });
+    if (lifecycleExplanation) {
+      lifecycleExplanation.addEventListener('touchstart', (e) => {
+        touchStartY = e.touches[0].clientY;
+      });
 
-    lifecycleExplanation.addEventListener('touchmove', (e) => {
-      const touchY = e.touches[0].clientY;
-      const diff = touchY - touchStartY;
-      if (diff > 50) {
-        closeLifecycleExplanation();
-      }
-    });
+      lifecycleExplanation.addEventListener('touchmove', (e) => {
+        const touchY = e.touches[0].clientY;
+        const diff = touchY - touchStartY;
+        if (diff > 50) {
+          closeLifecycleExplanation();
+        }
+      });
+    }
 
     // ═══════════════════════════════════════════════════════════════
     // EXPANDABLE FEATURE CARDS
@@ -588,7 +610,7 @@
         closeLifecycleExplanation();
         collapseAllFeatureCards();
         collapseAllStackLayers();
-        if (mobileMenu.classList.contains('active')) {
+        if (mobileMenu && mobileMenu.classList.contains('active')) {
           toggleMobileMenu();
         }
       }

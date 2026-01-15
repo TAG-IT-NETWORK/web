@@ -45,7 +45,7 @@
   <nav class="nav">
     <a href="/" class="logo">
       <div class="logo-icon">
-        <img src="/assets/images/tagit_logo.png" alt="TAG IT Network Logo" class="logo-img">
+        <img src="/assets/images/tagit_logo.png" alt="TAG IT Network Logo" class="logo-img" width="40" height="40">
       </div>
       <span>TAG IT Network</span>
     </a>
@@ -273,48 +273,56 @@
   </main>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-column footer-brand">
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
         <div class="logo">
-          <div class="logo-icon"><img src="/assets/images/tagit_logo.png" alt="TAG IT Network Logo" class="logo-img"></div>
+          <div class="logo-icon">
+            <img src="/assets/images/tagit_logo.png" alt="TAG IT Network Logo" class="logo-img" loading="lazy" width="40" height="40">
+          </div>
           <span>TAG IT Network</span>
         </div>
         <p>Blockchain-powered product authentication for the modern world.</p>
       </div>
+
       <div class="footer-column">
         <h4>Product</h4>
         <ul>
-          <li><a href="/#features">Features</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#lifecycle">Life Cycle</a></li>
           <li><a href="/solutions">Solutions</a></li>
           <li><a href="/technology">Technology</a></li>
-          <li><a href="/tokenomics">Tokenomics</a></li>
         </ul>
       </div>
+
       <div class="footer-column">
         <h4>Resources</h4>
         <ul>
-          <li><a href="/docs">Documentation</a></li>
-          <li><a href="/docs#api">API Reference</a></li>
-          <li><a href="#">Whitepaper</a></li>
-          <li><a href="#">GitHub</a></li>
+          <li><a href="https://github.com/TAG-IT-NETWORK/tagit-docs" target="_blank" rel="noopener">Documentation</a></li>
+          <li><a href="https://github.com/TAG-IT-NETWORK/tagit-docs" target="_blank" rel="noopener">API Reference</a></li>
+          <li><a href="https://github.com/TAG-IT-NETWORK/tagit-docs" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://www.youtube.com/@TAGITNetwork" target="_blank" rel="noopener">YouTube</a></li>
         </ul>
       </div>
+
       <div class="footer-column">
-        <h4>Company</h4>
+        <h4>Legal</h4>
         <ul>
-          <li><a href="/about">About</a></li>
-          <li><a href="/about#roadmap">Roadmap</a></li>
-          <li><a href="/about#contact">Contact</a></li>
-          <li><a href="#">Careers</a></li>
+          <li><a href="#" class="legal-trigger" data-modal="privacy">Privacy Policy</a></li>
+          <li><a href="#" class="legal-trigger" data-modal="terms">Terms of Service</a></li>
+          <li><a href="#" class="legal-trigger" data-modal="cookie">Cookie Policy</a></li>
+          <li><a href="#" id="contactModalTrigger">Contact</a></li>
         </ul>
       </div>
     </div>
+
     <div class="footer-bottom">
-      <p>&copy; 2026 TAG IT Network. All rights reserved.</p>
-      <div class="footer-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
+      <p>© 2026 TAG IT Network. All rights reserved.</p>
+      <div class="footer-socials">
+        <a href="https://x.com/TAGITNETWORK" target="_blank" rel="noopener" title="Twitter/X">𝕏</a>
+        <a href="https://www.linkedin.com/company/106815890" target="_blank" rel="noopener" title="LinkedIn">in</a>
+        <a href="https://www.youtube.com/@TAGITNetwork" target="_blank" rel="noopener" title="YouTube">▶</a>
+        <a href="https://github.com/TAG-IT-NETWORK/tagit-docs" target="_blank" rel="noopener" title="GitHub">⌘</a>
       </div>
     </div>
   </footer>
@@ -348,7 +356,7 @@
     <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg>
   </button>
 
-  <script src="/js/shared.js"></script>
+  <script src="/js/shared.js" defer></script>
 
   <style>
     .page-hero {

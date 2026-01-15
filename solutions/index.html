@@ -5,9 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Solutions — TAG IT Network</title>
 
-  <!-- Fonts -->
+  <!-- Performance: Preconnect to external origins -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- SEO Meta Tags -->
@@ -55,7 +58,7 @@
   <nav class="nav">
     <a href="/" class="logo">
       <div class="logo-icon">
-        <img src="/assets/images/tagit_logo.png" alt="TAG IT Network Logo" class="logo-img">
+        <img src="/assets/images/tagit_logo.png" alt="TAG IT Network Logo" class="logo-img" loading="lazy" width="40" height="40">
       </div>
       <span>TAG IT Network</span>
     </a>
@@ -115,8 +118,8 @@
     <div class="solutions-grid">
 
       <!-- Retail & Consumer Goods -->
-      <div class="solution-card fade-in">
-        <div class="solution-icon" style="--accent: var(--electric-blue);">
+      <div class="solution-card fade-in" data-sector="retail">
+        <div class="solution-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
             <line x1="3" y1="6" x2="21" y2="6"/>
@@ -136,11 +139,12 @@
           <span class="stat-number">$500B+</span>
           <span class="stat-label">Annual counterfeit market</span>
         </div>
+        <span class="learn-more">Learn more →</span>
       </div>
 
       <!-- Agriculture -->
-      <div class="solution-card fade-in stagger-1">
-        <div class="solution-icon" style="--accent: var(--circuit-green);">
+      <div class="solution-card fade-in stagger-1" data-sector="agriculture">
+        <div class="solution-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M12 2a10 10 0 0 1 10 10c0 5.52-4.48 10-10 10S2 17.52 2 12"/>
             <path d="M12 2v10l4 4"/>
@@ -160,11 +164,12 @@
           <span class="stat-number">100%</span>
           <span class="stat-label">Origin traceability</span>
         </div>
+        <span class="learn-more">Learn more →</span>
       </div>
 
       <!-- Healthcare -->
-      <div class="solution-card fade-in stagger-2">
-        <div class="solution-icon" style="--accent: var(--danger-red);">
+      <div class="solution-card fade-in stagger-2" data-sector="healthcare">
+        <div class="solution-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
           </svg>
@@ -182,11 +187,12 @@
           <span class="stat-number">1M+</span>
           <span class="stat-label">Lives at risk from fake drugs</span>
         </div>
+        <span class="learn-more">Learn more →</span>
       </div>
 
       <!-- Manufacturing -->
-      <div class="solution-card fade-in stagger-3">
-        <div class="solution-icon" style="--accent: var(--warning-amber);">
+      <div class="solution-card fade-in stagger-3" data-sector="manufacturing">
+        <div class="solution-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M2 20h20"/>
             <path d="M5 20V8l7-5 7 5v12"/>
@@ -206,11 +212,12 @@
           <span class="stat-number">24/7</span>
           <span class="stat-label">Real-time tracking</span>
         </div>
+        <span class="learn-more">Learn more →</span>
       </div>
 
       <!-- Military & Defense -->
-      <div class="solution-card fade-in stagger-4">
-        <div class="solution-icon" style="--accent: var(--neon-purple);">
+      <div class="solution-card fade-in stagger-4" data-sector="military">
+        <div class="solution-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
           </svg>
@@ -228,11 +235,12 @@
           <span class="stat-number">Zero</span>
           <span class="stat-label">Tolerance for compromise</span>
         </div>
+        <span class="learn-more">Learn more →</span>
       </div>
 
       <!-- Government -->
-      <div class="solution-card fade-in stagger-5">
-        <div class="solution-icon" style="--accent: var(--electric-blue);">
+      <div class="solution-card fade-in stagger-5" data-sector="government">
+        <div class="solution-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M3 21h18"/>
             <path d="M5 21V7l7-4 7 4v14"/>
@@ -253,6 +261,7 @@
           <span class="stat-number">100%</span>
           <span class="stat-label">Audit trail transparency</span>
         </div>
+        <span class="learn-more">Learn more →</span>
       </div>
 
     </div>
@@ -300,13 +309,32 @@
   </section>
   </main>
 
+  <!-- Solution Modal -->
+  <div class="solution-modal-overlay" id="solutionOverlay"></div>
+  <div class="solution-modal" id="solutionModal">
+    <button class="modal-close" id="modalClose" aria-label="Close modal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18"/>
+        <line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+    <div class="modal-header">
+      <div class="solution-icon" id="modalIcon"></div>
+      <h3 id="modalTitle"></h3>
+    </div>
+    <p class="modal-tagline" id="modalTagline"></p>
+    <p class="modal-description" id="modalDescription"></p>
+    <h4 class="modal-section-title">Use Cases</h4>
+    <ul class="use-cases-list" id="modalUseCases"></ul>
+  </div>
+
   <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-column footer-brand">
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
         <div class="logo">
           <div class="logo-icon">
-            <img src="/assets/images/tagit_logo.png" alt="TAG IT Network Logo" class="logo-img">
+            <img src="/assets/images/tagit_logo.png" alt="TAG IT Network Logo" class="logo-img" loading="lazy" width="40" height="40">
           </div>
           <span>TAG IT Network</span>
         </div>
@@ -316,39 +344,41 @@
       <div class="footer-column">
         <h4>Product</h4>
         <ul>
-          <li><a href="/#features">Features</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#lifecycle">Life Cycle</a></li>
           <li><a href="/solutions">Solutions</a></li>
           <li><a href="/technology">Technology</a></li>
-          <li><a href="/tokenomics">Tokenomics</a></li>
         </ul>
       </div>
 
       <div class="footer-column">
         <h4>Resources</h4>
         <ul>
-          <li><a href="/docs">Documentation</a></li>
-          <li><a href="/docs#api">API Reference</a></li>
-          <li><a href="#">Whitepaper</a></li>
-          <li><a href="#">GitHub</a></li>
+          <li><a href="https://github.com/TAG-IT-NETWORK/tagit-docs" target="_blank" rel="noopener">Documentation</a></li>
+          <li><a href="https://github.com/TAG-IT-NETWORK/tagit-docs" target="_blank" rel="noopener">API Reference</a></li>
+          <li><a href="https://github.com/TAG-IT-NETWORK/tagit-docs" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://www.youtube.com/@TAGITNetwork" target="_blank" rel="noopener">YouTube</a></li>
         </ul>
       </div>
 
       <div class="footer-column">
-        <h4>Company</h4>
+        <h4>Legal</h4>
         <ul>
-          <li><a href="/about">About</a></li>
-          <li><a href="/about#roadmap">Roadmap</a></li>
-          <li><a href="/about#contact">Contact</a></li>
-          <li><a href="#">Careers</a></li>
+          <li><a href="#" class="legal-trigger" data-modal="privacy">Privacy Policy</a></li>
+          <li><a href="#" class="legal-trigger" data-modal="terms">Terms of Service</a></li>
+          <li><a href="#" class="legal-trigger" data-modal="cookie">Cookie Policy</a></li>
+          <li><a href="#" id="contactModalTrigger">Contact</a></li>
         </ul>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; 2026 TAG IT Network. All rights reserved.</p>
-      <div class="footer-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
+      <p>© 2026 TAG IT Network. All rights reserved.</p>
+      <div class="footer-socials">
+        <a href="https://x.com/TAGITNETWORK" target="_blank" rel="noopener" title="Twitter/X">𝕏</a>
+        <a href="https://www.linkedin.com/company/106815890" target="_blank" rel="noopener" title="LinkedIn">in</a>
+        <a href="https://www.youtube.com/@TAGITNetwork" target="_blank" rel="noopener" title="YouTube">▶</a>
+        <a href="https://github.com/TAG-IT-NETWORK/tagit-docs" target="_blank" rel="noopener" title="GitHub">⌘</a>
       </div>
     </div>
   </footer>
@@ -407,7 +437,7 @@
   </button>
 
   <!-- Scripts -->
-  <script src="/js/shared.js"></script>
+  <script src="/js/shared.js" defer></script>
 
   <style>
     /* Page-specific styles */
