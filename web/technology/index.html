@@ -1,0 +1,2463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technology — TAG IT Network</title>
+
+  <!-- Performance: Preconnect to external origins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="TAG IT Network technology stack - NFC, blockchain, and AI powering the ORACULS platform for product authentication and supply chain verification.">
+  <meta name="keywords" content="NFC authentication, blockchain technology, digital twins, ORACULS, smart contracts, supply chain">
+  <meta name="author" content="TAG IT Network">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tagit.network/technology">
+  <meta property="og:title" content="Technology — TAG IT Network">
+  <meta property="og:description" content="The technology stack powering blockchain product authentication.">
+  <meta property="og:image" content="https://tagit.network/assets/images/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Technology — TAG IT Network">
+  <meta name="twitter:description" content="The technology stack powering blockchain product authentication.">
+  <meta name="twitter:image" content="https://tagit.network/assets/images/og-image.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/tagit_logo.png">
+  <link rel="apple-touch-icon" href="/assets/images/tagit_logo.png">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/css/shared.css">
+</head>
+<body>
+  <!-- Skip to main content link for keyboard users -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Noscript fallback -->
+  <noscript>
+    <div class="noscript-message">
+      This website requires JavaScript for some features. Core content is still accessible.
+    </div>
+  </noscript>
+
+  <!-- Global Cyber Grid Background -->
+  <div class="cyber-grid-overlay"></div>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <a href="/" class="logo">
+      <div class="logo-icon">
+        <img src="/assets/images/tagit_logo.png" alt="TAG IT Network Logo" class="logo-img" loading="lazy" width="40" height="40">
+      </div>
+      <span>TAG IT Network</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="/#features">Features</a>
+      <a href="/solutions">Solutions</a>
+      <a href="/technology" class="active">Technology</a>
+      <a href="/tokenomics">Tokenomics</a>
+      <a href="/docs">Docs</a>
+      <a href="/about">About</a>
+    </div>
+
+    <button class="nav-cta" id="connectWalletBtn" onclick="handleWalletClick()">
+      Connect Wallet
+    </button>
+
+    <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/#features">Features</a>
+    <a href="/solutions">Solutions</a>
+    <a href="/technology" class="active">Technology</a>
+    <a href="/tokenomics">Tokenomics</a>
+    <a href="/docs">Docs</a>
+    <a href="/about">About</a>
+    <button class="mobile-cta" onclick="handleWalletClick()">Connect Wallet</button>
+  </div>
+
+  <main id="main-content">
+  <!-- Hero Section -->
+  <section class="page-hero">
+    <div class="page-hero-content">
+      <span class="section-label">
+        <span class="label-icon">⚙</span>
+        Technology
+      </span>
+      <h1 class="page-hero-title">
+        Seven Stages of <span class="highlight">Verified Trust</span>
+      </h1>
+      <p class="page-hero-subtitle">
+        Every product goes through a complete lifecycle, each stage recorded immutably on-chain.
+      </p>
+    </div>
+  </section>
+
+  <!-- Visual Life Cycle Overview -->
+  <section id="lifecycle-visual" class="tech-section lifecycle-visual-section">
+    <div class="lifecycle-container scale-in">
+      <div class="lifecycle-stage mint" data-stage="mint">
+        <div class="icon">🪙</div>
+        <div class="name">Mint</div>
+      </div>
+      <div class="lifecycle-arrow">→</div>
+
+      <div class="lifecycle-stage bind" data-stage="bind">
+        <div class="icon">🔗</div>
+        <div class="name">Bind</div>
+      </div>
+      <div class="lifecycle-arrow">→</div>
+
+      <div class="lifecycle-stage activate" data-stage="activate">
+        <div class="icon">⚡</div>
+        <div class="name">Activate</div>
+      </div>
+      <div class="lifecycle-arrow">→</div>
+
+      <div class="lifecycle-stage claim" data-stage="claim">
+        <div class="icon">✋</div>
+        <div class="name">Claim</div>
+      </div>
+      <div class="lifecycle-arrow">→</div>
+
+      <div class="lifecycle-stage flag" data-stage="flag">
+        <div class="icon">🚩</div>
+        <div class="name">Flag</div>
+      </div>
+      <div class="lifecycle-arrow">→</div>
+
+      <div class="lifecycle-stage resolve" data-stage="resolve">
+        <div class="icon">⚖️</div>
+        <div class="name">Resolve</div>
+      </div>
+      <div class="lifecycle-arrow">→</div>
+
+      <div class="lifecycle-stage recycle" data-stage="recycle">
+        <div class="icon">♻️</div>
+        <div class="name">Recycle</div>
+      </div>
+    </div>
+
+    <!-- Explanation Panel -->
+    <div class="lifecycle-explanation" id="lifecycleExplanation">
+      <div class="explanation-header">
+        <span class="explanation-icon" id="explanationIcon"></span>
+        <span class="explanation-headline" id="explanationHeadline"></span>
+      </div>
+      <p class="explanation-vibe" id="explanationVibe"></p>
+      <p class="explanation-desc" id="explanationDesc"></p>
+      <div class="explanation-tech" id="explanationTech"></div>
+    </div>
+  </section>
+
+  <!-- ORACULS Stack Section -->
+  <section id="architecture" class="tech-section oraculs-section">
+    <div class="section-header text-center">
+      <span class="section-label">
+        <span class="label-icon">⚙</span>
+        Technical Architecture
+      </span>
+      <h2 class="section-title">The <span class="highlight">ORACULS</span> Stack</h2>
+      <p class="oraculs-subtitle">Oracle-Augmented Chain for Universal Logistics Security</p>
+    </div>
+
+    <div class="stack-wrapper">
+      <div class="stack-layers">
+        <!-- Layer 01: Applications -->
+        <div class="stack-layer applications fade-in" data-layer="applications">
+          <div class="layer-header">
+            <div class="layer-indicator">01</div>
+            <div class="layer-content">
+              <div class="layer-name">Applications Layer</div>
+              <div class="layer-desc">User-facing apps and partner integrations</div>
+            </div>
+            <div class="layer-tags">
+              <span class="component-tag">ORACULAR App</span>
+              <span class="component-tag">Admin Console</span>
+              <span class="component-tag">Partner Portal</span>
+              <span class="component-tag">SDK</span>
+            </div>
+            <span class="expand-indicator-layer">▼</span>
+          </div>
+          <div class="layer-expanded-content">
+            <div class="layer-divider"></div>
+            <div class="component-grid">
+              <div class="component-card">
+                <h4>ORACULAR App</h4>
+                <p class="component-desc">Mobile NFC scanner for consumers and field teams</p>
+                <span class="component-tech">React Native</span>
+              </div>
+              <div class="component-card">
+                <h4>Admin Console</h4>
+                <p class="component-desc">Internal dashboard for operations and analytics</p>
+                <span class="component-tech">Next.js 14</span>
+              </div>
+              <div class="component-card">
+                <h4>Partner Portal</h4>
+                <p class="component-desc">B2B portal with BIDGES authentication</p>
+                <span class="component-tech">Next.js + BIDGES</span>
+              </div>
+              <div class="component-card">
+                <h4>SDK</h4>
+                <p class="component-desc">Developer integrations for custom apps</p>
+                <span class="component-tech">TS / Kotlin / Swift</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Layer 02: Gateway -->
+        <div class="stack-layer gateway fade-in stagger-1" data-layer="gateway">
+          <div class="layer-header">
+            <div class="layer-indicator">02</div>
+            <div class="layer-content">
+              <div class="layer-name">Gateway Layer</div>
+              <div class="layer-desc">API routing, authentication, and AI orchestration</div>
+            </div>
+            <div class="layer-tags">
+              <span class="component-tag">tagit-services</span>
+              <span class="component-tag">Auth</span>
+              <span class="component-tag">Verification</span>
+              <span class="component-tag">AI Engine</span>
+            </div>
+            <span class="expand-indicator-layer">▼</span>
+          </div>
+          <div class="layer-expanded-content">
+            <div class="layer-divider"></div>
+            <div class="component-grid">
+              <div class="component-card">
+                <h4>tagit-services</h4>
+                <p class="component-desc">Backend APIs + AI orchestration layer</p>
+                <span class="component-tech">/api/v1/*</span>
+              </div>
+              <div class="component-card">
+                <h4>Auth Service</h4>
+                <p class="component-desc">JWT tokens + BIDGES badge verification</p>
+                <span class="component-tech">/auth/*</span>
+              </div>
+              <div class="component-card">
+                <h4>Verification</h4>
+                <p class="component-desc">NFC challenge-response protocol</p>
+                <span class="component-tech">/verify/*</span>
+              </div>
+              <div class="component-card">
+                <h4>AI Orchestrator</h4>
+                <p class="component-desc">Anomaly detection and fraud prevention</p>
+                <span class="component-tech">/ai/*</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Layer 03: Ledger -->
+        <div class="stack-layer ledger fade-in stagger-2" data-layer="ledger">
+          <div class="layer-header">
+            <div class="layer-indicator">03</div>
+            <div class="layer-content">
+              <div class="layer-name">Ledger Layer</div>
+              <div class="layer-desc">TAGIT L2 blockchain with smart contracts</div>
+            </div>
+            <div class="layer-tags">
+              <span class="component-tag">OP Stack</span>
+              <span class="component-tag">EigenDA</span>
+              <span class="component-tag">6 Contracts</span>
+            </div>
+            <span class="expand-indicator-layer">▼</span>
+          </div>
+          <div class="layer-expanded-content">
+            <div class="layer-divider"></div>
+            <div class="contracts-grid">
+              <div class="contract-card">
+                <h4>TAGITCore</h4>
+                <p>Asset NFT + Lifecycle</p>
+              </div>
+              <div class="contract-card">
+                <h4>TAGITAccess</h4>
+                <p>BIDGES badges</p>
+              </div>
+              <div class="contract-card">
+                <h4>TAGITRecovery</h4>
+                <p>AIRP disputes</p>
+              </div>
+              <div class="contract-card">
+                <h4>TAGITGovernor</h4>
+                <p>Multi-house DAO</p>
+              </div>
+              <div class="contract-card">
+                <h4>TAGITTreasury</h4>
+                <p>Fund management</p>
+              </div>
+              <div class="contract-card">
+                <h4>TAGITPrograms</h4>
+                <p>Rewards + Recalls</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Layer 04: Settlement -->
+        <div class="stack-layer settlement fade-in stagger-3" data-layer="settlement">
+          <div class="layer-header">
+            <div class="layer-indicator">04</div>
+            <div class="layer-content">
+              <div class="layer-name">Settlement Layer</div>
+              <div class="layer-desc">Final settlement and cross-chain interoperability</div>
+            </div>
+            <div class="layer-tags">
+              <span class="component-tag">Ethereum L1</span>
+              <span class="component-tag">EigenDA</span>
+              <span class="component-tag">Chainlink CCIP</span>
+              <span class="component-tag">Private Chain</span>
+            </div>
+            <span class="expand-indicator-layer">▼</span>
+          </div>
+          <div class="layer-expanded-content">
+            <div class="layer-divider"></div>
+            <div class="component-grid">
+              <div class="component-card">
+                <h4>Ethereum L1</h4>
+                <p class="component-desc">Final settlement with full L1 security</p>
+                <span class="component-tech">State roots + fraud proofs</span>
+              </div>
+              <div class="component-card">
+                <h4>EigenDA</h4>
+                <p class="component-desc">Data availability layer, ~10x cheaper</p>
+                <span class="component-tech">Restaked security</span>
+              </div>
+              <div class="component-card">
+                <h4>Chainlink CCIP</h4>
+                <p class="component-desc">Cross-chain messaging and transfers</p>
+                <span class="component-tech">ETH, Polygon, Arbitrum, Optimism</span>
+              </div>
+              <div class="component-card">
+                <h4>Private Chain</h4>
+                <p class="component-desc">Gov/military classified data isolation</p>
+                <span class="component-tech">Hyperledger Besu</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Performance Metrics Bar -->
+    <div class="performance-metrics fade-in">
+      <div class="metric-item">
+        <div class="metric-value">~2</div>
+        <div class="metric-label">Second Block Time</div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-value">~2,000</div>
+        <div class="metric-label">Transactions/sec</div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-value">~$0.001</div>
+        <div class="metric-label">Cost per Verification</div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-value">7 days</div>
+        <div class="metric-label">L1 Finality</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NFC Section - Redesigned -->
+  <section id="nfc" class="tech-section alt-bg nfc-section-redesign">
+    <div class="section-header text-center">
+      <span class="section-label">
+        <span class="label-icon">📡</span>
+        NFC Authentication
+      </span>
+      <h2 class="section-title">Tap to <span class="highlight">Verify</span></h2>
+      <p>One tap connects physical products to their blockchain identity. Instant, cryptographic verification anyone can perform.</p>
+    </div>
+
+    <!-- Main Visual Demo -->
+    <div class="nfc-demo-container">
+      <!-- Phone Mockup -->
+      <div class="nfc-phone-wrapper">
+        <div class="nfc-phone">
+          <div class="phone-notch"></div>
+          <div class="phone-screen-content">
+            <div class="scan-prompt">
+              <div class="nfc-icon-animated">
+                <svg viewBox="0 0 64 64" class="nfc-symbol">
+                  <path d="M32 8C18.7 8 8 18.7 8 32s10.7 24 24 24 24-10.7 24-24S45.3 8 32 8zm0 44c-11 0-20-9-20-20s9-20 20-20 20 9 20 20-9 20-20 20z" fill="currentColor" opacity="0.3"/>
+                  <path d="M32 16c-8.8 0-16 7.2-16 16s7.2 16 16 16 16-7.2 16-16-7.2-16-16-16zm0 28c-6.6 0-12-5.4-12-12s5.4-12 12-12 12 5.4 12 12-5.4 12-12 12z" fill="currentColor" opacity="0.5"/>
+                  <circle cx="32" cy="32" r="8" fill="currentColor"/>
+                </svg>
+              </div>
+              <span class="scan-text">Scanning NFC...</span>
+            </div>
+          </div>
+        </div>
+        <!-- NFC Wave Rings -->
+        <div class="nfc-wave-rings">
+          <span class="wave-ring"></span>
+          <span class="wave-ring"></span>
+          <span class="wave-ring"></span>
+        </div>
+      </div>
+
+      <!-- Connection Line with Data Particles -->
+      <div class="nfc-connection-line">
+        <svg class="connection-svg" viewBox="0 0 200 20" preserveAspectRatio="none">
+          <line x1="0" y1="10" x2="200" y2="10" stroke="url(#connectionGradient)" stroke-width="2" stroke-dasharray="4 4"/>
+          <defs>
+            <linearGradient id="connectionGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="var(--circuit-green)"/>
+              <stop offset="100%" stop-color="var(--electric-blue)"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <div class="data-particle p1"></div>
+        <div class="data-particle p2"></div>
+        <div class="data-particle p3"></div>
+      </div>
+
+      <!-- Verification Result Card -->
+      <div class="nfc-result-card">
+        <div class="result-header">
+          <div class="result-status verified">
+            <svg class="check-svg" viewBox="0 0 52 52">
+              <circle class="check-circle" cx="26" cy="26" r="24" fill="none" stroke="var(--circuit-green)" stroke-width="3"/>
+              <path class="check-mark" fill="none" stroke="var(--circuit-green)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" d="M14 27l8 8 16-16"/>
+            </svg>
+          </div>
+          <div class="result-info">
+            <span class="result-label">Verification Complete</span>
+            <span class="result-value">Authentic Product</span>
+          </div>
+        </div>
+        <div class="result-details">
+          <div class="detail-row">
+            <span class="detail-label">Token ID</span>
+            <span class="detail-value mono">#48291</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Owner</span>
+            <span class="detail-value mono">0x7a3...f82</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Verified</span>
+            <span class="detail-value">127 times</span>
+          </div>
+        </div>
+        <div class="result-glow"></div>
+      </div>
+    </div>
+
+    <!-- Feature Stats Cards -->
+    <div class="nfc-features-grid">
+      <div class="nfc-feature-card">
+        <div class="feature-stat">
+          <span class="stat-value">&lt;2s</span>
+          <span class="stat-label">Verification Time</span>
+        </div>
+        <p class="feature-desc">Instant cryptographic challenge-response. No app download required.</p>
+      </div>
+      <div class="nfc-feature-card">
+        <div class="feature-stat">
+          <span class="stat-value">256-bit</span>
+          <span class="stat-label">AES Encryption</span>
+        </div>
+        <p class="feature-desc">Military-grade security. Each chip has unique, unclonable keys.</p>
+      </div>
+      <div class="nfc-feature-card">
+        <div class="feature-stat">
+          <span class="stat-value">100%</span>
+          <span class="stat-label">Tamper Detection</span>
+        </div>
+        <p class="feature-desc">Physical tampering attempts are detected and logged on-chain.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Digital Twins Section - Enhanced -->
+  <section id="digital-twins" class="tech-section digital-twins-section">
+    <div class="section-header text-center">
+      <span class="section-label">
+        <span class="label-line"></span>
+        DIGITAL TWINS
+        <span class="label-line"></span>
+      </span>
+      <h2 class="section-title">Every Product, <span class="highlight">Uniquely Represented</span></h2>
+      <p class="section-subtitle">Digital twins are NFTs that mirror physical products, storing their complete history on-chain.</p>
+    </div>
+
+    <!-- Twin Connection Visualization -->
+    <div class="twin-connection">
+      <div class="twin-node physical">
+        <div class="twin-icon physical-icon">
+          <svg viewBox="0 0 64 64" class="cyber-icon">
+            <defs>
+              <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#00FF88"/>
+                <stop offset="100%" stop-color="#00D4FF"/>
+              </linearGradient>
+              <filter id="greenGlow">
+                <feGaussianBlur stdDeviation="3" result="blur"/>
+                <feMerge>
+                  <feMergeNode in="blur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
+            <rect x="12" y="20" width="40" height="32" rx="4" fill="none" stroke="url(#greenGrad)" stroke-width="2" filter="url(#greenGlow)"/>
+            <path d="M12 28 L32 16 L52 28" fill="none" stroke="url(#greenGrad)" stroke-width="2"/>
+            <line x1="32" y1="16" x2="32" y2="52" stroke="url(#greenGrad)" stroke-width="2"/>
+            <circle cx="32" cy="38" r="6" fill="none" stroke="#00FF88" stroke-width="2">
+              <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="32" cy="38" r="3" fill="#00FF88">
+              <animate attributeName="r" values="2;4;2" dur="2s" repeatCount="indefinite"/>
+            </circle>
+          </svg>
+        </div>
+        <span class="twin-label">PHYSICAL</span>
+        <span class="twin-sublabel">NFC Tag</span>
+      </div>
+
+      <div class="connection-line enhanced">
+        <svg class="connection-svg-enhanced" viewBox="0 0 200 40" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#00FF88"/>
+              <stop offset="50%" stop-color="#00D4FF"/>
+              <stop offset="100%" stop-color="#B84FFF"/>
+            </linearGradient>
+          </defs>
+          <line x1="0" y1="20" x2="200" y2="20" stroke="url(#lineGrad)" stroke-width="2" stroke-dasharray="8 4" opacity="0.5"/>
+          <line x1="0" y1="20" x2="200" y2="20" stroke="url(#lineGrad)" stroke-width="2" stroke-dasharray="8 4" class="flow-line"/>
+        </svg>
+        <div class="data-particles">
+          <span class="particle p1"></span>
+          <span class="particle p2"></span>
+          <span class="particle p3"></span>
+        </div>
+        <div class="sync-indicator">
+          <svg viewBox="0 0 24 24" class="sync-svg">
+            <path d="M23 4v6h-6M1 20v-6h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="twin-node digital">
+        <div class="twin-icon digital-icon">
+          <svg viewBox="0 0 64 64" class="cyber-icon">
+            <defs>
+              <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#00D4FF"/>
+                <stop offset="100%" stop-color="#B84FFF"/>
+              </linearGradient>
+              <filter id="blueGlow">
+                <feGaussianBlur stdDeviation="3" result="blur"/>
+                <feMerge>
+                  <feMergeNode in="blur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
+            <polygon points="32,8 56,20 56,44 32,56 8,44 8,20" fill="none" stroke="url(#blueGrad)" stroke-width="2" filter="url(#blueGlow)"/>
+            <line x1="32" y1="8" x2="32" y2="32" stroke="#00D4FF" stroke-width="1.5"/>
+            <line x1="8" y1="20" x2="32" y2="32" stroke="#00D4FF" stroke-width="1.5"/>
+            <line x1="56" y1="20" x2="32" y2="32" stroke="#00D4FF" stroke-width="1.5"/>
+            <circle cx="32" cy="32" r="8" fill="none" stroke="#00D4FF" stroke-width="1">
+              <animate attributeName="r" values="4;12;4" dur="2s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="1;0;1" dur="2s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="32" cy="32" r="4" fill="#00D4FF"/>
+          </svg>
+        </div>
+        <span class="twin-label">DIGITAL</span>
+        <span class="twin-sublabel">NFT</span>
+      </div>
+    </div>
+
+    <!-- Info Cards Grid -->
+    <div class="twin-cards-grid">
+      <div class="twin-card" data-color="green">
+        <div class="card-accent"></div>
+        <div class="card-header">
+          <span class="card-icon">
+            <svg viewBox="0 0 24 24" class="card-svg-icon green">
+              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <h3>On-Chain Data</h3>
+        </div>
+        <ul class="card-list">
+          <li><span class="check">✓</span> Unique token ID</li>
+          <li><span class="check">✓</span> Current owner address</li>
+          <li><span class="check">✓</span> Lifecycle state</li>
+          <li><span class="check">✓</span> Verification count</li>
+          <li><span class="check">✓</span> Flag/dispute status</li>
+        </ul>
+      </div>
+
+      <div class="twin-card" data-color="blue">
+        <div class="card-accent"></div>
+        <div class="card-header">
+          <span class="card-icon">
+            <svg viewBox="0 0 24 24" class="card-svg-icon blue">
+              <ellipse cx="12" cy="5" rx="9" ry="3" fill="none" stroke="currentColor" stroke-width="2"/>
+              <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" fill="none" stroke="currentColor" stroke-width="2"/>
+              <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" fill="none" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </span>
+          <h3>Off-Chain Metadata</h3>
+        </div>
+        <ul class="card-list">
+          <li><span class="check">✓</span> Product specifications</li>
+          <li><span class="check">✓</span> Manufacturing details</li>
+          <li><span class="check">✓</span> Images & documents</li>
+          <li><span class="check">✓</span> Extended attributes</li>
+          <li><span class="check">✓</span> AI analysis results</li>
+        </ul>
+      </div>
+
+      <div class="twin-card" data-color="purple">
+        <div class="card-accent"></div>
+        <div class="card-header">
+          <span class="card-icon">
+            <svg viewBox="0 0 24 24" class="card-svg-icon purple">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="none" stroke="currentColor" stroke-width="2"/>
+              <polyline points="9 12 11 14 15 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <h3>Benefits</h3>
+        </div>
+        <ul class="card-list">
+          <li><span class="check">✓</span> Immutable ownership history</li>
+          <li><span class="check">✓</span> Transferable warranties</li>
+          <li><span class="check">✓</span> Resale verification</li>
+          <li><span class="check">✓</span> Insurance integration</li>
+          <li><span class="check">✓</span> Regulatory compliance</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section id="tech-cta" class="cta-section">
+    <div class="cta-content">
+      <h2>Ready to integrate?</h2>
+      <p>Explore our documentation or contact our team to start building with TAG IT.</p>
+      <div class="button-group">
+        <a href="/docs" class="btn btn-primary">View Documentation</a>
+        <a href="/about#contact" class="btn btn-secondary">Contact Team</a>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon">
+            <img src="/assets/images/tagit_logo.png" alt="TAG IT Network Logo" class="logo-img" loading="lazy" width="40" height="40">
+          </div>
+          <span>TAG IT Network</span>
+        </div>
+        <p>Blockchain-powered product authentication for the modern world.</p>
+      </div>
+
+      <div class="footer-column">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#lifecycle">Life Cycle</a></li>
+          <li><a href="/solutions">Solutions</a></li>
+          <li><a href="/technology">Technology</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="https://github.com/TAG-IT-NETWORK/tagit-docs" target="_blank" rel="noopener">Documentation</a></li>
+          <li><a href="https://github.com/TAG-IT-NETWORK/tagit-docs" target="_blank" rel="noopener">API Reference</a></li>
+          <li><a href="https://github.com/TAG-IT-NETWORK/tagit-docs" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://www.youtube.com/@TAGITNetwork" target="_blank" rel="noopener">YouTube</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#" class="legal-trigger" data-modal="privacy">Privacy Policy</a></li>
+          <li><a href="#" class="legal-trigger" data-modal="terms">Terms of Service</a></li>
+          <li><a href="#" class="legal-trigger" data-modal="cookie">Cookie Policy</a></li>
+          <li><a href="/about#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 TAG IT Network. All rights reserved.</p>
+      <div class="footer-socials">
+        <a href="https://x.com/TAGITNETWORK" target="_blank" rel="noopener" title="Twitter/X">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/106815890" target="_blank" rel="noopener" title="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@TAGITNetwork" target="_blank" rel="noopener" title="YouTube">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+        <a href="https://github.com/TAG-IT-NETWORK/tagit-docs" target="_blank" rel="noopener" title="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+        <a href="https://discord.gg/gAnkjGyh" target="_blank" rel="noopener" title="Discord">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Privacy Policy Modal -->
+  <div class="legal-modal-overlay" id="privacyModalOverlay">
+    <div class="legal-modal">
+      <button class="legal-modal-close" data-close-modal>✕</button>
+
+      <div class="legal-modal-header">
+        <h3><span>🔒</span> Privacy Policy</h3>
+        <p class="effective-date">Effective Date: September 29, 2025</p>
+      </div>
+
+      <div class="legal-modal-content">
+        <p class="legal-intro">
+          TAG IT Network ("TAG IT," "we," "us," or "our") operates the <a href="https://www.tagit.network">https://www.tagit.network</a> website and related services (the "Service"). This page informs you of our policies regarding the collection, use, and disclosure of Personal Data when you use our Service. We will not use or share your information with anyone except as described in this Privacy Policy.
+        </p>
+
+        <div class="legal-section">
+          <h4>📋 Information Collection and Use</h4>
+          <p>While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you. Personally identifiable information may include, but is not limited to your name, email address, phone number ("Personal Data").</p>
+        </div>
+
+        <div class="legal-section">
+          <h4>📊 Log Data</h4>
+          <p>We collect information that your browser sends whenever you visit our Service ("Log Data"). This Log Data may include information such as your IP address, browser type, browser version, the pages of our Service that you visit, the time and date of your visit, the time spent on those pages and other statistics.</p>
+        </div>
+
+        <div class="legal-section">
+          <h4>🍪 Cookies</h4>
+          <p>Cookies are files with a small amount of data, which may include an anonymous unique identifier. Cookies are sent to your browser from a website and transferred to your device. We use "cookies" to collect information in order to improve our services for you. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent.</p>
+        </div>
+
+        <div class="legal-section">
+          <h4>🛡️ Security</h4>
+          <p>We secure your personal information using encryption and access controls. Only authorized employees have access with two-factor authentication enforced. Servers are routinely patched and scanned for vulnerabilities.</p>
+        </div>
+
+        <div class="legal-section">
+          <h4>📝 Changes to This Privacy Policy</h4>
+          <p>This Privacy Policy is effective as of the "Effective Date" indicated at the top of this Privacy Policy and will remain in effect until updated or replaced. We reserve the right to update or modify this Privacy Policy from time to time with or without notice. Your continued use of the Service after any changes or revisions to this Privacy Policy shall indicate your agreement with the terms of such revised Privacy Policy.</p>
+        </div>
+
+        <div class="legal-section">
+          <h4>✉️ Contact Us</h4>
+          <p>If you have any questions about this Privacy Policy, please contact us via email: <a href="mailto:info@tagit.network">info@tagit.network</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Terms of Service Modal -->
+  <div class="legal-modal-overlay" id="termsModalOverlay">
+    <div class="legal-modal">
+      <button class="legal-modal-close" data-close-modal>✕</button>
+
+      <div class="legal-modal-header">
+        <h3><span>📜</span> Terms of Service</h3>
+        <p class="effective-date">Effective Date: September 29, 2025</p>
+      </div>
+
+      <div class="legal-modal-content">
+        <p class="legal-intro">
+          Welcome to TAG IT Network. By accessing or using our website at <a href="https://www.tagit.network">https://www.tagit.network</a> and related services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our Service.
+        </p>
+
+        <div class="legal-section">
+          <h4>📌 Acceptance of Terms</h4>
+          <p>By accessing and using the Service, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service and our Privacy Policy. We reserve the right to modify these terms at any time, and such modifications shall be effective immediately upon posting.</p>
+        </div>
+
+        <div class="legal-section">
+          <h4>🔐 Use of Service</h4>
+          <p>You agree to use the Service only for lawful purposes and in accordance with these Terms. You agree not to use the Service in any way that violates any applicable federal, state, local, or international law or regulation, or to engage in any conduct that restricts or inhibits anyone's use or enjoyment of the Service.</p>
+        </div>
+
+        <div class="legal-section">
+          <h4>💎 Intellectual Property</h4>
+          <p>The Service and its entire contents, features, and functionality (including but not limited to all information, software, text, displays, images, video, and audio) are owned by TAG IT Network, its licensors, or other providers and are protected by copyright, trademark, patent, trade secret, and other intellectual property laws.</p>
+        </div>
+
+        <div class="legal-section">
+          <h4>🪙 Token Disclaimer</h4>
+          <p>The $TAGIT token is a utility token intended solely for use within the TAG IT Network ecosystem. It is not intended to be a security, investment contract, or any form of financial instrument. Purchasing, holding, or using $TAGIT tokens does not grant any ownership, equity, or voting rights in TAG IT Network or any affiliated entities.</p>
+        </div>
+
+        <div class="legal-section">
+          <h4>⚠️ Limitation of Liability</h4>
+          <p>In no event shall TAG IT Network, its directors, employees, partners, agents, suppliers, or affiliates be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the Service.</p>
+        </div>
+
+        <div class="legal-section">
+          <h4>⚖️ Governing Law</h4>
+          <p>These Terms shall be governed by and construed in accordance with the laws of the State of Florida, United States, without regard to its conflict of law provisions. Any legal action or proceeding arising under these Terms shall be brought exclusively in the federal or state courts located in Duval County, Florida.</p>
+        </div>
+
+        <div class="legal-section">
+          <h4>✉️ Contact Us</h4>
+          <p>If you have any questions about these Terms of Service, please contact us via email: <a href="mailto:info@tagit.network">info@tagit.network</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cookie Policy Modal -->
+  <div class="legal-modal-overlay" id="cookieModalOverlay">
+    <div class="legal-modal">
+      <button class="legal-modal-close" data-close-modal>✕</button>
+
+      <div class="legal-modal-header">
+        <h3><span>🍪</span> Cookie Policy</h3>
+        <p class="effective-date">Effective Date: September 29, 2025</p>
+      </div>
+
+      <div class="legal-modal-content">
+        <p class="legal-intro">
+          This Cookie Policy explains how TAG IT Network ("we," "us," or "our") uses cookies and similar technologies when you visit our website at <a href="https://www.tagit.network">https://www.tagit.network</a>. By using our website, you consent to our use of cookies as described in this policy.
+        </p>
+
+        <div class="legal-section">
+          <h4>🤔 What Are Cookies?</h4>
+          <p>Cookies are small text files that are placed on your device (computer, smartphone, or tablet) when you visit a website. They are widely used to make websites work more efficiently and provide information to website owners. Cookies help us recognize your device and remember your preferences.</p>
+        </div>
+
+        <div class="legal-section">
+          <h4>📂 Types of Cookies We Use</h4>
+          <p><strong>Essential Cookies:</strong> These cookies are necessary for the website to function properly. They enable basic features like page navigation and access to secure areas.<br><br>
+          <strong>Analytics Cookies:</strong> These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously.<br><br>
+          <strong>Preference Cookies:</strong> These cookies remember your settings and preferences to provide a more personalized experience.</p>
+        </div>
+
+        <div class="legal-section">
+          <h4>🎛️ Managing Cookies</h4>
+          <p>Most web browsers allow you to control cookies through their settings. You can set your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you disable cookies, some features of our website may not function properly.</p>
+        </div>
+
+        <div class="legal-section">
+          <h4>🔄 Third-Party Cookies</h4>
+          <p>We may use third-party services that set their own cookies, such as analytics providers. These third parties have their own privacy policies and cookie practices. We do not have control over these third-party cookies.</p>
+        </div>
+
+        <div class="legal-section">
+          <h4>📝 Updates to This Policy</h4>
+          <p>We may update this Cookie Policy from time to time to reflect changes in our practices or for operational, legal, or regulatory reasons. We encourage you to review this policy periodically for the latest information.</p>
+        </div>
+
+        <div class="legal-section">
+          <h4>✉️ Contact Us</h4>
+          <p>If you have any questions about our use of cookies, please contact us via email: <a href="mailto:info@tagit.network">info@tagit.network</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Wallet Connection Modal -->
+  <div class="wallet-modal-overlay" id="walletModal">
+    <div class="wallet-modal">
+      <button class="wallet-modal-close" onclick="closeWalletModal()" aria-label="Close modal">×</button>
+
+      <div id="walletConnectState">
+        <div class="wallet-modal-header">
+          <h3>Connect Wallet</h3>
+          <p>Connect your wallet to interact with TAG IT Network</p>
+        </div>
+
+        <div class="wallet-option" onclick="connectMetaMask()" role="button" tabindex="0">
+          <div class="wallet-option-icon">🦊</div>
+          <div class="wallet-option-info">
+            <h4>MetaMask</h4>
+            <p>Connect using browser extension</p>
+          </div>
+          <span class="wallet-option-arrow">→</span>
+        </div>
+
+        <div class="wallet-option" onclick="connectWalletConnect()" role="button" tabindex="0">
+          <div class="wallet-option-icon">🔗</div>
+          <div class="wallet-option-info">
+            <h4>WalletConnect</h4>
+            <p>Scan with your mobile wallet</p>
+          </div>
+          <span class="wallet-option-arrow">→</span>
+        </div>
+
+        <div class="wallet-option" onclick="connectCoinbase()" role="button" tabindex="0">
+          <div class="wallet-option-icon">💰</div>
+          <div class="wallet-option-info">
+            <h4>Coinbase Wallet</h4>
+            <p>Connect using Coinbase</p>
+          </div>
+          <span class="wallet-option-arrow">→</span>
+        </div>
+
+        <p class="wallet-modal-note">By connecting, you agree to TAG IT Network's Terms of Service</p>
+      </div>
+
+      <div id="walletConnectedState" style="display: none;">
+        <div class="wallet-modal-header">
+          <h3>Wallet Connected</h3>
+          <p>Your wallet is connected to TAG IT Network</p>
+        </div>
+        <div class="wallet-connected-info">
+          <div class="address-full" id="fullAddress">0x0000...0000</div>
+          <div id="networkInfo"></div>
+          <button class="wallet-disconnect-btn" onclick="disconnectWallet()">Disconnect Wallet</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg>
+  </button>
+
+  <!-- Scripts -->
+  <script src="/js/shared.js" defer></script>
+
+  <style>
+    /* Page-specific styles */
+    .page-hero {
+      padding: 160px 48px 32px;
+      text-align: center;
+      position: relative;
+      background: radial-gradient(ellipse at center top, var(--purple-10) 0%, transparent 50%);
+    }
+
+    .page-hero-title {
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 24px;
+    }
+
+    .page-hero-subtitle {
+      font-size: 18px;
+      color: var(--muted-gray);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .tech-section {
+      padding: 100px 48px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    /* Section Headers - Centered */
+    .section-header {
+      margin-bottom: var(--content-gap, 48px);
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-center .section-label {
+      justify-content: center;
+    }
+
+    /* Hide emoji icons in section labels */
+    .label-icon {
+      display: none;
+    }
+
+    .text-center p,
+    .text-center .section-subtitle {
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .lifecycle-visual-section {
+      padding-top: 32px;
+      padding-bottom: 32px;
+    }
+
+    .alt-bg {
+      background: linear-gradient(180deg, var(--carbon-gray) 0%, var(--deep-carbon) 100%);
+      max-width: 100%;
+      padding-left: 48px;
+      padding-right: 48px;
+    }
+
+    /* ORACULS Stack */
+    .oraculs-section {
+      padding-top: 48px;
+      padding-bottom: 48px;
+    }
+
+    /* NFC Section */
+    .nfc-section-redesign {
+      padding-top: 48px;
+      padding-bottom: 48px;
+    }
+
+    /* Digital Twins Section */
+    .digital-twins-section {
+      padding-top: 48px;
+      padding-bottom: 48px;
+    }
+
+    .oraculs-subtitle {
+      color: var(--muted-gray);
+      font-size: 16px;
+      margin-top: 8px;
+      font-style: italic;
+    }
+
+    .stack-wrapper {
+      margin-top: 48px;
+      position: relative;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .stack-layers {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .stack-layer {
+      background: var(--carbon-gray);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       ORACULS STACK LAYER COLORS - Explicit, Consistent Assignments
+       01 Applications = Electric Blue (#00D4FF)
+       02 Gateway = Neon Purple (#B84FFF)
+       03 Ledger = Circuit Green (#00FF88)
+       04 Settlement = Warning Amber (#FFA502)
+       ═══════════════════════════════════════════════════════════════ */
+    
+    /* Layer 01: Applications - Electric Blue */
+    .stack-layer.applications {
+      border-left: 3px solid #00D4FF !important;
+      border-top-color: rgba(255,255,255,0.05);
+      border-right-color: rgba(255,255,255,0.05);
+      border-bottom-color: rgba(255,255,255,0.05);
+    }
+    .stack-layer.applications:hover {
+      border-left-color: #00D4FF !important;
+      box-shadow: inset 3px 0 20px -8px rgba(0, 212, 255, 0.5), 0 0 30px rgba(0, 212, 255, 0.15);
+    }
+
+    /* Layer 02: Gateway - Neon Purple */
+    .stack-layer.gateway {
+      border-left: 3px solid #B84FFF !important;
+      border-top-color: rgba(255,255,255,0.05);
+      border-right-color: rgba(255,255,255,0.05);
+      border-bottom-color: rgba(255,255,255,0.05);
+    }
+    .stack-layer.gateway:hover {
+      border-left-color: #B84FFF !important;
+      box-shadow: inset 3px 0 20px -8px rgba(184, 79, 255, 0.5), 0 0 30px rgba(184, 79, 255, 0.15);
+    }
+
+    /* Layer 03: Ledger - Circuit Green */
+    .stack-layer.ledger {
+      border-left: 3px solid #00FF88 !important;
+      border-top-color: rgba(255,255,255,0.05);
+      border-right-color: rgba(255,255,255,0.05);
+      border-bottom-color: rgba(255,255,255,0.05);
+    }
+    .stack-layer.ledger:hover {
+      border-left-color: #00FF88 !important;
+      box-shadow: inset 3px 0 20px -8px rgba(0, 255, 136, 0.5), 0 0 30px rgba(0, 255, 136, 0.15);
+    }
+
+    /* Layer 04: Settlement - Warning Amber */
+    .stack-layer.settlement {
+      border-left: 3px solid #FFA502 !important;
+      border-top-color: rgba(255,255,255,0.05);
+      border-right-color: rgba(255,255,255,0.05);
+      border-bottom-color: rgba(255,255,255,0.05);
+    }
+    .stack-layer.settlement:hover {
+      border-left-color: #FFA502 !important;
+      box-shadow: inset 3px 0 20px -8px rgba(255, 165, 2, 0.5), 0 0 30px rgba(255, 165, 2, 0.15);
+    }
+
+    .layer-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 24px;
+      cursor: pointer;
+    }
+
+    .layer-indicator {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    /* Layer Indicators - Explicit color assignments with glow effects */
+    .stack-layer.applications .layer-indicator { 
+      background: var(--blue-10); 
+      color: var(--electric-blue); 
+      box-shadow: 0 0 0 2px rgba(0, 212, 255, 0.2), 0 0 12px rgba(0, 212, 255, 0.15);
+    }
+    .stack-layer.gateway .layer-indicator { 
+      background: var(--purple-10); 
+      color: var(--neon-purple); 
+      box-shadow: 0 0 0 2px rgba(184, 79, 255, 0.2), 0 0 12px rgba(184, 79, 255, 0.15);
+    }
+    .stack-layer.ledger .layer-indicator { 
+      background: var(--green-10); 
+      color: var(--circuit-green); 
+      box-shadow: 0 0 0 2px rgba(0, 255, 136, 0.2), 0 0 12px rgba(0, 255, 136, 0.15);
+    }
+    .stack-layer.settlement .layer-indicator { 
+      background: rgba(255, 165, 2, 0.1); 
+      color: var(--warning-amber); 
+      box-shadow: 0 0 0 2px rgba(255, 165, 2, 0.2), 0 0 12px rgba(255, 165, 2, 0.15);
+    }
+
+    /* Hover states for indicators - intensify matching glow */
+    .stack-layer.applications:hover .layer-indicator {
+      box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.3), 0 0 20px rgba(0, 212, 255, 0.25);
+    }
+    .stack-layer.gateway:hover .layer-indicator {
+      box-shadow: 0 0 0 3px rgba(184, 79, 255, 0.3), 0 0 20px rgba(184, 79, 255, 0.25);
+    }
+    .stack-layer.ledger:hover .layer-indicator {
+      box-shadow: 0 0 0 3px rgba(0, 255, 136, 0.3), 0 0 20px rgba(0, 255, 136, 0.25);
+    }
+    .stack-layer.settlement:hover .layer-indicator {
+      box-shadow: 0 0 0 3px rgba(255, 165, 2, 0.3), 0 0 20px rgba(255, 165, 2, 0.25);
+    }
+
+    .layer-header .layer-content {
+      flex: 1;
+      display: block;
+    }
+
+    .layer-name {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .layer-desc {
+      font-size: 14px;
+      color: var(--muted-gray);
+    }
+
+    .layer-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .component-tag {
+      background: var(--deep-carbon);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--muted-gray);
+    }
+
+    .expand-indicator-layer {
+      color: var(--muted-gray);
+      font-size: 12px;
+      transition: transform 0.3s ease;
+    }
+
+    .stack-layer.expanded .expand-indicator-layer {
+      transform: rotate(180deg);
+    }
+
+    .layer-expanded-content {
+      display: none;
+      padding: 0 24px 24px;
+    }
+
+    .stack-layer.expanded .layer-expanded-content {
+      display: block;
+    }
+
+    .layer-divider {
+      height: 1px;
+      background: rgba(255,255,255,0.05);
+      margin-bottom: 20px;
+    }
+
+    .component-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .component-card {
+      background: var(--deep-carbon);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .component-card h4 {
+      font-size: 15px;
+      margin-bottom: 8px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       LAYER-SPECIFIC COMPONENT CARD COLORS
+       Each layer's expanded content uses its designated accent color
+       ═══════════════════════════════════════════════════════════════ */
+    
+    /* Layer 01: Applications - Electric Blue */
+    .stack-layer.applications .component-card h4 {
+      color: var(--electric-blue);
+    }
+    .stack-layer.applications .component-tech {
+      color: var(--electric-blue);
+      background: var(--blue-10);
+    }
+
+    /* Layer 02: Gateway - Neon Purple */
+    .stack-layer.gateway .component-card h4 {
+      color: var(--neon-purple);
+    }
+    .stack-layer.gateway .component-tech {
+      color: var(--neon-purple);
+      background: var(--purple-10);
+    }
+
+    /* Layer 03: Ledger - Circuit Green */
+    .stack-layer.ledger .component-card h4 {
+      color: var(--circuit-green);
+    }
+    .stack-layer.ledger .component-tech {
+      color: var(--circuit-green);
+      background: var(--green-10);
+    }
+    .stack-layer.ledger .ledger-metric {
+      color: var(--circuit-green);
+    }
+
+    /* Layer 04: Settlement - Warning Amber */
+    .stack-layer.settlement .component-card h4 {
+      color: var(--warning-amber);
+    }
+    .stack-layer.settlement .component-tech {
+      color: var(--warning-amber);
+      background: rgba(255, 165, 2, 0.1);
+    }
+
+    .component-desc {
+      font-size: 13px;
+      color: var(--muted-gray);
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+
+    .component-tech {
+      font-size: 11px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--electric-blue);
+      background: var(--blue-10);
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
+    .ledger-metrics {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .ledger-metric {
+      background: var(--deep-carbon);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--circuit-green);
+    }
+
+    .contracts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 12px;
+    }
+
+    .contract-card {
+      background: var(--deep-carbon);
+      border: 1px solid var(--green-10);
+      border-radius: 8px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .contract-card h4 {
+      font-size: 13px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--circuit-green);
+      margin-bottom: 4px;
+    }
+
+    .contract-card {
+      transition: all 0.3s ease;
+    }
+
+    .contract-card:hover {
+      border-color: var(--circuit-green);
+      box-shadow: 0 0 12px rgba(0, 255, 136, 0.2);
+    }
+
+    .contract-card p {
+      font-size: 11px;
+      color: var(--muted-gray);
+      margin: 0;
+    }
+
+    /* Performance Metrics */
+    .performance-metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+      padding: 32px;
+      background: var(--carbon-gray);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 16px;
+    }
+
+    .metric-item {
+      text-align: center;
+    }
+
+    .metric-item .metric-value {
+      font-size: 32px;
+      font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--electric-blue);
+      margin-bottom: 8px;
+    }
+
+    .metric-item .metric-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted-gray);
+    }
+
+    /* Two column */
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 32px;
+    }
+
+    .feature-list li {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .feature-icon {
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+
+    .feature-list strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .feature-list p {
+      color: var(--muted-gray);
+      font-size: 14px;
+      margin: 0;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       NFC SECTION REDESIGN - Full Visual Demo
+       ═══════════════════════════════════════════════════════════════ */
+
+    .nfc-section-redesign {
+      overflow: hidden;
+    }
+
+    /* Main Demo Container - Horizontal Layout */
+    .nfc-demo-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      margin: 48px auto;
+      max-width: 900px;
+    }
+
+    /* Phone Wrapper with Wave Rings */
+    .nfc-phone-wrapper {
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .nfc-phone {
+      width: 200px;
+      height: 380px;
+      background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+      border-radius: 32px;
+      padding: 8px;
+      border: 2px solid #333;
+      box-shadow:
+        0 20px 60px rgba(0,0,0,0.5),
+        inset 0 1px 0 rgba(255,255,255,0.1);
+      position: relative;
+      z-index: 2;
+      animation: phoneBounce 3s ease-in-out infinite;
+    }
+
+    @keyframes phoneBounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .phone-notch {
+      width: 80px;
+      height: 24px;
+      background: #000;
+      border-radius: 0 0 16px 16px;
+      margin: 0 auto 8px;
+      position: relative;
+    }
+
+    .phone-notch::after {
+      content: '';
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: #1a1a1a;
+      border-radius: 50%;
+      top: 8px;
+      right: 20px;
+    }
+
+    .phone-screen-content {
+      width: 100%;
+      height: calc(100% - 32px);
+      background: linear-gradient(180deg, var(--deep-carbon) 0%, #0a0a0f 100%);
+      border-radius: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .scan-prompt {
+      text-align: center;
+    }
+
+    .nfc-icon-animated {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 16px;
+      color: var(--circuit-green);
+      animation: nfcGlow 2s ease-in-out infinite;
+    }
+
+    @keyframes nfcGlow {
+      0%, 100% {
+        filter: drop-shadow(0 0 8px var(--circuit-green));
+        opacity: 0.8;
+      }
+      50% {
+        filter: drop-shadow(0 0 20px var(--circuit-green));
+        opacity: 1;
+      }
+    }
+
+    .nfc-symbol {
+      width: 100%;
+      height: 100%;
+    }
+
+    .scan-text {
+      font-size: 14px;
+      color: var(--circuit-green);
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      animation: textPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes textPulse {
+      0%, 100% { opacity: 0.7; }
+      50% { opacity: 1; }
+    }
+
+    /* NFC Wave Rings */
+    .nfc-wave-rings {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 300px;
+      height: 300px;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .wave-ring {
+      position: absolute;
+      inset: 0;
+      border: 2px solid var(--circuit-green);
+      border-radius: 50%;
+      animation: waveExpand 3s ease-out infinite;
+    }
+
+    .wave-ring:nth-child(2) { animation-delay: 1s; }
+    .wave-ring:nth-child(3) { animation-delay: 2s; }
+
+    @keyframes waveExpand {
+      0% {
+        transform: scale(0.3);
+        opacity: 0.8;
+      }
+      100% {
+        transform: scale(1.2);
+        opacity: 0;
+      }
+    }
+
+    /* Connection Line with Data Particles */
+    .nfc-connection-line {
+      position: relative;
+      width: 120px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+
+    .connection-svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .data-particle {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: var(--circuit-green);
+      border-radius: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+      box-shadow: 0 0 12px var(--circuit-green);
+      animation: particleMove 2s ease-in-out infinite;
+    }
+
+    .data-particle.p1 { animation-delay: 0s; }
+    .data-particle.p2 { animation-delay: 0.6s; }
+    .data-particle.p3 { animation-delay: 1.2s; }
+
+    @keyframes particleMove {
+      0% {
+        left: 0;
+        opacity: 0;
+        transform: translateY(-50%) scale(0.5);
+      }
+      10% {
+        opacity: 1;
+        transform: translateY(-50%) scale(1);
+      }
+      90% {
+        opacity: 1;
+        transform: translateY(-50%) scale(1);
+      }
+      100% {
+        left: 100%;
+        opacity: 0;
+        transform: translateY(-50%) scale(0.5);
+      }
+    }
+
+    /* Verification Result Card */
+    .nfc-result-card {
+      background: linear-gradient(145deg, var(--carbon-gray), var(--deep-carbon));
+      border: 1px solid rgba(0, 255, 136, 0.2);
+      border-radius: 20px;
+      padding: 24px;
+      width: 280px;
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+
+    .result-glow {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(0, 255, 136, 0.1) 0%, transparent 70%);
+      pointer-events: none;
+      animation: glowPulse 3s ease-in-out infinite;
+    }
+
+    @keyframes glowPulse {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
+    }
+
+    .result-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .result-status {
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+    }
+
+    .check-svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .check-circle {
+      stroke-dasharray: 166;
+      stroke-dashoffset: 166;
+      animation: circleAnim 1s ease-out forwards;
+      animation-delay: 0.5s;
+    }
+
+    .check-mark {
+      stroke-dasharray: 48;
+      stroke-dashoffset: 48;
+      animation: checkAnim 0.5s ease-out forwards;
+      animation-delay: 1.2s;
+    }
+
+    @keyframes circleAnim {
+      to { stroke-dashoffset: 0; }
+    }
+
+    @keyframes checkAnim {
+      to { stroke-dashoffset: 0; }
+    }
+
+    .result-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .result-label {
+      font-size: 12px;
+      color: var(--muted-gray);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .result-value {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--circuit-green);
+    }
+
+    .result-details {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      position: relative;
+      z-index: 1;
+    }
+
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .detail-label {
+      font-size: 13px;
+      color: var(--muted-gray);
+    }
+
+    .detail-value {
+      font-size: 13px;
+      color: var(--pure-white);
+    }
+
+    .detail-value.mono {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--electric-blue);
+    }
+
+    /* Feature Stats Cards */
+    .nfc-features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 64px;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .nfc-feature-card {
+      background: var(--carbon-gray);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 16px;
+      padding: 32px 24px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .nfc-feature-card:hover {
+      border-color: rgba(0, 255, 136, 0.2);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+    }
+
+    .feature-stat {
+      margin-bottom: 16px;
+    }
+
+    .stat-value {
+      display: block;
+      font-size: 36px;
+      font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--circuit-green);
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted-gray);
+    }
+
+    .feature-desc {
+      font-size: 14px;
+      color: var(--muted-gray);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       DIGITAL TWINS SECTION - Enhanced Cyber-Industrial Design
+       ═══════════════════════════════════════════════════════════════ */
+
+    .digital-twins-section {
+      position: relative;
+    }
+
+    /* Section Label with Decorative Lines */
+    .digital-twins-section .section-label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      color: var(--electric-blue);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .label-line {
+      width: 40px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--electric-blue));
+    }
+
+    .label-line:last-child {
+      background: linear-gradient(90deg, var(--electric-blue), transparent);
+    }
+
+    /* Twin Connection Visualization */
+    .twin-connection {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      margin: 60px auto;
+      padding: 40px;
+    }
+
+    .twin-node {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 40px;
+      border-radius: 16px;
+      background: var(--carbon-gray);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .twin-node.physical {
+      border-color: rgba(0, 255, 136, 0.3);
+      box-shadow: 0 0 30px rgba(0, 255, 136, 0.1);
+    }
+
+    .twin-node.physical:hover {
+      border-color: var(--circuit-green);
+      box-shadow: 0 0 20px rgba(0, 255, 136, 0.5), 0 0 40px rgba(0, 255, 136, 0.3);
+    }
+
+    .twin-node.digital {
+      border-color: rgba(0, 212, 255, 0.3);
+      box-shadow: 0 0 30px rgba(0, 212, 255, 0.1);
+    }
+
+    .twin-node.digital:hover {
+      border-color: var(--electric-blue);
+      box-shadow: 0 0 20px rgba(0, 212, 255, 0.5), 0 0 40px rgba(0, 212, 255, 0.3);
+    }
+
+    .twin-icon {
+      font-size: 48px;
+      margin-bottom: 12px;
+    }
+
+    .twin-label {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--pure-white);
+    }
+
+    .twin-sublabel {
+      font-size: 12px;
+      color: var(--muted-gray);
+      margin-top: 4px;
+    }
+
+    /* Connection Line Animation */
+    .connection-line {
+      display: flex;
+      align-items: center;
+      position: relative;
+      width: 200px;
+    }
+
+    .connection-dots {
+      width: 100%;
+      height: 2px;
+      background: repeating-linear-gradient(
+        90deg,
+        var(--electric-blue) 0px,
+        var(--electric-blue) 8px,
+        transparent 8px,
+        transparent 16px
+      );
+      background-size: 200% 100%;
+      animation: flowDots 2s linear infinite;
+    }
+
+    @keyframes flowDots {
+      0% { background-position: 0% 0; }
+      100% { background-position: -100% 0; }
+    }
+
+    .sync-indicator {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--deep-carbon);
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: 1px solid var(--electric-blue);
+      color: var(--electric-blue);
+      font-size: 18px;
+      animation: syncPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes syncPulse {
+      0%, 100% { opacity: 1; transform: translateX(-50%) scale(1); }
+      50% { opacity: 0.7; transform: translateX(-50%) scale(1.1); }
+    }
+
+    /* Twin Cards Grid */
+    .twin-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 60px;
+    }
+
+    /* Card Base */
+    .twin-card {
+      position: relative;
+      background: var(--carbon-gray);
+      border-radius: 16px;
+      padding: 32px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.3s ease;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeSlideUp 0.6s ease forwards;
+    }
+
+    .twin-card:nth-child(1) { animation-delay: 0.1s; }
+    .twin-card:nth-child(2) { animation-delay: 0.2s; }
+    .twin-card:nth-child(3) { animation-delay: 0.3s; }
+
+    @keyframes fadeSlideUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Card Color Accent Bar (Left Edge) */
+    .card-accent {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      transition: all 0.3s ease;
+    }
+
+    .twin-card[data-color="green"] .card-accent {
+      background: var(--circuit-green);
+      box-shadow: 0 0 10px var(--circuit-green);
+    }
+
+    .twin-card[data-color="blue"] .card-accent {
+      background: var(--electric-blue);
+      box-shadow: 0 0 10px var(--electric-blue);
+    }
+
+    .twin-card[data-color="purple"] .card-accent {
+      background: var(--neon-purple);
+      box-shadow: 0 0 10px var(--neon-purple);
+    }
+
+    /* Card Hover States */
+    .twin-card[data-color="green"]:hover {
+      border-color: rgba(0, 255, 136, 0.3);
+      box-shadow: 0 8px 32px rgba(0, 255, 136, 0.15);
+      transform: translateY(-4px);
+    }
+
+    .twin-card[data-color="blue"]:hover {
+      border-color: rgba(0, 212, 255, 0.3);
+      box-shadow: 0 8px 32px rgba(0, 212, 255, 0.15);
+      transform: translateY(-4px);
+    }
+
+    .twin-card[data-color="purple"]:hover {
+      border-color: rgba(184, 79, 255, 0.3);
+      box-shadow: 0 8px 32px rgba(184, 79, 255, 0.15);
+      transform: translateY(-4px);
+    }
+
+    /* Card Header */
+    .twin-card .card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .card-icon {
+      font-size: 28px;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* SVG Card Icons */
+    .card-svg-icon {
+      width: 24px;
+      height: 24px;
+      filter: drop-shadow(0 0 6px currentColor);
+    }
+
+    .card-svg-icon.green {
+      color: var(--circuit-green);
+    }
+
+    .card-svg-icon.blue {
+      color: var(--electric-blue);
+    }
+
+    .card-svg-icon.purple {
+      color: var(--neon-purple);
+    }
+
+    /* Cyber Icons for Twin Nodes */
+    .cyber-icon {
+      width: 64px;
+      height: 64px;
+    }
+
+    .twin-icon {
+      font-size: 48px;
+      margin-bottom: 12px;
+      width: 64px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Enhanced Connection Line */
+    .connection-line.enhanced {
+      width: 200px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .connection-svg-enhanced {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
+    .connection-svg-enhanced .flow-line {
+      animation: flowLine 2s linear infinite;
+    }
+
+    @keyframes flowLine {
+      0% { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: -24; }
+    }
+
+    /* Data Particles */
+    .data-particles {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    .data-particles .particle {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+      animation: particleFlow 2s ease-in-out infinite;
+    }
+
+    .data-particles .particle.p1 {
+      background: #00FF88;
+      box-shadow: 0 0 10px #00FF88;
+      animation-delay: 0s;
+    }
+
+    .data-particles .particle.p2 {
+      background: #00D4FF;
+      box-shadow: 0 0 10px #00D4FF;
+      animation-delay: 0.6s;
+    }
+
+    .data-particles .particle.p3 {
+      background: #B84FFF;
+      box-shadow: 0 0 10px #B84FFF;
+      animation-delay: 1.2s;
+    }
+
+    @keyframes particleFlow {
+      0% {
+        left: 0;
+        opacity: 0;
+        transform: translateY(-50%) scale(0.5);
+      }
+      10% {
+        opacity: 1;
+        transform: translateY(-50%) scale(1);
+      }
+      90% {
+        opacity: 1;
+        transform: translateY(-50%) scale(1);
+      }
+      100% {
+        left: 100%;
+        opacity: 0;
+        transform: translateY(-50%) scale(0.5);
+      }
+    }
+
+    /* Enhanced Sync Indicator */
+    .connection-line.enhanced .sync-indicator {
+      position: relative;
+      background: var(--deep-carbon);
+      padding: 8px;
+      border-radius: 50%;
+      border: 2px solid var(--electric-blue);
+      color: var(--electric-blue);
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+    }
+
+    .sync-svg {
+      width: 20px;
+      height: 20px;
+      animation: rotateSyncReverse 3s linear infinite;
+    }
+
+    @keyframes rotateSyncReverse {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(-360deg); }
+    }
+
+    .connection-line.enhanced .sync-indicator::before,
+    .connection-line.enhanced .sync-indicator::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      animation: syncRing 2s ease-in-out infinite;
+    }
+
+    .connection-line.enhanced .sync-indicator::before {
+      inset: -4px;
+      border: 1px solid rgba(0, 212, 255, 0.5);
+    }
+
+    .connection-line.enhanced .sync-indicator::after {
+      inset: -8px;
+      border: 1px solid rgba(0, 212, 255, 0.3);
+      animation-delay: 0.5s;
+    }
+
+    @keyframes syncRing {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.2); opacity: 0.5; }
+    }
+
+    .twin-card .card-header h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--pure-white);
+      margin: 0;
+    }
+
+    /* Card List */
+    .card-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .card-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      color: var(--muted-gray);
+      font-size: 15px;
+      transition: color 0.2s;
+    }
+
+    .card-list li:last-child {
+      border-bottom: none;
+    }
+
+    .twin-card:hover .card-list li {
+      color: var(--pure-white);
+    }
+
+    /* Checkmark Color Matching */
+    .twin-card[data-color="green"] .check { color: var(--circuit-green); }
+    .twin-card[data-color="blue"] .check { color: var(--electric-blue); }
+    .twin-card[data-color="purple"] .check { color: var(--neon-purple); }
+
+    .check {
+      font-weight: 700;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    /* CTA */
+    .cta-section {
+      padding: 48px;
+      text-align: center;
+      background: linear-gradient(135deg, var(--blue-10), var(--purple-10));
+      border: 1px solid var(--blue-20);
+      border-radius: 24px;
+      max-width: 900px;
+      margin: 48px auto 80px;
+    }
+
+    .cta-content h2 {
+      font-size: 36px;
+      margin-bottom: 16px;
+    }
+
+    .cta-content p {
+      color: var(--muted-gray);
+      margin-bottom: 32px;
+      font-size: 18px;
+    }
+
+    /* Active nav */
+    .nav-links a.active {
+      color: var(--electric-blue);
+    }
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    @media (max-width: 1024px) {
+      .two-column {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      /* NFC Section - Tablet */
+      .nfc-demo-container {
+        flex-direction: column;
+        gap: 32px;
+      }
+
+      .nfc-connection-line {
+        transform: rotate(90deg);
+        width: 80px;
+      }
+
+      .nfc-result-card {
+        width: 100%;
+        max-width: 320px;
+      }
+
+      .nfc-features-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+
+      /* Digital Twins Section - Tablet */
+      .twin-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .twin-connection {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .connection-line {
+        transform: rotate(90deg);
+        width: 100px;
+      }
+
+      .connection-line.enhanced {
+        transform: rotate(90deg);
+        width: 100px;
+        height: 60px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .page-hero, .tech-section, .cta-section {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+      .layer-header {
+        flex-wrap: wrap;
+      }
+      .layer-tags {
+        width: 100%;
+        margin-top: 12px;
+      }
+      .performance-metrics {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .metric-item .metric-value {
+        font-size: 24px;
+      }
+
+      /* NFC Section - Mobile */
+      .nfc-phone {
+        width: 180px;
+        height: 340px;
+      }
+
+      .nfc-wave-rings {
+        width: 240px;
+        height: 240px;
+      }
+
+      .nfc-icon-animated {
+        width: 60px;
+        height: 60px;
+      }
+
+      .nfc-result-card {
+        padding: 20px;
+      }
+
+      .result-value {
+        font-size: 16px;
+      }
+
+      .nfc-features-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .nfc-feature-card {
+        padding: 24px 20px;
+      }
+
+      .stat-value {
+        font-size: 28px;
+      }
+
+      .nfc-connection-line {
+        width: 60px;
+      }
+
+      /* Digital Twins Section - Mobile */
+      .twin-node {
+        padding: 20px 30px;
+      }
+
+      .twin-icon {
+        font-size: 36px;
+        width: 48px;
+        height: 48px;
+      }
+
+      .cyber-icon {
+        width: 48px;
+        height: 48px;
+      }
+
+      .twin-label {
+        font-size: 12px;
+      }
+
+      .connection-line {
+        width: 60px;
+      }
+
+      .connection-line.enhanced {
+        width: 60px;
+        height: 50px;
+      }
+
+      .connection-line.enhanced .sync-indicator {
+        width: 32px;
+        height: 32px;
+        padding: 6px;
+      }
+
+      .sync-svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      .data-particles .particle {
+        width: 4px;
+        height: 4px;
+      }
+
+      .twin-card {
+        padding: 24px;
+      }
+
+      .twin-card .card-header h3 {
+        font-size: 18px;
+      }
+
+      .card-list li {
+        font-size: 14px;
+        padding: 8px 0;
+      }
+    }
+  </style>
+
+  <script>
+    // Stack layer expand/collapse
+    document.querySelectorAll('.stack-layer').forEach(layer => {
+      layer.querySelector('.layer-header').addEventListener('click', () => {
+        layer.classList.toggle('expanded');
+      });
+    });
+  </script>
+</body>
+</html>

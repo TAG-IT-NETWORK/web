@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript SDK - TAG IT Network Documentation</title>
+    <meta name="description" content="Official JavaScript/TypeScript SDK for TAG IT Network.">
+    <meta name="keywords" content="TAG IT JavaScript SDK, Node.js SDK, TypeScript SDK, blockchain authentication">
+    <meta name="author" content="TAG IT Network">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="JavaScript SDK - TAG IT Network Documentation">
+    <meta property="og:description" content="Official JavaScript/TypeScript SDK for TAG IT Network.">
+    <meta property="og:image" content="/assets/images/og-image.png">
+    <meta property="og:url" content="https://tagit.network/docs/sdk/javascript">
+    <meta property="og:type" content="article">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="JavaScript SDK - TAG IT Network Documentation">
+    <meta name="twitter:description" content="Official JavaScript/TypeScript SDK for TAG IT Network.">
+    <meta name="twitter:image" content="/assets/images/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/tagit_logo.png">
+    <link rel="apple-touch-icon" href="/assets/images/tagit_logo.png">
+
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/shared.css">
+    <link rel="stylesheet" href="/css/docs.css">
+</head>
+<body>
+    <!-- Skip to main content link for keyboard users -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Global Cyber Grid Background -->
+    <div class="cyber-grid-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <img src="/assets/images/tagit_logo.png" alt="TAG IT Network Logo" class="logo-img" width="40" height="40">
+        </div>
+        <span>TAG IT Network</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="/#features">Features</a>
+        <a href="/solutions">Solutions</a>
+        <a href="/technology">Technology</a>
+        <a href="/tokenomics">Tokenomics</a>
+        <a href="/docs" class="active">Docs</a>
+        <a href="/about">About</a>
+      </div>
+
+      <button class="nav-cta" id="connectWalletBtn" onclick="handleWalletClick()">
+        Connect Wallet
+      </button>
+
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="/#features">Features</a>
+      <a href="/solutions">Solutions</a>
+      <a href="/technology">Technology</a>
+      <a href="/tokenomics">Tokenomics</a>
+      <a href="/docs" class="active">Docs</a>
+      <a href="/about">About</a>
+      <button class="mobile-cta" onclick="handleWalletClick()">Connect Wallet</button>
+    </div>
+
+    <!-- Mobile Docs Header -->
+    <div class="docs-mobile-header">
+        <button class="docs-mobile-toggle" id="docsMobileToggle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+            <span>Documentation Menu</span>
+            <svg class="docs-mobile-toggle-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 9l6 6 6-6"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Docs Layout -->
+    <div class="docs-layout">
+        <!-- Left Sidebar -->
+        <aside class="docs-sidebar" id="docsSidebar">
+            <div class="docs-sidebar-header">
+                <a href="/docs">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                    Documentation
+                </a>
+            </div>
+
+            <nav>
+                <!-- Getting Started -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">Getting Started</div>
+                    <a href="/docs/getting-started/quick-start.html" class="docs-nav-link">Quick Start Guide</a>
+                    <a href="/docs/getting-started/platform-overview.html" class="docs-nav-link">Platform Overview</a>
+                    <a href="/docs/getting-started/first-integration.html" class="docs-nav-link">First Integration</a>
+                </div>
+
+                <!-- API Reference -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">API Reference</div>
+                    <a href="/docs/api/rest-api.html" class="docs-nav-link">REST API</a>
+                    <a href="/docs/api/graphql.html" class="docs-nav-link">GraphQL API</a>
+                    <a href="/docs/api/webhooks.html" class="docs-nav-link">Webhooks</a>
+                </div>
+
+                <!-- Smart Contracts -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">Smart Contracts</div>
+                    <a href="/docs/contracts/addresses.html" class="docs-nav-link">Contract Addresses</a>
+                    <a href="/docs/contracts/abi-reference.html" class="docs-nav-link">ABI Reference</a>
+                    <a href="/docs/contracts/audits.html" class="docs-nav-link">Audit Reports</a>
+                </div>
+
+                <!-- NFC Integration -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">NFC Integration</div>
+                    <a href="/docs/nfc/chip-selection.html" class="docs-nav-link">Chip Selection</a>
+                    <a href="/docs/nfc/encoding-guide.html" class="docs-nav-link">Encoding Guide</a>
+                    <a href="/docs/nfc/mobile-sdk.html" class="docs-nav-link">Mobile SDK</a>
+                </div>
+
+                <!-- SDK & Libraries -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">SDK & Libraries</div>
+                    <a href="/docs/sdk/javascript.html" class="docs-nav-link active">JavaScript SDK</a>
+                    <a href="/docs/sdk/python.html" class="docs-nav-link">Python SDK</a>
+                    <a href="/docs/sdk/mobile.html" class="docs-nav-link">Mobile SDKs</a>
+                </div>
+
+                <!-- Tutorials -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">Tutorials</div>
+                    <a href="/docs/tutorials/product-tagging.html" class="docs-nav-link">Product Tagging</a>
+                    <a href="/docs/tutorials/ownership-transfer.html" class="docs-nav-link">Ownership Transfer</a>
+                    <a href="/docs/tutorials/dispute-resolution.html" class="docs-nav-link">Dispute Resolution</a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="docs-content" id="main-content">
+            <div class="docs-breadcrumb">
+                <a href="/docs">Docs</a>
+                <span>/</span>
+                <a href="/docs/sdk/javascript">SDK & Libraries</a>
+                <span>/</span>
+                <span>JavaScript SDK</span>
+            </div>
+
+            <h1>JavaScript SDK</h1>
+            <p class="docs-lead">The official TAG IT JavaScript SDK for Node.js and browser environments.</p>
+
+            <h2 id="installation">Installation</h2>
+            <p>Install the TAG IT SDK using your preferred package manager:</p>
+
+            <h3>npm</h3>
+            <pre><code class="language-bash">npm install @tagit/sdk</code></pre>
+
+            <h3>yarn</h3>
+            <pre><code class="language-bash">yarn add @tagit/sdk</code></pre>
+
+            <h3>CDN (Browser)</h3>
+            <p>For browser environments, you can include the SDK directly via CDN:</p>
+            <pre><code class="language-html">&lt;!-- Production (minified) --&gt;
+&lt;script src="https://cdn.tagit.network/sdk/v2/tagit.min.js"&gt;&lt;/script&gt;
+
+&lt;!-- Development (with source maps) --&gt;
+&lt;script src="https://cdn.tagit.network/sdk/v2/tagit.js"&gt;&lt;/script&gt;</code></pre>
+
+            <div class="docs-callout docs-callout-info">
+                <div class="docs-callout-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 16v-4"/>
+                        <path d="M12 8h.01"/>
+                    </svg>
+                    Note
+                </div>
+                <p>The SDK requires Node.js 16+ for server-side usage. For browsers, it supports all modern browsers (Chrome, Firefox, Safari, Edge).</p>
+            </div>
+
+            <h2 id="initialization">Initialization</h2>
+            <p>Initialize the SDK with your API credentials and configuration options:</p>
+
+            <pre><code class="language-javascript">import { TagIt } from '@tagit/sdk';
+
+// Basic initialization
+const tagit = new TagIt({
+  apiKey: process.env.TAGIT_API_KEY,
+  network: 'mainnet'
+});
+
+// Advanced configuration
+const tagit = new TagIt({
+  apiKey: process.env.TAGIT_API_KEY,
+  apiSecret: process.env.TAGIT_API_SECRET,
+  network: 'mainnet', // 'mainnet' | 'testnet' | 'devnet'
+  timeout: 30000,     // Request timeout in milliseconds
+  retries: 3,         // Number of retry attempts
+  baseUrl: 'https://api.tagit.network/v2', // Custom API endpoint
+  debug: false,       // Enable debug logging
+  onError: (error) => {
+    // Global error handler
+    console.error('TagIt Error:', error);
+  }
+});</code></pre>
+
+            <h3>Browser Initialization</h3>
+            <pre><code class="language-javascript">// When using CDN in browser
+const tagit = new TagIt({
+  apiKey: 'your_public_api_key',
+  network: 'mainnet'
+});
+
+// Note: Never expose your API secret in browser code
+// Use server-side proxying for sensitive operations</code></pre>
+
+            <h2 id="products">Products Module</h2>
+            <p>The products module provides methods for registering, verifying, and managing product authenticity on the blockchain.</p>
+
+            <h3 id="register">tagit.products.register()</h3>
+            <p>Register a new product on the TAG IT Network blockchain:</p>
+
+            <pre><code class="language-javascript">// Register a new product
+const product = await tagit.products.register({
+  tagId: 'NFC-TAG-001-XYZ',
+  metadata: {
+    productName: 'Luxury Handbag Model A',
+    brand: 'Premium Fashion',
+    serialNumber: 'SN-2024-789456',
+    manufactureDate: '2024-03-15',
+    origin: 'Italy',
+    materials: ['Genuine Leather', 'Gold Hardware'],
+    warranty: {
+      duration: '2 years',
+      coverage: 'Manufacturing defects'
+    }
+  },
+  initialOwner: '0x742d35Cc6634C0532925a3b844Bc9e7595f5c9E8',
+  privateMetadata: {
+    internalSku: 'INT-SKU-12345',
+    costPrice: '450.00'
+  }
+});
+
+console.log('Product registered:', product);
+// Returns:
+// {
+//   success: true,
+//   productId: 'prod_abc123xyz',
+//   tagId: 'NFC-TAG-001-XYZ',
+//   txHash: '0xabc123...',
+//   blockNumber: 12345678,
+//   tokenId: '98765'
+// }</code></pre>
+
+            <h3 id="verify">tagit.products.verify()</h3>
+            <p>Verify the authenticity of a product using its NFC tag ID:</p>
+
+            <pre><code class="language-javascript">// Verify product authenticity
+const verification = await tagit.products.verify('NFC-TAG-001-XYZ');
+
+console.log('Verification result:', verification);
+// Returns:
+// {
+//   verified: true,
+//   authentic: true,
+//   tagId: 'NFC-TAG-001-XYZ',
+//   productId: 'prod_abc123xyz',
+//   metadata: {
+//     productName: 'Luxury Handbag Model A',
+//     brand: 'Premium Fashion',
+//     ...
+//   },
+//   currentOwner: '0x742d35Cc6634C0532925a3b844Bc9e7595f5c9E8',
+//   verificationTimestamp: '2024-03-20T14:30:00Z',
+//   blockchain: {
+//     network: 'polygon',
+//     contractAddress: '0x1234...',
+//     tokenId: '98765'
+//   }
+// }
+
+// Verify with additional options
+const detailedVerification = await tagit.products.verify('NFC-TAG-001-XYZ', {
+  includeHistory: true,      // Include transfer history
+  includeProvenanceProof: true, // Include cryptographic proof
+  checkRecalls: true         // Check for product recalls
+});</code></pre>
+
+            <h3 id="get">tagit.products.get()</h3>
+            <p>Retrieve detailed information about a registered product:</p>
+
+            <pre><code class="language-javascript">// Get product by tag ID
+const product = await tagit.products.get('NFC-TAG-001-XYZ');
+
+// Get product by product ID
+const product = await tagit.products.get({ productId: 'prod_abc123xyz' });
+
+// Get product with specific fields
+const product = await tagit.products.get('NFC-TAG-001-XYZ', {
+  fields: ['metadata', 'currentOwner', 'transferHistory'],
+  includePrivateMetadata: true // Requires authentication
+});
+
+console.log('Product details:', product);
+// Returns:
+// {
+//   productId: 'prod_abc123xyz',
+//   tagId: 'NFC-TAG-001-XYZ',
+//   status: 'active',
+//   metadata: { ... },
+//   currentOwner: '0x742d35...',
+//   transferHistory: [ ... ],
+//   createdAt: '2024-03-15T10:00:00Z',
+//   updatedAt: '2024-03-20T14:30:00Z'
+// }</code></pre>
+
+            <h3 id="list">tagit.products.list()</h3>
+            <p>List products with filtering and pagination:</p>
+
+            <pre><code class="language-javascript">// List all products for your account
+const products = await tagit.products.list();
+
+// List with pagination
+const products = await tagit.products.list({
+  page: 1,
+  limit: 50,
+  sortBy: 'createdAt',
+  sortOrder: 'desc'
+});
+
+// List with filters
+const products = await tagit.products.list({
+  brand: 'Premium Fashion',
+  status: 'active',
+  owner: '0x742d35Cc6634C0532925a3b844Bc9e7595f5c9E8',
+  createdAfter: '2024-01-01',
+  createdBefore: '2024-12-31'
+});
+
+console.log('Products:', products);
+// Returns:
+// {
+//   data: [ ... ],
+//   pagination: {
+//     page: 1,
+//     limit: 50,
+//     total: 234,
+//     totalPages: 5,
+//     hasMore: true
+//   }
+// }
+
+// Iterate through all products
+for await (const product of tagit.products.listAll({ brand: 'Premium Fashion' })) {
+  console.log(product.tagId);
+}</code></pre>
+
+            <h2 id="transfers">Transfers Module</h2>
+            <p>The transfers module handles ownership transfers between parties.</p>
+
+            <h3 id="initiate">tagit.transfers.initiate()</h3>
+            <p>Initiate an ownership transfer for a product:</p>
+
+            <pre><code class="language-javascript">// Initiate a transfer
+const transfer = await tagit.transfers.initiate({
+  tagId: 'NFC-TAG-001-XYZ',
+  toAddress: '0x8765432109abcdef...',
+  message: 'Sold via authorized retailer',
+  metadata: {
+    salePrice: '1299.00',
+    currency: 'USD',
+    retailer: 'Authorized Store #42',
+    invoiceNumber: 'INV-2024-001'
+  }
+});
+
+console.log('Transfer initiated:', transfer);
+// Returns:
+// {
+//   transferId: 'txf_abc123',
+//   status: 'pending_confirmation',
+//   tagId: 'NFC-TAG-001-XYZ',
+//   fromAddress: '0x742d35...',
+//   toAddress: '0x876543...',
+//   expiresAt: '2024-03-21T14:30:00Z',
+//   confirmationUrl: 'https://app.tagit.network/transfer/confirm/txf_abc123'
+// }
+
+// Initiate transfer with additional security
+const secureTransfer = await tagit.transfers.initiate({
+  tagId: 'NFC-TAG-001-XYZ',
+  toAddress: '0x8765432109abcdef...',
+  requireSignature: true,     // Require recipient signature
+  requireNfcScan: true,       // Require NFC scan confirmation
+  expirationMinutes: 60,      // Transfer expires in 60 minutes
+  notifyRecipient: true       // Send notification to recipient
+});</code></pre>
+
+            <h3 id="confirm">tagit.transfers.confirm()</h3>
+            <p>Confirm a pending ownership transfer:</p>
+
+            <pre><code class="language-javascript">// Confirm transfer as recipient
+const confirmation = await tagit.transfers.confirm({
+  transferId: 'txf_abc123',
+  signature: recipientSignature,  // EIP-712 typed signature
+  nfcProof: nfcScanData           // Optional NFC scan proof
+});
+
+console.log('Transfer confirmed:', confirmation);
+// Returns:
+// {
+//   success: true,
+//   transferId: 'txf_abc123',
+//   status: 'completed',
+//   txHash: '0xdef456...',
+//   blockNumber: 12345700,
+//   completedAt: '2024-03-20T15:00:00Z',
+//   newOwner: '0x876543...'
+// }
+
+// Cancel a pending transfer
+const cancelled = await tagit.transfers.cancel('txf_abc123', {
+  reason: 'Buyer requested cancellation'
+});
+
+// Get transfer status
+const status = await tagit.transfers.getStatus('txf_abc123');
+
+// List transfer history for a product
+const history = await tagit.transfers.history('NFC-TAG-001-XYZ', {
+  limit: 100,
+  includeDetails: true
+});</code></pre>
+
+            <h2 id="events">Event Handling</h2>
+            <p>Subscribe to real-time events and set up callbacks for various SDK operations.</p>
+
+            <pre><code class="language-javascript">// Subscribe to product events
+tagit.events.on('product:verified', (event) => {
+  console.log('Product verified:', event.tagId);
+  console.log('Verification result:', event.data);
+});
+
+tagit.events.on('product:registered', (event) => {
+  console.log('New product registered:', event.productId);
+});
+
+tagit.events.on('transfer:initiated', (event) => {
+  console.log('Transfer started:', event.transferId);
+});
+
+tagit.events.on('transfer:completed', (event) => {
+  console.log('Transfer completed:', event.transferId);
+  console.log('New owner:', event.newOwner);
+});
+
+// Subscribe to specific product
+const unsubscribe = tagit.events.subscribe('NFC-TAG-001-XYZ', {
+  onVerification: (data) => console.log('Scanned:', data),
+  onTransfer: (data) => console.log('Transferred:', data),
+  onStatusChange: (data) => console.log('Status changed:', data)
+});
+
+// Unsubscribe when done
+unsubscribe();
+
+// WebSocket connection for real-time updates
+const ws = tagit.events.connectWebSocket({
+  onConnect: () => console.log('Connected'),
+  onDisconnect: () => console.log('Disconnected'),
+  onError: (error) => console.error('WebSocket error:', error),
+  autoReconnect: true,
+  reconnectInterval: 5000
+});
+
+// Batch event processing
+tagit.events.onBatch(['product:verified', 'transfer:completed'], (events) => {
+  console.log('Batch received:', events.length, 'events');
+  events.forEach(processEvent);
+});</code></pre>
+
+            <h2 id="typescript">TypeScript Support</h2>
+            <p>The SDK includes comprehensive TypeScript definitions for type-safe development.</p>
+
+            <pre><code class="language-typescript">import {
+  TagIt,
+  TagItConfig,
+  Product,
+  ProductMetadata,
+  Verification,
+  Transfer,
+  TransferStatus,
+  TagItError,
+  NetworkType
+} from '@tagit/sdk';
+
+// Typed configuration
+const config: TagItConfig = {
+  apiKey: process.env.TAGIT_API_KEY!,
+  network: 'mainnet' as NetworkType,
+  timeout: 30000,
+  retries: 3
+};
+
+const tagit = new TagIt(config);
+
+// Typed product registration
+interface CustomMetadata extends ProductMetadata {
+  customField: string;
+  warrantyYears: number;
+}
+
+const product: Product&lt;CustomMetadata&gt; = await tagit.products.register({
+  tagId: 'NFC-TAG-001-XYZ',
+  metadata: {
+    productName: 'Custom Product',
+    brand: 'My Brand',
+    serialNumber: 'SN-001',
+    customField: 'custom value',
+    warrantyYears: 2
+  }
+});
+
+// Typed verification result
+const verification: Verification = await tagit.products.verify('NFC-TAG-001-XYZ');
+
+if (verification.verified) {
+  const owner: string = verification.currentOwner;
+  const metadata: ProductMetadata = verification.metadata;
+}
+
+// Typed transfer
+const transfer: Transfer = await tagit.transfers.initiate({
+  tagId: 'NFC-TAG-001-XYZ',
+  toAddress: '0x8765432109abcdef...'
+});
+
+const status: TransferStatus = transfer.status; // 'pending' | 'completed' | 'cancelled' | 'expired'
+
+// Generic type support for custom responses
+async function getCustomProduct&lt;T extends ProductMetadata&gt;(tagId: string): Promise&lt;Product&lt;T&gt;&gt; {
+  return tagit.products.get(tagId) as Promise&lt;Product&lt;T&gt;&gt;;
+}</code></pre>
+
+            <div class="docs-callout docs-callout-info">
+                <div class="docs-callout-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 16v-4"/>
+                        <path d="M12 8h.01"/>
+                    </svg>
+                    TypeScript Version
+                </div>
+                <p>The SDK requires TypeScript 4.7+ for full type inference support. All types are exported from the main package entry point.</p>
+            </div>
+
+            <h2 id="errors">Error Handling</h2>
+            <p>The SDK provides structured error handling with specific error types and retry strategies.</p>
+
+            <pre><code class="language-javascript">import {
+  TagIt,
+  TagItError,
+  AuthenticationError,
+  NotFoundError,
+  ValidationError,
+  RateLimitError,
+  NetworkError,
+  BlockchainError
+} from '@tagit/sdk';
+
+const tagit = new TagIt({ apiKey: 'your_api_key' });
+
+try {
+  const product = await tagit.products.verify('NFC-TAG-001-XYZ');
+} catch (error) {
+  if (error instanceof AuthenticationError) {
+    console.error('Invalid API key or expired token');
+    // Refresh authentication
+  } else if (error instanceof NotFoundError) {
+    console.error('Product not found:', error.tagId);
+    // Handle missing product
+  } else if (error instanceof ValidationError) {
+    console.error('Invalid input:', error.validationErrors);
+    // Fix input parameters
+    error.validationErrors.forEach(err => {
+      console.log(`Field: ${err.field}, Message: ${err.message}`);
+    });
+  } else if (error instanceof RateLimitError) {
+    console.error('Rate limit exceeded');
+    console.log('Retry after:', error.retryAfter, 'seconds');
+    // Wait and retry
+    await sleep(error.retryAfter * 1000);
+  } else if (error instanceof NetworkError) {
+    console.error('Network error:', error.message);
+    // Retry with exponential backoff
+  } else if (error instanceof BlockchainError) {
+    console.error('Blockchain error:', error.message);
+    console.log('Transaction hash:', error.txHash);
+    // Handle blockchain-specific errors
+  } else if (error instanceof TagItError) {
+    console.error('TagIt error:', error.code, error.message);
+  } else {
+    throw error; // Re-throw unexpected errors
+  }
+}
+
+// Built-in retry with exponential backoff
+const tagit = new TagIt({
+  apiKey: 'your_api_key',
+  retries: 3,
+  retryDelay: 1000, // Initial delay in ms
+  retryBackoff: 2,  // Exponential backoff multiplier
+  retryOn: [500, 502, 503, 504], // HTTP status codes to retry
+  onRetry: (attempt, error) => {
+    console.log(`Retry attempt ${attempt}:`, error.message);
+  }
+});
+
+// Custom retry strategy
+import { withRetry } from '@tagit/sdk';
+
+const result = await withRetry(
+  () => tagit.products.verify('NFC-TAG-001-XYZ'),
+  {
+    maxAttempts: 5,
+    delay: 1000,
+    backoff: 'exponential',
+    shouldRetry: (error) => error instanceof NetworkError,
+    onRetry: (attempt, error, nextDelay) => {
+      console.log(`Attempt ${attempt} failed, retrying in ${nextDelay}ms`);
+    }
+  }
+);</code></pre>
+
+            <div class="docs-callout docs-callout-warning">
+                <div class="docs-callout-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                        <line x1="12" y1="9" x2="12" y2="13"/>
+                        <line x1="12" y1="17" x2="12.01" y2="17"/>
+                    </svg>
+                    Error Handling Best Practice
+                </div>
+                <p>Always implement proper error handling in production. Use the specific error types to provide meaningful feedback to users and implement appropriate recovery strategies.</p>
+            </div>
+
+            <div class="docs-callout docs-callout-success">
+                <div class="docs-callout-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                    Need Help?
+                </div>
+                <p>Join our <a href="#">Discord community</a> for real-time support, or check out the <a href="#">API Reference</a> for detailed endpoint documentation.</p>
+            </div>
+
+            <!-- Page Navigation -->
+            <div class="docs-page-nav">
+                <a href="/docs/nfc/mobile-sdk.html" class="docs-page-nav-item prev">
+                    <span class="docs-page-nav-label">Previous</span>
+                    <span class="docs-page-nav-title">Mobile SDK</span>
+                </a>
+                <a href="/docs/sdk/python.html" class="docs-page-nav-item next">
+                    <span class="docs-page-nav-label">Next</span>
+                    <span class="docs-page-nav-title">Python SDK</span>
+                </a>
+            </div>
+
+            <!-- Edit Link -->
+            <a href="https://github.com/TAG-IT-NETWORK/tagit-docs" class="docs-edit-link" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                </svg>
+                Edit this page on GitHub
+            </a>
+        </main>
+
+        <!-- Right Sidebar - Table of Contents -->
+        <aside class="docs-toc">
+            <div class="docs-toc-title">On this page</div>
+            <a href="#installation" class="docs-toc-link">Installation</a>
+            <a href="#initialization" class="docs-toc-link">Initialization</a>
+            <a href="#products" class="docs-toc-link">Products Module</a>
+            <a href="#register" class="docs-toc-link docs-toc-link-h3">tagit.products.register()</a>
+            <a href="#verify" class="docs-toc-link docs-toc-link-h3">tagit.products.verify()</a>
+            <a href="#get" class="docs-toc-link docs-toc-link-h3">tagit.products.get()</a>
+            <a href="#list" class="docs-toc-link docs-toc-link-h3">tagit.products.list()</a>
+            <a href="#transfers" class="docs-toc-link">Transfers Module</a>
+            <a href="#initiate" class="docs-toc-link docs-toc-link-h3">tagit.transfers.initiate()</a>
+            <a href="#confirm" class="docs-toc-link docs-toc-link-h3">tagit.transfers.confirm()</a>
+            <a href="#events" class="docs-toc-link">Event Handling</a>
+            <a href="#typescript" class="docs-toc-link">TypeScript Support</a>
+            <a href="#errors" class="docs-toc-link">Error Handling</a>
+        </aside>
+    </div>
+
+    <!-- Search Modal -->
+    <div class="docs-search-modal" id="docsSearchModal">
+        <div class="docs-search-modal-content">
+            <div class="docs-search-modal-header">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="m21 21-4.35-4.35"/>
+                </svg>
+                <input type="text" placeholder="Search documentation..." id="docsSearchInput">
+                <button class="docs-search-modal-close" id="docsSearchClose">Esc</button>
+            </div>
+            <div class="docs-search-results" id="docsSearchResults">
+                <div class="docs-search-empty">Type to search documentation...</div>
+            </div>
+            <div class="docs-search-footer">
+                <span><kbd>↑</kbd><kbd>↓</kbd> to navigate</span>
+                <span><kbd>Enter</kbd> to select</span>
+                <span><kbd>Esc</kbd> to close</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+      <svg viewBox="0 0 24 24">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </button>
+
+    <script src="/js/shared.js" defer></script>
+    <script src="/docs/js/docs.js" defer></script>
+</body>
+</html>

@@ -53,28 +53,8 @@
       "destination": "/about/index.html"
     },
     {
-      "source": "/docs/getting-started/:path",
-      "destination": "/docs/getting-started/:path.html"
-    },
-    {
-      "source": "/docs/api/:path",
-      "destination": "/docs/api/:path.html"
-    },
-    {
-      "source": "/docs/contracts/:path",
-      "destination": "/docs/contracts/:path.html"
-    },
-    {
-      "source": "/docs/nfc/:path",
-      "destination": "/docs/nfc/:path.html"
-    },
-    {
-      "source": "/docs/sdk/:path",
-      "destination": "/docs/sdk/:path.html"
-    },
-    {
-      "source": "/docs/tutorials/:path",
-      "destination": "/docs/tutorials/:path.html"
+      "source": "/docs/:folder/:page",
+      "destination": "/docs/:folder/:page.html"
     }
   ]
 }

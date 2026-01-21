@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Start Guide - TAG IT Network Documentation</title>
+    <meta name="description" content="Get started with TAG IT Network in minutes. Learn how to set up your first product authentication system.">
+    <meta name="keywords" content="TAG IT quick start, getting started, setup guide, blockchain authentication">
+    <meta name="author" content="TAG IT Network">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Quick Start Guide - TAG IT Network Documentation">
+    <meta property="og:description" content="Get started with TAG IT Network in minutes.">
+    <meta property="og:image" content="/assets/images/og-image.png">
+    <meta property="og:url" content="https://tagit.network/docs/getting-started/quick-start">
+    <meta property="og:type" content="article">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Quick Start Guide - TAG IT Network Documentation">
+    <meta name="twitter:description" content="Get started with TAG IT Network in minutes.">
+    <meta name="twitter:image" content="/assets/images/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/tagit_logo.png">
+    <link rel="apple-touch-icon" href="/assets/images/tagit_logo.png">
+
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/shared.css">
+    <link rel="stylesheet" href="/css/docs.css">
+</head>
+<body>
+    <!-- Skip to main content link for keyboard users -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Global Cyber Grid Background -->
+    <div class="cyber-grid-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <img src="/assets/images/tagit_logo.png" alt="TAG IT Network Logo" class="logo-img" width="40" height="40">
+        </div>
+        <span>TAG IT Network</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="/#features">Features</a>
+        <a href="/solutions">Solutions</a>
+        <a href="/technology">Technology</a>
+        <a href="/tokenomics">Tokenomics</a>
+        <a href="/docs" class="active">Docs</a>
+        <a href="/about">About</a>
+      </div>
+
+      <button class="nav-cta" id="connectWalletBtn" onclick="handleWalletClick()">
+        Connect Wallet
+      </button>
+
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="/#features">Features</a>
+      <a href="/solutions">Solutions</a>
+      <a href="/technology">Technology</a>
+      <a href="/tokenomics">Tokenomics</a>
+      <a href="/docs" class="active">Docs</a>
+      <a href="/about">About</a>
+      <button class="mobile-cta" onclick="handleWalletClick()">Connect Wallet</button>
+    </div>
+
+    <!-- Mobile Docs Header -->
+    <div class="docs-mobile-header">
+        <button class="docs-mobile-toggle" id="docsMobileToggle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+            <span>Documentation Menu</span>
+            <svg class="docs-mobile-toggle-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 9l6 6 6-6"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Docs Layout -->
+    <div class="docs-layout">
+        <!-- Left Sidebar -->
+        <aside class="docs-sidebar" id="docsSidebar">
+            <div class="docs-sidebar-header">
+                <a href="/docs">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                    Documentation
+                </a>
+            </div>
+
+            <nav>
+                <!-- Getting Started -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">Getting Started</div>
+                    <a href="/docs/getting-started/quick-start.html" class="docs-nav-link active">Quick Start Guide</a>
+                    <a href="/docs/getting-started/platform-overview.html" class="docs-nav-link">Platform Overview</a>
+                    <a href="/docs/getting-started/first-integration.html" class="docs-nav-link">First Integration</a>
+                </div>
+
+                <!-- API Reference -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">API Reference</div>
+                    <a href="/docs/api/rest-api.html" class="docs-nav-link">REST API</a>
+                    <a href="/docs/api/graphql.html" class="docs-nav-link">GraphQL API</a>
+                    <a href="/docs/api/webhooks.html" class="docs-nav-link">Webhooks</a>
+                </div>
+
+                <!-- Smart Contracts -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">Smart Contracts</div>
+                    <a href="/docs/contracts/addresses.html" class="docs-nav-link">Contract Addresses</a>
+                    <a href="/docs/contracts/abi-reference.html" class="docs-nav-link">ABI Reference</a>
+                    <a href="/docs/contracts/audits.html" class="docs-nav-link">Audit Reports</a>
+                </div>
+
+                <!-- NFC Integration -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">NFC Integration</div>
+                    <a href="/docs/nfc/chip-selection.html" class="docs-nav-link">Chip Selection</a>
+                    <a href="/docs/nfc/encoding-guide.html" class="docs-nav-link">Encoding Guide</a>
+                    <a href="/docs/nfc/mobile-sdk.html" class="docs-nav-link">Mobile SDK</a>
+                </div>
+
+                <!-- SDK & Libraries -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">SDK & Libraries</div>
+                    <a href="/docs/sdk/javascript.html" class="docs-nav-link">JavaScript SDK</a>
+                    <a href="/docs/sdk/python.html" class="docs-nav-link">Python SDK</a>
+                    <a href="/docs/sdk/mobile.html" class="docs-nav-link">Mobile SDKs</a>
+                </div>
+
+                <!-- Tutorials -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">Tutorials</div>
+                    <a href="/docs/tutorials/product-tagging.html" class="docs-nav-link">Product Tagging</a>
+                    <a href="/docs/tutorials/ownership-transfer.html" class="docs-nav-link">Ownership Transfer</a>
+                    <a href="/docs/tutorials/dispute-resolution.html" class="docs-nav-link">Dispute Resolution</a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="docs-content" id="main-content">
+            <div class="docs-breadcrumb">
+                <a href="/docs">Docs</a>
+                <span>/</span>
+                <a href="/docs/getting-started/quick-start">Getting Started</a>
+                <span>/</span>
+                <span>Quick Start</span>
+            </div>
+
+            <h1>Quick Start Guide</h1>
+            <p class="docs-lead">Get up and running with TAG IT Network in under 5 minutes. This guide walks you through creating your account, getting API keys, and verifying your first product.</p>
+
+            <h2 id="prerequisites">Prerequisites</h2>
+            <p>Before you begin, make sure you have:</p>
+            <ul>
+                <li>A modern web browser (Chrome, Firefox, Safari, or Edge)</li>
+                <li>A cryptocurrency wallet (MetaMask recommended)</li>
+                <li>Basic familiarity with REST APIs</li>
+                <li>Node.js 16+ or Python 3.8+ (for SDK usage)</li>
+            </ul>
+
+            <h2 id="create-account">Step 1: Create Your Developer Account</h2>
+            <p>Start by creating a free developer account on the TAG IT Network dashboard:</p>
+            <ol>
+                <li>Visit <a href="#">dashboard.tagit.network</a></li>
+                <li>Click <strong>"Sign Up"</strong> and connect your wallet</li>
+                <li>Complete the verification process</li>
+                <li>Access your dashboard to get your API keys</li>
+            </ol>
+
+            <div class="docs-callout docs-callout-info">
+                <div class="docs-callout-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 16v-4"/>
+                        <path d="M12 8h.01"/>
+                    </svg>
+                    Note
+                </div>
+                <p>Your developer account includes 1,000 free API calls per month on the Starter plan. Upgrade anytime for higher limits.</p>
+            </div>
+
+            <h2 id="get-api-keys">Step 2: Get Your API Keys</h2>
+            <p>Once logged in, navigate to <strong>Settings &gt; API Keys</strong> to generate your credentials:</p>
+
+            <pre><code class="language-bash"># Your API credentials will look like this:
+API_KEY=tagit_live_abc123xyz789
+API_SECRET=sk_live_your_secret_key_here</code></pre>
+
+            <div class="docs-callout docs-callout-warning">
+                <div class="docs-callout-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                        <line x1="12" y1="9" x2="12" y2="13"/>
+                        <line x1="12" y1="17" x2="12.01" y2="17"/>
+                    </svg>
+                    Security Warning
+                </div>
+                <p>Never expose your API secret in client-side code. Always use environment variables and keep secrets server-side.</p>
+            </div>
+
+            <h2 id="install-sdk">Step 3: Install the SDK</h2>
+            <p>Choose your preferred language and install the TAG IT SDK:</p>
+
+            <h3 id="javascript">JavaScript / Node.js</h3>
+            <pre><code class="language-bash">npm install @tagit/sdk
+# or
+yarn add @tagit/sdk</code></pre>
+
+            <h3 id="python">Python</h3>
+            <pre><code class="language-bash">pip install tagit-sdk</code></pre>
+
+            <h2 id="verify-product">Step 4: Verify Your First Product</h2>
+            <p>Now let's verify a product's authenticity using the SDK:</p>
+
+            <pre><code class="language-javascript">// Initialize the TAG IT SDK
+import { TagIt } from '@tagit/sdk';
+
+const tagit = new TagIt({
+  apiKey: process.env.TAGIT_API_KEY,
+  network: 'mainnet' // or 'testnet' for development
+});
+
+// Verify a product by its NFC tag ID
+async function verifyProduct(tagId) {
+  try {
+    const result = await tagit.products.verify(tagId);
+
+    console.log('Product verified:', result.verified);
+    console.log('Product info:', result.metadata);
+    console.log('Current owner:', result.currentOwner);
+    console.log('Transfer history:', result.transferHistory);
+
+    return result;
+  } catch (error) {
+    console.error('Verification failed:', error.message);
+  }
+}
+
+// Example usage
+verifyProduct('NFC-TAG-001-ABC');</code></pre>
+
+            <h2 id="test-response">Step 5: Understanding the Response</h2>
+            <p>A successful verification returns a response object like this:</p>
+
+            <pre><code class="language-json">{
+  "verified": true,
+  "tagId": "NFC-TAG-001-ABC",
+  "metadata": {
+    "productName": "Luxury Watch Model X",
+    "brand": "Premium Timepieces",
+    "serialNumber": "SN-2024-001234",
+    "manufactureDate": "2024-01-15",
+    "origin": "Switzerland"
+  },
+  "currentOwner": "0x742d35Cc6634C0532925a3b844Bc9e7595f5c9E8",
+  "transferHistory": [
+    {
+      "from": "0x0000000000000000000000000000000000000000",
+      "to": "0x742d35Cc6634C0532925a3b844Bc9e7595f5c9E8",
+      "timestamp": "2024-01-15T10:30:00Z",
+      "txHash": "0xabc123..."
+    }
+  ],
+  "blockchain": {
+    "network": "polygon",
+    "contractAddress": "0x1234567890abcdef...",
+    "tokenId": "12345"
+  }
+}</code></pre>
+
+            <h2 id="next-steps">Next Steps</h2>
+            <p>Congratulations! You've successfully verified your first product. Here's what to explore next:</p>
+            <ul>
+                <li><a href="/docs/getting-started/platform-overview">Platform Overview</a> - Understand the full TAG IT architecture</li>
+                <li><a href="/docs/api/rest-api">REST API Reference</a> - Explore all available endpoints</li>
+                <li><a href="/docs/tutorials/product-tagging">Product Tagging Tutorial</a> - Learn how to tag physical products</li>
+                <li><a href="/docs/nfc/chip-selection">NFC Chip Selection</a> - Choose the right hardware for your use case</li>
+            </ul>
+
+            <div class="docs-callout docs-callout-success">
+                <div class="docs-callout-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                    Need Help?
+                </div>
+                <p>Join our <a href="#">Discord community</a> for real-time support, or check out the <a href="#">FAQ</a> for common questions.</p>
+            </div>
+
+            <!-- Page Navigation -->
+            <div class="docs-page-nav">
+                <div></div>
+                <a href="/docs/getting-started/platform-overview.html" class="docs-page-nav-item next">
+                    <span class="docs-page-nav-label">Next</span>
+                    <span class="docs-page-nav-title">Platform Overview</span>
+                </a>
+            </div>
+
+            <!-- Edit Link -->
+            <a href="https://github.com/TAG-IT-NETWORK/tagit-docs" class="docs-edit-link" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                </svg>
+                Edit this page on GitHub
+            </a>
+        </main>
+
+        <!-- Right Sidebar - Table of Contents -->
+        <aside class="docs-toc">
+            <div class="docs-toc-title">On this page</div>
+            <a href="#prerequisites" class="docs-toc-link">Prerequisites</a>
+            <a href="#create-account" class="docs-toc-link">Create Your Account</a>
+            <a href="#get-api-keys" class="docs-toc-link">Get Your API Keys</a>
+            <a href="#install-sdk" class="docs-toc-link">Install the SDK</a>
+            <a href="#javascript" class="docs-toc-link docs-toc-link-h3">JavaScript / Node.js</a>
+            <a href="#python" class="docs-toc-link docs-toc-link-h3">Python</a>
+            <a href="#verify-product" class="docs-toc-link">Verify Your First Product</a>
+            <a href="#test-response" class="docs-toc-link">Understanding the Response</a>
+            <a href="#next-steps" class="docs-toc-link">Next Steps</a>
+        </aside>
+    </div>
+
+    <!-- Search Modal -->
+    <div class="docs-search-modal" id="docsSearchModal">
+        <div class="docs-search-modal-content">
+            <div class="docs-search-modal-header">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="m21 21-4.35-4.35"/>
+                </svg>
+                <input type="text" placeholder="Search documentation..." id="docsSearchInput">
+                <button class="docs-search-modal-close" id="docsSearchClose">Esc</button>
+            </div>
+            <div class="docs-search-results" id="docsSearchResults">
+                <div class="docs-search-empty">Type to search documentation...</div>
+            </div>
+            <div class="docs-search-footer">
+                <span><kbd>↑</kbd><kbd>↓</kbd> to navigate</span>
+                <span><kbd>Enter</kbd> to select</span>
+                <span><kbd>Esc</kbd> to close</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+      <svg viewBox="0 0 24 24">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </button>
+
+    <script src="/js/shared.js" defer></script>
+    <script src="/docs/js/docs.js" defer></script>
+</body>
+</html>

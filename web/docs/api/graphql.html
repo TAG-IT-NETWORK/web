@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GraphQL API - TAG IT Network Documentation</title>
+    <meta name="description" content="Query TAG IT Network data with our flexible GraphQL API.">
+    <meta name="keywords" content="TAG IT GraphQL, GraphQL API, query API, blockchain data API">
+    <meta name="author" content="TAG IT Network">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="GraphQL API - TAG IT Network Documentation">
+    <meta property="og:description" content="Query TAG IT Network data with our flexible GraphQL API.">
+    <meta property="og:image" content="/assets/images/og-image.png">
+    <meta property="og:url" content="https://tagit.network/docs/api/graphql">
+    <meta property="og:type" content="article">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GraphQL API - TAG IT Network Documentation">
+    <meta name="twitter:description" content="Query TAG IT Network data with our flexible GraphQL API.">
+    <meta name="twitter:image" content="/assets/images/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/tagit_logo.png">
+    <link rel="apple-touch-icon" href="/assets/images/tagit_logo.png">
+
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/shared.css">
+    <link rel="stylesheet" href="/css/docs.css">
+</head>
+<body>
+    <!-- Skip to main content link for keyboard users -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Global Cyber Grid Background -->
+    <div class="cyber-grid-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <img src="/assets/images/tagit_logo.png" alt="TAG IT Network Logo" class="logo-img" width="40" height="40">
+        </div>
+        <span>TAG IT Network</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="/#features">Features</a>
+        <a href="/solutions">Solutions</a>
+        <a href="/technology">Technology</a>
+        <a href="/tokenomics">Tokenomics</a>
+        <a href="/docs" class="active">Docs</a>
+        <a href="/about">About</a>
+      </div>
+
+      <button class="nav-cta" id="connectWalletBtn" onclick="handleWalletClick()">
+        Connect Wallet
+      </button>
+
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="/#features">Features</a>
+      <a href="/solutions">Solutions</a>
+      <a href="/technology">Technology</a>
+      <a href="/tokenomics">Tokenomics</a>
+      <a href="/docs" class="active">Docs</a>
+      <a href="/about">About</a>
+      <button class="mobile-cta" onclick="handleWalletClick()">Connect Wallet</button>
+    </div>
+
+    <!-- Mobile Docs Header -->
+    <div class="docs-mobile-header">
+        <button class="docs-mobile-toggle" id="docsMobileToggle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+            <span>Documentation Menu</span>
+            <svg class="docs-mobile-toggle-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 9l6 6 6-6"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Docs Layout -->
+    <div class="docs-layout">
+        <!-- Left Sidebar -->
+        <aside class="docs-sidebar" id="docsSidebar">
+            <div class="docs-sidebar-header">
+                <a href="/docs">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                    Documentation
+                </a>
+            </div>
+
+            <nav>
+                <!-- Getting Started -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">Getting Started</div>
+                    <a href="/docs/getting-started/quick-start.html" class="docs-nav-link">Quick Start Guide</a>
+                    <a href="/docs/getting-started/platform-overview.html" class="docs-nav-link">Platform Overview</a>
+                    <a href="/docs/getting-started/first-integration.html" class="docs-nav-link">First Integration</a>
+                </div>
+
+                <!-- API Reference -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">API Reference</div>
+                    <a href="/docs/api/rest-api.html" class="docs-nav-link">REST API</a>
+                    <a href="/docs/api/graphql.html" class="docs-nav-link active">GraphQL API</a>
+                    <a href="/docs/api/webhooks.html" class="docs-nav-link">Webhooks</a>
+                </div>
+
+                <!-- Smart Contracts -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">Smart Contracts</div>
+                    <a href="/docs/contracts/addresses.html" class="docs-nav-link">Contract Addresses</a>
+                    <a href="/docs/contracts/abi-reference.html" class="docs-nav-link">ABI Reference</a>
+                    <a href="/docs/contracts/audits.html" class="docs-nav-link">Audit Reports</a>
+                </div>
+
+                <!-- NFC Integration -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">NFC Integration</div>
+                    <a href="/docs/nfc/chip-selection.html" class="docs-nav-link">Chip Selection</a>
+                    <a href="/docs/nfc/encoding-guide.html" class="docs-nav-link">Encoding Guide</a>
+                    <a href="/docs/nfc/mobile-sdk.html" class="docs-nav-link">Mobile SDK</a>
+                </div>
+
+                <!-- SDK & Libraries -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">SDK & Libraries</div>
+                    <a href="/docs/sdk/javascript.html" class="docs-nav-link">JavaScript SDK</a>
+                    <a href="/docs/sdk/python.html" class="docs-nav-link">Python SDK</a>
+                    <a href="/docs/sdk/mobile.html" class="docs-nav-link">Mobile SDKs</a>
+                </div>
+
+                <!-- Tutorials -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">Tutorials</div>
+                    <a href="/docs/tutorials/product-tagging.html" class="docs-nav-link">Product Tagging</a>
+                    <a href="/docs/tutorials/ownership-transfer.html" class="docs-nav-link">Ownership Transfer</a>
+                    <a href="/docs/tutorials/dispute-resolution.html" class="docs-nav-link">Dispute Resolution</a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="docs-content" id="main-content">
+            <div class="docs-breadcrumb">
+                <a href="/docs">Docs</a>
+                <span>/</span>
+                <a href="/docs/api/rest-api">API Reference</a>
+                <span>/</span>
+                <span>GraphQL API</span>
+            </div>
+
+            <h1>GraphQL API</h1>
+            <p class="docs-lead">Use GraphQL to query exactly the data you need with a single request.</p>
+
+            <h2 id="endpoint">GraphQL Endpoint</h2>
+            <p>All GraphQL queries and mutations are sent to a single endpoint:</p>
+
+            <pre><code class="language-bash">https://api.tagit.network/graphql</code></pre>
+
+            <p>Send all requests as POST with the query in the request body:</p>
+
+            <pre><code class="language-bash">curl -X POST https://api.tagit.network/graphql \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -d '{"query": "{ product(id: \"123\") { name } }"}'</code></pre>
+
+            <h2 id="authentication">Authentication</h2>
+            <p>Include your API key in the Authorization header for all requests:</p>
+
+            <pre><code class="language-javascript">const headers = {
+  'Content-Type': 'application/json',
+  'Authorization': 'Bearer tagit_live_abc123xyz789'
+};</code></pre>
+
+            <div class="docs-callout docs-callout-warning">
+                <div class="docs-callout-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                        <line x1="12" y1="9" x2="12" y2="13"/>
+                        <line x1="12" y1="17" x2="12.01" y2="17"/>
+                    </svg>
+                    Security Warning
+                </div>
+                <p>Never expose your API key in client-side code. Use a backend proxy for browser-based applications.</p>
+            </div>
+
+            <h2 id="schema">Schema Overview</h2>
+            <p>The TAG IT GraphQL schema includes the following main types:</p>
+
+            <pre><code class="language-graphql">type Product {
+  id: ID!
+  tagId: String!
+  name: String!
+  brand: String
+  serialNumber: String
+  metadata: ProductMetadata
+  currentOwner: Owner
+  transfers: [Transfer!]!
+  verified: Boolean!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type Owner {
+  address: String!
+  displayName: String
+  verifiedAt: DateTime
+}
+
+type Transfer {
+  id: ID!
+  from: Owner!
+  to: Owner!
+  timestamp: DateTime!
+  txHash: String!
+  status: TransferStatus!
+}
+
+type ProductMetadata {
+  description: String
+  imageUrl: String
+  manufactureDate: Date
+  origin: String
+  customFields: JSON
+}
+
+enum TransferStatus {
+  PENDING
+  CONFIRMED
+  FAILED
+}</code></pre>
+
+            <h2 id="queries">Available Queries</h2>
+            <p>Query TAG IT data with these available operations:</p>
+
+            <h3 id="product-query">product(id: ID!)</h3>
+            <p>Fetch a single product by its unique ID:</p>
+
+            <pre><code class="language-graphql">query GetProduct($productId: ID!) {
+  product(id: $productId) {
+    id
+    tagId
+    name
+    brand
+    serialNumber
+    verified
+    currentOwner {
+      address
+      displayName
+    }
+    metadata {
+      description
+      imageUrl
+      origin
+      manufactureDate
+    }
+    transfers {
+      from { address }
+      to { address }
+      timestamp
+      txHash
+      status
+    }
+  }
+}</code></pre>
+
+            <p>Example response:</p>
+
+            <pre><code class="language-json">{
+  "data": {
+    "product": {
+      "id": "prod_abc123",
+      "tagId": "NFC-TAG-001-ABC",
+      "name": "Luxury Watch Model X",
+      "brand": "Premium Timepieces",
+      "serialNumber": "SN-2024-001234",
+      "verified": true,
+      "currentOwner": {
+        "address": "0x742d35Cc6634C0532925a3b844Bc9e7595f5c9E8",
+        "displayName": "John Doe"
+      },
+      "metadata": {
+        "description": "Swiss-made automatic watch",
+        "imageUrl": "https://cdn.tagit.network/images/watch-x.jpg",
+        "origin": "Switzerland",
+        "manufactureDate": "2024-01-15"
+      },
+      "transfers": [
+        {
+          "from": { "address": "0x0000000000000000000000000000000000000000" },
+          "to": { "address": "0x742d35Cc6634C0532925a3b844Bc9e7595f5c9E8" },
+          "timestamp": "2024-01-15T10:30:00Z",
+          "txHash": "0xabc123...",
+          "status": "CONFIRMED"
+        }
+      ]
+    }
+  }
+}</code></pre>
+
+            <h3 id="products-query">products(filter: ProductFilter)</h3>
+            <p>Query multiple products with optional filtering and pagination:</p>
+
+            <pre><code class="language-graphql">query GetProducts($filter: ProductFilter, $first: Int, $after: String) {
+  products(filter: $filter, first: $first, after: $after) {
+    edges {
+      node {
+        id
+        tagId
+        name
+        brand
+        verified
+        currentOwner {
+          address
+        }
+      }
+      cursor
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+    totalCount
+  }
+}
+
+# Variables
+{
+  "filter": {
+    "brand": "Premium Timepieces",
+    "verified": true
+  },
+  "first": 10,
+  "after": null
+}</code></pre>
+
+            <h3 id="transfers-query">transfers(productId: ID)</h3>
+            <p>Query transfer history for a specific product or across all products:</p>
+
+            <pre><code class="language-graphql">query GetTransfers($productId: ID, $status: TransferStatus, $first: Int) {
+  transfers(productId: $productId, status: $status, first: $first) {
+    edges {
+      node {
+        id
+        product {
+          id
+          name
+        }
+        from {
+          address
+          displayName
+        }
+        to {
+          address
+          displayName
+        }
+        timestamp
+        txHash
+        status
+      }
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}</code></pre>
+
+            <h2 id="mutations">Mutations</h2>
+            <p>Modify data using these mutation operations:</p>
+
+            <h3 id="register-mutation">registerProduct</h3>
+            <p>Register a new product on the TAG IT Network:</p>
+
+            <pre><code class="language-graphql">mutation RegisterProduct($input: RegisterProductInput!) {
+  registerProduct(input: $input) {
+    product {
+      id
+      tagId
+      name
+      verified
+      currentOwner {
+        address
+      }
+    }
+    txHash
+    success
+    errors {
+      field
+      message
+    }
+  }
+}
+
+# Variables
+{
+  "input": {
+    "tagId": "NFC-TAG-002-XYZ",
+    "name": "Designer Handbag",
+    "brand": "Luxury Fashion House",
+    "serialNumber": "BAG-2024-5678",
+    "metadata": {
+      "description": "Limited edition leather handbag",
+      "origin": "Italy",
+      "manufactureDate": "2024-03-01"
+    }
+  }
+}</code></pre>
+
+            <h3 id="transfer-mutation">initiateTransfer</h3>
+            <p>Initiate an ownership transfer for a product:</p>
+
+            <pre><code class="language-graphql">mutation InitiateTransfer($input: TransferInput!) {
+  initiateTransfer(input: $input) {
+    transfer {
+      id
+      from { address }
+      to { address }
+      status
+      txHash
+    }
+    success
+    errors {
+      field
+      message
+    }
+  }
+}
+
+# Variables
+{
+  "input": {
+    "productId": "prod_abc123",
+    "toAddress": "0x8901234567890abcdef1234567890abcdef12345",
+    "message": "Transferring to new owner"
+  }
+}</code></pre>
+
+            <div class="docs-callout docs-callout-info">
+                <div class="docs-callout-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 16v-4"/>
+                        <path d="M12 8h.01"/>
+                    </svg>
+                    Note
+                </div>
+                <p>Transfers require wallet signature verification. The recipient must accept the transfer before ownership is finalized.</p>
+            </div>
+
+            <h2 id="subscriptions">Subscriptions</h2>
+            <p>Subscribe to real-time updates using GraphQL subscriptions over WebSocket:</p>
+
+            <pre><code class="language-graphql">subscription OnProductTransfer($productId: ID!) {
+  productTransferred(productId: $productId) {
+    transfer {
+      id
+      from { address }
+      to { address }
+      timestamp
+      status
+    }
+    product {
+      id
+      name
+      currentOwner { address }
+    }
+  }
+}
+
+subscription OnProductVerification {
+  productVerified {
+    product {
+      id
+      tagId
+      name
+      verified
+    }
+    verifiedAt
+    verifiedBy { address }
+  }
+}</code></pre>
+
+            <p>Connect to the WebSocket endpoint for subscriptions:</p>
+
+            <pre><code class="language-javascript">import { createClient } from 'graphql-ws';
+
+const client = createClient({
+  url: 'wss://api.tagit.network/graphql',
+  connectionParams: {
+    authorization: 'Bearer tagit_live_abc123xyz789'
+  }
+});
+
+// Subscribe to product transfers
+const unsubscribe = client.subscribe(
+  {
+    query: `subscription OnProductTransfer($productId: ID!) {
+      productTransferred(productId: $productId) {
+        transfer { id status }
+        product { name currentOwner { address } }
+      }
+    }`,
+    variables: { productId: 'prod_abc123' }
+  },
+  {
+    next: (data) => console.log('Transfer update:', data),
+    error: (err) => console.error('Subscription error:', err),
+    complete: () => console.log('Subscription completed')
+  }
+);</code></pre>
+
+            <h2 id="playground">GraphQL Playground</h2>
+            <p>Explore and test the API interactively using our GraphQL Playground:</p>
+
+            <div class="docs-callout docs-callout-success">
+                <div class="docs-callout-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                    Try it Out
+                </div>
+                <p>Access the interactive GraphQL Playground at <a href="https://api.tagit.network/playground" target="_blank" rel="noopener">api.tagit.network/playground</a> to test queries with your API key.</p>
+            </div>
+
+            <p>The playground provides:</p>
+            <ul>
+                <li>Auto-complete for queries and mutations</li>
+                <li>Schema documentation browser</li>
+                <li>Query history and saved queries</li>
+                <li>Variable editor for parameterized queries</li>
+                <li>Real-time subscription testing</li>
+            </ul>
+
+            <!-- Page Navigation -->
+            <div class="docs-page-nav">
+                <a href="/docs/api/rest-api.html" class="docs-page-nav-item prev">
+                    <span class="docs-page-nav-label">Previous</span>
+                    <span class="docs-page-nav-title">REST API</span>
+                </a>
+                <a href="/docs/api/webhooks.html" class="docs-page-nav-item next">
+                    <span class="docs-page-nav-label">Next</span>
+                    <span class="docs-page-nav-title">Webhooks</span>
+                </a>
+            </div>
+
+            <!-- Edit Link -->
+            <a href="https://github.com/TAG-IT-NETWORK/tagit-docs" class="docs-edit-link" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                </svg>
+                Edit this page on GitHub
+            </a>
+        </main>
+
+        <!-- Right Sidebar - Table of Contents -->
+        <aside class="docs-toc">
+            <div class="docs-toc-title">On this page</div>
+            <a href="#endpoint" class="docs-toc-link">GraphQL Endpoint</a>
+            <a href="#authentication" class="docs-toc-link">Authentication</a>
+            <a href="#schema" class="docs-toc-link">Schema Overview</a>
+            <a href="#queries" class="docs-toc-link">Available Queries</a>
+            <a href="#product-query" class="docs-toc-link docs-toc-link-h3">product(id: ID!)</a>
+            <a href="#products-query" class="docs-toc-link docs-toc-link-h3">products(filter: ProductFilter)</a>
+            <a href="#transfers-query" class="docs-toc-link docs-toc-link-h3">transfers(productId: ID)</a>
+            <a href="#mutations" class="docs-toc-link">Mutations</a>
+            <a href="#register-mutation" class="docs-toc-link docs-toc-link-h3">registerProduct</a>
+            <a href="#transfer-mutation" class="docs-toc-link docs-toc-link-h3">initiateTransfer</a>
+            <a href="#subscriptions" class="docs-toc-link">Subscriptions</a>
+            <a href="#playground" class="docs-toc-link">GraphQL Playground</a>
+        </aside>
+    </div>
+
+    <!-- Search Modal -->
+    <div class="docs-search-modal" id="docsSearchModal">
+        <div class="docs-search-modal-content">
+            <div class="docs-search-modal-header">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="m21 21-4.35-4.35"/>
+                </svg>
+                <input type="text" placeholder="Search documentation..." id="docsSearchInput">
+                <button class="docs-search-modal-close" id="docsSearchClose">Esc</button>
+            </div>
+            <div class="docs-search-results" id="docsSearchResults">
+                <div class="docs-search-empty">Type to search documentation...</div>
+            </div>
+            <div class="docs-search-footer">
+                <span><kbd>↑</kbd><kbd>↓</kbd> to navigate</span>
+                <span><kbd>Enter</kbd> to select</span>
+                <span><kbd>Esc</kbd> to close</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+      <svg viewBox="0 0 24 24">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </button>
+
+    <script src="/js/shared.js" defer></script>
+    <script src="/docs/js/docs.js" defer></script>
+</body>
+</html>

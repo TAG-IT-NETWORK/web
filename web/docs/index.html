@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - TAG IT Network</title>
+    <meta name="description" content="Technical documentation, API reference, and developer resources for TAG IT Network's blockchain-powered product authentication platform.">
+    <meta name="keywords" content="TAG IT documentation, API reference, developer docs, blockchain API, NFC integration, SDK">
+    <meta name="author" content="TAG IT Network">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Documentation - TAG IT Network">
+    <meta property="og:description" content="Technical documentation, API reference, and developer resources for TAG IT Network.">
+    <meta property="og:image" content="/assets/images/og-image.png">
+    <meta property="og:url" content="https://tagit.network/docs">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Documentation - TAG IT Network">
+    <meta name="twitter:description" content="Technical documentation, API reference, and developer resources for TAG IT Network.">
+    <meta name="twitter:image" content="/assets/images/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/tagit_logo.png">
+    <link rel="apple-touch-icon" href="/assets/images/tagit_logo.png">
+
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/shared.css">
+    <link rel="stylesheet" href="/css/docs.css">
+</head>
+<body>
+    <!-- Skip to main content link for keyboard users -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Noscript fallback -->
+    <noscript>
+        <div class="noscript-message">
+            This website requires JavaScript for some features. Core content is still accessible.
+        </div>
+    </noscript>
+
+    <!-- Global Cyber Grid Background -->
+    <div class="cyber-grid-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <img src="/assets/images/tagit_logo.png" alt="TAG IT Network Logo" class="logo-img" width="40" height="40">
+        </div>
+        <span>TAG IT Network</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="/#features">Features</a>
+        <a href="/solutions">Solutions</a>
+        <a href="/technology">Technology</a>
+        <a href="/tokenomics">Tokenomics</a>
+        <a href="/docs" class="active">Docs</a>
+        <a href="/about">About</a>
+      </div>
+
+      <button class="nav-cta" id="connectWalletBtn" onclick="handleWalletClick()">
+        Connect Wallet
+      </button>
+
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="/#features">Features</a>
+      <a href="/solutions">Solutions</a>
+      <a href="/technology">Technology</a>
+      <a href="/tokenomics">Tokenomics</a>
+      <a href="/docs" class="active">Docs</a>
+      <a href="/about">About</a>
+      <button class="mobile-cta" onclick="handleWalletClick()">Connect Wallet</button>
+    </div>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="docs-hero">
+            <div class="container" style="text-align: center;">
+                <h1>Documentation</h1>
+                <p>Everything you need to integrate TAG IT Network into your products and systems.</p>
+
+                <div class="docs-search" id="docsSearchTrigger">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"/>
+                        <path d="m21 21-4.35-4.35"/>
+                    </svg>
+                    <input type="text" placeholder="Search documentation..." readonly>
+                    <span class="docs-search-shortcut">Ctrl+K</span>
+                </div>
+
+                <!-- Testnet Notice -->
+                <div class="docs-notice">
+                    <div class="docs-notice-icon">🚧</div>
+                    <div class="docs-notice-content">
+                        <h4>Work in Progress</h4>
+                        <p>
+                            We're actively building this documentation as TAG IT Network evolves on testnet. Some info may change before <strong>Mainnet (Q3-Q4 2026)</strong>. For the latest details, visit our <a href="https://github.com/TAG-IT-NETWORK/tagit-docs" target="_blank" rel="noopener">GitHub</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Documentation Grid -->
+        <section class="container">
+            <div class="docs-grid">
+                <!-- Getting Started -->
+                <div class="docs-card">
+                    <div class="docs-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3>Getting Started</h3>
+                    <p>Learn the basics of TAG IT Network and set up your first authentication system in minutes.</p>
+                    <div class="docs-card-links">
+                        <a href="/docs/getting-started/quick-start.html">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                            Quick Start Guide
+                        </a>
+                        <a href="/docs/getting-started/platform-overview.html">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                            Platform Overview
+                        </a>
+                        <a href="/docs/getting-started/first-integration.html">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                            First Integration
+                        </a>
+                    </div>
+                </div>
+
+                <!-- API Reference -->
+                <div class="docs-card">
+                    <div class="docs-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 18l6-6-6-6"/>
+                            <path d="M8 6l-6 6 6 6"/>
+                        </svg>
+                    </div>
+                    <h3>API Reference</h3>
+                    <p>Complete API documentation with endpoints, authentication, and request/response examples.</p>
+                    <div class="docs-card-links">
+                        <a href="/docs/api/rest-api.html">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                            REST API
+                        </a>
+                        <a href="/docs/api/graphql.html">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                            GraphQL API
+                        </a>
+                        <a href="/docs/api/webhooks.html">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                            Webhooks
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Smart Contracts -->
+                <div class="docs-card">
+                    <div class="docs-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                            <path d="M8 21h8"/>
+                            <path d="M12 17v4"/>
+                        </svg>
+                    </div>
+                    <h3>Smart Contracts</h3>
+                    <p>Explore our audited smart contracts for NFT minting, token management, and DAO governance.</p>
+                    <div class="docs-card-links">
+                        <a href="/docs/contracts/addresses.html">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                            Contract Addresses
+                        </a>
+                        <a href="/docs/contracts/abi-reference.html">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                            ABI Reference
+                        </a>
+                        <a href="/docs/contracts/audits.html">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                            Audit Reports
+                        </a>
+                    </div>
+                </div>
+
+                <!-- NFC Integration -->
+                <div class="docs-card">
+                    <div class="docs-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 8.32a7.43 7.43 0 0 1 0 7.36"/>
+                            <path d="M9.46 6.21a11.76 11.76 0 0 1 0 11.58"/>
+                            <path d="M12.91 4.1a15.91 15.91 0 0 1 .01 15.8"/>
+                            <path d="M16.37 2a20.16 20.16 0 0 1 0 20"/>
+                        </svg>
+                    </div>
+                    <h3>NFC Integration</h3>
+                    <p>Hardware guides for integrating NFC chips with our authentication protocol.</p>
+                    <div class="docs-card-links">
+                        <a href="/docs/nfc/chip-selection.html">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                            Chip Selection
+                        </a>
+                        <a href="/docs/nfc/encoding-guide.html">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                            Encoding Guide
+                        </a>
+                        <a href="/docs/nfc/mobile-sdk.html">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                            Mobile SDK
+                        </a>
+                    </div>
+                </div>
+
+                <!-- SDK & Libraries -->
+                <div class="docs-card">
+                    <div class="docs-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                            <path d="M3.27 6.96L12 12.01l8.73-5.05"/>
+                            <path d="M12 22.08V12"/>
+                        </svg>
+                    </div>
+                    <h3>SDK & Libraries</h3>
+                    <p>Official SDKs for JavaScript, Python, Go, and mobile platforms.</p>
+                    <div class="docs-card-links">
+                        <a href="/docs/sdk/javascript.html">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                            JavaScript SDK
+                        </a>
+                        <a href="/docs/sdk/python.html">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                            Python SDK
+                        </a>
+                        <a href="/docs/sdk/mobile.html">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                            Mobile SDKs
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tutorials -->
+                <div class="docs-card">
+                    <div class="docs-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                        </svg>
+                    </div>
+                    <h3>Tutorials</h3>
+                    <p>Step-by-step guides for common use cases and integration patterns.</p>
+                    <div class="docs-card-links">
+                        <a href="/docs/tutorials/product-tagging.html">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                            Product Tagging
+                        </a>
+                        <a href="/docs/tutorials/ownership-transfer.html">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                            Ownership Transfer
+                        </a>
+                        <a href="/docs/tutorials/dispute-resolution.html">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                            Dispute Resolution
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- API Example Section -->
+        <section class="api-section">
+            <div class="container">
+                <h2>Quick API Example</h2>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>JavaScript - Verify Product Authenticity</span>
+                        <button onclick="copyCode()">Copy</button>
+                    </div>
+                    <div class="code-content">
+<pre><span class="comment">// Initialize TAG IT SDK</span>
+<span class="keyword">import</span> { TagIt } <span class="keyword">from</span> <span class="string">'@tagit/sdk'</span>;
+
+<span class="keyword">const</span> tagit = <span class="keyword">new</span> <span class="function">TagIt</span>({
+  apiKey: <span class="variable">process.env.TAGIT_API_KEY</span>,
+  network: <span class="string">'mainnet'</span>
+});
+
+<span class="comment">// Verify product authenticity by NFC tag ID</span>
+<span class="keyword">async function</span> <span class="function">verifyProduct</span>(tagId) {
+  <span class="keyword">const</span> result = <span class="keyword">await</span> tagit.products.<span class="function">verify</span>(tagId);
+
+  <span class="keyword">return</span> {
+    authentic: result.verified,
+    product: result.metadata,
+    owner: result.currentOwner,
+    history: result.transferHistory
+  };
+}</pre>
+                    </div>
+                </div>
+
+                <!-- SDK Badges -->
+                <div class="sdk-badges">
+                    <a href="https://github.com/TAG-IT-NETWORK/tagit-docs/tree/main/docs/sdk" target="_blank" rel="noopener" class="sdk-badge">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"/></svg>
+                        JavaScript
+                    </a>
+                    <a href="https://github.com/TAG-IT-NETWORK/tagit-docs/tree/main/docs/sdk" target="_blank" rel="noopener" class="sdk-badge">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09zm13.09 3.95l.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25l-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08z"/></svg>
+                        Python
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resources Section -->
+        <section class="resources-section">
+            <div class="container">
+                <h2 style="font-size: 2rem; margin-bottom: 2rem; text-align: center;">Additional Resources</h2>
+
+                <div class="resources-grid">
+                    <a href="https://github.com/TAG-IT-NETWORK/tagit-docs/tree/main/docs/sdk" target="_blank" rel="noopener" class="resource-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                        </svg>
+                        <div>
+                            <h4>GitHub Repository</h4>
+                            <p>Open source SDKs and examples</p>
+                        </div>
+                    </a>
+
+                    <a href="https://discord.gg/gAnkjGyh" target="_blank" rel="noopener" class="resource-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                        </svg>
+                        <div>
+                            <h4>Discord Community</h4>
+                            <p>Get help from the community</p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="resource-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                            <path d="M12 17h.01"/>
+                        </svg>
+                        <div>
+                            <h4>FAQ</h4>
+                            <p>Common questions answered</p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="resource-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <path d="M14 2v6h6"/>
+                            <path d="M16 13H8"/>
+                            <path d="M16 17H8"/>
+                            <path d="M10 9H8"/>
+                        </svg>
+                        <div>
+                            <h4>Changelog</h4>
+                            <p>Latest updates and releases</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section" style="padding: 80px 0; text-align: center; border-top: 1px solid rgba(0, 212, 255, 0.1);">
+            <div class="container">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Ready to Get Started?</h2>
+                <p style="color: var(--muted-gray); font-size: 1.25rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Create your free developer account and start integrating TAG IT Network today.
+                </p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="#" class="btn-primary" style="padding: 1rem 2rem; font-size: 1.1rem;">
+                        Create Developer Account
+                    </a>
+                    <a href="#" class="btn-secondary" style="padding: 1rem 2rem; font-size: 1.1rem;">
+                        View Demo App
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">
+            <div class="logo-icon">
+              <img src="/assets/images/tagit_logo.png" alt="TAG IT Network Logo" class="logo-img" loading="lazy" width="40" height="40">
+            </div>
+            <span>TAG IT Network</span>
+          </div>
+          <p>Blockchain-powered product authentication for the modern world.</p>
+        </div>
+
+        <div class="footer-column">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#lifecycle">Life Cycle</a></li>
+            <li><a href="/solutions">Solutions</a></li>
+            <li><a href="/technology">Technology</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="https://github.com/TAG-IT-NETWORK/tagit-docs" target="_blank" rel="noopener">Documentation</a></li>
+            <li><a href="https://github.com/TAG-IT-NETWORK/tagit-docs" target="_blank" rel="noopener">API Reference</a></li>
+            <li><a href="https://github.com/TAG-IT-NETWORK/tagit-docs" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://www.youtube.com/@TAGITNetwork" target="_blank" rel="noopener">YouTube</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#" class="legal-trigger" data-modal="privacy">Privacy Policy</a></li>
+            <li><a href="#" class="legal-trigger" data-modal="terms">Terms of Service</a></li>
+            <li><a href="#" class="legal-trigger" data-modal="cookie">Cookie Policy</a></li>
+            <li><a href="#" id="contactModalTrigger">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 TAG IT Network. All rights reserved.</p>
+        <div class="footer-socials">
+          <a href="https://x.com/TAGITNETWORK" target="_blank" rel="noopener" title="Twitter/X">𝕏</a>
+          <a href="https://www.linkedin.com/company/106815890" target="_blank" rel="noopener" title="LinkedIn">in</a>
+          <a href="https://www.youtube.com/@TAGITNetwork" target="_blank" rel="noopener" title="YouTube">▶</a>
+          <a href="https://github.com/TAG-IT-NETWORK/tagit-docs" target="_blank" rel="noopener" title="GitHub">⌘</a>
+          <a href="https://discord.gg/gAnkjGyh" target="_blank" rel="noopener" title="Discord">💬</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Wallet Connection Modal -->
+    <div class="wallet-modal-overlay" id="walletModal">
+      <div class="wallet-modal">
+        <button class="wallet-modal-close" onclick="closeWalletModal()" aria-label="Close modal">×</button>
+
+        <div id="walletConnectState">
+          <div class="wallet-modal-header">
+            <h3>Connect Wallet</h3>
+            <p>Connect your wallet to interact with TAG IT Network</p>
+          </div>
+
+          <div class="wallet-option" onclick="connectMetaMask()" role="button" tabindex="0">
+            <div class="wallet-option-icon">🦊</div>
+            <div class="wallet-option-info">
+              <h4>MetaMask</h4>
+              <p>Connect using browser extension</p>
+            </div>
+            <span class="wallet-option-arrow">→</span>
+          </div>
+
+          <div class="wallet-option" onclick="connectWalletConnect()" role="button" tabindex="0">
+            <div class="wallet-option-icon">🔗</div>
+            <div class="wallet-option-info">
+              <h4>WalletConnect</h4>
+              <p>Scan with your mobile wallet</p>
+            </div>
+            <span class="wallet-option-arrow">→</span>
+          </div>
+
+          <div class="wallet-option" onclick="connectCoinbase()" role="button" tabindex="0">
+            <div class="wallet-option-icon">💰</div>
+            <div class="wallet-option-info">
+              <h4>Coinbase Wallet</h4>
+              <p>Connect using Coinbase</p>
+            </div>
+            <span class="wallet-option-arrow">→</span>
+          </div>
+
+          <p class="wallet-modal-note">By connecting, you agree to TAG IT Network's Terms of Service</p>
+        </div>
+
+        <div id="walletConnectedState" style="display: none;">
+          <div class="wallet-modal-header">
+            <h3>Wallet Connected</h3>
+            <p>Your wallet is connected to TAG IT Network</p>
+          </div>
+          <div class="wallet-connected-info">
+            <div class="address-full" id="fullAddress">0x0000...0000</div>
+            <div id="networkInfo"></div>
+            <button class="wallet-disconnect-btn" onclick="disconnectWallet()">Disconnect Wallet</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Search Modal -->
+    <div class="docs-search-modal" id="docsSearchModal">
+        <div class="docs-search-modal-content">
+            <div class="docs-search-modal-header">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="m21 21-4.35-4.35"/>
+                </svg>
+                <input type="text" placeholder="Search documentation..." id="docsSearchInput">
+                <button class="docs-search-modal-close" id="docsSearchClose">Esc</button>
+            </div>
+            <div class="docs-search-results" id="docsSearchResults">
+                <div class="docs-search-empty">Type to search documentation...</div>
+            </div>
+            <div class="docs-search-footer">
+                <span><kbd>↑</kbd><kbd>↓</kbd> to navigate</span>
+                <span><kbd>Enter</kbd> to select</span>
+                <span><kbd>Esc</kbd> to close</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div class="legal-modal-overlay" id="privacyModalOverlay">
+      <div class="legal-modal">
+        <button class="legal-modal-close" data-close-modal>✕</button>
+
+        <div class="legal-modal-header">
+          <h3><span>🔒</span> Privacy Policy</h3>
+          <p class="effective-date">Effective Date: September 29, 2025</p>
+        </div>
+
+        <div class="legal-modal-content">
+          <p class="legal-intro">
+            TAG IT Network ("TAG IT," "we," "us," or "our") operates the <a href="https://www.tagit.network">https://www.tagit.network</a> website and related services (the "Service"). This page informs you of our policies regarding the collection, use, and disclosure of Personal Data when you use our Service. We will not use or share your information with anyone except as described in this Privacy Policy.
+          </p>
+
+          <div class="legal-section">
+            <h4>📋 Information Collection and Use</h4>
+            <p>While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you. Personally identifiable information may include, but is not limited to your name, email address, phone number ("Personal Data").</p>
+          </div>
+
+          <div class="legal-section">
+            <h4>📊 Log Data</h4>
+            <p>We collect information that your browser sends whenever you visit our Service ("Log Data"). This Log Data may include information such as your IP address, browser type, browser version, the pages of our Service that you visit, the time and date of your visit, the time spent on those pages and other statistics.</p>
+          </div>
+
+          <div class="legal-section">
+            <h4>🍪 Cookies</h4>
+            <p>Cookies are files with a small amount of data, which may include an anonymous unique identifier. Cookies are sent to your browser from a website and transferred to your device. We use "cookies" to collect information in order to improve our services for you. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent.</p>
+          </div>
+
+          <div class="legal-section">
+            <h4>🛡️ Security</h4>
+            <p>We secure your personal information using encryption and access controls. Only authorized employees have access with two-factor authentication enforced. Servers are routinely patched and scanned for vulnerabilities.</p>
+          </div>
+
+          <div class="legal-section">
+            <h4>📝 Changes to This Privacy Policy</h4>
+            <p>This Privacy Policy is effective as of the "Effective Date" indicated at the top of this Privacy Policy and will remain in effect until updated or replaced. We reserve the right to update or modify this Privacy Policy from time to time with or without notice. Your continued use of the Service after any changes or revisions to this Privacy Policy shall indicate your agreement with the terms of such revised Privacy Policy.</p>
+          </div>
+
+          <div class="legal-section">
+            <h4>✉️ Contact Us</h4>
+            <p>If you have any questions about this Privacy Policy, please contact us via email: <a href="mailto:info@tagit.network">info@tagit.network</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Terms of Service Modal -->
+    <div class="legal-modal-overlay" id="termsModalOverlay">
+      <div class="legal-modal">
+        <button class="legal-modal-close" data-close-modal>✕</button>
+
+        <div class="legal-modal-header">
+          <h3><span>📜</span> Terms of Service</h3>
+          <p class="effective-date">Effective Date: September 29, 2025</p>
+        </div>
+
+        <div class="legal-modal-content">
+          <p class="legal-intro">
+            Welcome to TAG IT Network. By accessing or using our website at <a href="https://www.tagit.network">https://www.tagit.network</a> and related services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our Service.
+          </p>
+
+          <div class="legal-section">
+            <h4>📌 Acceptance of Terms</h4>
+            <p>By accessing and using the Service, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service and our Privacy Policy. We reserve the right to modify these terms at any time, and such modifications shall be effective immediately upon posting.</p>
+          </div>
+
+          <div class="legal-section">
+            <h4>🔐 Use of Service</h4>
+            <p>You agree to use the Service only for lawful purposes and in accordance with these Terms. You agree not to use the Service in any way that violates any applicable federal, state, local, or international law or regulation, or to engage in any conduct that restricts or inhibits anyone's use or enjoyment of the Service.</p>
+          </div>
+
+          <div class="legal-section">
+            <h4>💎 Intellectual Property</h4>
+            <p>The Service and its entire contents, features, and functionality (including but not limited to all information, software, text, displays, images, video, and audio) are owned by TAG IT Network, its licensors, or other providers and are protected by copyright, trademark, patent, trade secret, and other intellectual property laws.</p>
+          </div>
+
+          <div class="legal-section">
+            <h4>🪙 Token Disclaimer</h4>
+            <p>The $TAGIT token is a utility token intended solely for use within the TAG IT Network ecosystem. It is not intended to be a security, investment contract, or any form of financial instrument. Purchasing, holding, or using $TAGIT tokens does not grant any ownership, equity, or voting rights in TAG IT Network or any affiliated entities.</p>
+          </div>
+
+          <div class="legal-section">
+            <h4>⚠️ Limitation of Liability</h4>
+            <p>In no event shall TAG IT Network, its directors, employees, partners, agents, suppliers, or affiliates be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the Service.</p>
+          </div>
+
+          <div class="legal-section">
+            <h4>⚖️ Governing Law</h4>
+            <p>These Terms shall be governed by and construed in accordance with the laws of the State of Florida, United States, without regard to its conflict of law provisions. Any legal action or proceeding arising under these Terms shall be brought exclusively in the federal or state courts located in Duval County, Florida.</p>
+          </div>
+
+          <div class="legal-section">
+            <h4>✉️ Contact Us</h4>
+            <p>If you have any questions about these Terms of Service, please contact us via email: <a href="mailto:info@tagit.network">info@tagit.network</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cookie Policy Modal -->
+    <div class="legal-modal-overlay" id="cookieModalOverlay">
+      <div class="legal-modal">
+        <button class="legal-modal-close" data-close-modal>✕</button>
+
+        <div class="legal-modal-header">
+          <h3><span>🍪</span> Cookie Policy</h3>
+          <p class="effective-date">Effective Date: September 29, 2025</p>
+        </div>
+
+        <div class="legal-modal-content">
+          <p class="legal-intro">
+            This Cookie Policy explains how TAG IT Network ("we," "us," or "our") uses cookies and similar technologies when you visit our website at <a href="https://www.tagit.network">https://www.tagit.network</a>. By using our website, you consent to our use of cookies as described in this policy.
+          </p>
+
+          <div class="legal-section">
+            <h4>🤔 What Are Cookies?</h4>
+            <p>Cookies are small text files that are placed on your device (computer, smartphone, or tablet) when you visit a website. They are widely used to make websites work more efficiently and provide information to website owners. Cookies help us recognize your device and remember your preferences.</p>
+          </div>
+
+          <div class="legal-section">
+            <h4>📂 Types of Cookies We Use</h4>
+            <p><strong>Essential Cookies:</strong> These cookies are necessary for the website to function properly. They enable basic features like page navigation and access to secure areas.<br><br>
+            <strong>Analytics Cookies:</strong> These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously.<br><br>
+            <strong>Preference Cookies:</strong> These cookies remember your settings and preferences to provide a more personalized experience.</p>
+          </div>
+
+          <div class="legal-section">
+            <h4>🎛️ Managing Cookies</h4>
+            <p>Most web browsers allow you to control cookies through their settings. You can set your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you disable cookies, some features of our website may not function properly.</p>
+          </div>
+
+          <div class="legal-section">
+            <h4>🔄 Third-Party Cookies</h4>
+            <p>We may use third-party services that set their own cookies, such as analytics providers. These third parties have their own privacy policies and cookie practices. We do not have control over these third-party cookies.</p>
+          </div>
+
+          <div class="legal-section">
+            <h4>📝 Updates to This Policy</h4>
+            <p>We may update this Cookie Policy from time to time to reflect changes in our practices or for operational, legal, or regulatory reasons. We encourage you to review this policy periodically for the latest information.</p>
+          </div>
+
+          <div class="legal-section">
+            <h4>✉️ Contact Us</h4>
+            <p>If you have any questions about our use of cookies, please contact us via email: <a href="mailto:info@tagit.network">info@tagit.network</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+      <svg viewBox="0 0 24 24">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </button>
+
+    <script src="/js/shared.js" defer></script>
+    <script src="/docs/js/docs.js" defer></script>
+</body>
+</html>

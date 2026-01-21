@@ -1,0 +1,2180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - TAG IT Network</title>
+    <meta name="description" content="Learn about TAG IT Network's mission to combat counterfeiting and build trust through blockchain-powered product authentication.">
+    <meta name="keywords" content="TAG IT about, blockchain authentication, anti-counterfeiting, product verification, supply chain transparency">
+    <meta name="author" content="TAG IT Network">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="About - TAG IT Network">
+    <meta property="og:description" content="Learn about TAG IT Network's mission to combat counterfeiting and build trust.">
+    <meta property="og:image" content="/assets/images/og-image.png">
+    <meta property="og:url" content="https://tagit.network/about">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About - TAG IT Network">
+    <meta name="twitter:description" content="Learn about TAG IT Network's mission to combat counterfeiting and build trust.">
+    <meta name="twitter:image" content="/assets/images/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/tagit_logo.png">
+    <link rel="apple-touch-icon" href="/assets/images/tagit_logo.png">
+
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/shared.css">
+
+    <style>
+        /* Page-specific styles - Aligned with Home Page Design System */
+
+        /* Hero Section - Matches home page hero pattern */
+        .about-hero {
+            padding: 160px 48px 100px;
+            background: linear-gradient(180deg, var(--blue-5) 0%, transparent 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Circuit grid background effect */
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                linear-gradient(var(--blue-5) 1px, transparent 1px),
+                linear-gradient(90deg, var(--blue-5) 1px, transparent 1px);
+            background-size: 60px 60px;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        /* Gradient orb effect */
+        .about-hero::after {
+            content: '';
+            position: absolute;
+            top: -20%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--blue-10) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .about-hero .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-hero h1 {
+            font-size: clamp(var(--text-4xl), 7vw, 80px);
+            font-weight: var(--font-bold);
+            line-height: var(--leading-tight);
+            letter-spacing: -0.03em;
+            margin-bottom: var(--space-lg);
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .about-hero h1 .gradient-text {
+            background: linear-gradient(135deg, var(--electric-blue) 0%, var(--circuit-green) 50%, var(--neon-purple) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-hero .lead {
+            font-size: clamp(var(--text-base), 2vw, var(--text-xl));
+            color: var(--muted-gray);
+            max-width: 720px;
+            margin: 0 auto;
+            line-height: var(--leading-loose);
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-hero {
+                padding: 120px 24px 60px;
+            }
+
+            .about-hero h1 {
+                font-size: clamp(32px, 8vw, 48px);
+            }
+
+            .about-hero .lead {
+                font-size: var(--text-base);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .about-hero {
+                padding: 100px 16px 48px;
+            }
+
+            .about-hero::after {
+                width: 300px;
+                height: 300px;
+            }
+        }
+
+        /* Mission Section - Matches home page section pattern */
+        .mission-section {
+            padding: var(--space-section) 48px;
+            border-top: var(--border-medium);
+        }
+
+        .mission-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--content-gap);
+            align-items: center;
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .mission-section {
+                padding: var(--space-xl) 24px;
+            }
+
+            .mission-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-lg);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .mission-section {
+                padding: var(--space-lg) 16px;
+            }
+        }
+
+        .mission-content h2 {
+            font-size: clamp(var(--text-3xl), 4vw, var(--text-4xl));
+            font-weight: var(--font-bold);
+            margin-bottom: var(--space-md);
+        }
+
+        .mission-content p {
+            color: var(--muted-gray);
+            font-size: var(--text-lg);
+            line-height: var(--leading-loose);
+            margin-bottom: var(--space-sm);
+        }
+
+        .mission-visual {
+            position: relative;
+            padding: var(--space-lg);
+        }
+
+        .problem-solution {
+            display: grid;
+            gap: var(--space-md);
+        }
+
+        .problem-box, .solution-box {
+            padding: var(--card-padding);
+            border-radius: var(--radius-lg);
+            position: relative;
+            transition: var(--transition-base);
+        }
+
+        .problem-box {
+            background: rgba(255, 71, 87, 0.05);
+            border: 1px solid rgba(255, 71, 87, 0.2);
+        }
+
+        .problem-box:hover {
+            border-color: rgba(255, 71, 87, 0.4);
+        }
+
+        .solution-box {
+            background: var(--green-10);
+            border: 1px solid var(--green-30);
+        }
+
+        .solution-box:hover {
+            border-color: var(--circuit-green);
+        }
+
+        .problem-box h3 {
+            color: var(--danger-red);
+            margin-bottom: var(--space-sm);
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            font-weight: var(--font-semibold);
+        }
+
+        .solution-box h3 {
+            color: var(--circuit-green);
+            margin-bottom: var(--space-sm);
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            font-weight: var(--font-semibold);
+        }
+
+        .problem-box ul, .solution-box ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .problem-box li, .solution-box li {
+            padding: var(--space-xs) 0;
+            color: var(--muted-gray);
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-sm);
+            font-size: var(--text-sm);
+            line-height: var(--leading-normal);
+        }
+
+        .problem-box li::before {
+            content: "✕";
+            color: var(--danger-red);
+            font-weight: var(--font-bold);
+        }
+
+        .solution-box li::before {
+            content: "✓";
+            color: var(--circuit-green);
+            font-weight: var(--font-bold);
+        }
+
+        /* Values Section - Matches home page features pattern */
+        .values-section {
+            padding: var(--space-section) 48px;
+            background: var(--blue-5);
+        }
+
+        .values-section h2 {
+            text-align: center;
+            font-size: clamp(var(--text-3xl), 4vw, var(--text-4xl));
+            font-weight: var(--font-bold);
+            margin-bottom: var(--space-xl);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--card-gap);
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        @media (max-width: 1200px) {
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .values-section {
+                padding: var(--space-xl) 24px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .values-section {
+                padding: var(--space-lg) 16px;
+            }
+        }
+
+        .value-card {
+            --card-glow: var(--electric-blue);
+            background: rgba(10, 14, 20, 0.6);
+            border: 1px solid var(--blue-10);
+            border-radius: var(--radius-lg);
+            padding: var(--card-padding);
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .value-card:hover::before {
+            left: 100%;
+        }
+
+        .value-card:hover {
+            border-color: var(--card-glow);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3), 0 0 20px color-mix(in srgb, var(--card-glow) 20%, transparent);
+        }
+
+        .value-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid color-mix(in srgb, var(--card-glow) 40%, transparent);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-md);
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover .value-icon {
+            background: color-mix(in srgb, var(--card-glow) 15%, transparent);
+            box-shadow: 0 0 20px color-mix(in srgb, var(--card-glow) 40%, transparent);
+            transform: scale(1.05);
+        }
+
+        .value-icon svg {
+            width: 28px;
+            height: 28px;
+            color: var(--card-glow);
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover .value-icon svg {
+            transform: scale(1.1);
+        }
+
+        .value-card h3 {
+            font-size: var(--text-lg);
+            font-weight: var(--font-semibold);
+            margin-bottom: var(--space-sm);
+            color: var(--neutral-white);
+        }
+
+        .value-card p {
+            color: var(--muted-gray);
+            font-size: var(--text-sm);
+            line-height: var(--leading-relaxed);
+        }
+
+        .value-quote {
+            font-style: italic;
+            color: var(--card-glow);
+            font-size: 13px;
+            margin-bottom: var(--space-sm);
+            padding: 12px;
+            background: color-mix(in srgb, var(--card-glow) 5%, transparent);
+            border-radius: var(--radius-md);
+            border-left: 3px solid var(--card-glow);
+            text-align: left;
+        }
+
+        /* Color variants for each value card */
+        .value-card.value-primary {
+            --card-glow: var(--circuit-green);
+        }
+
+        .value-card[data-color="cyan"] {
+            --card-glow: var(--electric-blue);
+        }
+
+        .value-card[data-color="purple"] {
+            --card-glow: var(--neon-purple);
+        }
+
+        .value-card[data-color="amber"] {
+            --card-glow: var(--warning-amber);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            padding: var(--space-xl) 0;
+            background: var(--blue-5);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--card-gap);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-lg);
+            }
+
+            .stat-item h3 {
+                font-size: var(--text-3xl);
+            }
+        }
+
+        .stat-item h3 {
+            font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl));
+            font-weight: var(--font-bold);
+            background: linear-gradient(135deg, var(--electric-blue), var(--circuit-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--space-xs);
+        }
+
+        .stat-item p {
+            color: var(--muted-gray);
+            font-size: var(--text-sm);
+            line-height: var(--leading-normal);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: var(--space-section) 0;
+            border-top: var(--border-medium);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--content-gap);
+        }
+
+        @media (max-width: 768px) {
+            .contact-section {
+                padding: var(--space-xl) 24px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: var(--card-gap);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-section {
+                padding: var(--space-lg) 16px;
+            }
+
+            .contact-form {
+                padding: var(--space-md);
+            }
+        }
+
+        .contact-info h2 {
+            font-size: clamp(var(--text-2xl), 3vw, var(--text-3xl));
+            font-weight: var(--font-bold);
+            margin-bottom: var(--space-sm);
+        }
+
+        .contact-info p {
+            color: var(--muted-gray);
+            margin-bottom: var(--space-lg);
+            line-height: var(--leading-relaxed);
+        }
+
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-sm);
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: var(--space-sm);
+            background: var(--blue-5);
+            border: 1px solid var(--blue-10);
+            border-radius: var(--radius-lg);
+            transition: var(--transition-base);
+            text-decoration: none;
+        }
+
+        .contact-method:hover {
+            border-color: var(--electric-blue);
+            transform: translateX(4px);
+        }
+
+        .contact-method svg {
+            width: 24px;
+            height: 24px;
+            color: var(--electric-blue);
+            flex-shrink: 0;
+        }
+
+        .contact-method div h4 {
+            font-size: var(--text-sm);
+            font-weight: var(--font-medium);
+            margin-bottom: 4px;
+            color: var(--neutral-white);
+        }
+
+        .contact-method div p {
+            color: var(--muted-gray);
+            font-size: var(--text-xs);
+            margin: 0;
+        }
+
+        .contact-form {
+            background: var(--blue-5);
+            border: 1px solid var(--blue-10);
+            border-radius: var(--radius-xl);
+            padding: var(--card-padding);
+        }
+
+        .contact-form h3 {
+            font-size: var(--text-xl);
+            font-weight: var(--font-semibold);
+            margin-bottom: var(--space-md);
+        }
+
+        .form-group {
+            margin-bottom: var(--space-md);
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: var(--space-xs);
+            color: var(--muted-gray);
+            font-size: var(--text-sm);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px var(--space-sm);
+            background: var(--blue-5);
+            border: 1px solid var(--blue-20);
+            border-radius: var(--radius-md);
+            color: var(--neutral-white);
+            font-size: var(--text-base);
+            font-family: var(--font-body);
+            transition: var(--transition-base);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--electric-blue);
+            box-shadow: 0 0 20px var(--blue-10);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: var(--space-sm);
+            background: linear-gradient(135deg, var(--electric-blue), var(--circuit-green));
+            border: none;
+            border-radius: var(--radius-md);
+            color: var(--deep-carbon);
+            font-size: var(--text-base);
+            font-weight: var(--font-semibold);
+            cursor: pointer;
+            transition: var(--transition-base);
+        }
+
+        .contact-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--glow-blue);
+        }
+
+        .contact-form button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .form-status {
+            margin-top: var(--space-md);
+            padding: var(--space-sm);
+            border-radius: var(--radius-md);
+            text-align: center;
+            font-size: var(--text-sm);
+            display: none;
+        }
+
+        .form-status.success {
+            display: block;
+            background: var(--green-10);
+            border: 1px solid var(--circuit-green);
+            color: var(--circuit-green);
+        }
+
+        .form-status.error {
+            display: block;
+            background: rgba(255, 71, 87, 0.1);
+            border: 1px solid var(--danger-red);
+            color: var(--danger-red);
+        }
+
+        .form-status.loading {
+            display: block;
+            background: var(--blue-10);
+            border: 1px solid var(--electric-blue);
+            color: var(--electric-blue);
+        }
+
+        /* ========================================
+           PHASE 1: PREMIUM VISUAL ENHANCEMENTS
+           ======================================== */
+
+        /* Hero Scan Line Animation */
+        .hero-scan-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--electric-blue), var(--circuit-green), var(--electric-blue), transparent);
+            animation: scanLine 3s ease-in-out infinite;
+            box-shadow: 0 0 20px var(--electric-blue), 0 0 40px var(--blue-30);
+            z-index: 10;
+        }
+
+        @keyframes scanLine {
+            0%, 100% { opacity: 0.3; transform: scaleX(0.5); }
+            50% { opacity: 1; transform: scaleX(1); }
+        }
+
+        /* Hero Purple Orb */
+        .hero-orb-purple {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            top: 60%;
+            right: -10%;
+            background: radial-gradient(circle, var(--purple-20) 0%, transparent 70%);
+            filter: blur(80px);
+            animation: orbFloat 8s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes orbFloat {
+            0%, 100% { transform: translate(0, 0); opacity: 0.4; }
+            50% { transform: translate(-30px, 20px); opacity: 0.6; }
+        }
+
+        @media (max-width: 768px) {
+            .hero-orb-purple {
+                width: 250px;
+                height: 250px;
+                right: -20%;
+            }
+        }
+
+        /* Stats Section Glassmorphism */
+        .stats-section {
+            padding: var(--space-xl) 0;
+            background: transparent;
+            position: relative;
+        }
+
+        .stat-item {
+            background: rgba(26, 31, 41, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--blue-10);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Top accent line */
+        .stat-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 20%;
+            right: 20%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--electric-blue), transparent);
+            opacity: 0.6;
+        }
+
+        /* Shimmer on hover */
+        .stat-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .stat-item:hover::after {
+            left: 100%;
+        }
+
+        .stat-item:hover {
+            border-color: var(--blue-30);
+            transform: translateY(-4px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3), 0 0 30px var(--blue-15);
+        }
+
+        .stat-item h3 {
+            font-family: 'JetBrains Mono', monospace;
+            text-shadow: 0 0 30px var(--blue-50);
+        }
+
+        /* Section Dividers */
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg,
+                transparent,
+                var(--blue-30) 20%,
+                var(--electric-blue) 50%,
+                var(--blue-30) 80%,
+                transparent);
+            margin: 0;
+            position: relative;
+        }
+
+        .section-divider::after {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: 0;
+            right: 0;
+            height: 7px;
+            background: linear-gradient(90deg,
+                transparent,
+                var(--blue-10) 20%,
+                var(--blue-20) 50%,
+                var(--blue-10) 80%,
+                transparent);
+            filter: blur(4px);
+        }
+
+        /* ========================================
+           PHASE 2: MISSION & VALUES ENHANCEMENTS
+           ======================================== */
+
+        /* Mission Problem/Solution Glassmorphism */
+        .problem-box, .solution-box {
+            background: rgba(26, 31, 41, 0.4);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: var(--radius-lg);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Corner brackets */
+        .problem-box .corner-tl,
+        .problem-box .corner-br,
+        .solution-box .corner-tl,
+        .solution-box .corner-br {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-style: solid;
+            border-width: 2px;
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+
+        .problem-box .corner-tl {
+            top: 8px;
+            left: 8px;
+            border-color: var(--danger-red) transparent transparent var(--danger-red);
+        }
+
+        .problem-box .corner-br {
+            bottom: 8px;
+            right: 8px;
+            border-color: transparent var(--danger-red) var(--danger-red) transparent;
+        }
+
+        .solution-box .corner-tl {
+            top: 8px;
+            left: 8px;
+            border-color: var(--circuit-green) transparent transparent var(--circuit-green);
+        }
+
+        .solution-box .corner-br {
+            bottom: 8px;
+            right: 8px;
+            border-color: transparent var(--circuit-green) var(--circuit-green) transparent;
+        }
+
+        .problem-box:hover .corner-tl,
+        .problem-box:hover .corner-br,
+        .solution-box:hover .corner-tl,
+        .solution-box:hover .corner-br {
+            width: 30px;
+            height: 30px;
+        }
+
+        .problem-box:hover {
+            border-color: rgba(255, 71, 87, 0.5);
+            box-shadow: 0 0 30px rgba(255, 71, 87, 0.2), inset 0 0 20px rgba(255, 71, 87, 0.05);
+        }
+
+        .solution-box:hover {
+            border-color: var(--green-50);
+            box-shadow: 0 0 30px var(--green-20), inset 0 0 20px var(--green-5);
+        }
+
+        /* Icon pulse ring */
+        .problem-box h3 svg,
+        .solution-box h3 svg {
+            position: relative;
+        }
+
+        .icon-pulse-ring {
+            position: absolute;
+            inset: -6px;
+            border-radius: 50%;
+            border: 2px solid currentColor;
+            opacity: 0;
+            animation: iconPulse 2s ease-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes iconPulse {
+            0% { transform: scale(1); opacity: 0.6; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+
+        /* Values Cards Enhanced */
+        .value-card {
+            background: rgba(26, 31, 41, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        /* Rotating gradient border */
+        .value-card .card-border {
+            position: absolute;
+            inset: -1px;
+            border-radius: var(--radius-lg);
+            background: conic-gradient(
+                from var(--border-angle, 0deg),
+                var(--card-glow) 0deg,
+                transparent 60deg,
+                transparent 300deg,
+                var(--card-glow) 360deg
+            );
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+
+        .value-card:hover .card-border {
+            opacity: 0.6;
+            animation: borderRotate 3s linear infinite;
+        }
+
+        @keyframes borderRotate {
+            to { --border-angle: 360deg; }
+        }
+
+        @property --border-angle {
+            syntax: '<angle>';
+            initial-value: 0deg;
+            inherits: false;
+        }
+
+        /* Value icon pulse ring */
+        .value-icon {
+            position: relative;
+        }
+
+        .value-icon .pulse-ring {
+            position: absolute;
+            inset: -6px;
+            border-radius: var(--radius-md);
+            border: 2px solid var(--card-glow);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .value-card:hover .value-icon .pulse-ring {
+            animation: iconPulseActive 1.5s ease-out infinite;
+        }
+
+        @keyframes iconPulseActive {
+            0% { transform: scale(1); opacity: 0.5; }
+            100% { transform: scale(1.3); opacity: 0; }
+        }
+
+        /* Inner glow on hover */
+        .value-card .inner-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120%;
+            height: 120%;
+            background: radial-gradient(circle, color-mix(in srgb, var(--card-glow) 8%, transparent) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .value-card:hover .inner-glow {
+            opacity: 1;
+        }
+
+        /* ========================================
+           PHASE 2: CONTACT FORM GLASSMORPHISM
+           ======================================== */
+
+        .contact-form {
+            background: rgba(26, 31, 41, 0.5);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--blue-10);
+            border-radius: var(--radius-xl);
+            padding: var(--card-padding);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Top gradient accent */
+        .contact-form::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--electric-blue), var(--circuit-green), transparent);
+            border-radius: 2px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            background: rgba(10, 14, 20, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--blue-15);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--electric-blue);
+            box-shadow:
+                0 0 0 3px var(--blue-10),
+                0 0 20px var(--blue-20),
+                inset 0 0 10px var(--blue-5);
+        }
+
+        .form-group input:focus + label,
+        .form-group textarea:focus + label {
+            color: var(--electric-blue);
+            text-shadow: 0 0 10px var(--blue-30);
+        }
+
+        /* Submit button shimmer */
+        .contact-form button {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-form button::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .contact-form button:hover::after {
+            left: 100%;
+        }
+
+        .contact-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--glow-blue), 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Contact Methods Enhanced */
+        .contact-method {
+            background: rgba(26, 31, 41, 0.4);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--blue-10);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .contact-method::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 3px;
+            height: 0;
+            background: var(--electric-blue);
+            transition: height 0.3s ease;
+            transform: translateY(-50%);
+            border-radius: 0 2px 2px 0;
+        }
+
+        .contact-method:hover::before {
+            height: 60%;
+            box-shadow: 0 0 15px var(--electric-blue);
+        }
+
+        .contact-method:hover {
+            border-color: var(--blue-30);
+            transform: translateX(8px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3), -5px 0 20px var(--blue-10);
+        }
+
+        .contact-method:hover svg {
+            filter: drop-shadow(0 0 8px var(--electric-blue));
+            transform: scale(1.1);
+        }
+
+        .contact-method svg {
+            transition: all 0.3s ease;
+        }
+
+        /* ========================================
+           PHASE 3: FLOATING PARTICLES
+           ======================================== */
+
+        .about-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .about-particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--electric-blue);
+            border-radius: 50%;
+            opacity: 0;
+            animation: particleFloat 15s linear infinite;
+        }
+
+        .about-particle:nth-child(even) {
+            background: var(--circuit-green);
+        }
+
+        .about-particle:nth-child(3n) {
+            background: var(--neon-purple);
+        }
+
+        @keyframes particleFloat {
+            0% {
+                opacity: 0;
+                transform: translateY(100vh) scale(0);
+            }
+            10% {
+                opacity: 0.6;
+                transform: translateY(80vh) scale(1);
+            }
+            90% {
+                opacity: 0.6;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-20vh) scale(0.5);
+            }
+        }
+
+        /* ========================================
+           PHASE 3: PERFORMANCE & ACCESSIBILITY
+           ======================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+            .about-particle,
+            .value-icon .pulse-ring,
+            .card-border,
+            .hero-scan-line,
+            .hero-orb-purple,
+            .icon-pulse-ring {
+                animation: none !important;
+            }
+
+            .value-card,
+            .stat-item,
+            .contact-method,
+            .problem-box,
+            .solution-box {
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* GPU Acceleration */
+        .about-particle,
+        .value-card,
+        .stat-item,
+        .contact-form button::after,
+        .hero-orb-purple {
+            will-change: transform, opacity;
+            backface-visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to main content link for keyboard users -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Noscript fallback -->
+    <noscript>
+        <div class="noscript-message">
+            This website requires JavaScript for some features. Core content is still accessible.
+        </div>
+    </noscript>
+
+    <!-- Global Cyber Grid Background -->
+    <div class="cyber-grid-overlay"></div>
+
+    <!-- Floating Particles -->
+    <div class="about-particles" id="aboutParticles"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <img src="/assets/images/tagit_logo.png" alt="TAG IT Network Logo" class="logo-img" width="40" height="40">
+        </div>
+        <span>TAG IT Network</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="/#features">Features</a>
+        <a href="/solutions">Solutions</a>
+        <a href="/technology">Technology</a>
+        <a href="/tokenomics">Tokenomics</a>
+        <a href="/docs">Docs</a>
+        <a href="/about" class="active">About</a>
+      </div>
+
+      <button class="nav-cta" id="connectWalletBtn" onclick="handleWalletClick()">
+        Connect Wallet
+      </button>
+
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="/#features">Features</a>
+      <a href="/solutions">Solutions</a>
+      <a href="/technology">Technology</a>
+      <a href="/tokenomics">Tokenomics</a>
+      <a href="/docs">Docs</a>
+      <a href="/about" class="active">About</a>
+      <button class="mobile-cta" onclick="handleWalletClick()">Connect Wallet</button>
+    </div>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="about-hero">
+            <div class="hero-scan-line"></div>
+            <div class="hero-orb-purple"></div>
+            <div class="container">
+                <h1>Reshaping <span class="gradient-text">Global Trade</span></h1>
+                <p class="lead">
+                    Turning provenance, compliance, and settlement into verifiable, programmable, low-friction rails. Enable any authorized party to verify authenticity, ownership, and status - privately when needed, publicly when useful - while enabling safe recovery, recalls, and auditable custody.
+                </p>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h3>$2T+</h3>
+                        <p>Annual counterfeit market size</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>7%</h3>
+                        <p>Of global trade is counterfeit</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>2.5M</h3>
+                        <p>Jobs lost to counterfeiting yearly</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>100%</h3>
+                        <p>On-chain verification accuracy</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Divider -->
+        <div class="section-divider"></div>
+
+        <!-- Mission Section -->
+        <section class="mission-section">
+            <div class="container">
+                <div class="mission-grid">
+                    <div class="mission-content">
+                        <h2>Our Mission</h2>
+                        <p>
+                            Reshape global trade by turning provenance, compliance, and settlement into verifiable, programmable, low-friction rails.
+                        </p>
+                        <p>
+                            Enable any authorized party to verify authenticity, ownership, and status - privately when needed, publicly when useful - while enabling safe recovery, recalls, and auditable custody.
+                        </p>
+                        <p>
+                            TAG IT Network combines the immutability of blockchain with the physical security of NFC chips to create unforgeable product identities. Every product gets a unique digital twin that travels with it from manufacturer to consumer - creating transparent, trustworthy supply chains.
+                        </p>
+                    </div>
+                    <div class="mission-visual">
+                        <div class="problem-solution">
+                            <div class="problem-box">
+                                <div class="corner-tl"></div>
+                                <div class="corner-br"></div>
+                                <h3>
+                                    <span style="position: relative; display: inline-flex;">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <circle cx="12" cy="12" r="10"/>
+                                            <path d="M15 9l-6 6"/>
+                                            <path d="M9 9l6 6"/>
+                                        </svg>
+                                        <span class="icon-pulse-ring"></span>
+                                    </span>
+                                    The Problem
+                                </h3>
+                                <ul>
+                                    <li>Holograms and labels easily faked</li>
+                                    <li>No way to track ownership changes</li>
+                                    <li>Consumer safety at risk</li>
+                                    <li>Brands lose billions in revenue</li>
+                                </ul>
+                            </div>
+                            <div class="solution-box">
+                                <div class="corner-tl"></div>
+                                <div class="corner-br"></div>
+                                <h3>
+                                    <span style="position: relative; display: inline-flex;">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                            <path d="M22 4L12 14.01l-3-3"/>
+                                        </svg>
+                                        <span class="icon-pulse-ring"></span>
+                                    </span>
+                                    Our Solution
+                                </h3>
+                                <ul>
+                                    <li>Cryptographic NFC authentication</li>
+                                    <li>Immutable blockchain records</li>
+                                    <li>Complete ownership history</li>
+                                    <li>Community-powered verification</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Divider -->
+        <div class="section-divider"></div>
+
+        <!-- Core Values Section -->
+        <section class="values-section">
+            <div class="container">
+                <h2>Core Values</h2>
+                <div class="values-grid">
+                    <div class="value-card value-primary" data-color="green">
+                        <div class="card-border"></div>
+                        <div class="inner-glow"></div>
+                        <div class="value-icon">
+                            <div class="pulse-ring"></div>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                        </div>
+                        <h3>Security First</h3>
+                        <p>Threat model everything, default deny, build security from the beginning</p>
+                    </div>
+
+                    <div class="value-card" data-color="cyan">
+                        <div class="card-border"></div>
+                        <div class="inner-glow"></div>
+                        <div class="value-icon">
+                            <div class="pulse-ring"></div>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                                <line x1="12" y1="15" x2="12" y2="17"/>
+                            </svg>
+                        </div>
+                        <h3>Transparency & Trust</h3>
+                        <p>Immutable records, verifiable provenance, cryptographic proof</p>
+                    </div>
+
+                    <div class="value-card" data-color="purple">
+                        <div class="card-border"></div>
+                        <div class="inner-glow"></div>
+                        <div class="value-icon">
+                            <div class="pulse-ring"></div>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 12l2 2 4-4"/>
+                                <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/>
+                            </svg>
+                        </div>
+                        <h3>Excellence & Rigor</h3>
+                        <p>No shortcuts on quality, no hand-waving on security, always audit-grade standards</p>
+                    </div>
+
+                    <div class="value-card" data-color="amber">
+                        <div class="card-border"></div>
+                        <div class="inner-glow"></div>
+                        <div class="value-icon">
+                            <div class="pulse-ring"></div>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <h3>User Protection First</h3>
+                        <p>Safeguard users, investors, and partners through design - not as an afterthought</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Roadmap Section -->
+        <section id="roadmap" class="section">
+          <div class="background-container">
+            <div class="particle-field">
+              <div class="particle"></div>
+              <div class="particle"></div>
+              <div class="particle"></div>
+              <div class="particle"></div>
+              <div class="particle"></div>
+              <div class="particle"></div>
+            </div>
+          </div>
+
+          <span class="section-label fade-in">✦ THE JOURNEY</span>
+          <h2 class="section-title fade-in">Product Roadmap</h2>
+          <p class="section-subtitle fade-in">From testnet to global expansion - our path to building the trusted technosphere.</p>
+
+          <div class="roadmap-container">
+            <!-- Timeline Progress Header -->
+            <div class="timeline-header">
+              <div class="timeline-progress-bar">
+                <div class="timeline-segment active">
+                  <div class="you-are-here">YOU ARE HERE</div>
+                  <div class="segment-node"></div>
+                  <div class="segment-line"></div>
+                  <div class="segment-label">Q1 2026</div>
+                </div>
+                <div class="timeline-segment upcoming">
+                  <div class="segment-node"></div>
+                  <div class="segment-line"></div>
+                  <div class="segment-label">Q2 2026</div>
+                </div>
+                <div class="timeline-segment purple">
+                  <div class="segment-node"></div>
+                  <div class="segment-line"></div>
+                  <div class="segment-label">Q3-Q4</div>
+                </div>
+                <div class="timeline-segment amber">
+                  <div class="segment-node"></div>
+                  <div class="segment-label">2027+</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-track">
+              <!-- Phase 1: BUILD & VALIDATE -->
+              <div class="phase-card current fade-in">
+                <div class="phase-content">
+                  <div class="phase-header">
+                    <div class="phase-number">1</div>
+                    <div class="phase-title">BUILD & VALIDATE</div>
+                  </div>
+                  <div class="phase-period">Q1 2026 • Current Phase</div>
+                  <div class="phase-progress">
+                    <div class="progress-header">
+                      <span class="progress-label">Progress</span>
+                      <span class="progress-value">63%</span>
+                    </div>
+                    <div class="progress-bar">
+                      <div class="progress-fill"></div>
+                    </div>
+                  </div>
+                  <div class="milestones-list">
+                    <div class="milestone-item">
+                      <span class="milestone-status">✅</span>
+                      <span class="milestone-text">Testnet Launch</span>
+                      <span class="milestone-date">Jan 2026</span>
+                    </div>
+                    <div class="milestone-item">
+                      <span class="milestone-status">✅</span>
+                      <span class="milestone-text">NIST CSF 2.0 Compliance</span>
+                      <span class="milestone-date">Jan 2026</span>
+                    </div>
+                    <div class="milestone-item">
+                      <span class="milestone-status">🔄</span>
+                      <span class="milestone-text">Security Audit (Contracts)</span>
+                      <span class="milestone-date">Mar 2026</span>
+                    </div>
+                    <div class="milestone-item">
+                      <span class="milestone-status">⚪</span>
+                      <span class="milestone-text">Seed Round Close</span>
+                      <span class="milestone-date">Q1 2026</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Phase 2: MAINNET LAUNCH -->
+              <div class="phase-card upcoming fade-in">
+                <div class="phase-content">
+                  <div class="phase-header">
+                    <div class="phase-number">2</div>
+                    <div class="phase-title">MAINNET LAUNCH</div>
+                  </div>
+                  <div class="phase-period">Q2 2026</div>
+                  <div class="milestones-list">
+                    <div class="milestone-item">
+                      <span class="milestone-status">⚪</span>
+                      <span class="milestone-text">Mainnet L2 Launch</span>
+                      <span class="milestone-date">Apr 2026</span>
+                    </div>
+                    <div class="milestone-item">
+                      <span class="milestone-status">⚪</span>
+                      <span class="milestone-text">$TAGIT Token TGE</span>
+                      <span class="milestone-date">May 2026</span>
+                    </div>
+                    <div class="milestone-item">
+                      <span class="milestone-status">⚪</span>
+                      <span class="milestone-text">Recovery Protocol (AIRP)</span>
+                      <span class="milestone-date">Apr 2026</span>
+                    </div>
+                    <div class="milestone-item">
+                      <span class="milestone-status">⚪</span>
+                      <span class="milestone-text">10+ Enterprise Clients</span>
+                      <span class="milestone-date">Jun 2026</span>
+                    </div>
+                    <div class="milestone-item">
+                      <span class="milestone-status">⚪</span>
+                      <span class="milestone-text">ORACULAR Mobile App</span>
+                      <span class="milestone-date">May 2026</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Phase 3: SCALE & GOVERN -->
+              <div class="phase-card future purple fade-in">
+                <div class="phase-content">
+                  <div class="phase-header">
+                    <div class="phase-number">3</div>
+                    <div class="phase-title">SCALE & GOVERN</div>
+                  </div>
+                  <div class="phase-period">Q3-Q4 2026</div>
+                  <div class="milestones-list">
+                    <div class="milestone-item">
+                      <span class="milestone-status">⚪</span>
+                      <span class="milestone-text">DAO Governance Live</span>
+                      <span class="milestone-date">Q3 2026</span>
+                    </div>
+                    <div class="milestone-item">
+                      <span class="milestone-status">⚪</span>
+                      <span class="milestone-text">Chainlink CCIP Multi-Chain</span>
+                      <span class="milestone-date">Q3 2026</span>
+                    </div>
+                    <div class="milestone-item">
+                      <span class="milestone-status">⚪</span>
+                      <span class="milestone-text">1M+ Assets Tracked</span>
+                      <span class="milestone-date">Q4 2026</span>
+                    </div>
+                    <div class="milestone-item">
+                      <span class="milestone-status">⚪</span>
+                      <span class="milestone-text">AI Assurance Engine</span>
+                      <span class="milestone-date">Q4 2026</span>
+                    </div>
+                    <div class="milestone-item">
+                      <span class="milestone-status">⚪</span>
+                      <span class="milestone-text">Series A ($10-15M)</span>
+                      <span class="milestone-date">Q4 2026</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Phase 4: GLOBAL EXPANSION -->
+              <div class="phase-card future amber fade-in">
+                <div class="phase-content">
+                  <div class="phase-header">
+                    <div class="phase-number">4</div>
+                    <div class="phase-title">GLOBAL EXPANSION</div>
+                  </div>
+                  <div class="phase-period">2027+</div>
+                  <div class="milestones-list">
+                    <div class="milestone-item">
+                      <span class="milestone-status">⚪</span>
+                      <span class="milestone-text">Post-Quantum Cryptography</span>
+                      <span class="milestone-date">2027</span>
+                    </div>
+                    <div class="milestone-item">
+                      <span class="milestone-status">⚪</span>
+                      <span class="milestone-text">Defense Certs (CMMC)</span>
+                      <span class="milestone-date">2027</span>
+                    </div>
+                    <div class="milestone-item">
+                      <span class="milestone-status">⚪</span>
+                      <span class="milestone-text">FedRAMP Ready</span>
+                      <span class="milestone-date">2027</span>
+                    </div>
+                    <div class="milestone-item">
+                      <span class="milestone-status">⚪</span>
+                      <span class="milestone-text">10M+ Assets Tracked</span>
+                      <span class="milestone-date">2027</span>
+                    </div>
+                    <div class="milestone-item">
+                      <span class="milestone-status">⚪</span>
+                      <span class="milestone-text">Cross-Border Customs</span>
+                      <span class="milestone-date">2027</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h2>Get in Touch</h2>
+                        <p>
+                            Whether you're a brand looking to protect your products, a developer wanting to integrate our SDK, or an investor interested in the future of product authentication, we'd love to hear from you.
+                        </p>
+                        <div class="contact-methods">
+                            <a href="mailto:info@tagit.network" class="contact-method">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <path d="M22 6l-10 7L2 6"/>
+                                </svg>
+                                <div>
+                                    <h4>Email</h4>
+                                    <p>info@tagit.network</p>
+                                </div>
+                            </a>
+                            <a href="https://discord.com/invite/gAnkjGyh" target="_blank" rel="noopener" class="contact-method">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/>
+                                </svg>
+                                <div>
+                                    <h4>Discord</h4>
+                                    <p>Join our community</p>
+                                </div>
+                            </a>
+                            <a href="https://x.com/TAGITNETWORK" target="_blank" rel="noopener" class="contact-method">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                                </svg>
+                                <div>
+                                    <h4>Twitter / X</h4>
+                                    <p>@TAGITNETWORK</p>
+                                </div>
+                            </a>
+                            <a href="https://github.com/TAG-IT-NETWORK/tagit-docs" target="_blank" rel="noopener" class="contact-method">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                                </svg>
+                                <div>
+                                    <h4>GitHub</h4>
+                                    <p>View our documentation</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <h3>Send us a Message</h3>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="contactName">Name</label>
+                                <input type="text" id="contactName" name="name" placeholder="Your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactEmail">Email</label>
+                                <input type="email" id="contactEmail" name="email" placeholder="your@email.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactSubject">Subject</label>
+                                <input type="text" id="contactSubject" name="subject" placeholder="How can we help?" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactMessage">Message</label>
+                                <textarea id="contactMessage" name="message" placeholder="Tell us more..." required></textarea>
+                            </div>
+                            <button type="submit" id="contactSubmit">Send Message</button>
+                            <div id="formStatus" class="form-status"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">
+            <div class="logo-icon">
+              <img src="/assets/images/tagit_logo.png" alt="TAG IT Network Logo" class="logo-img" loading="lazy" width="40" height="40">
+            </div>
+            <span>TAG IT Network</span>
+          </div>
+          <p>Blockchain-powered product authentication for the modern world.</p>
+        </div>
+
+        <div class="footer-column">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#lifecycle">Life Cycle</a></li>
+            <li><a href="/solutions">Solutions</a></li>
+            <li><a href="/technology">Technology</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="https://github.com/TAG-IT-NETWORK/tagit-docs" target="_blank" rel="noopener">Documentation</a></li>
+            <li><a href="https://github.com/TAG-IT-NETWORK/tagit-docs" target="_blank" rel="noopener">API Reference</a></li>
+            <li><a href="https://github.com/TAG-IT-NETWORK/tagit-docs" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://www.youtube.com/@TAGITNetwork" target="_blank" rel="noopener">YouTube</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#" class="legal-trigger" data-modal="privacy">Privacy Policy</a></li>
+            <li><a href="#" class="legal-trigger" data-modal="terms">Terms of Service</a></li>
+            <li><a href="#" class="legal-trigger" data-modal="cookie">Cookie Policy</a></li>
+            <li><a href="/about#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 TAG IT Network. All rights reserved.</p>
+        <div class="footer-socials">
+        <a href="https://x.com/TAGITNETWORK" target="_blank" rel="noopener" title="Twitter/X">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/106815890" target="_blank" rel="noopener" title="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+        <a href="https://www.youtube.com/@TAGITNetwork" target="_blank" rel="noopener" title="YouTube">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+        <a href="https://github.com/TAG-IT-NETWORK/tagit-docs" target="_blank" rel="noopener" title="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+        <a href="https://discord.gg/gAnkjGyh" target="_blank" rel="noopener" title="Discord">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>
+        </a>
+      </div>
+      </div>
+    </footer>
+
+    <!-- Privacy Policy Modal -->
+    <div class="legal-modal-overlay" id="privacyModalOverlay">
+      <div class="legal-modal">
+        <button class="legal-modal-close" data-close-modal>✕</button>
+        
+        <div class="legal-modal-header">
+          <h3><span>🔒</span> Privacy Policy</h3>
+          <p class="effective-date">Effective Date: September 29, 2025</p>
+        </div>
+        
+        <div class="legal-modal-content">
+          <p class="legal-intro">
+            TAG IT Network ("TAG IT," "we," "us," or "our") operates the <a href="https://www.tagit.network">https://www.tagit.network</a> website and related services (the "Service"). This page informs you of our policies regarding the collection, use, and disclosure of Personal Data when you use our Service. We will not use or share your information with anyone except as described in this Privacy Policy.
+          </p>
+          
+          <div class="legal-section">
+            <h4>📋 Information Collection and Use</h4>
+            <p>While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you. Personally identifiable information may include, but is not limited to your name, email address, phone number ("Personal Data").</p>
+          </div>
+          
+          <div class="legal-section">
+            <h4>📊 Log Data</h4>
+            <p>We collect information that your browser sends whenever you visit our Service ("Log Data"). This Log Data may include information such as your IP address, browser type, browser version, the pages of our Service that you visit, the time and date of your visit, the time spent on those pages and other statistics.</p>
+          </div>
+          
+          <div class="legal-section">
+            <h4>🍪 Cookies</h4>
+            <p>Cookies are files with a small amount of data, which may include an anonymous unique identifier. Cookies are sent to your browser from a website and transferred to your device. We use "cookies" to collect information in order to improve our services for you. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent.</p>
+          </div>
+          
+          <div class="legal-section">
+            <h4>🛡️ Security</h4>
+            <p>We secure your personal information using encryption and access controls. Only authorized employees have access with two-factor authentication enforced. Servers are routinely patched and scanned for vulnerabilities.</p>
+          </div>
+          
+          <div class="legal-section">
+            <h4>™️ Third-Party Logos & Trademarks</h4>
+            <p>Our Service may display third-party logos, trademarks, and brand names. These trademarks are the property of their respective owners. Their display on our Service is intended solely to indicate platforms, technologies, or services that our products use, support, or interoperate with.</p>
+          </div>
+          
+          <div class="legal-section">
+            <h4>📝 Changes to This Privacy Policy</h4>
+            <p>This Privacy Policy is effective as of the "Effective Date" indicated at the top of this Privacy Policy and will remain in effect until updated or replaced. We reserve the right to update or modify this Privacy Policy from time to time with or without notice. Your continued use of the Service after any changes or revisions to this Privacy Policy shall indicate your agreement with the terms of such revised Privacy Policy.</p>
+          </div>
+          
+          <div class="legal-section">
+            <h4>✉️ Contact Us</h4>
+            <p>If you have any questions about this Privacy Policy, please contact us via email: <a href="mailto:info@tagit.network">info@tagit.network</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Terms of Service Modal -->
+    <div class="legal-modal-overlay" id="termsModalOverlay">
+      <div class="legal-modal">
+        <button class="legal-modal-close" data-close-modal>✕</button>
+        
+        <div class="legal-modal-header">
+          <h3><span>📜</span> Terms of Service</h3>
+          <p class="effective-date">Effective Date: September 29, 2025</p>
+        </div>
+        
+        <div class="legal-modal-content">
+          <p class="legal-intro">
+            Welcome to TAG IT Network. By accessing or using our website at <a href="https://www.tagit.network">https://www.tagit.network</a> and related services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our Service.
+          </p>
+          
+          <div class="legal-section">
+            <h4>📌 Acceptance of Terms</h4>
+            <p>By accessing and using the Service, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service and our Privacy Policy. We reserve the right to modify these terms at any time, and such modifications shall be effective immediately upon posting.</p>
+          </div>
+          
+          <div class="legal-section">
+            <h4>🔐 Use of Service</h4>
+            <p>You agree to use the Service only for lawful purposes and in accordance with these Terms. You agree not to use the Service in any way that violates any applicable federal, state, local, or international law or regulation, or to engage in any conduct that restricts or inhibits anyone's use or enjoyment of the Service.</p>
+          </div>
+          
+          <div class="legal-section">
+            <h4>💎 Intellectual Property</h4>
+            <p>The Service and its entire contents, features, and functionality (including but not limited to all information, software, text, displays, images, video, and audio) are owned by TAG IT Network, its licensors, or other providers and are protected by copyright, trademark, patent, trade secret, and other intellectual property laws.</p>
+          </div>
+          
+          <div class="legal-section">
+            <h4>🪙 Token Disclaimer</h4>
+            <p>The $TAGIT token is a utility token intended solely for use within the TAG IT Network ecosystem. It is not intended to be a security, investment contract, or any form of financial instrument. Purchasing, holding, or using $TAGIT tokens does not grant any ownership, equity, or voting rights in TAG IT Network or any affiliated entities.</p>
+          </div>
+          
+          <div class="legal-section">
+            <h4>⚠️ Limitation of Liability</h4>
+            <p>In no event shall TAG IT Network, its directors, employees, partners, agents, suppliers, or affiliates be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the Service.</p>
+          </div>
+          
+          <div class="legal-section">
+            <h4>⚖️ Governing Law</h4>
+            <p>These Terms shall be governed by and construed in accordance with the laws of the State of Florida, United States, without regard to its conflict of law provisions. Any legal action or proceeding arising under these Terms shall be brought exclusively in the federal or state courts located in Duval County, Florida.</p>
+          </div>
+          
+          <div class="legal-section">
+            <h4>✉️ Contact Us</h4>
+            <p>If you have any questions about these Terms of Service, please contact us via email: <a href="mailto:info@tagit.network">info@tagit.network</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cookie Policy Modal -->
+    <div class="legal-modal-overlay" id="cookieModalOverlay">
+      <div class="legal-modal">
+        <button class="legal-modal-close" data-close-modal>✕</button>
+        
+        <div class="legal-modal-header">
+          <h3><span>🍪</span> Cookie Policy</h3>
+          <p class="effective-date">Effective Date: September 29, 2025</p>
+        </div>
+        
+        <div class="legal-modal-content">
+          <p class="legal-intro">
+            This Cookie Policy explains how TAG IT Network ("we," "us," or "our") uses cookies and similar technologies when you visit our website at <a href="https://www.tagit.network">https://www.tagit.network</a>. By using our website, you consent to our use of cookies as described in this policy.
+          </p>
+          
+          <div class="legal-section">
+            <h4>🤔 What Are Cookies?</h4>
+            <p>Cookies are small text files that are placed on your device (computer, smartphone, or tablet) when you visit a website. They are widely used to make websites work more efficiently and provide information to website owners. Cookies help us recognize your device and remember your preferences.</p>
+          </div>
+          
+          <div class="legal-section">
+            <h4>📂 Types of Cookies We Use</h4>
+            <p><strong>Essential Cookies:</strong> These cookies are necessary for the website to function properly. They enable basic features like page navigation and access to secure areas.<br><br>
+            <strong>Analytics Cookies:</strong> These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously.<br><br>
+            <strong>Preference Cookies:</strong> These cookies remember your settings and preferences to provide a more personalized experience.</p>
+          </div>
+          
+          <div class="legal-section">
+            <h4>🎛️ Managing Cookies</h4>
+            <p>Most web browsers allow you to control cookies through their settings. You can set your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you disable cookies, some features of our website may not function properly.</p>
+          </div>
+          
+          <div class="legal-section">
+            <h4>🔄 Third-Party Cookies</h4>
+            <p>We may use third-party services that set their own cookies, such as analytics providers. These third parties have their own privacy policies and cookie practices. We do not have control over these third-party cookies.</p>
+          </div>
+          
+          <div class="legal-section">
+            <h4>📝 Updates to This Policy</h4>
+            <p>We may update this Cookie Policy from time to time to reflect changes in our practices or for operational, legal, or regulatory reasons. We encourage you to review this policy periodically for the latest information.</p>
+          </div>
+          
+          <div class="legal-section">
+            <h4>✉️ Contact Us</h4>
+            <p>If you have any questions about our use of cookies, please contact us via email: <a href="mailto:info@tagit.network">info@tagit.network</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wallet Connection Modal -->
+    <div class="wallet-modal-overlay" id="walletModal">
+      <div class="wallet-modal">
+        <button class="wallet-modal-close" onclick="closeWalletModal()" aria-label="Close modal">×</button>
+
+        <div id="walletConnectState">
+          <div class="wallet-modal-header">
+            <h3>Connect Wallet</h3>
+            <p>Connect your wallet to interact with TAG IT Network</p>
+          </div>
+
+          <div class="wallet-option" onclick="connectMetaMask()" role="button" tabindex="0">
+            <div class="wallet-option-icon">🦊</div>
+            <div class="wallet-option-info">
+              <h4>MetaMask</h4>
+              <p>Connect using browser extension</p>
+            </div>
+            <span class="wallet-option-arrow">→</span>
+          </div>
+
+          <div class="wallet-option" onclick="connectWalletConnect()" role="button" tabindex="0">
+            <div class="wallet-option-icon">🔗</div>
+            <div class="wallet-option-info">
+              <h4>WalletConnect</h4>
+              <p>Scan with your mobile wallet</p>
+            </div>
+            <span class="wallet-option-arrow">→</span>
+          </div>
+
+          <div class="wallet-option" onclick="connectCoinbase()" role="button" tabindex="0">
+            <div class="wallet-option-icon">💰</div>
+            <div class="wallet-option-info">
+              <h4>Coinbase Wallet</h4>
+              <p>Connect using Coinbase</p>
+            </div>
+            <span class="wallet-option-arrow">→</span>
+          </div>
+
+          <p class="wallet-modal-note">By connecting, you agree to TAG IT Network's Terms of Service</p>
+        </div>
+
+        <div id="walletConnectedState" style="display: none;">
+          <div class="wallet-modal-header">
+            <h3>Wallet Connected</h3>
+            <p>Your wallet is connected to TAG IT Network</p>
+          </div>
+          <div class="wallet-connected-info">
+            <div class="address-full" id="fullAddress">0x0000...0000</div>
+            <div id="networkInfo"></div>
+            <button class="wallet-disconnect-btn" onclick="disconnectWallet()">Disconnect Wallet</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+      <svg viewBox="0 0 24 24">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </button>
+
+    <script src="/js/shared.js" defer></script>
+
+    <!-- Contact Form Handler + Visual Enhancements -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // ========================================
+        // CONTACT FORM HANDLER
+        // ========================================
+        const form = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('contactSubmit');
+        const formStatus = document.getElementById('formStatus');
+
+        if (form) {
+          form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            // Get form data
+            const formData = {
+              name: document.getElementById('contactName').value.trim(),
+              email: document.getElementById('contactEmail').value.trim(),
+              subject: document.getElementById('contactSubject').value.trim(),
+              message: document.getElementById('contactMessage').value.trim()
+            };
+
+            // Validate
+            if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+              showStatus('Please fill in all fields.', 'error');
+              return;
+            }
+
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            showStatus('Sending your message...', 'loading');
+
+            try {
+              const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+              });
+
+              const data = await response.json();
+
+              if (response.ok) {
+                showStatus('Message sent successfully! We\'ll get back to you soon.', 'success');
+                form.reset();
+              } else {
+                showStatus(data.error || 'Failed to send message. Please try again.', 'error');
+              }
+            } catch (error) {
+              console.error('Contact form error:', error);
+              showStatus('Network error. Please check your connection and try again.', 'error');
+            } finally {
+              submitBtn.disabled = false;
+              submitBtn.textContent = 'Send Message';
+            }
+          });
+        }
+
+        function showStatus(message, type) {
+          formStatus.textContent = message;
+          formStatus.className = 'form-status ' + type;
+        }
+
+        // ========================================
+        // ANIMATED COUNTERS
+        // ========================================
+        function animateCounter(element, target, suffix = '') {
+          const duration = 2000;
+          const start = 0;
+          const startTime = performance.now();
+
+          function update(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const easeOut = 1 - Math.pow(1 - progress, 3);
+            const current = Math.floor(start + (target - start) * easeOut);
+            element.textContent = current.toLocaleString() + suffix;
+
+            if (progress < 1) {
+              requestAnimationFrame(update);
+            } else {
+              element.textContent = target.toLocaleString() + suffix;
+            }
+          }
+
+          requestAnimationFrame(update);
+        }
+
+        // Observe stats section
+        const statsSection = document.querySelector('.stats-section');
+        let statsAnimated = false;
+
+        if (statsSection) {
+          const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting && !statsAnimated) {
+                statsAnimated = true;
+                const statItems = document.querySelectorAll('.stat-item h3');
+
+                statItems.forEach((item, index) => {
+                  const text = item.textContent.trim();
+                  setTimeout(() => {
+                    if (text.includes('$2T')) {
+                      item.textContent = '$0';
+                      animateCounter(item, 2, 'T+');
+                      setTimeout(() => { item.textContent = '$2T+'; }, 2100);
+                    } else if (text.includes('7%')) {
+                      item.textContent = '0%';
+                      animateCounter(item, 7, '%');
+                    } else if (text.includes('2.5M')) {
+                      item.textContent = '0';
+                      animateCounter(item, 2.5, 'M');
+                      setTimeout(() => { item.textContent = '2.5M'; }, 2100);
+                    } else if (text.includes('100%')) {
+                      item.textContent = '0%';
+                      animateCounter(item, 100, '%');
+                    }
+                  }, index * 150);
+                });
+              }
+            });
+          }, { threshold: 0.3 });
+
+          statsObserver.observe(statsSection);
+        }
+
+        // ========================================
+        // 3D TILT EFFECT FOR VALUE CARDS
+        // ========================================
+        const valueCards = document.querySelectorAll('.value-card');
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (!prefersReducedMotion) {
+          valueCards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+              const rect = card.getBoundingClientRect();
+              const x = e.clientX - rect.left;
+              const y = e.clientY - rect.top;
+              const centerX = rect.width / 2;
+              const centerY = rect.height / 2;
+
+              const rotateX = (y - centerY) / 20;
+              const rotateY = (centerX - x) / 20;
+
+              card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+              card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+            });
+          });
+        }
+
+        // ========================================
+        // FLOATING PARTICLES GENERATOR
+        // ========================================
+        function generateParticles() {
+          const container = document.getElementById('aboutParticles');
+          if (!container || prefersReducedMotion) return;
+
+          const isMobile = window.innerWidth < 768;
+          const count = isMobile ? 12 : 25;
+
+          for (let i = 0; i < count; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'about-particle';
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.animationDelay = `${Math.random() * 15}s`;
+            particle.style.animationDuration = `${12 + Math.random() * 8}s`;
+            container.appendChild(particle);
+          }
+        }
+
+        generateParticles();
+
+        // ========================================
+        // FADE-IN ANIMATIONS FOR SECTIONS
+        // ========================================
+        const fadeElements = document.querySelectorAll('.stat-item, .value-card, .problem-box, .solution-box, .contact-method');
+
+        const fadeObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+              setTimeout(() => {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = entry.target.style.transform || 'translateY(0)';
+              }, index * 50);
+              fadeObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+
+        fadeElements.forEach(el => {
+          el.style.opacity = '0';
+          el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+          fadeObserver.observe(el);
+        });
+      });
+    </script>
+</body>
+</html>

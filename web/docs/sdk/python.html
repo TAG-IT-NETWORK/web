@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python SDK - TAG IT Network Documentation</title>
+    <meta name="description" content="Official Python SDK for TAG IT Network integration.">
+    <meta name="keywords" content="TAG IT Python SDK, Python integration, server-side SDK, data pipelines">
+    <meta name="author" content="TAG IT Network">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Python SDK - TAG IT Network Documentation">
+    <meta property="og:description" content="Official Python SDK for TAG IT Network integration.">
+    <meta property="og:image" content="/assets/images/og-image.png">
+    <meta property="og:url" content="https://tagit.network/docs/sdk/python">
+    <meta property="og:type" content="article">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Python SDK - TAG IT Network Documentation">
+    <meta name="twitter:description" content="Official Python SDK for TAG IT Network integration.">
+    <meta name="twitter:image" content="/assets/images/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/tagit_logo.png">
+    <link rel="apple-touch-icon" href="/assets/images/tagit_logo.png">
+
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/shared.css">
+    <link rel="stylesheet" href="/css/docs.css">
+</head>
+<body>
+    <!-- Skip to main content link for keyboard users -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Global Cyber Grid Background -->
+    <div class="cyber-grid-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <img src="/assets/images/tagit_logo.png" alt="TAG IT Network Logo" class="logo-img" width="40" height="40">
+        </div>
+        <span>TAG IT Network</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="/#features">Features</a>
+        <a href="/solutions">Solutions</a>
+        <a href="/technology">Technology</a>
+        <a href="/tokenomics">Tokenomics</a>
+        <a href="/docs" class="active">Docs</a>
+        <a href="/about">About</a>
+      </div>
+
+      <button class="nav-cta" id="connectWalletBtn" onclick="handleWalletClick()">
+        Connect Wallet
+      </button>
+
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="/#features">Features</a>
+      <a href="/solutions">Solutions</a>
+      <a href="/technology">Technology</a>
+      <a href="/tokenomics">Tokenomics</a>
+      <a href="/docs" class="active">Docs</a>
+      <a href="/about">About</a>
+      <button class="mobile-cta" onclick="handleWalletClick()">Connect Wallet</button>
+    </div>
+
+    <!-- Mobile Docs Header -->
+    <div class="docs-mobile-header">
+        <button class="docs-mobile-toggle" id="docsMobileToggle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+            <span>Documentation Menu</span>
+            <svg class="docs-mobile-toggle-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 9l6 6 6-6"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Docs Layout -->
+    <div class="docs-layout">
+        <!-- Left Sidebar -->
+        <aside class="docs-sidebar" id="docsSidebar">
+            <div class="docs-sidebar-header">
+                <a href="/docs">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                    Documentation
+                </a>
+            </div>
+
+            <nav>
+                <!-- Getting Started -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">Getting Started</div>
+                    <a href="/docs/getting-started/quick-start.html" class="docs-nav-link">Quick Start Guide</a>
+                    <a href="/docs/getting-started/platform-overview.html" class="docs-nav-link">Platform Overview</a>
+                    <a href="/docs/getting-started/first-integration.html" class="docs-nav-link">First Integration</a>
+                </div>
+
+                <!-- API Reference -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">API Reference</div>
+                    <a href="/docs/api/rest-api.html" class="docs-nav-link">REST API</a>
+                    <a href="/docs/api/graphql.html" class="docs-nav-link">GraphQL API</a>
+                    <a href="/docs/api/webhooks.html" class="docs-nav-link">Webhooks</a>
+                </div>
+
+                <!-- Smart Contracts -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">Smart Contracts</div>
+                    <a href="/docs/contracts/addresses.html" class="docs-nav-link">Contract Addresses</a>
+                    <a href="/docs/contracts/abi-reference.html" class="docs-nav-link">ABI Reference</a>
+                    <a href="/docs/contracts/audits.html" class="docs-nav-link">Audit Reports</a>
+                </div>
+
+                <!-- NFC Integration -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">NFC Integration</div>
+                    <a href="/docs/nfc/chip-selection.html" class="docs-nav-link">Chip Selection</a>
+                    <a href="/docs/nfc/encoding-guide.html" class="docs-nav-link">Encoding Guide</a>
+                    <a href="/docs/nfc/mobile-sdk.html" class="docs-nav-link">Mobile SDK</a>
+                </div>
+
+                <!-- SDK & Libraries -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">SDK & Libraries</div>
+                    <a href="/docs/sdk/javascript.html" class="docs-nav-link">JavaScript SDK</a>
+                    <a href="/docs/sdk/python.html" class="docs-nav-link active">Python SDK</a>
+                    <a href="/docs/sdk/mobile.html" class="docs-nav-link">Mobile SDKs</a>
+                </div>
+
+                <!-- Tutorials -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">Tutorials</div>
+                    <a href="/docs/tutorials/product-tagging.html" class="docs-nav-link">Product Tagging</a>
+                    <a href="/docs/tutorials/ownership-transfer.html" class="docs-nav-link">Ownership Transfer</a>
+                    <a href="/docs/tutorials/dispute-resolution.html" class="docs-nav-link">Dispute Resolution</a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="docs-content" id="main-content">
+            <div class="docs-breadcrumb">
+                <a href="/docs">Docs</a>
+                <span>/</span>
+                <a href="/docs/sdk/javascript">SDK & Libraries</a>
+                <span>/</span>
+                <span>Python SDK</span>
+            </div>
+
+            <h1>Python SDK</h1>
+            <p class="docs-lead">The official TAG IT Python SDK for server-side applications and data pipelines.</p>
+
+            <h2 id="installation">Installation</h2>
+            <p>Install the TAG IT Python SDK using pip:</p>
+
+            <pre><code class="language-bash">pip install tagit-sdk</code></pre>
+
+            <p>Or add it to your <code>requirements.txt</code>:</p>
+
+            <pre><code class="language-text">tagit-sdk>=1.0.0</code></pre>
+
+            <p>Then install dependencies:</p>
+
+            <pre><code class="language-bash">pip install -r requirements.txt</code></pre>
+
+            <div class="docs-callout docs-callout-info">
+                <div class="docs-callout-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 16v-4"/>
+                        <path d="M12 8h.01"/>
+                    </svg>
+                    Note
+                </div>
+                <p>The SDK requires Python 3.8 or higher. For async support, Python 3.9+ is recommended.</p>
+            </div>
+
+            <h2 id="initialization">Initialization</h2>
+            <p>Initialize the TAG IT client with your API credentials:</p>
+
+            <h3>Synchronous Client</h3>
+            <pre><code class="language-python">from tagit import TagIt
+
+# Initialize the synchronous client
+client = TagIt(
+    api_key="tagit_live_abc123xyz789",
+    api_secret="sk_live_your_secret_key_here",
+    network="mainnet"  # or "testnet" for development
+)
+
+# Verify a product
+result = client.products.verify("NFC-TAG-001-ABC")
+print(f"Verified: {result.verified}")</code></pre>
+
+            <h3>Async Client</h3>
+            <pre><code class="language-python">from tagit import AsyncTagIt
+import asyncio
+
+# Initialize the async client
+client = AsyncTagIt(
+    api_key="tagit_live_abc123xyz789",
+    api_secret="sk_live_your_secret_key_here",
+    network="mainnet"
+)
+
+async def main():
+    result = await client.products.verify("NFC-TAG-001-ABC")
+    print(f"Verified: {result.verified}")
+    await client.close()
+
+asyncio.run(main())</code></pre>
+
+            <div class="docs-callout docs-callout-warning">
+                <div class="docs-callout-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                        <line x1="12" y1="9" x2="12" y2="13"/>
+                        <line x1="12" y1="17" x2="12.01" y2="17"/>
+                    </svg>
+                    Security Warning
+                </div>
+                <p>Never hardcode API credentials. Use environment variables or a secrets manager in production.</p>
+            </div>
+
+            <pre><code class="language-python">import os
+from tagit import TagIt
+
+client = TagIt(
+    api_key=os.environ["TAGIT_API_KEY"],
+    api_secret=os.environ["TAGIT_API_SECRET"],
+    network=os.environ.get("TAGIT_NETWORK", "mainnet")
+)</code></pre>
+
+            <h2 id="products">Products Module</h2>
+            <p>The Products module provides methods for registering, verifying, and retrieving product information.</p>
+
+            <h3 id="register">client.products.register()</h3>
+            <p>Register a new product on the TAG IT Network:</p>
+
+            <pre><code class="language-python"># Register a new product
+product = client.products.register(
+    tag_id="NFC-TAG-002-XYZ",
+    metadata={
+        "product_name": "Designer Handbag",
+        "brand": "Luxury Brand Co",
+        "serial_number": "SN-2024-005678",
+        "manufacture_date": "2024-03-15",
+        "origin": "Italy",
+        "materials": ["leather", "gold hardware"],
+        "retail_price": 2500.00
+    },
+    owner_address="0x742d35Cc6634C0532925a3b844Bc9e7595f5c9E8"
+)
+
+print(f"Product registered with ID: {product.tag_id}")
+print(f"Transaction hash: {product.tx_hash}")
+print(f"Token ID: {product.token_id}")</code></pre>
+
+            <h3 id="verify">client.products.verify()</h3>
+            <p>Verify a product's authenticity:</p>
+
+            <pre><code class="language-python"># Verify product authenticity
+result = client.products.verify("NFC-TAG-001-ABC")
+
+if result.verified:
+    print(f"Product is authentic!")
+    print(f"Product: {result.metadata['product_name']}")
+    print(f"Brand: {result.metadata['brand']}")
+    print(f"Current owner: {result.current_owner}")
+    print(f"Transfer count: {len(result.transfer_history)}")
+else:
+    print("Product verification failed - may be counterfeit")
+
+# Verify with additional options
+result = client.products.verify(
+    tag_id="NFC-TAG-001-ABC",
+    include_history=True,
+    include_blockchain_data=True
+)</code></pre>
+
+            <h3 id="get">client.products.get()</h3>
+            <p>Retrieve detailed product information:</p>
+
+            <pre><code class="language-python"># Get product details
+product = client.products.get("NFC-TAG-001-ABC")
+
+print(f"Tag ID: {product.tag_id}")
+print(f"Name: {product.metadata['product_name']}")
+print(f"Brand: {product.metadata['brand']}")
+print(f"Serial: {product.metadata['serial_number']}")
+print(f"Owner: {product.current_owner}")
+print(f"Registered: {product.created_at}")
+print(f"Last updated: {product.updated_at}")
+
+# Access blockchain data
+print(f"Network: {product.blockchain['network']}")
+print(f"Contract: {product.blockchain['contract_address']}")
+print(f"Token ID: {product.blockchain['token_id']}")</code></pre>
+
+            <h2 id="transfers">Transfers Module</h2>
+            <p>The Transfers module handles ownership transfer operations.</p>
+
+            <h3 id="initiate">client.transfers.initiate()</h3>
+            <p>Initiate an ownership transfer:</p>
+
+            <pre><code class="language-python"># Initiate a transfer
+transfer = client.transfers.initiate(
+    tag_id="NFC-TAG-001-ABC",
+    from_address="0x742d35Cc6634C0532925a3b844Bc9e7595f5c9E8",
+    to_address="0x8ba1f109551bD432803012645Ac136ddd64DBA72",
+    transfer_type="sale",  # "sale", "gift", or "return"
+    metadata={
+        "sale_price": 2200.00,
+        "currency": "USD",
+        "notes": "Secondary market sale"
+    }
+)
+
+print(f"Transfer ID: {transfer.transfer_id}")
+print(f"Status: {transfer.status}")
+print(f"Expires at: {transfer.expires_at}")
+print(f"Confirmation required from: {transfer.to_address}")</code></pre>
+
+            <h3 id="confirm">client.transfers.confirm()</h3>
+            <p>Confirm a pending transfer:</p>
+
+            <pre><code class="language-python"># Confirm the transfer (called by the recipient)
+confirmed = client.transfers.confirm(
+    transfer_id="TXF-2024-001234",
+    signature="0x..."  # Wallet signature for verification
+)
+
+print(f"Transfer confirmed: {confirmed.confirmed}")
+print(f"New owner: {confirmed.new_owner}")
+print(f"Transaction hash: {confirmed.tx_hash}")
+print(f"Block number: {confirmed.block_number}")
+
+# Check transfer status
+status = client.transfers.get_status("TXF-2024-001234")
+print(f"Current status: {status.status}")  # pending, confirmed, cancelled, expired</code></pre>
+
+            <h2 id="async">Async Support</h2>
+            <p>The SDK provides full async support for high-performance applications:</p>
+
+            <pre><code class="language-python">import asyncio
+from tagit import AsyncTagIt
+
+async def process_batch_verification(tag_ids: list[str]):
+    """Verify multiple products concurrently."""
+    client = AsyncTagIt(
+        api_key=os.environ["TAGIT_API_KEY"],
+        api_secret=os.environ["TAGIT_API_SECRET"]
+    )
+
+    try:
+        # Create verification tasks
+        tasks = [client.products.verify(tag_id) for tag_id in tag_ids]
+
+        # Execute concurrently
+        results = await asyncio.gather(*tasks, return_exceptions=True)
+
+        for tag_id, result in zip(tag_ids, results):
+            if isinstance(result, Exception):
+                print(f"{tag_id}: Error - {result}")
+            elif result.verified:
+                print(f"{tag_id}: Verified - {result.metadata['product_name']}")
+            else:
+                print(f"{tag_id}: Not verified")
+
+        return results
+    finally:
+        await client.close()
+
+# Run the batch verification
+tag_ids = ["NFC-TAG-001", "NFC-TAG-002", "NFC-TAG-003"]
+asyncio.run(process_batch_verification(tag_ids))</code></pre>
+
+            <h3>Context Manager Support</h3>
+            <pre><code class="language-python">async def verify_with_context():
+    """Use async context manager for automatic cleanup."""
+    async with AsyncTagIt(
+        api_key=os.environ["TAGIT_API_KEY"],
+        api_secret=os.environ["TAGIT_API_SECRET"]
+    ) as client:
+        result = await client.products.verify("NFC-TAG-001-ABC")
+        return result
+
+# The client is automatically closed after the block</code></pre>
+
+            <h2 id="django">Django Integration</h2>
+            <p>Integrate TAG IT SDK with Django applications:</p>
+
+            <h3>Settings Configuration</h3>
+            <pre><code class="language-python"># settings.py
+TAGIT_CONFIG = {
+    "API_KEY": os.environ["TAGIT_API_KEY"],
+    "API_SECRET": os.environ["TAGIT_API_SECRET"],
+    "NETWORK": os.environ.get("TAGIT_NETWORK", "mainnet"),
+    "TIMEOUT": 30,
+    "RETRY_ATTEMPTS": 3,
+}
+
+INSTALLED_APPS = [
+    # ...
+    "tagit.django",
+]
+
+MIDDLEWARE = [
+    # ...
+    "tagit.django.middleware.TagItMiddleware",
+]</code></pre>
+
+            <h3>Middleware</h3>
+            <pre><code class="language-python"># tagit/django/middleware.py
+from django.conf import settings
+from tagit import TagIt
+
+class TagItMiddleware:
+    def __init__(self, get_response):
+        self.get_response = get_response
+        self.client = TagIt(**settings.TAGIT_CONFIG)
+
+    def __call__(self, request):
+        # Attach client to request
+        request.tagit = self.client
+        response = self.get_response(request)
+        return response</code></pre>
+
+            <h3>Using in Views</h3>
+            <pre><code class="language-python"># views.py
+from django.http import JsonResponse
+from django.views import View
+
+class ProductVerifyView(View):
+    def get(self, request, tag_id):
+        result = request.tagit.products.verify(tag_id)
+
+        return JsonResponse({
+            "verified": result.verified,
+            "product": result.metadata if result.verified else None,
+            "owner": result.current_owner if result.verified else None,
+        })
+
+class ProductRegisterView(View):
+    def post(self, request):
+        data = request.POST
+
+        product = request.tagit.products.register(
+            tag_id=data["tag_id"],
+            metadata={
+                "product_name": data["name"],
+                "brand": data["brand"],
+                "serial_number": data["serial"],
+            },
+            owner_address=data["owner_address"]
+        )
+
+        return JsonResponse({
+            "success": True,
+            "tag_id": product.tag_id,
+            "tx_hash": product.tx_hash,
+        })</code></pre>
+
+            <h2 id="errors">Error Handling</h2>
+            <p>The SDK provides specific exception classes for different error scenarios:</p>
+
+            <pre><code class="language-python">from tagit import TagIt
+from tagit.exceptions import (
+    TagItError,
+    AuthenticationError,
+    ValidationError,
+    NotFoundError,
+    RateLimitError,
+    NetworkError,
+    BlockchainError,
+)
+
+client = TagIt(
+    api_key=os.environ["TAGIT_API_KEY"],
+    api_secret=os.environ["TAGIT_API_SECRET"]
+)
+
+try:
+    result = client.products.verify("NFC-TAG-001-ABC")
+
+except AuthenticationError as e:
+    # Invalid or expired API credentials
+    print(f"Authentication failed: {e.message}")
+    print(f"Error code: {e.code}")
+
+except ValidationError as e:
+    # Invalid input parameters
+    print(f"Validation error: {e.message}")
+    print(f"Field: {e.field}")
+    print(f"Details: {e.details}")
+
+except NotFoundError as e:
+    # Product or resource not found
+    print(f"Not found: {e.message}")
+    print(f"Resource type: {e.resource_type}")
+    print(f"Resource ID: {e.resource_id}")
+
+except RateLimitError as e:
+    # API rate limit exceeded
+    print(f"Rate limit exceeded: {e.message}")
+    print(f"Retry after: {e.retry_after} seconds")
+
+except NetworkError as e:
+    # Network connectivity issues
+    print(f"Network error: {e.message}")
+    print(f"Retryable: {e.retryable}")
+
+except BlockchainError as e:
+    # Blockchain transaction failed
+    print(f"Blockchain error: {e.message}")
+    print(f"Transaction hash: {e.tx_hash}")
+    print(f"Reason: {e.reason}")
+
+except TagItError as e:
+    # Base exception for all TAG IT errors
+    print(f"TAG IT error: {e.message}")
+    print(f"Error code: {e.code}")</code></pre>
+
+            <div class="docs-callout docs-callout-success">
+                <div class="docs-callout-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                    Best Practice
+                </div>
+                <p>Always implement proper error handling in production. Use specific exception types to provide meaningful error messages to your users and log errors for debugging.</p>
+            </div>
+
+            <!-- Page Navigation -->
+            <div class="docs-page-nav">
+                <a href="/docs/sdk/javascript.html" class="docs-page-nav-item prev">
+                    <span class="docs-page-nav-label">Previous</span>
+                    <span class="docs-page-nav-title">JavaScript SDK</span>
+                </a>
+                <a href="/docs/sdk/mobile.html" class="docs-page-nav-item next">
+                    <span class="docs-page-nav-label">Next</span>
+                    <span class="docs-page-nav-title">Mobile SDKs</span>
+                </a>
+            </div>
+
+            <!-- Edit Link -->
+            <a href="https://github.com/TAG-IT-NETWORK/tagit-docs" class="docs-edit-link" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                </svg>
+                Edit this page on GitHub
+            </a>
+        </main>
+
+        <!-- Right Sidebar - Table of Contents -->
+        <aside class="docs-toc">
+            <div class="docs-toc-title">On this page</div>
+            <a href="#installation" class="docs-toc-link">Installation</a>
+            <a href="#initialization" class="docs-toc-link">Initialization</a>
+            <a href="#products" class="docs-toc-link">Products Module</a>
+            <a href="#register" class="docs-toc-link docs-toc-link-h3">client.products.register()</a>
+            <a href="#verify" class="docs-toc-link docs-toc-link-h3">client.products.verify()</a>
+            <a href="#get" class="docs-toc-link docs-toc-link-h3">client.products.get()</a>
+            <a href="#transfers" class="docs-toc-link">Transfers Module</a>
+            <a href="#initiate" class="docs-toc-link docs-toc-link-h3">client.transfers.initiate()</a>
+            <a href="#confirm" class="docs-toc-link docs-toc-link-h3">client.transfers.confirm()</a>
+            <a href="#async" class="docs-toc-link">Async Support</a>
+            <a href="#django" class="docs-toc-link">Django Integration</a>
+            <a href="#errors" class="docs-toc-link">Error Handling</a>
+        </aside>
+    </div>
+
+    <!-- Search Modal -->
+    <div class="docs-search-modal" id="docsSearchModal">
+        <div class="docs-search-modal-content">
+            <div class="docs-search-modal-header">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="m21 21-4.35-4.35"/>
+                </svg>
+                <input type="text" placeholder="Search documentation..." id="docsSearchInput">
+                <button class="docs-search-modal-close" id="docsSearchClose">Esc</button>
+            </div>
+            <div class="docs-search-results" id="docsSearchResults">
+                <div class="docs-search-empty">Type to search documentation...</div>
+            </div>
+            <div class="docs-search-footer">
+                <span><kbd>↑</kbd><kbd>↓</kbd> to navigate</span>
+                <span><kbd>Enter</kbd> to select</span>
+                <span><kbd>Esc</kbd> to close</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+      <svg viewBox="0 0 24 24">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </button>
+
+    <script src="/js/shared.js" defer></script>
+    <script src="/docs/js/docs.js" defer></script>
+</body>
+</html>

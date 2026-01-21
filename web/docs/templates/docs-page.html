@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}} | TAG IT Network Docs</title>
+    <meta name="description" content="{{description}}">
+    <meta name="keywords" content="TAG IT, blockchain, NFC, authentication, digital twin, supply chain">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="{{title}} | TAG IT Docs">
+    <meta property="og:description" content="{{description}}">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="TAG IT Network Documentation">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/docs.css">
+    
+    <!-- Mermaid for diagrams -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+</head>
+<body class="docs-page">
+    <!-- Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="docs-header">
+        <div class="docs-header-inner">
+            <!-- Logo -->
+            <a href="/" class="docs-logo">
+                <svg class="docs-logo-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="docs-logo-text">TAG IT</span>
+                <span class="docs-logo-badge">DOCS</span>
+            </a>
+            
+            <!-- Navigation -->
+            <nav class="docs-header-nav">
+                <a href="/docs/" class="docs-header-link">Documentation</a>
+                <a href="/docs/api/overview.html" class="docs-header-link">API</a>
+                <a href="/docs/sdk/javascript.html" class="docs-header-link">SDK</a>
+                <a href="https://github.com/tagit-network" class="docs-header-link" target="_blank" rel="noopener">
+                    GitHub
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="margin-left: 4px;">
+                        <path d="M3.5 3C3.22386 3 3 3.22386 3 3.5C3 3.77614 3.22386 4 3.5 4V3ZM8.5 3.5H9C9 3.22386 8.77614 3 8.5 3V3.5ZM8 8.5C8 8.77614 8.22386 9 8.5 9C8.77614 9 9 8.77614 9 8.5H8ZM2.64645 8.64645C2.45118 8.84171 2.45118 9.15829 2.64645 9.35355C2.84171 9.54882 3.15829 9.54882 3.35355 9.35355L2.64645 8.64645ZM3.5 4H8.5V3H3.5V4ZM8 3.5V8.5H9V3.5H8ZM8.14645 3.14645L2.64645 8.64645L3.35355 9.35355L8.85355 3.85355L8.14645 3.14645Z" fill="currentColor"/>
+                    </svg>
+                </a>
+            </nav>
+            
+            <!-- Search Trigger -->
+            <button id="docsSearchTrigger" class="docs-search-trigger" aria-label="Search documentation">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M7.25 12.5C10.1495 12.5 12.5 10.1495 12.5 7.25C12.5 4.35051 10.1495 2 7.25 2C4.35051 2 2 4.35051 2 7.25C2 10.1495 4.35051 12.5 7.25 12.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M14 14L10.9 10.9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="docs-search-text">Search docs...</span>
+                <kbd class="docs-search-kbd">⌘K</kbd>
+            </button>
+            
+            <!-- Mobile Menu Toggle -->
+            <button id="docsMobileToggle" class="docs-mobile-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Layout -->
+    <div class="docs-layout">
+        <!-- Sidebar -->
+        <aside class="docs-sidebar" id="docsSidebar">
+            <nav class="docs-nav" aria-label="Documentation navigation">
+                {{sidebar}}
+            </nav>
+        </aside>
+
+        <!-- Content Area -->
+        <main class="docs-main" id="main-content">
+            <article class="docs-content">
+                <!-- Breadcrumb -->
+                <nav class="docs-breadcrumb" aria-label="Breadcrumb">
+                    <ol>
+                        <li><a href="/docs/">Docs</a></li>
+                        <li><a href="/docs/{{category_slug}}/">{{category}}</a></li>
+                        <li aria-current="page">{{title}}</li>
+                    </ol>
+                </nav>
+
+                <!-- Article Content -->
+                <div class="docs-article">
+                    {{content}}
+                </div>
+
+                <!-- Pagination -->
+                <nav class="docs-pagination" aria-label="Page navigation">
+                    <div class="docs-pagination-prev">
+                        {{prev_link}}
+                    </div>
+                    <div class="docs-pagination-next">
+                        {{next_link}}
+                    </div>
+                </nav>
+
+                <!-- Page Footer -->
+                <footer class="docs-article-footer">
+                    <div class="docs-article-meta">
+                        <span>Last updated: {{lastUpdated}}</span>
+                        <span class="docs-article-meta-sep">•</span>
+                        <a href="https://github.com/tagit-network/docs/edit/main/{{sourcePath}}" target="_blank" rel="noopener">
+                            Edit this page
+                        </a>
+                    </div>
+                </footer>
+            </article>
+
+            <!-- Table of Contents -->
+            <aside class="docs-toc" aria-label="Table of contents">
+                <div class="docs-toc-header">
+                    <span class="docs-toc-title">On this page</span>
+                </div>
+                <nav class="docs-toc-nav">
+                    {{toc}}
+                </nav>
+            </aside>
+        </main>
+    </div>
+
+    <!-- Search Modal -->
+    <div id="docsSearchModal" class="docs-search-modal" role="dialog" aria-modal="true" aria-label="Search documentation">
+        <div class="docs-search-modal-backdrop"></div>
+        <div class="docs-search-modal-content">
+            <div class="docs-search-input-wrapper">
+                <svg class="docs-search-input-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M9 17C13.4183 17 17 13.4183 17 9C17 4.58172 13.4183 1 9 1C4.58172 1 1 4.58172 1 9C1 13.4183 4.58172 17 9 17Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M19 19L14.65 14.65" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <input type="text" id="docsSearchInput" placeholder="Search documentation..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                <button id="docsSearchClose" class="docs-search-close" aria-label="Close search">
+                    <kbd>ESC</kbd>
+                </button>
+            </div>
+            <div id="docsSearchResults" class="docs-search-results">
+                <div class="docs-search-empty">
+                    <p>Type to search the documentation</p>
+                    <div class="docs-search-hints">
+                        <span><kbd>↑</kbd><kbd>↓</kbd> Navigate</span>
+                        <span><kbd>↵</kbd> Select</span>
+                        <span><kbd>ESC</kbd> Close</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/docs/js/search-index.js"></script>
+    <script src="/docs/js/docs.js"></script>
+    <script>
+        // Initialize Mermaid with cyberpunk theme
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'base',
+            themeVariables: {
+                // Background colors
+                background: '#0d0d1a',
+                mainBkg: '#1a1a2e',
+                secondaryBkg: '#16213e',
+                
+                // Primary colors (circuit green)
+                primaryColor: '#00ff88',
+                primaryTextColor: '#e0e0e0',
+                primaryBorderColor: '#00ff88',
+                
+                // Secondary colors (electric blue)
+                secondaryColor: '#00d4ff',
+                secondaryTextColor: '#e0e0e0',
+                secondaryBorderColor: '#00d4ff',
+                
+                // Tertiary colors (neon purple)
+                tertiaryColor: '#bf5af2',
+                tertiaryTextColor: '#e0e0e0',
+                tertiaryBorderColor: '#bf5af2',
+                
+                // Lines and borders
+                lineColor: '#404040',
+                
+                // Nodes
+                nodeBorder: '#00ff88',
+                nodeTextColor: '#e0e0e0',
+                
+                // Clusters
+                clusterBkg: '#1a1a2e',
+                clusterBorder: '#00d4ff',
+                
+                // Labels
+                titleColor: '#00ff88',
+                edgeLabelBackground: '#1a1a2e',
+                
+                // Fonts
+                fontFamily: 'Inter, system-ui, sans-serif',
+                fontSize: '14px'
+            },
+            flowchart: {
+                curve: 'basis',
+                padding: 20
+            },
+            sequence: {
+                actorMargin: 80,
+                boxMargin: 10,
+                boxTextMargin: 5,
+                noteMargin: 10,
+                messageMargin: 35
+            }
+        });
+    </script>
+</body>
+</html>

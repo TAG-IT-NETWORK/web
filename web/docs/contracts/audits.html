@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audit Reports - TAG IT Network Documentation</title>
+    <meta name="description" content="Security audit reports for TAG IT Network smart contracts.">
+    <meta name="keywords" content="TAG IT audits, smart contract security, CertiK, Trail of Bits, OpenZeppelin, bug bounty">
+    <meta name="author" content="TAG IT Network">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Audit Reports - TAG IT Network Documentation">
+    <meta property="og:description" content="Security audit reports for TAG IT Network smart contracts.">
+    <meta property="og:image" content="/assets/images/og-image.png">
+    <meta property="og:url" content="https://tagit.network/docs/contracts/audits">
+    <meta property="og:type" content="article">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Audit Reports - TAG IT Network Documentation">
+    <meta name="twitter:description" content="Security audit reports for TAG IT Network smart contracts.">
+    <meta name="twitter:image" content="/assets/images/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/tagit_logo.png">
+    <link rel="apple-touch-icon" href="/assets/images/tagit_logo.png">
+
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/shared.css">
+    <link rel="stylesheet" href="/css/docs.css">
+</head>
+<body>
+    <!-- Skip to main content link for keyboard users -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Global Cyber Grid Background -->
+    <div class="cyber-grid-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <img src="/assets/images/tagit_logo.png" alt="TAG IT Network Logo" class="logo-img" width="40" height="40">
+        </div>
+        <span>TAG IT Network</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="/#features">Features</a>
+        <a href="/solutions">Solutions</a>
+        <a href="/technology">Technology</a>
+        <a href="/tokenomics">Tokenomics</a>
+        <a href="/docs" class="active">Docs</a>
+        <a href="/about">About</a>
+      </div>
+
+      <button class="nav-cta" id="connectWalletBtn" onclick="handleWalletClick()">
+        Connect Wallet
+      </button>
+
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="/#features">Features</a>
+      <a href="/solutions">Solutions</a>
+      <a href="/technology">Technology</a>
+      <a href="/tokenomics">Tokenomics</a>
+      <a href="/docs" class="active">Docs</a>
+      <a href="/about">About</a>
+      <button class="mobile-cta" onclick="handleWalletClick()">Connect Wallet</button>
+    </div>
+
+    <!-- Mobile Docs Header -->
+    <div class="docs-mobile-header">
+        <button class="docs-mobile-toggle" id="docsMobileToggle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+            <span>Documentation Menu</span>
+            <svg class="docs-mobile-toggle-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 9l6 6 6-6"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Docs Layout -->
+    <div class="docs-layout">
+        <!-- Left Sidebar -->
+        <aside class="docs-sidebar" id="docsSidebar">
+            <div class="docs-sidebar-header">
+                <a href="/docs">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                    Documentation
+                </a>
+            </div>
+
+            <nav>
+                <!-- Getting Started -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">Getting Started</div>
+                    <a href="/docs/getting-started/quick-start.html" class="docs-nav-link">Quick Start Guide</a>
+                    <a href="/docs/getting-started/platform-overview.html" class="docs-nav-link">Platform Overview</a>
+                    <a href="/docs/getting-started/first-integration.html" class="docs-nav-link">First Integration</a>
+                </div>
+
+                <!-- API Reference -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">API Reference</div>
+                    <a href="/docs/api/rest-api.html" class="docs-nav-link">REST API</a>
+                    <a href="/docs/api/graphql.html" class="docs-nav-link">GraphQL API</a>
+                    <a href="/docs/api/webhooks.html" class="docs-nav-link">Webhooks</a>
+                </div>
+
+                <!-- Smart Contracts -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">Smart Contracts</div>
+                    <a href="/docs/contracts/addresses.html" class="docs-nav-link">Contract Addresses</a>
+                    <a href="/docs/contracts/abi-reference.html" class="docs-nav-link">ABI Reference</a>
+                    <a href="/docs/contracts/audits.html" class="docs-nav-link active">Audit Reports</a>
+                </div>
+
+                <!-- NFC Integration -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">NFC Integration</div>
+                    <a href="/docs/nfc/chip-selection.html" class="docs-nav-link">Chip Selection</a>
+                    <a href="/docs/nfc/encoding-guide.html" class="docs-nav-link">Encoding Guide</a>
+                    <a href="/docs/nfc/mobile-sdk.html" class="docs-nav-link">Mobile SDK</a>
+                </div>
+
+                <!-- SDK & Libraries -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">SDK & Libraries</div>
+                    <a href="/docs/sdk/javascript.html" class="docs-nav-link">JavaScript SDK</a>
+                    <a href="/docs/sdk/python.html" class="docs-nav-link">Python SDK</a>
+                    <a href="/docs/sdk/mobile.html" class="docs-nav-link">Mobile SDKs</a>
+                </div>
+
+                <!-- Tutorials -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">Tutorials</div>
+                    <a href="/docs/tutorials/product-tagging.html" class="docs-nav-link">Product Tagging</a>
+                    <a href="/docs/tutorials/ownership-transfer.html" class="docs-nav-link">Ownership Transfer</a>
+                    <a href="/docs/tutorials/dispute-resolution.html" class="docs-nav-link">Dispute Resolution</a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="docs-content" id="main-content">
+            <div class="docs-breadcrumb">
+                <a href="/docs">Docs</a>
+                <span>/</span>
+                <a href="/docs/contracts/addresses">Smart Contracts</a>
+                <span>/</span>
+                <span>Audit Reports</span>
+            </div>
+
+            <h1>Audit Reports</h1>
+            <p class="docs-lead">All TAG IT smart contracts undergo rigorous security audits by leading firms. We are committed to maintaining the highest security standards for our decentralized product authentication platform.</p>
+
+            <h2 id="summary">Audit Summary</h2>
+            <p>Below is a comprehensive overview of all security audits conducted on TAG IT Network smart contracts:</p>
+
+            <div class="docs-table-wrapper">
+                <table class="docs-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Auditor</th>
+                            <th>Scope</th>
+                            <th>Critical</th>
+                            <th>High</th>
+                            <th>Medium</th>
+                            <th>Low</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Jan 2024</td>
+                            <td>CertiK</td>
+                            <td>Full Protocol</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>2</td>
+                            <td>5</td>
+                            <td><span class="docs-badge docs-badge-success">Resolved</span></td>
+                        </tr>
+                        <tr>
+                            <td>Oct 2023</td>
+                            <td>Trail of Bits</td>
+                            <td>Core Contracts</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>3</td>
+                            <td>8</td>
+                            <td><span class="docs-badge docs-badge-success">Resolved</span></td>
+                        </tr>
+                        <tr>
+                            <td>Jun 2023</td>
+                            <td>OpenZeppelin</td>
+                            <td>Initial Review</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>4</td>
+                            <td>6</td>
+                            <td><span class="docs-badge docs-badge-success">Resolved</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="docs-callout docs-callout-success">
+                <div class="docs-callout-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                    All Issues Resolved
+                </div>
+                <p>All critical, high, and medium severity findings from our audits have been addressed and verified by the respective audit firms.</p>
+            </div>
+
+            <h2 id="latest">Latest Audit - January 2024</h2>
+            <p>Our most recent comprehensive audit was conducted by <strong>CertiK</strong>, one of the leading blockchain security firms.</p>
+
+            <h3>Audit Scope</h3>
+            <ul>
+                <li><strong>TagItRegistry.sol</strong> - Core product registration and authentication contract</li>
+                <li><strong>TagItToken.sol</strong> - ERC-20 utility token with staking mechanisms</li>
+                <li><strong>OwnershipTransfer.sol</strong> - Secure ownership transfer protocol</li>
+                <li><strong>DisputeResolution.sol</strong> - Decentralized dispute handling system</li>
+                <li><strong>NFCVerifier.sol</strong> - On-chain NFC signature verification</li>
+            </ul>
+
+            <h3>Findings Summary</h3>
+            <p>The CertiK audit identified the following issues, all of which have been resolved:</p>
+
+            <ul>
+                <li><strong>Medium (2):</strong> Gas optimization improvements in batch operations</li>
+                <li><strong>Low (5):</strong> Code quality enhancements and documentation updates</li>
+            </ul>
+
+            <div class="docs-callout docs-callout-info">
+                <div class="docs-callout-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 16v-4"/>
+                        <path d="M12 8h.01"/>
+                    </svg>
+                    CertiK Skynet Score
+                </div>
+                <p>TAG IT Network maintains a <strong>94/100</strong> security score on CertiK Skynet, placing us in the top tier of audited DeFi protocols.</p>
+            </div>
+
+            <h3>Critical Issues Resolved</h3>
+            <p>No critical issues were found in the January 2024 audit, demonstrating the maturity of our codebase following previous audit remediation efforts.</p>
+
+            <h2 id="previous">Previous Audits</h2>
+
+            <h3 id="audit-2023">October 2023 - Trail of Bits</h3>
+            <p>Trail of Bits conducted an in-depth security assessment focusing on our core authentication contracts.</p>
+
+            <h4>Key Findings (All Resolved)</h4>
+            <ul>
+                <li><strong>High (1):</strong> Reentrancy vulnerability in ownership transfer function - Fixed by implementing checks-effects-interactions pattern and ReentrancyGuard</li>
+                <li><strong>Medium (3):</strong> Access control improvements, input validation enhancements, and event emission consistency</li>
+                <li><strong>Low (8):</strong> Code documentation, naming conventions, and gas optimizations</li>
+            </ul>
+
+            <h3 id="audit-initial">June 2023 - OpenZeppelin</h3>
+            <p>Our initial smart contract audit was performed by OpenZeppelin, establishing the security foundation for TAG IT Network.</p>
+
+            <h4>Key Findings (All Resolved)</h4>
+            <ul>
+                <li><strong>Critical (1):</strong> Integer overflow in token minting function - Fixed by upgrading to Solidity 0.8.x with built-in overflow checks</li>
+                <li><strong>High (2):</strong> Improper access control on admin functions and missing pause functionality</li>
+                <li><strong>Medium (4):</strong> Frontrunning vulnerabilities, timestamp dependencies, and upgrade mechanism improvements</li>
+                <li><strong>Low (6):</strong> Code quality and best practice recommendations</li>
+            </ul>
+
+            <div class="docs-callout docs-callout-warning">
+                <div class="docs-callout-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                        <line x1="12" y1="9" x2="12" y2="13"/>
+                        <line x1="12" y1="17" x2="12.01" y2="17"/>
+                    </svg>
+                    Security Best Practice
+                </div>
+                <p>Always verify you are interacting with our official contract addresses listed in the <a href="/docs/contracts/addresses">Contract Addresses</a> documentation. Phishing contracts may attempt to impersonate TAG IT Network.</p>
+            </div>
+
+            <h2 id="bug-bounty">Bug Bounty Program</h2>
+            <p>TAG IT Network maintains an active bug bounty program to incentivize responsible disclosure of security vulnerabilities.</p>
+
+            <h3>Reward Tiers</h3>
+            <div class="docs-table-wrapper">
+                <table class="docs-table">
+                    <thead>
+                        <tr>
+                            <th>Severity</th>
+                            <th>Reward Range</th>
+                            <th>Examples</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="docs-badge docs-badge-error">Critical</span></td>
+                            <td>$50,000 - $100,000</td>
+                            <td>Fund theft, contract takeover, permanent DoS</td>
+                        </tr>
+                        <tr>
+                            <td><span class="docs-badge docs-badge-warning">High</span></td>
+                            <td>$10,000 - $50,000</td>
+                            <td>Significant fund loss risk, access control bypass</td>
+                        </tr>
+                        <tr>
+                            <td><span class="docs-badge docs-badge-info">Medium</span></td>
+                            <td>$2,500 - $10,000</td>
+                            <td>Limited fund loss, griefing attacks</td>
+                        </tr>
+                        <tr>
+                            <td><span class="docs-badge docs-badge-default">Low</span></td>
+                            <td>$500 - $2,500</td>
+                            <td>Minor issues, informational findings</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Scope</h3>
+            <p>The following are in scope for our bug bounty program:</p>
+            <ul>
+                <li>All deployed smart contracts on Polygon Mainnet</li>
+                <li>TAG IT REST and GraphQL APIs</li>
+                <li>Web application at dashboard.tagit.network</li>
+                <li>Mobile applications (iOS and Android)</li>
+            </ul>
+
+            <h3>How to Report</h3>
+            <ol>
+                <li>Document the vulnerability with clear reproduction steps</li>
+                <li>Include proof-of-concept code if applicable</li>
+                <li>Submit your report to <strong>security@tagit.network</strong></li>
+                <li>Wait for our security team to acknowledge receipt (within 24 hours)</li>
+                <li>Work with our team to verify and remediate the issue</li>
+            </ol>
+
+            <div class="docs-callout docs-callout-info">
+                <div class="docs-callout-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 16v-4"/>
+                        <path d="M12 8h.01"/>
+                    </svg>
+                    Immunefi Partnership
+                </div>
+                <p>Our bug bounty program is also hosted on <a href="#">Immunefi</a>, providing additional protection and a trusted platform for security researchers.</p>
+            </div>
+
+            <h2 id="security-contact">Security Contact</h2>
+            <p>We take security seriously and encourage responsible disclosure of any vulnerabilities.</p>
+
+            <h3>Responsible Disclosure Policy</h3>
+            <ul>
+                <li><strong>Do</strong> provide detailed reports with reproduction steps</li>
+                <li><strong>Do</strong> give us reasonable time to respond (minimum 90 days)</li>
+                <li><strong>Do</strong> make a good faith effort to avoid privacy violations and data destruction</li>
+                <li><strong>Don't</strong> publicly disclose vulnerabilities before they are fixed</li>
+                <li><strong>Don't</strong> access or modify other users' data</li>
+                <li><strong>Don't</strong> perform actions that could harm our users or services</li>
+            </ul>
+
+            <h3>Contact Information</h3>
+            <ul>
+                <li><strong>Email:</strong> security@tagit.network</li>
+                <li><strong>PGP Key:</strong> Available on our <a href="#">security page</a></li>
+                <li><strong>Response Time:</strong> Initial response within 24 hours</li>
+            </ul>
+
+            <div class="docs-callout docs-callout-success">
+                <div class="docs-callout-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                    Safe Harbor
+                </div>
+                <p>Security researchers acting in good faith and following our responsible disclosure policy are protected under our Safe Harbor agreement. We will not pursue legal action against researchers who comply with our guidelines.</p>
+            </div>
+
+            <h2 id="download">Download Reports</h2>
+            <p>Full audit reports are available for download below:</p>
+
+            <ul>
+                <li><a href="#">CertiK Audit Report - January 2024 (PDF)</a></li>
+                <li><a href="#">Trail of Bits Audit Report - October 2023 (PDF)</a></li>
+                <li><a href="#">OpenZeppelin Audit Report - June 2023 (PDF)</a></li>
+            </ul>
+
+            <div class="docs-callout docs-callout-info">
+                <div class="docs-callout-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 16v-4"/>
+                        <path d="M12 8h.01"/>
+                    </svg>
+                    Verification
+                </div>
+                <p>All PDF reports are cryptographically signed. You can verify authenticity by checking the digital signatures against our public key.</p>
+            </div>
+
+            <!-- Page Navigation -->
+            <div class="docs-page-nav">
+                <a href="/docs/contracts/abi-reference.html" class="docs-page-nav-item prev">
+                    <span class="docs-page-nav-label">Previous</span>
+                    <span class="docs-page-nav-title">ABI Reference</span>
+                </a>
+                <a href="/docs/nfc/chip-selection.html" class="docs-page-nav-item next">
+                    <span class="docs-page-nav-label">Next</span>
+                    <span class="docs-page-nav-title">Chip Selection</span>
+                </a>
+            </div>
+
+            <!-- Edit Link -->
+            <a href="https://github.com/TAG-IT-NETWORK/tagit-docs" class="docs-edit-link" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                </svg>
+                Edit this page on GitHub
+            </a>
+        </main>
+
+        <!-- Right Sidebar - Table of Contents -->
+        <aside class="docs-toc">
+            <div class="docs-toc-title">On this page</div>
+            <a href="#summary" class="docs-toc-link">Audit Summary</a>
+            <a href="#latest" class="docs-toc-link">Latest Audit - January 2024</a>
+            <a href="#previous" class="docs-toc-link">Previous Audits</a>
+            <a href="#audit-2023" class="docs-toc-link docs-toc-link-h3">October 2023 - Trail of Bits</a>
+            <a href="#audit-initial" class="docs-toc-link docs-toc-link-h3">June 2023 - OpenZeppelin</a>
+            <a href="#bug-bounty" class="docs-toc-link">Bug Bounty Program</a>
+            <a href="#security-contact" class="docs-toc-link">Security Contact</a>
+            <a href="#download" class="docs-toc-link">Download Reports</a>
+        </aside>
+    </div>
+
+    <!-- Search Modal -->
+    <div class="docs-search-modal" id="docsSearchModal">
+        <div class="docs-search-modal-content">
+            <div class="docs-search-modal-header">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="m21 21-4.35-4.35"/>
+                </svg>
+                <input type="text" placeholder="Search documentation..." id="docsSearchInput">
+                <button class="docs-search-modal-close" id="docsSearchClose">Esc</button>
+            </div>
+            <div class="docs-search-results" id="docsSearchResults">
+                <div class="docs-search-empty">Type to search documentation...</div>
+            </div>
+            <div class="docs-search-footer">
+                <span><kbd>↑</kbd><kbd>↓</kbd> to navigate</span>
+                <span><kbd>Enter</kbd> to select</span>
+                <span><kbd>Esc</kbd> to close</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+      <svg viewBox="0 0 24 24">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </button>
+
+    <script src="/js/shared.js" defer></script>
+    <script src="/docs/js/docs.js" defer></script>
+</body>
+</html>

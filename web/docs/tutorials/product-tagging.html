@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Tagging Tutorial - TAG IT Network Documentation</title>
+    <meta name="description" content="Learn how to tag physical products with NFC chips and register them on the blockchain.">
+    <meta name="keywords" content="TAG IT product tagging, NFC tagging, blockchain registration, product authentication">
+    <meta name="author" content="TAG IT Network">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Product Tagging Tutorial - TAG IT Network Documentation">
+    <meta property="og:description" content="Learn how to tag physical products with NFC chips and register them on the blockchain.">
+    <meta property="og:image" content="/assets/images/og-image.png">
+    <meta property="og:url" content="https://tagit.network/docs/tutorials/product-tagging">
+    <meta property="og:type" content="article">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Product Tagging Tutorial - TAG IT Network Documentation">
+    <meta name="twitter:description" content="Learn how to tag physical products with NFC chips and register them on the blockchain.">
+    <meta name="twitter:image" content="/assets/images/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/tagit_logo.png">
+    <link rel="apple-touch-icon" href="/assets/images/tagit_logo.png">
+
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/shared.css">
+    <link rel="stylesheet" href="/css/docs.css">
+</head>
+<body>
+    <!-- Skip to main content link for keyboard users -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Global Cyber Grid Background -->
+    <div class="cyber-grid-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <img src="/assets/images/tagit_logo.png" alt="TAG IT Network Logo" class="logo-img" width="40" height="40">
+        </div>
+        <span>TAG IT Network</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="/#features">Features</a>
+        <a href="/solutions">Solutions</a>
+        <a href="/technology">Technology</a>
+        <a href="/tokenomics">Tokenomics</a>
+        <a href="/docs" class="active">Docs</a>
+        <a href="/about">About</a>
+      </div>
+
+      <button class="nav-cta" id="connectWalletBtn" onclick="handleWalletClick()">
+        Connect Wallet
+      </button>
+
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="/#features">Features</a>
+      <a href="/solutions">Solutions</a>
+      <a href="/technology">Technology</a>
+      <a href="/tokenomics">Tokenomics</a>
+      <a href="/docs" class="active">Docs</a>
+      <a href="/about">About</a>
+      <button class="mobile-cta" onclick="handleWalletClick()">Connect Wallet</button>
+    </div>
+
+    <!-- Mobile Docs Header -->
+    <div class="docs-mobile-header">
+        <button class="docs-mobile-toggle" id="docsMobileToggle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+            <span>Documentation Menu</span>
+            <svg class="docs-mobile-toggle-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 9l6 6 6-6"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Docs Layout -->
+    <div class="docs-layout">
+        <!-- Left Sidebar -->
+        <aside class="docs-sidebar" id="docsSidebar">
+            <div class="docs-sidebar-header">
+                <a href="/docs">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                    Documentation
+                </a>
+            </div>
+
+            <nav>
+                <!-- Getting Started -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">Getting Started</div>
+                    <a href="/docs/getting-started/quick-start.html" class="docs-nav-link">Quick Start Guide</a>
+                    <a href="/docs/getting-started/platform-overview.html" class="docs-nav-link">Platform Overview</a>
+                    <a href="/docs/getting-started/first-integration.html" class="docs-nav-link">First Integration</a>
+                </div>
+
+                <!-- API Reference -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">API Reference</div>
+                    <a href="/docs/api/rest-api.html" class="docs-nav-link">REST API</a>
+                    <a href="/docs/api/graphql.html" class="docs-nav-link">GraphQL API</a>
+                    <a href="/docs/api/webhooks.html" class="docs-nav-link">Webhooks</a>
+                </div>
+
+                <!-- Smart Contracts -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">Smart Contracts</div>
+                    <a href="/docs/contracts/addresses.html" class="docs-nav-link">Contract Addresses</a>
+                    <a href="/docs/contracts/abi-reference.html" class="docs-nav-link">ABI Reference</a>
+                    <a href="/docs/contracts/audits.html" class="docs-nav-link">Audit Reports</a>
+                </div>
+
+                <!-- NFC Integration -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">NFC Integration</div>
+                    <a href="/docs/nfc/chip-selection.html" class="docs-nav-link">Chip Selection</a>
+                    <a href="/docs/nfc/encoding-guide.html" class="docs-nav-link">Encoding Guide</a>
+                    <a href="/docs/nfc/mobile-sdk.html" class="docs-nav-link">Mobile SDK</a>
+                </div>
+
+                <!-- SDK & Libraries -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">SDK & Libraries</div>
+                    <a href="/docs/sdk/javascript.html" class="docs-nav-link">JavaScript SDK</a>
+                    <a href="/docs/sdk/python.html" class="docs-nav-link">Python SDK</a>
+                    <a href="/docs/sdk/mobile.html" class="docs-nav-link">Mobile SDKs</a>
+                </div>
+
+                <!-- Tutorials -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">Tutorials</div>
+                    <a href="/docs/tutorials/product-tagging.html" class="docs-nav-link active">Product Tagging</a>
+                    <a href="/docs/tutorials/ownership-transfer.html" class="docs-nav-link">Ownership Transfer</a>
+                    <a href="/docs/tutorials/dispute-resolution.html" class="docs-nav-link">Dispute Resolution</a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="docs-content" id="main-content">
+            <div class="docs-breadcrumb">
+                <a href="/docs">Docs</a>
+                <span>/</span>
+                <a href="/docs/tutorials/product-tagging">Tutorials</a>
+                <span>/</span>
+                <span>Product Tagging</span>
+            </div>
+
+            <h1>Product Tagging Tutorial</h1>
+            <p class="docs-lead">A complete guide to tagging your first product with TAG IT Network.</p>
+
+            <h2 id="overview">Tutorial Overview</h2>
+            <p>In this tutorial, you will learn how to tag a physical product with an NFC chip and register it on the blockchain. By the end, you will have a fully authenticated product ready for verification.</p>
+
+            <h3>What You'll Build</h3>
+            <ul>
+                <li>A physical product with an encoded NFC tag attached</li>
+                <li>A blockchain registration linking the tag to product metadata</li>
+                <li>A verifiable digital identity for your product</li>
+            </ul>
+
+            <h3>Prerequisites</h3>
+            <ul>
+                <li>A TAG IT Network developer account with API keys</li>
+                <li>NFC-enabled smartphone or NFC writer device</li>
+                <li>Compatible NFC tags (NTAG 424 DNA recommended)</li>
+                <li>The product you want to tag</li>
+                <li>TAG IT SDK installed (<a href="/docs/getting-started/quick-start">see Quick Start Guide</a>)</li>
+            </ul>
+
+            <div class="docs-callout docs-callout-info">
+                <div class="docs-callout-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 16v-4"/>
+                        <path d="M12 8h.01"/>
+                    </svg>
+                    Estimated Time
+                </div>
+                <p>This tutorial takes approximately 30-45 minutes to complete, depending on your familiarity with NFC technology.</p>
+            </div>
+
+            <h2 id="prepare-product">Step 1: Prepare Your Product</h2>
+            <p>Before attaching an NFC tag, you need to identify the optimal placement location and prepare the surface.</p>
+
+            <h3>Tag Placement Considerations</h3>
+            <!-- Diagram: Product with tag placement zones highlighted -->
+            <div class="docs-callout docs-callout-info">
+                <div class="docs-callout-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 16v-4"/>
+                        <path d="M12 8h.01"/>
+                    </svg>
+                    Diagram: Tag Placement Zones
+                </div>
+                <p>Consider placing tags in accessible but protected areas. For luxury goods, common locations include inside packaging, on product labels, or embedded within the product itself.</p>
+            </div>
+
+            <p>Choose a location that is:</p>
+            <ul>
+                <li><strong>Accessible:</strong> Users should be able to tap the tag easily with their phone</li>
+                <li><strong>Protected:</strong> The tag should be shielded from damage and tampering</li>
+                <li><strong>Away from metal:</strong> Metal surfaces can interfere with NFC signals</li>
+                <li><strong>Flat:</strong> Curved surfaces may reduce read range</li>
+            </ul>
+
+            <h3>Surface Preparation</h3>
+            <ol>
+                <li>Clean the surface with isopropyl alcohol to remove dust, oil, and debris</li>
+                <li>Allow the surface to dry completely (2-3 minutes)</li>
+                <li>For porous materials, apply a thin primer coat if necessary</li>
+                <li>Mark the exact placement location with a light pencil mark</li>
+            </ol>
+
+            <div class="docs-callout docs-callout-warning">
+                <div class="docs-callout-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                        <line x1="12" y1="9" x2="12" y2="13"/>
+                        <line x1="12" y1="17" x2="12.01" y2="17"/>
+                    </svg>
+                    Important
+                </div>
+                <p>Never place NFC tags directly on or within 1cm of metal surfaces. Use ferrite shielding if metal placement is unavoidable.</p>
+            </div>
+
+            <h2 id="select-tag">Step 2: Select NFC Tag</h2>
+            <p>Choosing the right NFC tag is crucial for security and durability. TAG IT Network supports various tag types, but we recommend using tags with cryptographic authentication.</p>
+
+            <h3>Recommended Tags</h3>
+            <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+                <thead>
+                    <tr style="border-bottom: 2px solid var(--border-color);">
+                        <th style="text-align: left; padding: 0.75rem;">Tag Type</th>
+                        <th style="text-align: left; padding: 0.75rem;">Security Level</th>
+                        <th style="text-align: left; padding: 0.75rem;">Best For</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                        <td style="padding: 0.75rem;"><strong>NTAG 424 DNA</strong></td>
+                        <td style="padding: 0.75rem;">High (AES-128)</td>
+                        <td style="padding: 0.75rem;">Luxury goods, high-value items</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                        <td style="padding: 0.75rem;"><strong>NTAG 213/215/216</strong></td>
+                        <td style="padding: 0.75rem;">Medium</td>
+                        <td style="padding: 0.75rem;">Consumer products, general use</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                        <td style="padding: 0.75rem;"><strong>ICODE SLIX2</strong></td>
+                        <td style="padding: 0.75rem;">Medium</td>
+                        <td style="padding: 0.75rem;">Industrial applications</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>For detailed tag specifications and purchasing options, see our <a href="/docs/nfc/chip-selection">Chip Selection Guide</a>.</p>
+
+            <h2 id="encode-tag">Step 3: Encode the Tag</h2>
+            <p>Before attaching the tag, you need to encode it with a unique identifier and configure its security settings.</p>
+
+            <h3>Using the TAG IT Mobile App</h3>
+            <ol>
+                <li>Download the TAG IT Encoder app from the App Store or Google Play</li>
+                <li>Log in with your developer credentials</li>
+                <li>Select <strong>"Encode New Tag"</strong> from the menu</li>
+                <li>Hold your phone near the blank NFC tag</li>
+                <li>The app will write a unique identifier and security keys to the tag</li>
+            </ol>
+
+            <h3>Using the SDK (Programmatic Encoding)</h3>
+            <p>For automated encoding workflows, use the SDK with an NFC writer device:</p>
+
+            <pre><code class="language-javascript">import { TagIt } from '@tagit/sdk';
+import { NFCWriter } from '@tagit/nfc-tools';
+
+const tagit = new TagIt({
+  apiKey: process.env.TAGIT_API_KEY,
+  network: 'mainnet'
+});
+
+// Initialize NFC writer
+const writer = new NFCWriter({
+  device: 'ACR122U' // Supported NFC reader/writer
+});
+
+async function encodeTag(productInfo) {
+  // Generate unique tag ID
+  const tagId = await tagit.tags.generateId();
+
+  // Prepare tag payload
+  const payload = {
+    tagId: tagId,
+    productSku: productInfo.sku,
+    manufacturerId: productInfo.manufacturerId,
+    timestamp: Date.now()
+  };
+
+  // Generate security keys
+  const keys = await tagit.tags.generateKeys(tagId);
+
+  // Write to NFC tag
+  await writer.write({
+    ndef: [{
+      type: 'url',
+      value: `https://verify.tagit.network/${tagId}`
+    }],
+    securityKeys: keys,
+    lockTag: true // Prevent overwriting
+  });
+
+  console.log('Tag encoded successfully:', tagId);
+  return tagId;
+}
+
+// Example usage
+const tagId = await encodeTag({
+  sku: 'WATCH-LUX-001',
+  manufacturerId: 'MFR-12345'
+});</code></pre>
+
+            <div class="docs-callout docs-callout-info">
+                <div class="docs-callout-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 16v-4"/>
+                        <path d="M12 8h.01"/>
+                    </svg>
+                    Tip
+                </div>
+                <p>Always test the encoded tag with a smartphone before attaching it to the product. Once attached, re-encoding may not be possible.</p>
+            </div>
+
+            <h2 id="register-blockchain">Step 4: Register on Blockchain</h2>
+            <p>After encoding the tag, register the product on the blockchain to create an immutable record of authenticity.</p>
+
+            <h3>Registration API Call</h3>
+            <pre><code class="language-javascript">import { TagIt } from '@tagit/sdk';
+
+const tagit = new TagIt({
+  apiKey: process.env.TAGIT_API_KEY,
+  network: 'mainnet'
+});
+
+async function registerProduct(tagId, productData) {
+  const registration = await tagit.products.register({
+    tagId: tagId,
+    metadata: {
+      name: productData.name,
+      brand: productData.brand,
+      category: productData.category,
+      serialNumber: productData.serialNumber,
+      manufactureDate: productData.manufactureDate,
+      origin: productData.origin,
+      description: productData.description,
+      images: productData.imageUrls
+    },
+    owner: productData.initialOwnerAddress,
+    options: {
+      mintNFT: true, // Create NFT certificate
+      storeOnIPFS: true // Store metadata on IPFS
+    }
+  });
+
+  console.log('Product registered!');
+  console.log('Transaction hash:', registration.txHash);
+  console.log('Token ID:', registration.tokenId);
+  console.log('IPFS hash:', registration.ipfsHash);
+
+  return registration;
+}
+
+// Example usage
+const result = await registerProduct('NFC-TAG-001-ABC', {
+  name: 'Luxury Watch Model X',
+  brand: 'Premium Timepieces',
+  category: 'Watches',
+  serialNumber: 'SN-2024-001234',
+  manufactureDate: '2024-01-15',
+  origin: 'Switzerland',
+  description: 'Limited edition automatic watch with sapphire crystal',
+  imageUrls: ['https://example.com/product-image.jpg'],
+  initialOwnerAddress: '0x742d35Cc6634C0532925a3b844Bc9e7595f5c9E8'
+});</code></pre>
+
+            <h3>Registration Response</h3>
+            <pre><code class="language-json">{
+  "success": true,
+  "tagId": "NFC-TAG-001-ABC",
+  "tokenId": "12345",
+  "txHash": "0xabc123def456...",
+  "ipfsHash": "QmXyz789...",
+  "contractAddress": "0x1234567890abcdef...",
+  "blockNumber": 45678901,
+  "timestamp": "2024-01-15T10:30:00Z",
+  "verificationUrl": "https://verify.tagit.network/NFC-TAG-001-ABC"
+}</code></pre>
+
+            <div class="docs-callout docs-callout-success">
+                <div class="docs-callout-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                    Gas Fees
+                </div>
+                <p>TAG IT Network uses Polygon for low-cost transactions. Registration typically costs less than $0.01 in gas fees.</p>
+            </div>
+
+            <h2 id="attach-tag">Step 5: Attach the Tag</h2>
+            <p>With the tag encoded and registered, it's time to physically attach it to your product.</p>
+
+            <h3>Application Methods</h3>
+
+            <!-- Diagram: Different attachment methods illustrated -->
+            <div class="docs-callout docs-callout-info">
+                <div class="docs-callout-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 16v-4"/>
+                        <path d="M12 8h.01"/>
+                    </svg>
+                    Diagram: Attachment Methods
+                </div>
+                <p>Visual guide showing adhesive application, heat sealing, sewing into labels, and embedded placement techniques.</p>
+            </div>
+
+            <h4>Adhesive Application (Most Common)</h4>
+            <ol>
+                <li>Peel the backing from the adhesive NFC tag</li>
+                <li>Align the tag with your marked placement location</li>
+                <li>Press firmly from the center outward to remove air bubbles</li>
+                <li>Apply pressure for 30 seconds for optimal adhesion</li>
+                <li>For added security, apply a tamper-evident overlay sticker</li>
+            </ol>
+
+            <h4>Heat-Sealed Tags</h4>
+            <p>For textile and apparel applications:</p>
+            <ol>
+                <li>Position the heat-seal tag on the fabric</li>
+                <li>Apply heat press at 150-170°C for 10-15 seconds</li>
+                <li>Allow to cool before handling</li>
+            </ol>
+
+            <h4>Sewn-In Labels</h4>
+            <p>For garments and accessories:</p>
+            <ul>
+                <li>Use woven labels with embedded NFC inlays</li>
+                <li>Sew into seams or care label areas</li>
+                <li>Ensure the antenna is not folded or crimped</li>
+            </ul>
+
+            <h4>Embedded Tags</h4>
+            <p>For products with internal cavities:</p>
+            <ul>
+                <li>Place the tag inside the product during manufacturing</li>
+                <li>Use protective housing if necessary</li>
+                <li>Ensure read range is adequate through the product material</li>
+            </ul>
+
+            <h2 id="verify">Step 6: Verify Installation</h2>
+            <p>After attaching the tag, perform a verification test to ensure everything works correctly.</p>
+
+            <h3>Verification Checklist</h3>
+            <ol>
+                <li><strong>Read Test:</strong> Use your smartphone to tap the tag. The verification page should load.</li>
+                <li><strong>Data Verification:</strong> Confirm all product information displays correctly.</li>
+                <li><strong>Range Test:</strong> Test reading from various angles and distances (should work within 2-4cm).</li>
+                <li><strong>Security Test:</strong> Verify the cryptographic signature validates successfully.</li>
+            </ol>
+
+            <h3>Verification Script</h3>
+            <pre><code class="language-javascript">import { TagIt } from '@tagit/sdk';
+
+const tagit = new TagIt({
+  apiKey: process.env.TAGIT_API_KEY,
+  network: 'mainnet'
+});
+
+async function verifyInstallation(tagId) {
+  console.log('Starting verification tests...\n');
+
+  // Test 1: Tag exists in database
+  const tagExists = await tagit.tags.exists(tagId);
+  console.log('1. Tag registered:', tagExists ? 'PASS' : 'FAIL');
+
+  // Test 2: Product data retrieval
+  const product = await tagit.products.get(tagId);
+  console.log('2. Product data:', product ? 'PASS' : 'FAIL');
+
+  // Test 3: Blockchain verification
+  const verification = await tagit.products.verify(tagId);
+  console.log('3. Blockchain verified:', verification.verified ? 'PASS' : 'FAIL');
+
+  // Test 4: Signature validation
+  const sigValid = await tagit.security.validateSignature(tagId);
+  console.log('4. Signature valid:', sigValid ? 'PASS' : 'FAIL');
+
+  // Test 5: IPFS data availability
+  const ipfsData = await tagit.storage.getIPFS(product.ipfsHash);
+  console.log('5. IPFS available:', ipfsData ? 'PASS' : 'FAIL');
+
+  const allPassed = tagExists && product && verification.verified && sigValid && ipfsData;
+  console.log('\n' + (allPassed ? 'All tests passed!' : 'Some tests failed. Review above.'));
+
+  return allPassed;
+}
+
+// Run verification
+verifyInstallation('NFC-TAG-001-ABC');</code></pre>
+
+            <h3>Expected Output</h3>
+            <pre><code class="language-bash">Starting verification tests...
+
+1. Tag registered: PASS
+2. Product data: PASS
+3. Blockchain verified: PASS
+4. Signature valid: PASS
+5. IPFS available: PASS
+
+All tests passed!</code></pre>
+
+            <h2 id="best-practices">Best Practices</h2>
+            <p>Follow these best practices to ensure long-term success with your product tagging implementation.</p>
+
+            <h3>Durability</h3>
+            <ul>
+                <li><strong>Environmental Protection:</strong> Use waterproof encapsulated tags for products exposed to moisture</li>
+                <li><strong>UV Resistance:</strong> Choose UV-resistant tag materials for outdoor products</li>
+                <li><strong>Temperature Range:</strong> Standard tags operate -25°C to +85°C; use industrial tags for extreme conditions</li>
+                <li><strong>Physical Protection:</strong> Apply protective overlays or embed tags in protective housings</li>
+            </ul>
+
+            <h3>Placement</h3>
+            <ul>
+                <li><strong>Consistency:</strong> Place tags in the same location across product lines for predictable user experience</li>
+                <li><strong>Documentation:</strong> Include tag location in user manuals and packaging</li>
+                <li><strong>Visual Indicators:</strong> Use "NFC Enabled" or "Tap to Verify" icons near the tag location</li>
+                <li><strong>Accessibility:</strong> Ensure the tag is reachable without disassembling the product</li>
+            </ul>
+
+            <h3>Security</h3>
+            <ul>
+                <li><strong>Use Cryptographic Tags:</strong> Always prefer NTAG 424 DNA or equivalent for high-value items</li>
+                <li><strong>Tamper Evidence:</strong> Apply tamper-evident seals over tags to detect removal attempts</li>
+                <li><strong>Key Management:</strong> Store encryption keys securely; never expose them in client-side code</li>
+                <li><strong>Regular Audits:</strong> Periodically verify registered products haven't been tampered with</li>
+            </ul>
+
+            <div class="docs-callout docs-callout-warning">
+                <div class="docs-callout-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                        <line x1="12" y1="9" x2="12" y2="13"/>
+                        <line x1="12" y1="17" x2="12.01" y2="17"/>
+                    </svg>
+                    Security Reminder
+                </div>
+                <p>Never share your API secret keys or tag encryption keys. Compromised keys can allow counterfeiters to create fraudulent products.</p>
+            </div>
+
+            <h3>Batch Operations</h3>
+            <p>For high-volume tagging operations:</p>
+            <pre><code class="language-javascript">import { TagIt } from '@tagit/sdk';
+
+const tagit = new TagIt({
+  apiKey: process.env.TAGIT_API_KEY,
+  network: 'mainnet'
+});
+
+async function batchRegister(products) {
+  const results = await tagit.products.batchRegister(products, {
+    batchSize: 100, // Process 100 at a time
+    retryOnFailure: true,
+    webhookUrl: 'https://your-server.com/webhook/batch-complete'
+  });
+
+  console.log(`Registered ${results.successful} of ${products.length} products`);
+  console.log(`Failed: ${results.failed}`);
+
+  return results;
+}
+
+// Register 1000 products
+const productBatch = generateProductBatch(1000);
+await batchRegister(productBatch);</code></pre>
+
+            <div class="docs-callout docs-callout-success">
+                <div class="docs-callout-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                    Congratulations!
+                </div>
+                <p>You have successfully tagged and registered your first product on the TAG IT Network. Your product now has a verifiable digital identity on the blockchain.</p>
+            </div>
+
+            <h3>Next Steps</h3>
+            <ul>
+                <li><a href="/docs/tutorials/ownership-transfer">Ownership Transfer Tutorial</a> - Learn how to transfer product ownership</li>
+                <li><a href="/docs/tutorials/dispute-resolution">Dispute Resolution</a> - Handle authenticity disputes</li>
+                <li><a href="/docs/api/rest-api">REST API Reference</a> - Explore all available API endpoints</li>
+                <li><a href="/docs/nfc/encoding-guide">Advanced Encoding Guide</a> - Deep dive into NFC encoding options</li>
+            </ul>
+
+            <!-- Page Navigation -->
+            <div class="docs-page-nav">
+                <a href="/docs/sdk/mobile.html" class="docs-page-nav-item prev">
+                    <span class="docs-page-nav-label">Previous</span>
+                    <span class="docs-page-nav-title">Mobile SDKs</span>
+                </a>
+                <a href="/docs/tutorials/ownership-transfer.html" class="docs-page-nav-item next">
+                    <span class="docs-page-nav-label">Next</span>
+                    <span class="docs-page-nav-title">Ownership Transfer</span>
+                </a>
+            </div>
+
+            <!-- Edit Link -->
+            <a href="https://github.com/TAG-IT-NETWORK/tagit-docs" class="docs-edit-link" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                </svg>
+                Edit this page on GitHub
+            </a>
+        </main>
+
+        <!-- Right Sidebar - Table of Contents -->
+        <aside class="docs-toc">
+            <div class="docs-toc-title">On this page</div>
+            <a href="#overview" class="docs-toc-link">Tutorial Overview</a>
+            <a href="#prepare-product" class="docs-toc-link">Step 1: Prepare Your Product</a>
+            <a href="#select-tag" class="docs-toc-link">Step 2: Select NFC Tag</a>
+            <a href="#encode-tag" class="docs-toc-link">Step 3: Encode the Tag</a>
+            <a href="#register-blockchain" class="docs-toc-link">Step 4: Register on Blockchain</a>
+            <a href="#attach-tag" class="docs-toc-link">Step 5: Attach the Tag</a>
+            <a href="#verify" class="docs-toc-link">Step 6: Verify Installation</a>
+            <a href="#best-practices" class="docs-toc-link">Best Practices</a>
+        </aside>
+    </div>
+
+    <!-- Search Modal -->
+    <div class="docs-search-modal" id="docsSearchModal">
+        <div class="docs-search-modal-content">
+            <div class="docs-search-modal-header">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="m21 21-4.35-4.35"/>
+                </svg>
+                <input type="text" placeholder="Search documentation..." id="docsSearchInput">
+                <button class="docs-search-modal-close" id="docsSearchClose">Esc</button>
+            </div>
+            <div class="docs-search-results" id="docsSearchResults">
+                <div class="docs-search-empty">Type to search documentation...</div>
+            </div>
+            <div class="docs-search-footer">
+                <span><kbd>↑</kbd><kbd>↓</kbd> to navigate</span>
+                <span><kbd>Enter</kbd> to select</span>
+                <span><kbd>Esc</kbd> to close</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+      <svg viewBox="0 0 24 24">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </button>
+
+    <script src="/js/shared.js" defer></script>
+    <script src="/docs/js/docs.js" defer></script>
+</body>
+</html>

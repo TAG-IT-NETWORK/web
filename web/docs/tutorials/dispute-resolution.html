@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dispute Resolution Tutorial - TAG IT Network Documentation</title>
+    <meta name="description" content="Handle authenticity disputes and fraud claims using TAG IT Network's dispute system.">
+    <meta name="keywords" content="TAG IT dispute resolution, fraud claims, authenticity disputes, blockchain verification">
+    <meta name="author" content="TAG IT Network">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Dispute Resolution Tutorial - TAG IT Network Documentation">
+    <meta property="og:description" content="Handle authenticity disputes and fraud claims using TAG IT Network's dispute system.">
+    <meta property="og:image" content="/assets/images/og-image.png">
+    <meta property="og:url" content="https://tagit.network/docs/tutorials/dispute-resolution">
+    <meta property="og:type" content="article">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dispute Resolution Tutorial - TAG IT Network Documentation">
+    <meta name="twitter:description" content="Handle authenticity disputes and fraud claims using TAG IT Network's dispute system.">
+    <meta name="twitter:image" content="/assets/images/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/tagit_logo.png">
+    <link rel="apple-touch-icon" href="/assets/images/tagit_logo.png">
+
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/shared.css">
+    <link rel="stylesheet" href="/css/docs.css">
+</head>
+<body>
+    <!-- Skip to main content link for keyboard users -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Global Cyber Grid Background -->
+    <div class="cyber-grid-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <img src="/assets/images/tagit_logo.png" alt="TAG IT Network Logo" class="logo-img" width="40" height="40">
+        </div>
+        <span>TAG IT Network</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="/#features">Features</a>
+        <a href="/solutions">Solutions</a>
+        <a href="/technology">Technology</a>
+        <a href="/tokenomics">Tokenomics</a>
+        <a href="/docs" class="active">Docs</a>
+        <a href="/about">About</a>
+      </div>
+
+      <button class="nav-cta" id="connectWalletBtn" onclick="handleWalletClick()">
+        Connect Wallet
+      </button>
+
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="/#features">Features</a>
+      <a href="/solutions">Solutions</a>
+      <a href="/technology">Technology</a>
+      <a href="/tokenomics">Tokenomics</a>
+      <a href="/docs" class="active">Docs</a>
+      <a href="/about">About</a>
+      <button class="mobile-cta" onclick="handleWalletClick()">Connect Wallet</button>
+    </div>
+
+    <!-- Mobile Docs Header -->
+    <div class="docs-mobile-header">
+        <button class="docs-mobile-toggle" id="docsMobileToggle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+            <span>Documentation Menu</span>
+            <svg class="docs-mobile-toggle-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 9l6 6 6-6"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Docs Layout -->
+    <div class="docs-layout">
+        <!-- Left Sidebar -->
+        <aside class="docs-sidebar" id="docsSidebar">
+            <div class="docs-sidebar-header">
+                <a href="/docs">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                    Documentation
+                </a>
+            </div>
+
+            <nav>
+                <!-- Getting Started -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">Getting Started</div>
+                    <a href="/docs/getting-started/quick-start.html" class="docs-nav-link">Quick Start Guide</a>
+                    <a href="/docs/getting-started/platform-overview.html" class="docs-nav-link">Platform Overview</a>
+                    <a href="/docs/getting-started/first-integration.html" class="docs-nav-link">First Integration</a>
+                </div>
+
+                <!-- API Reference -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">API Reference</div>
+                    <a href="/docs/api/rest-api.html" class="docs-nav-link">REST API</a>
+                    <a href="/docs/api/graphql.html" class="docs-nav-link">GraphQL API</a>
+                    <a href="/docs/api/webhooks.html" class="docs-nav-link">Webhooks</a>
+                </div>
+
+                <!-- Smart Contracts -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">Smart Contracts</div>
+                    <a href="/docs/contracts/addresses.html" class="docs-nav-link">Contract Addresses</a>
+                    <a href="/docs/contracts/abi-reference.html" class="docs-nav-link">ABI Reference</a>
+                    <a href="/docs/contracts/audits.html" class="docs-nav-link">Audit Reports</a>
+                </div>
+
+                <!-- NFC Integration -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">NFC Integration</div>
+                    <a href="/docs/nfc/chip-selection.html" class="docs-nav-link">Chip Selection</a>
+                    <a href="/docs/nfc/encoding-guide.html" class="docs-nav-link">Encoding Guide</a>
+                    <a href="/docs/nfc/mobile-sdk.html" class="docs-nav-link">Mobile SDK</a>
+                </div>
+
+                <!-- SDK & Libraries -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">SDK & Libraries</div>
+                    <a href="/docs/sdk/javascript.html" class="docs-nav-link">JavaScript SDK</a>
+                    <a href="/docs/sdk/python.html" class="docs-nav-link">Python SDK</a>
+                    <a href="/docs/sdk/mobile.html" class="docs-nav-link">Mobile SDKs</a>
+                </div>
+
+                <!-- Tutorials -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">Tutorials</div>
+                    <a href="/docs/tutorials/product-tagging.html" class="docs-nav-link">Product Tagging</a>
+                    <a href="/docs/tutorials/ownership-transfer.html" class="docs-nav-link">Ownership Transfer</a>
+                    <a href="/docs/tutorials/dispute-resolution.html" class="docs-nav-link active">Dispute Resolution</a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="docs-content" id="main-content">
+            <div class="docs-breadcrumb">
+                <a href="/docs">Docs</a>
+                <span>/</span>
+                <a href="/docs/tutorials/product-tagging">Tutorials</a>
+                <span>/</span>
+                <span>Dispute Resolution</span>
+            </div>
+
+            <h1>Dispute Resolution Tutorial</h1>
+            <p class="docs-lead">Learn how to handle authenticity disputes and protect both brands and consumers.</p>
+
+            <h2 id="overview">Dispute Resolution Overview</h2>
+            <p>Authenticity disputes can arise when there's uncertainty about a product's legitimacy. The TAG IT Network provides a comprehensive dispute resolution system that leverages blockchain transparency and AI-powered analysis to fairly resolve conflicts.</p>
+
+            <h3>When Disputes Occur</h3>
+            <p>Disputes typically arise in the following scenarios:</p>
+            <ul>
+                <li>A consumer suspects they received a counterfeit product</li>
+                <li>NFC tag verification returns inconsistent results</li>
+                <li>Ownership records show unexpected transfers</li>
+                <li>Product metadata doesn't match physical characteristics</li>
+                <li>Multiple parties claim ownership of the same item</li>
+            </ul>
+
+            <h3>Key Stakeholders</h3>
+            <p>The dispute resolution process involves several parties:</p>
+            <ul>
+                <li><strong>Claimant:</strong> The party filing the dispute (consumer, brand, or reseller)</li>
+                <li><strong>Respondent:</strong> The party against whom the dispute is filed</li>
+                <li><strong>ORACULS AI:</strong> The automated analysis system that evaluates evidence</li>
+                <li><strong>DAO Arbitrators:</strong> Community members who handle escalated cases</li>
+                <li><strong>Brand Representatives:</strong> Original manufacturers who can verify authenticity</li>
+            </ul>
+
+            <pre><code class="language-text">Dispute Resolution Flow:
++------------------+     +------------------+     +------------------+
+|    Claimant      | --> |   TAG IT System  | --> |    ORACULS AI    |
+|  Files Dispute   |     |  Collects Data   |     |    Analysis      |
++------------------+     +------------------+     +------------------+
+                                                          |
+                                                          v
++------------------+     +------------------+     +------------------+
+|    Resolution    | <-- |   DAO Review     | <-- |   Auto-Resolve   |
+|     Outcome      |     |  (if escalated)  |     |   or Escalate    |
++------------------+     +------------------+     +------------------+</code></pre>
+
+            <h2 id="filing">Step 1: Filing a Dispute</h2>
+            <p>To initiate a dispute, use the TAG IT SDK or REST API to submit a formal claim with supporting evidence.</p>
+
+            <h3>API Call</h3>
+            <pre><code class="language-javascript">import { TagIt } from '@tagit/sdk';
+
+const tagit = new TagIt({
+  apiKey: process.env.TAGIT_API_KEY,
+  network: 'mainnet'
+});
+
+// File a new dispute
+async function fileDispute(productTagId, evidenceData) {
+  try {
+    const dispute = await tagit.disputes.create({
+      tagId: productTagId,
+      type: 'authenticity', // or 'ownership', 'metadata'
+      description: 'Product characteristics do not match registered metadata',
+      evidence: {
+        photos: evidenceData.photos, // Array of image URLs
+        purchaseReceipt: evidenceData.receiptUrl,
+        nfcScanLog: evidenceData.scanLog,
+        additionalNotes: evidenceData.notes
+      },
+      claimantWallet: '0x742d35Cc6634C0532925a3b844Bc9e7595f5c9E8',
+      requestedOutcome: 'refund' // or 'replacement', 'investigation'
+    });
+
+    console.log('Dispute ID:', dispute.id);
+    console.log('Status:', dispute.status);
+    console.log('Estimated resolution:', dispute.estimatedResolution);
+
+    return dispute;
+  } catch (error) {
+    console.error('Failed to file dispute:', error.message);
+  }
+}
+
+// Example usage
+fileDispute('NFC-TAG-001-ABC', {
+  photos: ['https://storage.example.com/evidence/photo1.jpg'],
+  receiptUrl: 'https://storage.example.com/receipt.pdf',
+  scanLog: { timestamp: '2024-06-15T14:30:00Z', result: 'mismatch' },
+  notes: 'Serial number on product does not match blockchain record'
+});</code></pre>
+
+            <h3>Required Evidence</h3>
+            <p>For a dispute to be processed, you must provide:</p>
+            <ul>
+                <li><strong>Product photos:</strong> Clear images showing the product and any discrepancies</li>
+                <li><strong>NFC scan logs:</strong> Recent verification attempts with timestamps</li>
+                <li><strong>Purchase proof:</strong> Receipt, invoice, or transaction record</li>
+                <li><strong>Description:</strong> Detailed explanation of the issue</li>
+            </ul>
+
+            <div class="docs-callout docs-callout-info">
+                <div class="docs-callout-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 16v-4"/>
+                        <path d="M12 8h.01"/>
+                    </svg>
+                    Note
+                </div>
+                <p>Disputes must be filed within 90 days of the original transaction. Evidence submitted after filing may be added within 7 days.</p>
+            </div>
+
+            <h2 id="evidence">Step 2: Gathering Evidence</h2>
+            <p>The TAG IT system automatically collects blockchain records and NFC signature data to supplement your submitted evidence.</p>
+
+            <h3>Blockchain Records</h3>
+            <p>The system retrieves immutable on-chain data including:</p>
+            <ul>
+                <li>Original minting transaction and timestamp</li>
+                <li>Complete ownership transfer history</li>
+                <li>Metadata update records</li>
+                <li>Previous dispute history for the product</li>
+            </ul>
+
+            <pre><code class="language-javascript">// Retrieve blockchain evidence for a dispute
+async function getBlockchainEvidence(disputeId) {
+  const evidence = await tagit.disputes.getEvidence(disputeId);
+
+  return {
+    mintingTx: evidence.blockchain.mintTransaction,
+    transfers: evidence.blockchain.transferHistory,
+    metadataChanges: evidence.blockchain.metadataUpdates,
+    previousDisputes: evidence.blockchain.disputeHistory
+  };
+}</code></pre>
+
+            <h3>NFC Signature Verification</h3>
+            <p>NFC chips contain cryptographic signatures that prove authenticity:</p>
+
+            <pre><code class="language-javascript">// Verify NFC signature integrity
+async function verifyNFCSignature(tagId) {
+  const verification = await tagit.nfc.verifySignature(tagId);
+
+  console.log('Signature valid:', verification.isValid);
+  console.log('Chip manufacturer:', verification.chipManufacturer);
+  console.log('Encryption standard:', verification.encryptionType);
+  console.log('Tamper detection:', verification.tamperStatus);
+
+  return verification;
+}</code></pre>
+
+            <pre><code class="language-text">NFC Signature Verification Process:
++------------------+     +------------------+     +------------------+
+|   Physical NFC   | --> |   Read Chip ID   | --> |   Verify Against |
+|   Tag on Product |     |   & Signature    |     |   Blockchain     |
++------------------+     +------------------+     +------------------+
+                                                          |
+                                                          v
+                                                  +------------------+
+                                                  |   Match Status:  |
+                                                  |   VALID / INVALID|
+                                                  +------------------+</code></pre>
+
+            <h2 id="review">Step 3: Review Process</h2>
+            <p>Once evidence is gathered, the ORACULS AI system performs automated analysis to determine authenticity.</p>
+
+            <h3>ORACULS AI Analysis</h3>
+            <p>The ORACULS (Optimized Reasoning And Classification Using Learned Systems) AI evaluates:</p>
+            <ul>
+                <li><strong>Visual analysis:</strong> Compares submitted photos against brand reference images</li>
+                <li><strong>Pattern detection:</strong> Identifies anomalies in transaction patterns</li>
+                <li><strong>Signature verification:</strong> Validates cryptographic proofs</li>
+                <li><strong>Historical correlation:</strong> Cross-references with known fraud patterns</li>
+                <li><strong>Metadata consistency:</strong> Checks for discrepancies in product data</li>
+            </ul>
+
+            <pre><code class="language-javascript">// Check dispute analysis status
+async function checkAnalysisStatus(disputeId) {
+  const status = await tagit.disputes.getStatus(disputeId);
+
+  console.log('Analysis phase:', status.currentPhase);
+  console.log('Confidence score:', status.confidenceScore);
+  console.log('Factors analyzed:', status.analyzedFactors);
+
+  if (status.currentPhase === 'ai_review') {
+    console.log('AI findings:', status.aiFindings);
+  }
+
+  return status;
+}
+
+// Example response
+/*
+{
+  "disputeId": "DISP-2024-001234",
+  "currentPhase": "ai_review",
+  "confidenceScore": 0.87,
+  "analyzedFactors": [
+    "nfc_signature",
+    "visual_comparison",
+    "transaction_pattern",
+    "metadata_consistency"
+  ],
+  "aiFindings": {
+    "nfcSignature": "valid",
+    "visualMatch": 0.92,
+    "transactionAnomaly": false,
+    "metadataMatch": true
+  }
+}
+*/</code></pre>
+
+            <div class="docs-callout docs-callout-warning">
+                <div class="docs-callout-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                        <line x1="12" y1="9" x2="12" y2="13"/>
+                        <line x1="12" y1="17" x2="12.01" y2="17"/>
+                    </svg>
+                    Processing Time
+                </div>
+                <p>AI analysis typically completes within 24-48 hours. Complex cases involving brand verification may take up to 7 days.</p>
+            </div>
+
+            <h2 id="resolution">Step 4: Resolution Outcomes</h2>
+            <p>Based on the evidence and analysis, disputes are resolved with one of three outcomes:</p>
+
+            <h3>Authentic</h3>
+            <p>The product is verified as genuine. The dispute is closed, and the claimant is notified.</p>
+            <pre><code class="language-json">{
+  "outcome": "authentic",
+  "confidence": 0.95,
+  "summary": "Product verified as genuine based on NFC signature and blockchain records",
+  "actions": [],
+  "appealDeadline": "2024-07-15T00:00:00Z"
+}</code></pre>
+
+            <h3>Counterfeit</h3>
+            <p>The product is determined to be fake. Remediation actions are triggered.</p>
+            <pre><code class="language-json">{
+  "outcome": "counterfeit",
+  "confidence": 0.89,
+  "summary": "Product identified as counterfeit based on visual analysis and invalid NFC signature",
+  "actions": [
+    "refund_initiated",
+    "seller_flagged",
+    "brand_notified",
+    "nfc_tag_blacklisted"
+  ],
+  "refundAmount": "299.99",
+  "refundCurrency": "USD",
+  "appealDeadline": "2024-07-15T00:00:00Z"
+}</code></pre>
+
+            <h3>Inconclusive</h3>
+            <p>Evidence is insufficient for a definitive determination. Case is escalated for human review.</p>
+            <pre><code class="language-json">{
+  "outcome": "inconclusive",
+  "confidence": 0.52,
+  "summary": "Unable to determine authenticity with sufficient confidence",
+  "nextSteps": "escalated_to_dao",
+  "escalationReason": "Conflicting evidence between visual analysis and blockchain records",
+  "daoReviewDeadline": "2024-07-22T00:00:00Z"
+}</code></pre>
+
+            <h2 id="appeals">Step 5: Appeals Process</h2>
+            <p>If either party disagrees with the resolution, they can escalate to the TAG IT DAO for community arbitration.</p>
+
+            <h3>Escalation to DAO</h3>
+            <pre><code class="language-javascript">// File an appeal
+async function fileAppeal(disputeId, appealReason) {
+  const appeal = await tagit.disputes.appeal({
+    disputeId: disputeId,
+    reason: appealReason,
+    additionalEvidence: {
+      expertOpinion: 'https://storage.example.com/expert-report.pdf',
+      brandStatement: 'https://storage.example.com/brand-verification.pdf'
+    },
+    stakingAmount: '100' // TAGIT tokens staked for appeal
+  });
+
+  console.log('Appeal ID:', appeal.id);
+  console.log('DAO review starts:', appeal.reviewStartDate);
+  console.log('Voting deadline:', appeal.votingDeadline);
+
+  return appeal;
+}</code></pre>
+
+            <h3>DAO Arbitration Process</h3>
+            <ol>
+                <li><strong>Appeal submission:</strong> Claimant stakes TAGIT tokens and provides additional evidence</li>
+                <li><strong>Arbitrator selection:</strong> Random selection of qualified DAO members</li>
+                <li><strong>Evidence review:</strong> 7-day period for arbitrators to examine all materials</li>
+                <li><strong>Voting:</strong> Arbitrators cast weighted votes based on their reputation score</li>
+                <li><strong>Final resolution:</strong> Majority decision becomes binding</li>
+            </ol>
+
+            <div class="docs-callout docs-callout-info">
+                <div class="docs-callout-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 16v-4"/>
+                        <path d="M12 8h.01"/>
+                    </svg>
+                    Staking Requirement
+                </div>
+                <p>Appeals require staking 100 TAGIT tokens. If the appeal is successful, tokens are returned plus a bonus. If unsuccessful, tokens are distributed to arbitrators.</p>
+            </div>
+
+            <h2 id="automation">Automated Dispute Handling</h2>
+            <p>For high-volume brands, TAG IT offers automated dispute handling through configurable rules engines.</p>
+
+            <h3>Rules Engine Configuration</h3>
+            <pre><code class="language-javascript">// Configure automated dispute rules
+async function configureDisputeRules(brandId) {
+  const rules = await tagit.brands.setDisputeRules(brandId, {
+    autoResolve: {
+      enabled: true,
+      confidenceThreshold: 0.90, // Auto-resolve if AI confidence > 90%
+      maxValue: 500 // Only for products under $500
+    },
+    autoRefund: {
+      enabled: true,
+      conditions: [
+        { outcome: 'counterfeit', confidence: 0.85 },
+        { nfcStatus: 'tampered' }
+      ]
+    },
+    escalationTriggers: [
+      { disputeValue: 1000 }, // Escalate high-value items
+      { repeatClaimant: true }, // Escalate repeat claimants
+      { vipCustomer: true } // Escalate VIP customers
+    ],
+    notificationWebhook: 'https://api.brand.com/webhooks/disputes'
+  });
+
+  return rules;
+}</code></pre>
+
+            <h3>Threshold Configuration</h3>
+            <p>Set thresholds for automatic actions:</p>
+            <ul>
+                <li><strong>Confidence threshold:</strong> Minimum AI confidence score for auto-resolution (recommended: 0.85-0.95)</li>
+                <li><strong>Value threshold:</strong> Maximum product value for automatic handling</li>
+                <li><strong>Time threshold:</strong> Auto-escalate if unresolved after X days</li>
+                <li><strong>Volume threshold:</strong> Alert if dispute rate exceeds X% of sales</li>
+            </ul>
+
+            <h2 id="prevention">Fraud Prevention Tips</h2>
+            <p>Proactive measures to reduce disputes and protect against counterfeiting:</p>
+
+            <h3>For Brands</h3>
+            <ul>
+                <li><strong>Use tamper-evident NFC tags:</strong> Choose chips that detect physical manipulation</li>
+                <li><strong>Implement dynamic authentication:</strong> Rotate cryptographic challenges</li>
+                <li><strong>Register comprehensive metadata:</strong> Include unique identifiers and specifications</li>
+                <li><strong>Monitor scan patterns:</strong> Flag unusual verification activity</li>
+                <li><strong>Train authorized resellers:</strong> Ensure proper handling of authenticated products</li>
+            </ul>
+
+            <h3>For Consumers</h3>
+            <ul>
+                <li><strong>Always verify before purchase:</strong> Scan NFC tags using the TAG IT app</li>
+                <li><strong>Check seller reputation:</strong> Review transaction history on the blockchain</li>
+                <li><strong>Document everything:</strong> Keep photos and receipts for potential disputes</li>
+                <li><strong>Report suspicious activity:</strong> Help the community by flagging potential counterfeits</li>
+            </ul>
+
+            <pre><code class="language-javascript">// Monitor fraud indicators for a brand
+async function getFraudMetrics(brandId) {
+  const metrics = await tagit.brands.getFraudMetrics(brandId, {
+    timeframe: '30d'
+  });
+
+  console.log('Dispute rate:', metrics.disputeRate);
+  console.log('Counterfeit detections:', metrics.counterfeitCount);
+  console.log('Flagged sellers:', metrics.flaggedSellers);
+  console.log('High-risk regions:', metrics.riskRegions);
+
+  return metrics;
+}</code></pre>
+
+            <div class="docs-callout docs-callout-success">
+                <div class="docs-callout-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                    Best Practice
+                </div>
+                <p>Brands that implement comprehensive NFC authentication see a 94% reduction in counterfeit-related disputes and a 78% faster resolution time for legitimate claims.</p>
+            </div>
+
+            <!-- Page Navigation -->
+            <div class="docs-page-nav">
+                <a href="/docs/tutorials/ownership-transfer.html" class="docs-page-nav-item prev">
+                    <span class="docs-page-nav-label">Previous</span>
+                    <span class="docs-page-nav-title">Ownership Transfer</span>
+                </a>
+                <div></div>
+            </div>
+
+            <!-- Edit Link -->
+            <a href="https://github.com/TAG-IT-NETWORK/tagit-docs" class="docs-edit-link" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                </svg>
+                Edit this page on GitHub
+            </a>
+        </main>
+
+        <!-- Right Sidebar - Table of Contents -->
+        <aside class="docs-toc">
+            <div class="docs-toc-title">On this page</div>
+            <a href="#overview" class="docs-toc-link">Dispute Resolution Overview</a>
+            <a href="#filing" class="docs-toc-link">Step 1: Filing a Dispute</a>
+            <a href="#evidence" class="docs-toc-link">Step 2: Gathering Evidence</a>
+            <a href="#review" class="docs-toc-link">Step 3: Review Process</a>
+            <a href="#resolution" class="docs-toc-link">Step 4: Resolution Outcomes</a>
+            <a href="#appeals" class="docs-toc-link">Step 5: Appeals Process</a>
+            <a href="#automation" class="docs-toc-link">Automated Dispute Handling</a>
+            <a href="#prevention" class="docs-toc-link">Fraud Prevention Tips</a>
+        </aside>
+    </div>
+
+    <!-- Search Modal -->
+    <div class="docs-search-modal" id="docsSearchModal">
+        <div class="docs-search-modal-content">
+            <div class="docs-search-modal-header">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="m21 21-4.35-4.35"/>
+                </svg>
+                <input type="text" placeholder="Search documentation..." id="docsSearchInput">
+                <button class="docs-search-modal-close" id="docsSearchClose">Esc</button>
+            </div>
+            <div class="docs-search-results" id="docsSearchResults">
+                <div class="docs-search-empty">Type to search documentation...</div>
+            </div>
+            <div class="docs-search-footer">
+                <span><kbd>↑</kbd><kbd>↓</kbd> to navigate</span>
+                <span><kbd>Enter</kbd> to select</span>
+                <span><kbd>Esc</kbd> to close</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+      <svg viewBox="0 0 24 24">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </button>
+
+    <script src="/js/shared.js" defer></script>
+    <script src="/docs/js/docs.js" defer></script>
+</body>
+</html>

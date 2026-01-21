@@ -1,0 +1,159 @@
+{
+  "version": "2.0",
+  "generated": "2026-01-20",
+  
+  "pages": [
+    {
+      "id": "arch-system-overview",
+      "source": "content/architecture/system-overview.md",
+      "target": "architecture/system-overview.html",
+      "title": "System Overview",
+      "category": "Architecture",
+      "status": "ready",
+      "priority": 1,
+      "features": ["mermaid", "tables"],
+      "prev": null,
+      "next": "architecture/asset-lifecycle"
+    },
+    {
+      "id": "arch-asset-lifecycle",
+      "source": "content/architecture/asset-lifecycle.md",
+      "target": "architecture/asset-lifecycle.html",
+      "title": "Asset Lifecycle",
+      "category": "Architecture",
+      "status": "ready",
+      "priority": 1,
+      "features": ["mermaid", "tables", "code"],
+      "prev": "architecture/system-overview",
+      "next": "architecture/bidges-system"
+    },
+    {
+      "id": "arch-bidges-system",
+      "source": "content/architecture/bidges-system.md",
+      "target": "architecture/bidges-system.html",
+      "title": "BIDGES Access Control",
+      "category": "Architecture",
+      "status": "ready",
+      "priority": 1,
+      "features": ["tables", "code"],
+      "prev": "architecture/asset-lifecycle",
+      "next": "architecture/security-model"
+    },
+    {
+      "id": "arch-security-model",
+      "source": "content/architecture/security-model.md",
+      "target": "architecture/security-model.html",
+      "title": "Security Model",
+      "category": "Architecture",
+      "status": "ready",
+      "priority": 1,
+      "features": ["mermaid", "tables"],
+      "prev": "architecture/bidges-system",
+      "next": "architecture/data-flow-diagrams"
+    },
+    {
+      "id": "arch-data-flow",
+      "source": "content/architecture/data-flow-diagrams.md",
+      "target": "architecture/data-flow-diagrams.html",
+      "title": "Data Flow Diagrams",
+      "category": "Architecture",
+      "status": "ready",
+      "priority": 2,
+      "features": ["mermaid"],
+      "prev": "architecture/security-model",
+      "next": "contracts/overview"
+    },
+    {
+      "id": "contracts-overview",
+      "source": "content/smart-contracts/overview.md",
+      "target": "contracts/overview.html",
+      "title": "Smart Contracts Overview",
+      "category": "Smart Contracts",
+      "status": "ready",
+      "priority": 1,
+      "features": ["mermaid", "tables"],
+      "prev": "architecture/data-flow-diagrams",
+      "next": "contracts/core-contracts"
+    },
+    {
+      "id": "contracts-core",
+      "source": "content/smart-contracts/core-contracts.md",
+      "target": "contracts/core-contracts.html",
+      "title": "Core Contracts",
+      "category": "Smart Contracts",
+      "status": "ready",
+      "priority": 1,
+      "features": ["mermaid", "tables", "code"],
+      "prev": "contracts/overview",
+      "next": "contracts/token-contracts"
+    },
+    {
+      "id": "gov-dao-structure",
+      "source": "content/governance/dao-structure.md",
+      "target": "governance/dao-structure.html",
+      "title": "DAO Structure",
+      "category": "Governance",
+      "status": "ready",
+      "priority": 1,
+      "features": ["mermaid", "tables", "code"],
+      "prev": null,
+      "next": "governance/voting"
+    },
+    {
+      "id": "token-tagit",
+      "source": "content/tokenomics/tagit-token.md",
+      "target": "tokenomics/tagit-token.html",
+      "title": "TAGIT Token",
+      "category": "Tokenomics",
+      "status": "ready",
+      "priority": 1,
+      "features": ["mermaid", "tables", "code"],
+      "prev": null,
+      "next": "tokenomics/staking"
+    },
+    {
+      "id": "nfc-hardware",
+      "source": "content/nfc/hardware-specs.md",
+      "target": "nfc/hardware-specs.html",
+      "title": "NFC Hardware Specs",
+      "category": "NFC Integration",
+      "status": "ready",
+      "priority": 1,
+      "features": ["mermaid", "tables", "code"],
+      "prev": null,
+      "next": "nfc/ntag-424"
+    },
+    {
+      "id": "ref-glossary",
+      "source": "content/reference/glossary.md",
+      "target": "reference/glossary.html",
+      "title": "Glossary",
+      "category": "Reference",
+      "status": "ready",
+      "priority": 2,
+      "features": ["tables"],
+      "prev": null,
+      "next": "reference/changelog"
+    }
+  ],
+
+  "stats": {
+    "total": 11,
+    "ready": 11,
+    "placeholder": 0,
+    "categories": {
+      "Architecture": 5,
+      "Smart Contracts": 2,
+      "Governance": 1,
+      "Tokenomics": 1,
+      "NFC Integration": 1,
+      "Reference": 1
+    }
+  },
+
+  "features": {
+    "mermaid": ["arch-system-overview", "arch-asset-lifecycle", "arch-security-model", "arch-data-flow", "contracts-overview", "contracts-core", "gov-dao-structure", "token-tagit", "nfc-hardware"],
+    "tables": ["arch-system-overview", "arch-asset-lifecycle", "arch-bidges-system", "arch-security-model", "contracts-overview", "contracts-core", "gov-dao-structure", "token-tagit", "nfc-hardware", "ref-glossary"],
+    "code": ["arch-asset-lifecycle", "arch-bidges-system", "contracts-core", "gov-dao-structure", "token-tagit", "nfc-hardware"]
+  }
+}

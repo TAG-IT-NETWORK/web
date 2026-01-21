@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ownership Transfer Tutorial - TAG IT Network Documentation</title>
+    <meta name="description" content="Learn how to implement secure ownership transfers for authenticated products.">
+    <meta name="keywords" content="TAG IT ownership transfer, blockchain transfer, product authentication, secure transfer">
+    <meta name="author" content="TAG IT Network">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Ownership Transfer Tutorial - TAG IT Network Documentation">
+    <meta property="og:description" content="Learn how to implement secure ownership transfers for authenticated products.">
+    <meta property="og:image" content="/assets/images/og-image.png">
+    <meta property="og:url" content="https://tagit.network/docs/tutorials/ownership-transfer">
+    <meta property="og:type" content="article">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ownership Transfer Tutorial - TAG IT Network Documentation">
+    <meta name="twitter:description" content="Learn how to implement secure ownership transfers for authenticated products.">
+    <meta name="twitter:image" content="/assets/images/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/tagit_logo.png">
+    <link rel="apple-touch-icon" href="/assets/images/tagit_logo.png">
+
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/shared.css">
+    <link rel="stylesheet" href="/css/docs.css">
+</head>
+<body>
+    <!-- Skip to main content link for keyboard users -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Global Cyber Grid Background -->
+    <div class="cyber-grid-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <img src="/assets/images/tagit_logo.png" alt="TAG IT Network Logo" class="logo-img" width="40" height="40">
+        </div>
+        <span>TAG IT Network</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="/#features">Features</a>
+        <a href="/solutions">Solutions</a>
+        <a href="/technology">Technology</a>
+        <a href="/tokenomics">Tokenomics</a>
+        <a href="/docs" class="active">Docs</a>
+        <a href="/about">About</a>
+      </div>
+
+      <button class="nav-cta" id="connectWalletBtn" onclick="handleWalletClick()">
+        Connect Wallet
+      </button>
+
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="/#features">Features</a>
+      <a href="/solutions">Solutions</a>
+      <a href="/technology">Technology</a>
+      <a href="/tokenomics">Tokenomics</a>
+      <a href="/docs" class="active">Docs</a>
+      <a href="/about">About</a>
+      <button class="mobile-cta" onclick="handleWalletClick()">Connect Wallet</button>
+    </div>
+
+    <!-- Mobile Docs Header -->
+    <div class="docs-mobile-header">
+        <button class="docs-mobile-toggle" id="docsMobileToggle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+            <span>Documentation Menu</span>
+            <svg class="docs-mobile-toggle-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 9l6 6 6-6"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Docs Layout -->
+    <div class="docs-layout">
+        <!-- Left Sidebar -->
+        <aside class="docs-sidebar" id="docsSidebar">
+            <div class="docs-sidebar-header">
+                <a href="/docs">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                    Documentation
+                </a>
+            </div>
+
+            <nav>
+                <!-- Getting Started -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">Getting Started</div>
+                    <a href="/docs/getting-started/quick-start.html" class="docs-nav-link">Quick Start Guide</a>
+                    <a href="/docs/getting-started/platform-overview.html" class="docs-nav-link">Platform Overview</a>
+                    <a href="/docs/getting-started/first-integration.html" class="docs-nav-link">First Integration</a>
+                </div>
+
+                <!-- API Reference -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">API Reference</div>
+                    <a href="/docs/api/rest-api.html" class="docs-nav-link">REST API</a>
+                    <a href="/docs/api/graphql.html" class="docs-nav-link">GraphQL API</a>
+                    <a href="/docs/api/webhooks.html" class="docs-nav-link">Webhooks</a>
+                </div>
+
+                <!-- Smart Contracts -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">Smart Contracts</div>
+                    <a href="/docs/contracts/addresses.html" class="docs-nav-link">Contract Addresses</a>
+                    <a href="/docs/contracts/abi-reference.html" class="docs-nav-link">ABI Reference</a>
+                    <a href="/docs/contracts/audits.html" class="docs-nav-link">Audit Reports</a>
+                </div>
+
+                <!-- NFC Integration -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">NFC Integration</div>
+                    <a href="/docs/nfc/chip-selection.html" class="docs-nav-link">Chip Selection</a>
+                    <a href="/docs/nfc/encoding-guide.html" class="docs-nav-link">Encoding Guide</a>
+                    <a href="/docs/nfc/mobile-sdk.html" class="docs-nav-link">Mobile SDK</a>
+                </div>
+
+                <!-- SDK & Libraries -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">SDK & Libraries</div>
+                    <a href="/docs/sdk/javascript.html" class="docs-nav-link">JavaScript SDK</a>
+                    <a href="/docs/sdk/python.html" class="docs-nav-link">Python SDK</a>
+                    <a href="/docs/sdk/mobile.html" class="docs-nav-link">Mobile SDKs</a>
+                </div>
+
+                <!-- Tutorials -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">Tutorials</div>
+                    <a href="/docs/tutorials/product-tagging.html" class="docs-nav-link">Product Tagging</a>
+                    <a href="/docs/tutorials/ownership-transfer.html" class="docs-nav-link active">Ownership Transfer</a>
+                    <a href="/docs/tutorials/dispute-resolution.html" class="docs-nav-link">Dispute Resolution</a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="docs-content" id="main-content">
+            <div class="docs-breadcrumb">
+                <a href="/docs">Docs</a>
+                <span>/</span>
+                <a href="/docs/tutorials/product-tagging">Tutorials</a>
+                <span>/</span>
+                <span>Ownership Transfer</span>
+            </div>
+
+            <h1>Ownership Transfer Tutorial</h1>
+            <p class="docs-lead">Implement secure, blockchain-verified ownership transfers in your application.</p>
+
+            <h2 id="overview">How Transfers Work</h2>
+            <p>TAG IT Network uses a secure two-step transfer process to ensure both parties consent to ownership changes. This prevents unauthorized transfers and provides a clear audit trail on the blockchain.</p>
+
+            <p>The transfer flow consists of:</p>
+            <ol>
+                <li><strong>Initiation</strong> - The current owner (seller) initiates the transfer</li>
+                <li><strong>Verification</strong> - The buyer's identity is verified via wallet signature</li>
+                <li><strong>Confirmation</strong> - The buyer confirms acceptance of the transfer</li>
+                <li><strong>Recording</strong> - The blockchain record is automatically updated</li>
+                <li><strong>Notification</strong> - Both parties receive confirmation via webhooks</li>
+            </ol>
+
+            <div class="docs-callout docs-callout-info">
+                <div class="docs-callout-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 16v-4"/>
+                        <path d="M12 8h.01"/>
+                    </svg>
+                    Note
+                </div>
+                <p>Transfer requests expire after 72 hours if not confirmed by the buyer. This prevents stale transfers from cluttering the system.</p>
+            </div>
+
+            <h2 id="initiate">Step 1: Initiate Transfer</h2>
+            <p>The seller (current owner) initiates the transfer by specifying the product and the buyer's wallet address:</p>
+
+            <pre><code class="language-javascript">import { TagIt } from '@tagit/sdk';
+
+const tagit = new TagIt({
+  apiKey: process.env.TAGIT_API_KEY,
+  network: 'mainnet'
+});
+
+// Seller initiates the transfer
+async function initiateTransfer(tagId, buyerAddress) {
+  try {
+    const transfer = await tagit.transfers.initiate({
+      tagId: tagId,
+      toAddress: buyerAddress,
+      metadata: {
+        salePrice: '2500.00',
+        currency: 'USD',
+        notes: 'Luxury watch sale - includes original box and papers'
+      }
+    });
+
+    console.log('Transfer initiated:', transfer.transferId);
+    console.log('Status:', transfer.status); // 'pending_acceptance'
+    console.log('Expires at:', transfer.expiresAt);
+
+    return transfer;
+  } catch (error) {
+    console.error('Failed to initiate transfer:', error.message);
+    throw error;
+  }
+}
+
+// Example usage
+const transfer = await initiateTransfer(
+  'NFC-TAG-001-ABC',
+  '0x8Ba1f109551bD432803012645Ac136ddd64DBA72'
+);</code></pre>
+
+            <h2 id="verify-identity">Step 2: Verify Buyer Identity</h2>
+            <p>Before the buyer can accept the transfer, they must verify their wallet ownership by signing a message:</p>
+
+            <pre><code class="language-javascript">// Buyer verifies their identity
+async function verifyBuyerIdentity(transferId) {
+  // Generate a verification challenge
+  const challenge = await tagit.transfers.getChallenge(transferId);
+
+  console.log('Challenge message:', challenge.message);
+  // "TAG IT Network Transfer Verification\nTransfer ID: xfer_abc123\nTimestamp: 1706123456"
+
+  // Buyer signs the challenge with their wallet (e.g., using ethers.js)
+  const signer = provider.getSigner();
+  const signature = await signer.signMessage(challenge.message);
+
+  // Submit the signature for verification
+  const verification = await tagit.transfers.verifyIdentity({
+    transferId: transferId,
+    signature: signature
+  });
+
+  console.log('Identity verified:', verification.verified);
+  console.log('Verified address:', verification.address);
+
+  return verification;
+}
+
+// Example with MetaMask in browser
+async function verifyWithMetaMask(transferId) {
+  const accounts = await window.ethereum.request({
+    method: 'eth_requestAccounts'
+  });
+
+  const challenge = await tagit.transfers.getChallenge(transferId);
+
+  const signature = await window.ethereum.request({
+    method: 'personal_sign',
+    params: [challenge.message, accounts[0]]
+  });
+
+  return await tagit.transfers.verifyIdentity({
+    transferId,
+    signature
+  });
+}</code></pre>
+
+            <div class="docs-callout docs-callout-warning">
+                <div class="docs-callout-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                        <line x1="12" y1="9" x2="12" y2="13"/>
+                        <line x1="12" y1="17" x2="12.01" y2="17"/>
+                    </svg>
+                    Security Warning
+                </div>
+                <p>Always verify the challenge message content before signing. Never sign messages from untrusted sources, as this could be used in phishing attacks.</p>
+            </div>
+
+            <h2 id="confirm">Step 3: Confirm Transfer</h2>
+            <p>Once identity is verified, the buyer confirms the transfer to complete the ownership change:</p>
+
+            <pre><code class="language-javascript">// Buyer confirms the transfer
+async function confirmTransfer(transferId) {
+  try {
+    const result = await tagit.transfers.confirm({
+      transferId: transferId,
+      acceptTerms: true
+    });
+
+    console.log('Transfer confirmed!');
+    console.log('New owner:', result.newOwner);
+    console.log('Transaction hash:', result.txHash);
+    console.log('Block number:', result.blockNumber);
+
+    return result;
+  } catch (error) {
+    if (error.code === 'TRANSFER_EXPIRED') {
+      console.error('Transfer has expired. Please request a new transfer.');
+    } else if (error.code === 'IDENTITY_NOT_VERIFIED') {
+      console.error('Please verify your identity first.');
+    } else {
+      console.error('Transfer confirmation failed:', error.message);
+    }
+    throw error;
+  }
+}
+
+// Complete transfer flow for buyer
+async function acceptTransfer(transferId) {
+  // Step 1: Verify identity
+  await verifyBuyerIdentity(transferId);
+
+  // Step 2: Confirm the transfer
+  const result = await confirmTransfer(transferId);
+
+  console.log('Ownership transfer complete!');
+  return result;
+}</code></pre>
+
+            <h2 id="update-record">Step 4: Update Blockchain Record</h2>
+            <p>After confirmation, the blockchain record is automatically updated. You can query the updated product information:</p>
+
+            <pre><code class="language-javascript">// Query updated product ownership
+async function getProductOwnership(tagId) {
+  const product = await tagit.products.get(tagId);
+
+  console.log('Current owner:', product.currentOwner);
+  console.log('Transfer count:', product.transferHistory.length);
+
+  // Get full transfer history
+  const history = await tagit.products.getTransferHistory(tagId);
+
+  history.forEach((transfer, index) => {
+    console.log(`Transfer ${index + 1}:`);
+    console.log(`  From: ${transfer.from}`);
+    console.log(`  To: ${transfer.to}`);
+    console.log(`  Date: ${transfer.timestamp}`);
+    console.log(`  TX: ${transfer.txHash}`);
+  });
+
+  return product;
+}
+
+// Verify transfer on-chain directly
+async function verifyOnChain(tagId, expectedOwner) {
+  const verification = await tagit.products.verifyOwnership({
+    tagId: tagId,
+    address: expectedOwner
+  });
+
+  console.log('Is owner:', verification.isOwner);
+  console.log('Verified at block:', verification.blockNumber);
+
+  return verification;
+}</code></pre>
+
+            <pre><code class="language-json">// Example transfer history response
+{
+  "tagId": "NFC-TAG-001-ABC",
+  "currentOwner": "0x8Ba1f109551bD432803012645Ac136ddd64DBA72",
+  "transferHistory": [
+    {
+      "transferId": "xfer_001",
+      "from": "0x0000000000000000000000000000000000000000",
+      "to": "0x742d35Cc6634C0532925a3b844Bc9e7595f5c9E8",
+      "timestamp": "2024-01-15T10:30:00Z",
+      "txHash": "0xabc123...",
+      "type": "mint"
+    },
+    {
+      "transferId": "xfer_002",
+      "from": "0x742d35Cc6634C0532925a3b844Bc9e7595f5c9E8",
+      "to": "0x8Ba1f109551bD432803012645Ac136ddd64DBA72",
+      "timestamp": "2024-06-20T14:45:00Z",
+      "txHash": "0xdef456...",
+      "type": "transfer",
+      "metadata": {
+        "salePrice": "2500.00",
+        "currency": "USD"
+      }
+    }
+  ]
+}</code></pre>
+
+            <h2 id="notifications">Step 5: Send Notifications</h2>
+            <p>Configure webhooks to receive real-time notifications about transfer events:</p>
+
+            <pre><code class="language-javascript">// Configure webhook endpoint in your dashboard or via API
+async function configureWebhook() {
+  const webhook = await tagit.webhooks.create({
+    url: 'https://your-app.com/api/webhooks/tagit',
+    events: [
+      'transfer.initiated',
+      'transfer.verified',
+      'transfer.confirmed',
+      'transfer.cancelled',
+      'transfer.expired'
+    ],
+    secret: process.env.WEBHOOK_SECRET
+  });
+
+  console.log('Webhook configured:', webhook.id);
+  return webhook;
+}
+
+// Handle incoming webhooks (Express.js example)
+import express from 'express';
+import crypto from 'crypto';
+
+const app = express();
+
+app.post('/api/webhooks/tagit', express.raw({ type: 'application/json' }), (req, res) => {
+  // Verify webhook signature
+  const signature = req.headers['x-tagit-signature'];
+  const expectedSignature = crypto
+    .createHmac('sha256', process.env.WEBHOOK_SECRET)
+    .update(req.body)
+    .digest('hex');
+
+  if (signature !== `sha256=${expectedSignature}`) {
+    return res.status(401).send('Invalid signature');
+  }
+
+  const event = JSON.parse(req.body);
+
+  switch (event.type) {
+    case 'transfer.initiated':
+      console.log('Transfer initiated:', event.data.transferId);
+      // Notify buyer about pending transfer
+      notifyBuyer(event.data);
+      break;
+
+    case 'transfer.confirmed':
+      console.log('Transfer confirmed:', event.data.transferId);
+      // Update your database, send confirmation emails
+      updateOwnershipRecord(event.data);
+      sendConfirmationEmails(event.data);
+      break;
+
+    case 'transfer.expired':
+      console.log('Transfer expired:', event.data.transferId);
+      // Clean up pending transfers
+      handleExpiredTransfer(event.data);
+      break;
+  }
+
+  res.status(200).send('OK');
+});</code></pre>
+
+            <h2 id="secondary-market">Secondary Market Integration</h2>
+            <p>Integrate with marketplace APIs to enable secondary market sales with authenticated products:</p>
+
+            <pre><code class="language-javascript">// List a product for sale on supported marketplaces
+async function listForSale(tagId, listingDetails) {
+  // First, verify you own the product
+  const verification = await tagit.products.verifyOwnership({
+    tagId: tagId,
+    address: await signer.getAddress()
+  });
+
+  if (!verification.isOwner) {
+    throw new Error('You must own the product to list it for sale');
+  }
+
+  // Create marketplace listing
+  const listing = await tagit.marketplace.createListing({
+    tagId: tagId,
+    price: listingDetails.price,
+    currency: listingDetails.currency,
+    description: listingDetails.description,
+    images: listingDetails.images,
+    shippingOptions: listingDetails.shipping,
+    acceptedPaymentMethods: ['crypto', 'card']
+  });
+
+  console.log('Listing created:', listing.listingId);
+  console.log('Marketplace URL:', listing.url);
+
+  return listing;
+}
+
+// Handle purchase from marketplace
+async function handleMarketplacePurchase(listingId, buyerAddress) {
+  // Marketplace handles payment, then initiates transfer
+  const purchase = await tagit.marketplace.completePurchase({
+    listingId: listingId,
+    buyerAddress: buyerAddress
+  });
+
+  // Transfer is automatically initiated
+  console.log('Transfer initiated:', purchase.transferId);
+  console.log('Buyer should confirm at:', purchase.confirmationUrl);
+
+  return purchase;
+}
+
+// Query marketplace activity for a product
+async function getMarketplaceHistory(tagId) {
+  const history = await tagit.marketplace.getHistory(tagId);
+
+  history.sales.forEach(sale => {
+    console.log(`Sale on ${sale.date}: ${sale.price} ${sale.currency}`);
+    console.log(`  Platform: ${sale.marketplace}`);
+    console.log(`  Verified: ${sale.authenticated}`);
+  });
+
+  return history;
+}</code></pre>
+
+            <h2 id="escrow">Escrow Transfers</h2>
+            <p>For high-value items, use escrow transfers to protect both buyer and seller:</p>
+
+            <pre><code class="language-javascript">// Create an escrow transfer for high-value items
+async function createEscrowTransfer(tagId, buyerAddress, terms) {
+  const escrow = await tagit.transfers.createEscrow({
+    tagId: tagId,
+    toAddress: buyerAddress,
+    amount: terms.price,
+    currency: terms.currency,
+    escrowPeriod: terms.inspectionDays * 24 * 60 * 60, // Convert days to seconds
+    conditions: {
+      requirePhysicalDelivery: true,
+      requireInspectionApproval: true,
+      disputeResolutionMethod: 'arbitration'
+    }
+  });
+
+  console.log('Escrow created:', escrow.escrowId);
+  console.log('Escrow address:', escrow.escrowContractAddress);
+  console.log('Buyer must deposit:', escrow.requiredDeposit);
+
+  return escrow;
+}
+
+// Buyer funds the escrow
+async function fundEscrow(escrowId) {
+  const funding = await tagit.escrow.fund({
+    escrowId: escrowId,
+    // Payment handled via connected wallet
+  });
+
+  console.log('Escrow funded:', funding.txHash);
+  console.log('Status:', funding.status); // 'awaiting_delivery'
+
+  return funding;
+}
+
+// Confirm delivery and release funds
+async function confirmDeliveryAndRelease(escrowId) {
+  // Buyer confirms they received the item in good condition
+  const release = await tagit.escrow.confirmAndRelease({
+    escrowId: escrowId,
+    inspectionPassed: true,
+    rating: 5,
+    feedback: 'Item exactly as described, fast shipping!'
+  });
+
+  console.log('Escrow released:', release.txHash);
+  console.log('Seller received:', release.sellerPayout);
+  console.log('Ownership transferred:', release.transferComplete);
+
+  return release;
+}
+
+// Handle dispute if item not as described
+async function initiateDispute(escrowId, reason) {
+  const dispute = await tagit.escrow.initiateDispute({
+    escrowId: escrowId,
+    reason: reason,
+    evidence: [
+      { type: 'image', url: 'https://...' },
+      { type: 'description', text: 'Item has damage not shown in listing' }
+    ]
+  });
+
+  console.log('Dispute created:', dispute.disputeId);
+  console.log('Arbitration deadline:', dispute.deadline);
+
+  return dispute;
+}</code></pre>
+
+            <div class="docs-callout docs-callout-success">
+                <div class="docs-callout-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                    Best Practice
+                </div>
+                <p>For items valued over $1,000, we recommend using escrow transfers to protect both parties and ensure a smooth transaction.</p>
+            </div>
+
+            <!-- Page Navigation -->
+            <div class="docs-page-nav">
+                <a href="/docs/tutorials/product-tagging.html" class="docs-page-nav-item prev">
+                    <span class="docs-page-nav-label">Previous</span>
+                    <span class="docs-page-nav-title">Product Tagging</span>
+                </a>
+                <a href="/docs/tutorials/dispute-resolution.html" class="docs-page-nav-item next">
+                    <span class="docs-page-nav-label">Next</span>
+                    <span class="docs-page-nav-title">Dispute Resolution</span>
+                </a>
+            </div>
+
+            <!-- Edit Link -->
+            <a href="https://github.com/TAG-IT-NETWORK/tagit-docs" class="docs-edit-link" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                </svg>
+                Edit this page on GitHub
+            </a>
+        </main>
+
+        <!-- Right Sidebar - Table of Contents -->
+        <aside class="docs-toc">
+            <div class="docs-toc-title">On this page</div>
+            <a href="#overview" class="docs-toc-link">How Transfers Work</a>
+            <a href="#initiate" class="docs-toc-link">Step 1: Initiate Transfer</a>
+            <a href="#verify-identity" class="docs-toc-link">Step 2: Verify Buyer Identity</a>
+            <a href="#confirm" class="docs-toc-link">Step 3: Confirm Transfer</a>
+            <a href="#update-record" class="docs-toc-link">Step 4: Update Blockchain Record</a>
+            <a href="#notifications" class="docs-toc-link">Step 5: Send Notifications</a>
+            <a href="#secondary-market" class="docs-toc-link">Secondary Market Integration</a>
+            <a href="#escrow" class="docs-toc-link">Escrow Transfers</a>
+        </aside>
+    </div>
+
+    <!-- Search Modal -->
+    <div class="docs-search-modal" id="docsSearchModal">
+        <div class="docs-search-modal-content">
+            <div class="docs-search-modal-header">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="m21 21-4.35-4.35"/>
+                </svg>
+                <input type="text" placeholder="Search documentation..." id="docsSearchInput">
+                <button class="docs-search-modal-close" id="docsSearchClose">Esc</button>
+            </div>
+            <div class="docs-search-results" id="docsSearchResults">
+                <div class="docs-search-empty">Type to search documentation...</div>
+            </div>
+            <div class="docs-search-footer">
+                <span><kbd>↑</kbd><kbd>↓</kbd> to navigate</span>
+                <span><kbd>Enter</kbd> to select</span>
+                <span><kbd>Esc</kbd> to close</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+      <svg viewBox="0 0 24 24">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </button>
+
+    <script src="/js/shared.js" defer></script>
+    <script src="/docs/js/docs.js" defer></script>
+</body>
+</html>

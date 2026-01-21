@@ -1,0 +1,170 @@
+{
+  "version": "2.0",
+  "lastUpdated": "2026-01-20",
+  "baseUrl": "/docs",
+  
+  "navigation": {
+    "main": [
+      {
+        "title": "Getting Started",
+        "icon": "rocket",
+        "slug": "getting-started",
+        "children": [
+          { "title": "Introduction", "slug": "introduction", "file": "getting-started/introduction.html" },
+          { "title": "Quick Start", "slug": "quickstart", "file": "getting-started/quickstart.html" },
+          { "title": "Platform Overview", "slug": "platform-overview", "file": "getting-started/platform-overview.html" },
+          { "title": "Key Concepts", "slug": "key-concepts", "file": "getting-started/key-concepts.html" }
+        ]
+      },
+      {
+        "title": "Architecture",
+        "icon": "layers",
+        "slug": "architecture",
+        "children": [
+          { "title": "System Overview", "slug": "system-overview", "file": "architecture/system-overview.html", "content": "architecture/system-overview.md", "status": "ready" },
+          { "title": "Asset Lifecycle", "slug": "asset-lifecycle", "file": "architecture/asset-lifecycle.html", "content": "architecture/asset-lifecycle.md", "status": "ready" },
+          { "title": "BIDGES Access Control", "slug": "bidges-system", "file": "architecture/bidges-system.html", "content": "architecture/bidges-system.md", "status": "ready" },
+          { "title": "Security Model", "slug": "security-model", "file": "architecture/security-model.html", "content": "architecture/security-model.md", "status": "ready" },
+          { "title": "Data Flow Diagrams", "slug": "data-flow", "file": "architecture/data-flow-diagrams.html", "content": "architecture/data-flow-diagrams.md", "status": "ready" }
+        ]
+      },
+      {
+        "title": "Smart Contracts",
+        "icon": "code",
+        "slug": "smart-contracts",
+        "children": [
+          { "title": "Overview", "slug": "overview", "file": "contracts/overview.html", "content": "smart-contracts/overview.md", "status": "ready" },
+          { "title": "Core Contracts", "slug": "core-contracts", "file": "contracts/core-contracts.html", "content": "smart-contracts/core-contracts.md", "status": "ready" },
+          { "title": "Token Contracts", "slug": "token-contracts", "file": "contracts/token-contracts.html", "status": "placeholder" },
+          { "title": "Governance Contracts", "slug": "governance-contracts", "file": "contracts/governance-contracts.html", "status": "placeholder" },
+          { "title": "Contract Addresses", "slug": "addresses", "file": "contracts/addresses.html", "status": "placeholder" },
+          { "title": "ABI Reference", "slug": "abi-reference", "file": "contracts/abi-reference.html", "status": "placeholder" }
+        ]
+      },
+      {
+        "title": "NFC Integration",
+        "icon": "cpu",
+        "slug": "nfc",
+        "children": [
+          { "title": "Hardware Specs", "slug": "hardware-specs", "file": "nfc/hardware-specs.html", "content": "nfc/hardware-specs.md", "status": "ready" },
+          { "title": "NTAG 424 DNA", "slug": "ntag-424", "file": "nfc/ntag-424.html", "status": "placeholder" },
+          { "title": "Tag Provisioning", "slug": "provisioning", "file": "nfc/provisioning.html", "status": "placeholder" },
+          { "title": "SUN Authentication", "slug": "sun-auth", "file": "nfc/sun-authentication.html", "status": "placeholder" }
+        ]
+      },
+      {
+        "title": "API Reference",
+        "icon": "terminal",
+        "slug": "api",
+        "children": [
+          { "title": "Overview", "slug": "overview", "file": "api/overview.html", "status": "placeholder" },
+          { "title": "Authentication", "slug": "authentication", "file": "api/authentication.html", "status": "placeholder" },
+          { "title": "Verification API", "slug": "verification", "file": "api/verification.html", "status": "placeholder" },
+          { "title": "Assets API", "slug": "assets", "file": "api/assets.html", "status": "placeholder" },
+          { "title": "Webhooks", "slug": "webhooks", "file": "api/webhooks.html", "status": "placeholder" },
+          { "title": "Error Codes", "slug": "errors", "file": "api/errors.html", "status": "placeholder" }
+        ]
+      },
+      {
+        "title": "SDK",
+        "icon": "package",
+        "slug": "sdk",
+        "children": [
+          { "title": "JavaScript SDK", "slug": "javascript", "file": "sdk/javascript.html", "status": "placeholder" },
+          { "title": "Python SDK", "slug": "python", "file": "sdk/python.html", "status": "placeholder" },
+          { "title": "Mobile SDK", "slug": "mobile", "file": "sdk/mobile.html", "status": "placeholder" },
+          { "title": "CLI Tools", "slug": "cli", "file": "sdk/cli.html", "status": "placeholder" }
+        ]
+      },
+      {
+        "title": "Governance",
+        "icon": "users",
+        "slug": "governance",
+        "children": [
+          { "title": "DAO Structure", "slug": "dao-structure", "file": "governance/dao-structure.html", "content": "governance/dao-structure.md", "status": "ready" },
+          { "title": "Multi-House Voting", "slug": "voting", "file": "governance/voting.html", "status": "placeholder" },
+          { "title": "Proposals", "slug": "proposals", "file": "governance/proposals.html", "status": "placeholder" },
+          { "title": "Treasury", "slug": "treasury", "file": "governance/treasury.html", "status": "placeholder" }
+        ]
+      },
+      {
+        "title": "Tokenomics",
+        "icon": "coins",
+        "slug": "tokenomics",
+        "children": [
+          { "title": "TAGIT Token", "slug": "tagit-token", "file": "tokenomics/tagit-token.html", "content": "tokenomics/tagit-token.md", "status": "ready" },
+          { "title": "Staking", "slug": "staking", "file": "tokenomics/staking.html", "status": "placeholder" },
+          { "title": "Burn Mechanics", "slug": "burns", "file": "tokenomics/burns.html", "status": "placeholder" },
+          { "title": "Vesting Schedules", "slug": "vesting", "file": "tokenomics/vesting.html", "status": "placeholder" }
+        ]
+      },
+      {
+        "title": "Tutorials",
+        "icon": "book-open",
+        "slug": "tutorials",
+        "children": [
+          { "title": "First Integration", "slug": "first-integration", "file": "tutorials/first-integration.html", "status": "placeholder" },
+          { "title": "Verify a Product", "slug": "verify-product", "file": "tutorials/verify-product.html", "status": "placeholder" },
+          { "title": "Mint an Asset", "slug": "mint-asset", "file": "tutorials/mint-asset.html", "status": "placeholder" },
+          { "title": "Handle Recovery", "slug": "recovery", "file": "tutorials/recovery.html", "status": "placeholder" }
+        ]
+      },
+      {
+        "title": "Reference",
+        "icon": "book",
+        "slug": "reference",
+        "children": [
+          { "title": "Glossary", "slug": "glossary", "file": "reference/glossary.html", "content": "reference/glossary.md", "status": "ready" },
+          { "title": "Changelog", "slug": "changelog", "file": "reference/changelog.html", "status": "placeholder" },
+          { "title": "Status Page", "slug": "status", "file": "reference/status.html", "status": "placeholder" },
+          { "title": "FAQ", "slug": "faq", "file": "reference/faq.html", "status": "placeholder" }
+        ]
+      }
+    ]
+  },
+
+  "categories": [
+    {
+      "id": "getting-started",
+      "title": "Getting Started",
+      "description": "New to TAG IT? Start here.",
+      "icon": "rocket",
+      "color": "#00ff88"
+    },
+    {
+      "id": "architecture",
+      "title": "Architecture",
+      "description": "System design and components",
+      "icon": "layers",
+      "color": "#00d4ff"
+    },
+    {
+      "id": "smart-contracts",
+      "title": "Smart Contracts",
+      "description": "On-chain contract reference",
+      "icon": "code",
+      "color": "#bf5af2"
+    },
+    {
+      "id": "nfc",
+      "title": "NFC Integration",
+      "description": "Hardware and chip documentation",
+      "icon": "cpu",
+      "color": "#ff9500"
+    },
+    {
+      "id": "api",
+      "title": "API Reference",
+      "description": "REST API documentation",
+      "icon": "terminal",
+      "color": "#30d158"
+    },
+    {
+      "id": "sdk",
+      "title": "SDK",
+      "description": "Client libraries and tools",
+      "icon": "package",
+      "color": "#5e5ce6"
+    }
+  ]
+}

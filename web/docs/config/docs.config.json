@@ -1,0 +1,179 @@
+{
+  "site": {
+    "title": "TAG IT Network Documentation",
+    "description": "Technical documentation for the TAG IT Network blockchain-powered product authentication platform",
+    "url": "https://docs.tagit.network",
+    "version": "2.0.0",
+    "lastUpdated": "2026-01-20"
+  },
+  "navigation": {
+    "main": [
+      {
+        "title": "Getting Started",
+        "icon": "rocket",
+        "path": "/docs/getting-started",
+        "children": [
+          { "title": "Quick Start", "path": "/docs/getting-started/quickstart" },
+          { "title": "Platform Overview", "path": "/docs/getting-started/platform-overview" },
+          { "title": "Installation", "path": "/docs/getting-started/installation" },
+          { "title": "First Integration", "path": "/docs/getting-started/first-integration" }
+        ]
+      },
+      {
+        "title": "Architecture",
+        "icon": "cpu",
+        "path": "/docs/architecture",
+        "children": [
+          { "title": "System Overview", "path": "/docs/architecture/system-overview", "source": "architecture/system-overview.md" },
+          { "title": "ORACULS Stack", "path": "/docs/architecture/oraculs-stack" },
+          { "title": "Asset Lifecycle", "path": "/docs/architecture/asset-lifecycle", "source": "architecture/asset-lifecycle.md" },
+          { "title": "BIDGES Access Control", "path": "/docs/architecture/bidges-system", "source": "architecture/bidges-system.md" },
+          { "title": "Security Model", "path": "/docs/architecture/security-model", "source": "architecture/security-model.md" },
+          { "title": "Data Flow Diagrams", "path": "/docs/architecture/data-flow-diagrams", "source": "architecture/data-flow-diagrams.md" }
+        ]
+      },
+      {
+        "title": "Smart Contracts",
+        "icon": "file-code",
+        "path": "/docs/smart-contracts",
+        "children": [
+          { "title": "Overview", "path": "/docs/smart-contracts/overview", "source": "smart-contracts/overview.md" },
+          { "title": "Core Contracts", "path": "/docs/smart-contracts/core-contracts", "source": "smart-contracts/core-contracts.md" },
+          { "title": "Token Contracts", "path": "/docs/smart-contracts/token-contracts" },
+          { "title": "Governance Contracts", "path": "/docs/smart-contracts/governance" },
+          { "title": "Account Abstraction", "path": "/docs/smart-contracts/account-abstraction" },
+          { "title": "Contract Addresses", "path": "/docs/smart-contracts/addresses" },
+          { "title": "ABI Reference", "path": "/docs/smart-contracts/abi-reference" }
+        ]
+      },
+      {
+        "title": "NFC & Hardware",
+        "icon": "wifi",
+        "path": "/docs/nfc",
+        "children": [
+          { "title": "Hardware Overview", "path": "/docs/nfc/hardware-specs", "source": "nfc/hardware-specs.md" },
+          { "title": "NTAG 424 DNA", "path": "/docs/nfc/ntag-424-dna" },
+          { "title": "Tag Provisioning", "path": "/docs/nfc/provisioning" },
+          { "title": "SUN Authentication", "path": "/docs/nfc/sun-authentication" },
+          { "title": "Reader Integration", "path": "/docs/nfc/readers" }
+        ]
+      },
+      {
+        "title": "API Reference",
+        "icon": "code",
+        "path": "/docs/api",
+        "children": [
+          { "title": "Overview", "path": "/docs/api/overview" },
+          { "title": "Authentication", "path": "/docs/api/authentication" },
+          { "title": "Verification API", "path": "/docs/api/verification" },
+          { "title": "Asset Management", "path": "/docs/api/assets" },
+          { "title": "Recovery API", "path": "/docs/api/recovery" },
+          { "title": "Webhooks", "path": "/docs/api/webhooks" },
+          { "title": "Rate Limits", "path": "/docs/api/rate-limits" }
+        ]
+      },
+      {
+        "title": "SDKs",
+        "icon": "package",
+        "path": "/docs/sdk",
+        "children": [
+          { "title": "JavaScript/TypeScript", "path": "/docs/sdk/javascript" },
+          { "title": "Python", "path": "/docs/sdk/python" },
+          { "title": "Kotlin (Android)", "path": "/docs/sdk/kotlin" },
+          { "title": "Swift (iOS)", "path": "/docs/sdk/swift" },
+          { "title": "CLI Tools", "path": "/docs/sdk/cli" }
+        ]
+      },
+      {
+        "title": "Governance",
+        "icon": "users",
+        "path": "/docs/governance",
+        "children": [
+          { "title": "DAO Structure", "path": "/docs/governance/dao-structure", "source": "governance/dao-structure.md" },
+          { "title": "Multi-House Voting", "path": "/docs/governance/voting" },
+          { "title": "Proposals", "path": "/docs/governance/proposals" },
+          { "title": "Treasury", "path": "/docs/governance/treasury" }
+        ]
+      },
+      {
+        "title": "Tokenomics",
+        "icon": "coins",
+        "path": "/docs/tokenomics",
+        "children": [
+          { "title": "TAGIT Token", "path": "/docs/tokenomics/tagit-token", "source": "tokenomics/tagit-token.md" },
+          { "title": "Staking", "path": "/docs/tokenomics/staking" },
+          { "title": "Burn Mechanics", "path": "/docs/tokenomics/burns" },
+          { "title": "Fee Structure", "path": "/docs/tokenomics/fees" }
+        ]
+      },
+      {
+        "title": "Tutorials",
+        "icon": "book-open",
+        "path": "/docs/tutorials",
+        "children": [
+          { "title": "Verify Your First Product", "path": "/docs/tutorials/first-verification" },
+          { "title": "Mint a Digital Twin", "path": "/docs/tutorials/mint-digital-twin" },
+          { "title": "Integrate with POS", "path": "/docs/tutorials/pos-integration" },
+          { "title": "Build a Scanner App", "path": "/docs/tutorials/scanner-app" },
+          { "title": "Handle Recovery", "path": "/docs/tutorials/recovery-flow" }
+        ]
+      },
+      {
+        "title": "Reference",
+        "icon": "book",
+        "path": "/docs/reference",
+        "children": [
+          { "title": "Glossary", "path": "/docs/reference/glossary", "source": "reference/glossary.md" },
+          { "title": "Error Codes", "path": "/docs/reference/error-codes" },
+          { "title": "Changelog", "path": "/docs/reference/changelog" },
+          { "title": "Status Page", "path": "/docs/reference/status" }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "links": [
+      {
+        "title": "Product",
+        "items": [
+          { "title": "Home", "path": "/" },
+          { "title": "Solutions", "path": "/solutions" },
+          { "title": "Technology", "path": "/technology" },
+          { "title": "Tokenomics", "path": "/tokenomics" }
+        ]
+      },
+      {
+        "title": "Developers",
+        "items": [
+          { "title": "Documentation", "path": "/docs" },
+          { "title": "API Reference", "path": "/docs/api" },
+          { "title": "GitHub", "path": "https://github.com/tagit-network", "external": true },
+          { "title": "SDK Downloads", "path": "/docs/sdk" }
+        ]
+      },
+      {
+        "title": "Community",
+        "items": [
+          { "title": "Discord", "path": "https://discord.gg/tagit", "external": true },
+          { "title": "Twitter", "path": "https://twitter.com/tagitnetwork", "external": true },
+          { "title": "Blog", "path": "/blog" },
+          { "title": "Newsletter", "path": "/newsletter" }
+        ]
+      },
+      {
+        "title": "Legal",
+        "items": [
+          { "title": "Privacy Policy", "path": "/privacy" },
+          { "title": "Terms of Service", "path": "/terms" },
+          { "title": "Cookie Policy", "path": "/cookies" }
+        ]
+      }
+    ]
+  },
+  "search": {
+    "enabled": true,
+    "placeholder": "Search documentation...",
+    "shortcut": "Ctrl+K",
+    "maxResults": 10
+  }
+}

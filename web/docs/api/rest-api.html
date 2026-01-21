@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REST API Reference - TAG IT Network Documentation</title>
+    <meta name="description" content="Complete REST API documentation with endpoints, authentication, and request/response examples.">
+    <meta name="keywords" content="TAG IT API, REST API, product authentication API, blockchain API, endpoints">
+    <meta name="author" content="TAG IT Network">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="REST API Reference - TAG IT Network Documentation">
+    <meta property="og:description" content="Complete REST API documentation with endpoints, authentication, and request/response examples.">
+    <meta property="og:image" content="/assets/images/og-image.png">
+    <meta property="og:url" content="https://tagit.network/docs/api/rest-api">
+    <meta property="og:type" content="article">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="REST API Reference - TAG IT Network Documentation">
+    <meta name="twitter:description" content="Complete REST API documentation with endpoints, authentication, and request/response examples.">
+    <meta name="twitter:image" content="/assets/images/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/tagit_logo.png">
+    <link rel="apple-touch-icon" href="/assets/images/tagit_logo.png">
+
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/shared.css">
+    <link rel="stylesheet" href="/css/docs.css">
+</head>
+<body>
+    <!-- Skip to main content link for keyboard users -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Global Cyber Grid Background -->
+    <div class="cyber-grid-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <img src="/assets/images/tagit_logo.png" alt="TAG IT Network Logo" class="logo-img" width="40" height="40">
+        </div>
+        <span>TAG IT Network</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="/#features">Features</a>
+        <a href="/solutions">Solutions</a>
+        <a href="/technology">Technology</a>
+        <a href="/tokenomics">Tokenomics</a>
+        <a href="/docs" class="active">Docs</a>
+        <a href="/about">About</a>
+      </div>
+
+      <button class="nav-cta" id="connectWalletBtn" onclick="handleWalletClick()">
+        Connect Wallet
+      </button>
+
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="/#features">Features</a>
+      <a href="/solutions">Solutions</a>
+      <a href="/technology">Technology</a>
+      <a href="/tokenomics">Tokenomics</a>
+      <a href="/docs" class="active">Docs</a>
+      <a href="/about">About</a>
+      <button class="mobile-cta" onclick="handleWalletClick()">Connect Wallet</button>
+    </div>
+
+    <!-- Mobile Docs Header -->
+    <div class="docs-mobile-header">
+        <button class="docs-mobile-toggle" id="docsMobileToggle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+            <span>Documentation Menu</span>
+            <svg class="docs-mobile-toggle-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 9l6 6 6-6"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Docs Layout -->
+    <div class="docs-layout">
+        <!-- Left Sidebar -->
+        <aside class="docs-sidebar" id="docsSidebar">
+            <div class="docs-sidebar-header">
+                <a href="/docs">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                    Documentation
+                </a>
+            </div>
+
+            <nav>
+                <!-- Getting Started -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">Getting Started</div>
+                    <a href="/docs/getting-started/quick-start.html" class="docs-nav-link">Quick Start Guide</a>
+                    <a href="/docs/getting-started/platform-overview.html" class="docs-nav-link">Platform Overview</a>
+                    <a href="/docs/getting-started/first-integration.html" class="docs-nav-link">First Integration</a>
+                </div>
+
+                <!-- API Reference -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">API Reference</div>
+                    <a href="/docs/api/rest-api.html" class="docs-nav-link active">REST API</a>
+                    <a href="/docs/api/graphql.html" class="docs-nav-link">GraphQL API</a>
+                    <a href="/docs/api/webhooks.html" class="docs-nav-link">Webhooks</a>
+                </div>
+
+                <!-- Smart Contracts -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">Smart Contracts</div>
+                    <a href="/docs/contracts/addresses.html" class="docs-nav-link">Contract Addresses</a>
+                    <a href="/docs/contracts/abi-reference.html" class="docs-nav-link">ABI Reference</a>
+                    <a href="/docs/contracts/audits.html" class="docs-nav-link">Audit Reports</a>
+                </div>
+
+                <!-- NFC Integration -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">NFC Integration</div>
+                    <a href="/docs/nfc/chip-selection.html" class="docs-nav-link">Chip Selection</a>
+                    <a href="/docs/nfc/encoding-guide.html" class="docs-nav-link">Encoding Guide</a>
+                    <a href="/docs/nfc/mobile-sdk.html" class="docs-nav-link">Mobile SDK</a>
+                </div>
+
+                <!-- SDK & Libraries -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">SDK & Libraries</div>
+                    <a href="/docs/sdk/javascript.html" class="docs-nav-link">JavaScript SDK</a>
+                    <a href="/docs/sdk/python.html" class="docs-nav-link">Python SDK</a>
+                    <a href="/docs/sdk/mobile.html" class="docs-nav-link">Mobile SDKs</a>
+                </div>
+
+                <!-- Tutorials -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">Tutorials</div>
+                    <a href="/docs/tutorials/product-tagging.html" class="docs-nav-link">Product Tagging</a>
+                    <a href="/docs/tutorials/ownership-transfer.html" class="docs-nav-link">Ownership Transfer</a>
+                    <a href="/docs/tutorials/dispute-resolution.html" class="docs-nav-link">Dispute Resolution</a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="docs-content" id="main-content">
+            <div class="docs-breadcrumb">
+                <a href="/docs">Docs</a>
+                <span>/</span>
+                <a href="/docs/api/rest-api">API Reference</a>
+                <span>/</span>
+                <span>REST API</span>
+            </div>
+
+            <h1>REST API Reference</h1>
+            <p class="docs-lead">The TAG IT REST API provides programmatic access to product registration, verification, and ownership management.</p>
+
+            <h2 id="base-url">Base URL</h2>
+            <p>All API requests should be made to the following base URL:</p>
+            <pre><code class="language-text">https://api.tagit.network/v1</code></pre>
+            <p>For testing and development, use the sandbox environment:</p>
+            <pre><code class="language-text">https://sandbox.api.tagit.network/v1</code></pre>
+
+            <h2 id="authentication">Authentication</h2>
+            <p>The TAG IT API uses API keys and Bearer tokens for authentication. Include your credentials in every request.</p>
+
+            <h3>API Key Header</h3>
+            <p>Pass your API key in the <code>X-API-Key</code> header:</p>
+            <pre><code class="language-bash">curl -X GET "https://api.tagit.network/v1/products/123" \
+  -H "X-API-Key: tagit_live_abc123xyz789"</code></pre>
+
+            <h3>Bearer Token</h3>
+            <p>For user-specific actions, use Bearer token authentication:</p>
+            <pre><code class="language-bash">curl -X POST "https://api.tagit.network/v1/transfers" \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." \
+  -H "Content-Type: application/json"</code></pre>
+
+            <div class="docs-callout docs-callout-warning">
+                <div class="docs-callout-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                        <line x1="12" y1="9" x2="12" y2="13"/>
+                        <line x1="12" y1="17" x2="12.01" y2="17"/>
+                    </svg>
+                    Security Warning
+                </div>
+                <p>Never expose your API keys in client-side code. Use environment variables and keep secrets server-side only.</p>
+            </div>
+
+            <h2 id="products">Products Endpoints</h2>
+            <p>Endpoints for managing product registration, retrieval, and verification.</p>
+
+            <h3 id="register-product">POST /products - Register a Product</h3>
+            <p>Register a new product on the TAG IT Network blockchain.</p>
+
+            <h4>Request</h4>
+            <pre><code class="language-bash">curl -X POST "https://api.tagit.network/v1/products" \
+  -H "X-API-Key: tagit_live_abc123xyz789" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "tagId": "NFC-TAG-002-XYZ",
+    "productName": "Designer Handbag Limited Edition",
+    "brand": "Luxury Fashion House",
+    "serialNumber": "SN-2024-005678",
+    "category": "fashion",
+    "metadata": {
+      "material": "Italian Leather",
+      "color": "Black",
+      "manufactureDate": "2024-03-15",
+      "origin": "Italy"
+    }
+  }'</code></pre>
+
+            <h4>Response</h4>
+            <pre><code class="language-json">{
+  "success": true,
+  "data": {
+    "productId": "prod_a1b2c3d4e5f6",
+    "tagId": "NFC-TAG-002-XYZ",
+    "productName": "Designer Handbag Limited Edition",
+    "brand": "Luxury Fashion House",
+    "serialNumber": "SN-2024-005678",
+    "category": "fashion",
+    "metadata": {
+      "material": "Italian Leather",
+      "color": "Black",
+      "manufactureDate": "2024-03-15",
+      "origin": "Italy"
+    },
+    "blockchain": {
+      "network": "polygon",
+      "contractAddress": "0x1234567890abcdef1234567890abcdef12345678",
+      "tokenId": "56789",
+      "txHash": "0xabc123def456789..."
+    },
+    "registeredAt": "2024-03-15T14:30:00Z",
+    "owner": "0x742d35Cc6634C0532925a3b844Bc9e7595f5c9E8"
+  }
+}</code></pre>
+
+            <h3 id="get-product">GET /products/{id} - Get Product Details</h3>
+            <p>Retrieve detailed information about a registered product.</p>
+
+            <h4>Request</h4>
+            <pre><code class="language-bash">curl -X GET "https://api.tagit.network/v1/products/prod_a1b2c3d4e5f6" \
+  -H "X-API-Key: tagit_live_abc123xyz789"</code></pre>
+
+            <h4>Response</h4>
+            <pre><code class="language-json">{
+  "success": true,
+  "data": {
+    "productId": "prod_a1b2c3d4e5f6",
+    "tagId": "NFC-TAG-002-XYZ",
+    "productName": "Designer Handbag Limited Edition",
+    "brand": "Luxury Fashion House",
+    "serialNumber": "SN-2024-005678",
+    "category": "fashion",
+    "status": "active",
+    "metadata": {
+      "material": "Italian Leather",
+      "color": "Black",
+      "manufactureDate": "2024-03-15",
+      "origin": "Italy"
+    },
+    "currentOwner": "0x742d35Cc6634C0532925a3b844Bc9e7595f5c9E8",
+    "transferCount": 0,
+    "verificationCount": 12,
+    "lastVerifiedAt": "2024-03-20T09:15:00Z",
+    "registeredAt": "2024-03-15T14:30:00Z"
+  }
+}</code></pre>
+
+            <h3 id="verify-product">POST /products/verify - Verify Authenticity</h3>
+            <p>Verify a product's authenticity using its NFC tag ID or product ID.</p>
+
+            <h4>Request</h4>
+            <pre><code class="language-bash">curl -X POST "https://api.tagit.network/v1/products/verify" \
+  -H "X-API-Key: tagit_live_abc123xyz789" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "tagId": "NFC-TAG-002-XYZ",
+    "signature": "0x1234567890abcdef...",
+    "timestamp": 1710936000
+  }'</code></pre>
+
+            <h4>Response</h4>
+            <pre><code class="language-json">{
+  "success": true,
+  "data": {
+    "verified": true,
+    "authenticity": "confirmed",
+    "product": {
+      "productId": "prod_a1b2c3d4e5f6",
+      "tagId": "NFC-TAG-002-XYZ",
+      "productName": "Designer Handbag Limited Edition",
+      "brand": "Luxury Fashion House"
+    },
+    "currentOwner": "0x742d35Cc6634C0532925a3b844Bc9e7595f5c9E8",
+    "blockchain": {
+      "network": "polygon",
+      "tokenId": "56789",
+      "verified": true
+    },
+    "verifiedAt": "2024-03-20T10:00:00Z"
+  }
+}</code></pre>
+
+            <div class="docs-callout docs-callout-info">
+                <div class="docs-callout-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 16v-4"/>
+                        <path d="M12 8h.01"/>
+                    </svg>
+                    Note
+                </div>
+                <p>The <code>signature</code> field is optional but recommended for enhanced security. It proves the NFC chip was physically scanned.</p>
+            </div>
+
+            <h2 id="transfers">Transfers Endpoints</h2>
+            <p>Endpoints for managing product ownership transfers.</p>
+
+            <h3 id="initiate-transfer">POST /transfers - Initiate Ownership Transfer</h3>
+            <p>Start a product ownership transfer to a new owner.</p>
+
+            <h4>Request</h4>
+            <pre><code class="language-bash">curl -X POST "https://api.tagit.network/v1/transfers" \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." \
+  -H "Content-Type: application/json" \
+  -d '{
+    "productId": "prod_a1b2c3d4e5f6",
+    "toAddress": "0x9876543210fedcba9876543210fedcba98765432",
+    "message": "Gift for birthday"
+  }'</code></pre>
+
+            <h4>Response</h4>
+            <pre><code class="language-json">{
+  "success": true,
+  "data": {
+    "transferId": "txfr_x1y2z3a4b5c6",
+    "productId": "prod_a1b2c3d4e5f6",
+    "fromAddress": "0x742d35Cc6634C0532925a3b844Bc9e7595f5c9E8",
+    "toAddress": "0x9876543210fedcba9876543210fedcba98765432",
+    "status": "pending",
+    "message": "Gift for birthday",
+    "expiresAt": "2024-03-27T10:00:00Z",
+    "createdAt": "2024-03-20T10:00:00Z"
+  }
+}</code></pre>
+
+            <h3 id="confirm-transfer">POST /transfers/{id}/confirm - Confirm Transfer</h3>
+            <p>Confirm and complete a pending ownership transfer.</p>
+
+            <h4>Request</h4>
+            <pre><code class="language-bash">curl -X POST "https://api.tagit.network/v1/transfers/txfr_x1y2z3a4b5c6/confirm" \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." \
+  -H "Content-Type: application/json" \
+  -d '{
+    "signature": "0xabcdef1234567890..."
+  }'</code></pre>
+
+            <h4>Response</h4>
+            <pre><code class="language-json">{
+  "success": true,
+  "data": {
+    "transferId": "txfr_x1y2z3a4b5c6",
+    "productId": "prod_a1b2c3d4e5f6",
+    "fromAddress": "0x742d35Cc6634C0532925a3b844Bc9e7595f5c9E8",
+    "toAddress": "0x9876543210fedcba9876543210fedcba98765432",
+    "status": "completed",
+    "blockchain": {
+      "txHash": "0xdef456789abc123...",
+      "blockNumber": 54321098,
+      "gasUsed": "85000"
+    },
+    "completedAt": "2024-03-20T10:05:00Z"
+  }
+}</code></pre>
+
+            <h2 id="errors">Error Codes</h2>
+            <p>The API uses standard HTTP status codes and returns detailed error information in the response body.</p>
+
+            <table class="docs-table">
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Status</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>400</code></td>
+                        <td>Bad Request</td>
+                        <td>Invalid request parameters or malformed JSON</td>
+                    </tr>
+                    <tr>
+                        <td><code>401</code></td>
+                        <td>Unauthorized</td>
+                        <td>Missing or invalid API key / Bearer token</td>
+                    </tr>
+                    <tr>
+                        <td><code>403</code></td>
+                        <td>Forbidden</td>
+                        <td>Insufficient permissions for this action</td>
+                    </tr>
+                    <tr>
+                        <td><code>404</code></td>
+                        <td>Not Found</td>
+                        <td>Product or resource does not exist</td>
+                    </tr>
+                    <tr>
+                        <td><code>409</code></td>
+                        <td>Conflict</td>
+                        <td>Resource already exists or transfer in progress</td>
+                    </tr>
+                    <tr>
+                        <td><code>422</code></td>
+                        <td>Unprocessable Entity</td>
+                        <td>Validation failed for provided data</td>
+                    </tr>
+                    <tr>
+                        <td><code>429</code></td>
+                        <td>Too Many Requests</td>
+                        <td>Rate limit exceeded</td>
+                    </tr>
+                    <tr>
+                        <td><code>500</code></td>
+                        <td>Internal Server Error</td>
+                        <td>Unexpected server error</td>
+                    </tr>
+                    <tr>
+                        <td><code>503</code></td>
+                        <td>Service Unavailable</td>
+                        <td>Blockchain network or service temporarily unavailable</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4>Error Response Format</h4>
+            <pre><code class="language-json">{
+  "success": false,
+  "error": {
+    "code": "PRODUCT_NOT_FOUND",
+    "message": "No product found with the specified ID",
+    "details": {
+      "productId": "prod_invalid123"
+    }
+  },
+  "requestId": "req_abc123xyz"
+}</code></pre>
+
+            <h2 id="rate-limits">Rate Limiting</h2>
+            <p>API requests are rate limited based on your subscription plan. Limits are applied per API key.</p>
+
+            <table class="docs-table">
+                <thead>
+                    <tr>
+                        <th>Plan</th>
+                        <th>Requests/Minute</th>
+                        <th>Requests/Day</th>
+                        <th>Burst Limit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Starter</strong></td>
+                        <td>60</td>
+                        <td>1,000</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Professional</strong></td>
+                        <td>300</td>
+                        <td>10,000</td>
+                        <td>50</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Enterprise</strong></td>
+                        <td>1,000</td>
+                        <td>100,000</td>
+                        <td>200</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Custom</strong></td>
+                        <td>Unlimited</td>
+                        <td>Unlimited</td>
+                        <td>Custom</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Rate limit headers are included in all responses:</p>
+            <pre><code class="language-text">X-RateLimit-Limit: 60
+X-RateLimit-Remaining: 45
+X-RateLimit-Reset: 1710936060</code></pre>
+
+            <div class="docs-callout docs-callout-info">
+                <div class="docs-callout-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 16v-4"/>
+                        <path d="M12 8h.01"/>
+                    </svg>
+                    Tip
+                </div>
+                <p>Implement exponential backoff in your code when receiving <code>429</code> responses. Check the <code>X-RateLimit-Reset</code> header to know when you can retry.</p>
+            </div>
+
+            <!-- Page Navigation -->
+            <div class="docs-page-nav">
+                <a href="/docs/getting-started/first-integration.html" class="docs-page-nav-item prev">
+                    <span class="docs-page-nav-label">Previous</span>
+                    <span class="docs-page-nav-title">First Integration</span>
+                </a>
+                <a href="/docs/api/graphql.html" class="docs-page-nav-item next">
+                    <span class="docs-page-nav-label">Next</span>
+                    <span class="docs-page-nav-title">GraphQL API</span>
+                </a>
+            </div>
+
+            <!-- Edit Link -->
+            <a href="https://github.com/TAG-IT-NETWORK/tagit-docs" class="docs-edit-link" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                </svg>
+                Edit this page on GitHub
+            </a>
+        </main>
+
+        <!-- Right Sidebar - Table of Contents -->
+        <aside class="docs-toc">
+            <div class="docs-toc-title">On this page</div>
+            <a href="#base-url" class="docs-toc-link">Base URL</a>
+            <a href="#authentication" class="docs-toc-link">Authentication</a>
+            <a href="#products" class="docs-toc-link">Products Endpoints</a>
+            <a href="#register-product" class="docs-toc-link docs-toc-link-h3">POST /products</a>
+            <a href="#get-product" class="docs-toc-link docs-toc-link-h3">GET /products/{id}</a>
+            <a href="#verify-product" class="docs-toc-link docs-toc-link-h3">POST /products/verify</a>
+            <a href="#transfers" class="docs-toc-link">Transfers Endpoints</a>
+            <a href="#initiate-transfer" class="docs-toc-link docs-toc-link-h3">POST /transfers</a>
+            <a href="#confirm-transfer" class="docs-toc-link docs-toc-link-h3">POST /transfers/{id}/confirm</a>
+            <a href="#errors" class="docs-toc-link">Error Codes</a>
+            <a href="#rate-limits" class="docs-toc-link">Rate Limiting</a>
+        </aside>
+    </div>
+
+    <!-- Search Modal -->
+    <div class="docs-search-modal" id="docsSearchModal">
+        <div class="docs-search-modal-content">
+            <div class="docs-search-modal-header">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="m21 21-4.35-4.35"/>
+                </svg>
+                <input type="text" placeholder="Search documentation..." id="docsSearchInput">
+                <button class="docs-search-modal-close" id="docsSearchClose">Esc</button>
+            </div>
+            <div class="docs-search-results" id="docsSearchResults">
+                <div class="docs-search-empty">Type to search documentation...</div>
+            </div>
+            <div class="docs-search-footer">
+                <span><kbd>↑</kbd><kbd>↓</kbd> to navigate</span>
+                <span><kbd>Enter</kbd> to select</span>
+                <span><kbd>Esc</kbd> to close</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+      <svg viewBox="0 0 24 24">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </button>
+
+    <script src="/js/shared.js" defer></script>
+    <script src="/docs/js/docs.js" defer></script>
+</body>
+</html>

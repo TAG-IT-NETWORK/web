@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webhooks - TAG IT Network Documentation</title>
+    <meta name="description" content="Receive real-time notifications for product events with TAG IT webhooks.">
+    <meta name="keywords" content="TAG IT webhooks, event notifications, real-time updates, product events">
+    <meta name="author" content="TAG IT Network">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Webhooks - TAG IT Network Documentation">
+    <meta property="og:description" content="Receive real-time notifications for product events with TAG IT webhooks.">
+    <meta property="og:image" content="/assets/images/og-image.png">
+    <meta property="og:url" content="https://tagit.network/docs/api/webhooks">
+    <meta property="og:type" content="article">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Webhooks - TAG IT Network Documentation">
+    <meta name="twitter:description" content="Receive real-time notifications for product events with TAG IT webhooks.">
+    <meta name="twitter:image" content="/assets/images/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/tagit_logo.png">
+    <link rel="apple-touch-icon" href="/assets/images/tagit_logo.png">
+
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/shared.css">
+    <link rel="stylesheet" href="/css/docs.css">
+</head>
+<body>
+    <!-- Skip to main content link for keyboard users -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Global Cyber Grid Background -->
+    <div class="cyber-grid-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <img src="/assets/images/tagit_logo.png" alt="TAG IT Network Logo" class="logo-img" width="40" height="40">
+        </div>
+        <span>TAG IT Network</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="/#features">Features</a>
+        <a href="/solutions">Solutions</a>
+        <a href="/technology">Technology</a>
+        <a href="/tokenomics">Tokenomics</a>
+        <a href="/docs" class="active">Docs</a>
+        <a href="/about">About</a>
+      </div>
+
+      <button class="nav-cta" id="connectWalletBtn" onclick="handleWalletClick()">
+        Connect Wallet
+      </button>
+
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="/#features">Features</a>
+      <a href="/solutions">Solutions</a>
+      <a href="/technology">Technology</a>
+      <a href="/tokenomics">Tokenomics</a>
+      <a href="/docs" class="active">Docs</a>
+      <a href="/about">About</a>
+      <button class="mobile-cta" onclick="handleWalletClick()">Connect Wallet</button>
+    </div>
+
+    <!-- Mobile Docs Header -->
+    <div class="docs-mobile-header">
+        <button class="docs-mobile-toggle" id="docsMobileToggle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+            <span>Documentation Menu</span>
+            <svg class="docs-mobile-toggle-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 9l6 6 6-6"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Docs Layout -->
+    <div class="docs-layout">
+        <!-- Left Sidebar -->
+        <aside class="docs-sidebar" id="docsSidebar">
+            <div class="docs-sidebar-header">
+                <a href="/docs">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                    Documentation
+                </a>
+            </div>
+
+            <nav>
+                <!-- Getting Started -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">Getting Started</div>
+                    <a href="/docs/getting-started/quick-start.html" class="docs-nav-link">Quick Start Guide</a>
+                    <a href="/docs/getting-started/platform-overview.html" class="docs-nav-link">Platform Overview</a>
+                    <a href="/docs/getting-started/first-integration.html" class="docs-nav-link">First Integration</a>
+                </div>
+
+                <!-- API Reference -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">API Reference</div>
+                    <a href="/docs/api/rest-api.html" class="docs-nav-link">REST API</a>
+                    <a href="/docs/api/graphql.html" class="docs-nav-link">GraphQL API</a>
+                    <a href="/docs/api/webhooks.html" class="docs-nav-link active">Webhooks</a>
+                </div>
+
+                <!-- Smart Contracts -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">Smart Contracts</div>
+                    <a href="/docs/contracts/addresses.html" class="docs-nav-link">Contract Addresses</a>
+                    <a href="/docs/contracts/abi-reference.html" class="docs-nav-link">ABI Reference</a>
+                    <a href="/docs/contracts/audits.html" class="docs-nav-link">Audit Reports</a>
+                </div>
+
+                <!-- NFC Integration -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">NFC Integration</div>
+                    <a href="/docs/nfc/chip-selection.html" class="docs-nav-link">Chip Selection</a>
+                    <a href="/docs/nfc/encoding-guide.html" class="docs-nav-link">Encoding Guide</a>
+                    <a href="/docs/nfc/mobile-sdk.html" class="docs-nav-link">Mobile SDK</a>
+                </div>
+
+                <!-- SDK & Libraries -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">SDK & Libraries</div>
+                    <a href="/docs/sdk/javascript.html" class="docs-nav-link">JavaScript SDK</a>
+                    <a href="/docs/sdk/python.html" class="docs-nav-link">Python SDK</a>
+                    <a href="/docs/sdk/mobile.html" class="docs-nav-link">Mobile SDKs</a>
+                </div>
+
+                <!-- Tutorials -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">Tutorials</div>
+                    <a href="/docs/tutorials/product-tagging.html" class="docs-nav-link">Product Tagging</a>
+                    <a href="/docs/tutorials/ownership-transfer.html" class="docs-nav-link">Ownership Transfer</a>
+                    <a href="/docs/tutorials/dispute-resolution.html" class="docs-nav-link">Dispute Resolution</a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="docs-content" id="main-content">
+            <div class="docs-breadcrumb">
+                <a href="/docs">Docs</a>
+                <span>/</span>
+                <a href="/docs/api/rest-api">API Reference</a>
+                <span>/</span>
+                <span>Webhooks</span>
+            </div>
+
+            <h1>Webhooks</h1>
+            <p class="docs-lead">Get notified instantly when products are registered, verified, or transferred.</p>
+
+            <h2 id="setup">Setting Up Webhooks</h2>
+            <p>Configure webhooks from your TAG IT dashboard to receive real-time notifications for product events:</p>
+
+            <ol>
+                <li>Navigate to <strong>Settings &gt; Webhooks</strong> in your dashboard</li>
+                <li>Click <strong>"Add Webhook Endpoint"</strong></li>
+                <li>Enter your endpoint URL (must be HTTPS)</li>
+                <li>Select the events you want to subscribe to</li>
+                <li>Copy your webhook signing secret for signature verification</li>
+                <li>Click <strong>"Save"</strong> to activate the webhook</li>
+            </ol>
+
+            <div class="docs-callout docs-callout-info">
+                <div class="docs-callout-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 16v-4"/>
+                        <path d="M12 8h.01"/>
+                    </svg>
+                    Note
+                </div>
+                <p>Your webhook endpoint must respond with a 2xx status code within 30 seconds to be considered successful. Use asynchronous processing for long-running tasks.</p>
+            </div>
+
+            <h2 id="events">Webhook Events</h2>
+            <p>TAG IT sends webhook notifications for the following events:</p>
+
+            <h3 id="product-registered">product.registered</h3>
+            <p>Triggered when a new product is registered on the TAG IT Network:</p>
+
+            <pre><code class="language-json">{
+  "event": "product.registered",
+  "timestamp": "2024-03-15T14:30:00Z",
+  "data": {
+    "productId": "prod_abc123",
+    "tagId": "NFC-TAG-001-ABC",
+    "name": "Luxury Watch Model X",
+    "brand": "Premium Timepieces",
+    "serialNumber": "SN-2024-001234",
+    "owner": "0x742d35Cc6634C0532925a3b844Bc9e7595f5c9E8",
+    "txHash": "0xabc123def456..."
+  }
+}</code></pre>
+
+            <h3 id="product-verified">product.verified</h3>
+            <p>Triggered when a product is scanned and verified:</p>
+
+            <pre><code class="language-json">{
+  "event": "product.verified",
+  "timestamp": "2024-03-15T15:45:00Z",
+  "data": {
+    "productId": "prod_abc123",
+    "tagId": "NFC-TAG-001-ABC",
+    "verified": true,
+    "verifiedBy": "0x8901234567890abcdef1234567890abcdef12345",
+    "location": {
+      "latitude": 40.7128,
+      "longitude": -74.0060,
+      "city": "New York",
+      "country": "US"
+    },
+    "deviceInfo": {
+      "type": "mobile",
+      "os": "iOS 17.0"
+    }
+  }
+}</code></pre>
+
+            <h3 id="transfer-initiated">transfer.initiated</h3>
+            <p>Triggered when an ownership transfer is initiated:</p>
+
+            <pre><code class="language-json">{
+  "event": "transfer.initiated",
+  "timestamp": "2024-03-15T16:00:00Z",
+  "data": {
+    "transferId": "txfr_xyz789",
+    "productId": "prod_abc123",
+    "from": "0x742d35Cc6634C0532925a3b844Bc9e7595f5c9E8",
+    "to": "0x8901234567890abcdef1234567890abcdef12345",
+    "status": "pending",
+    "expiresAt": "2024-03-22T16:00:00Z"
+  }
+}</code></pre>
+
+            <h3 id="transfer-completed">transfer.completed</h3>
+            <p>Triggered when an ownership transfer is completed:</p>
+
+            <pre><code class="language-json">{
+  "event": "transfer.completed",
+  "timestamp": "2024-03-15T16:30:00Z",
+  "data": {
+    "transferId": "txfr_xyz789",
+    "productId": "prod_abc123",
+    "from": "0x742d35Cc6634C0532925a3b844Bc9e7595f5c9E8",
+    "to": "0x8901234567890abcdef1234567890abcdef12345",
+    "status": "completed",
+    "txHash": "0xdef789ghi012...",
+    "completedAt": "2024-03-15T16:30:00Z"
+  }
+}</code></pre>
+
+            <h2 id="payload">Webhook Payload Structure</h2>
+            <p>All webhook payloads follow a consistent structure:</p>
+
+            <pre><code class="language-json">{
+  "id": "evt_unique_event_id",
+  "event": "event.type",
+  "timestamp": "2024-03-15T14:30:00Z",
+  "apiVersion": "2024-01-01",
+  "data": {
+    // Event-specific data
+  }
+}</code></pre>
+
+            <p>Each webhook request includes the following headers:</p>
+
+            <pre><code class="language-bash">Content-Type: application/json
+X-TagIt-Signature: sha256=abc123...
+X-TagIt-Event: product.registered
+X-TagIt-Delivery-Id: evt_unique_event_id
+X-TagIt-Timestamp: 1710510600</code></pre>
+
+            <h2 id="verification">Verifying Webhook Signatures</h2>
+            <p>Always verify webhook signatures to ensure requests are from TAG IT. We use HMAC-SHA256 to sign all webhook payloads.</p>
+
+            <div class="docs-callout docs-callout-warning">
+                <div class="docs-callout-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                        <line x1="12" y1="9" x2="12" y2="13"/>
+                        <line x1="12" y1="17" x2="12.01" y2="17"/>
+                    </svg>
+                    Security Warning
+                </div>
+                <p>Never skip signature verification in production. Always validate that webhooks originate from TAG IT before processing.</p>
+            </div>
+
+            <p>Here's how to verify webhook signatures in Node.js:</p>
+
+            <pre><code class="language-javascript">const crypto = require('crypto');
+
+/**
+ * Verify TAG IT webhook signature
+ * @param {string} payload - Raw request body as string
+ * @param {string} signature - X-TagIt-Signature header value
+ * @param {string} secret - Your webhook signing secret
+ * @param {number} timestamp - X-TagIt-Timestamp header value
+ * @returns {boolean} - True if signature is valid
+ */
+function verifyWebhookSignature(payload, signature, secret, timestamp) {
+  // Prevent replay attacks - reject if timestamp is older than 5 minutes
+  const currentTime = Math.floor(Date.now() / 1000);
+  if (currentTime - timestamp > 300) {
+    console.error('Webhook timestamp too old');
+    return false;
+  }
+
+  // Construct the signed payload
+  const signedPayload = `${timestamp}.${payload}`;
+
+  // Compute expected signature
+  const expectedSignature = crypto
+    .createHmac('sha256', secret)
+    .update(signedPayload)
+    .digest('hex');
+
+  // Extract signature from header (format: "sha256=...")
+  const receivedSignature = signature.replace('sha256=', '');
+
+  // Use timing-safe comparison to prevent timing attacks
+  return crypto.timingSafeEqual(
+    Buffer.from(expectedSignature),
+    Buffer.from(receivedSignature)
+  );
+}
+
+// Express.js middleware example
+const express = require('express');
+const app = express();
+
+// Use raw body for signature verification
+app.use('/webhooks', express.raw({ type: 'application/json' }));
+
+app.post('/webhooks/tagit', (req, res) => {
+  const signature = req.headers['x-tagit-signature'];
+  const timestamp = parseInt(req.headers['x-tagit-timestamp'], 10);
+  const payload = req.body.toString();
+
+  if (!verifyWebhookSignature(payload, signature, process.env.WEBHOOK_SECRET, timestamp)) {
+    console.error('Invalid webhook signature');
+    return res.status(401).json({ error: 'Invalid signature' });
+  }
+
+  // Parse and process the webhook
+  const event = JSON.parse(payload);
+
+  console.log('Received valid webhook:', event.event);
+
+  // Handle different event types
+  switch (event.event) {
+    case 'product.registered':
+      handleProductRegistered(event.data);
+      break;
+    case 'product.verified':
+      handleProductVerified(event.data);
+      break;
+    case 'transfer.initiated':
+      handleTransferInitiated(event.data);
+      break;
+    case 'transfer.completed':
+      handleTransferCompleted(event.data);
+      break;
+    default:
+      console.log('Unhandled event type:', event.event);
+  }
+
+  // Respond quickly with 200 OK
+  res.status(200).json({ received: true });
+});
+
+app.listen(3000, () => {
+  console.log('Webhook server listening on port 3000');
+});</code></pre>
+
+            <h2 id="retries">Retry Policy</h2>
+            <p>TAG IT uses exponential backoff to retry failed webhook deliveries:</p>
+
+            <ul>
+                <li><strong>Retry 1:</strong> 1 minute after initial failure</li>
+                <li><strong>Retry 2:</strong> 5 minutes after retry 1</li>
+                <li><strong>Retry 3:</strong> 30 minutes after retry 2</li>
+                <li><strong>Retry 4:</strong> 2 hours after retry 3</li>
+                <li><strong>Retry 5:</strong> 8 hours after retry 4</li>
+                <li><strong>Retry 6:</strong> 24 hours after retry 5</li>
+            </ul>
+
+            <p>A webhook delivery is considered failed if:</p>
+            <ul>
+                <li>Your endpoint returns a non-2xx status code</li>
+                <li>The connection times out (30 seconds)</li>
+                <li>The endpoint is unreachable</li>
+                <li>SSL/TLS verification fails</li>
+            </ul>
+
+            <div class="docs-callout docs-callout-info">
+                <div class="docs-callout-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 16v-4"/>
+                        <path d="M12 8h.01"/>
+                    </svg>
+                    Note
+                </div>
+                <p>After 6 failed attempts over approximately 34 hours, the webhook is marked as permanently failed. You can view failed deliveries and manually retry them from your dashboard.</p>
+            </div>
+
+            <h2 id="best-practices">Best Practices</h2>
+            <p>Follow these best practices to ensure reliable webhook processing:</p>
+
+            <h3>Respond Quickly</h3>
+            <p>Return a 200 response immediately and process webhooks asynchronously. If processing takes longer than 30 seconds, the delivery will be marked as failed and retried.</p>
+
+            <pre><code class="language-javascript">// Good: Respond immediately, process async
+app.post('/webhooks/tagit', async (req, res) => {
+  // Verify signature first
+  if (!verifySignature(req)) {
+    return res.status(401).send('Invalid signature');
+  }
+
+  // Respond immediately
+  res.status(200).json({ received: true });
+
+  // Process asynchronously (e.g., add to queue)
+  await queue.add('process-webhook', req.body);
+});</code></pre>
+
+            <h3>Implement Idempotency</h3>
+            <p>Webhooks may be delivered more than once. Use the event ID to ensure you only process each event once:</p>
+
+            <pre><code class="language-javascript">async function processWebhook(event) {
+  // Check if already processed
+  const exists = await db.webhookEvents.findById(event.id);
+  if (exists) {
+    console.log('Event already processed:', event.id);
+    return;
+  }
+
+  // Store event ID before processing
+  await db.webhookEvents.create({
+    id: event.id,
+    processedAt: new Date()
+  });
+
+  // Process the event
+  await handleEvent(event);
+}</code></pre>
+
+            <h3>Log Everything</h3>
+            <p>Maintain detailed logs for debugging and auditing:</p>
+
+            <pre><code class="language-javascript">app.post('/webhooks/tagit', (req, res) => {
+  const deliveryId = req.headers['x-tagit-delivery-id'];
+  const eventType = req.headers['x-tagit-event'];
+
+  console.log({
+    message: 'Webhook received',
+    deliveryId,
+    eventType,
+    timestamp: new Date().toISOString(),
+    headers: req.headers,
+    bodyPreview: JSON.stringify(req.body).substring(0, 200)
+  });
+
+  // ... process webhook
+});</code></pre>
+
+            <h3>Monitor and Alert</h3>
+            <ul>
+                <li>Set up monitoring for webhook processing success rates</li>
+                <li>Alert on repeated failures or signature mismatches</li>
+                <li>Track processing time to identify bottlenecks</li>
+                <li>Use your dashboard to view delivery history and troubleshoot issues</li>
+            </ul>
+
+            <div class="docs-callout docs-callout-success">
+                <div class="docs-callout-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                    Testing Webhooks
+                </div>
+                <p>Use the <strong>Test Webhook</strong> button in your dashboard to send test events to your endpoint. You can also use tools like <a href="https://ngrok.com" target="_blank" rel="noopener">ngrok</a> to test webhooks locally during development.</p>
+            </div>
+
+            <!-- Page Navigation -->
+            <div class="docs-page-nav">
+                <a href="/docs/api/graphql.html" class="docs-page-nav-item prev">
+                    <span class="docs-page-nav-label">Previous</span>
+                    <span class="docs-page-nav-title">GraphQL API</span>
+                </a>
+                <a href="/docs/contracts/addresses.html" class="docs-page-nav-item next">
+                    <span class="docs-page-nav-label">Next</span>
+                    <span class="docs-page-nav-title">Contract Addresses</span>
+                </a>
+            </div>
+
+            <!-- Edit Link -->
+            <a href="https://github.com/TAG-IT-NETWORK/tagit-docs" class="docs-edit-link" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                </svg>
+                Edit this page on GitHub
+            </a>
+        </main>
+
+        <!-- Right Sidebar - Table of Contents -->
+        <aside class="docs-toc">
+            <div class="docs-toc-title">On this page</div>
+            <a href="#setup" class="docs-toc-link">Setting Up Webhooks</a>
+            <a href="#events" class="docs-toc-link">Webhook Events</a>
+            <a href="#product-registered" class="docs-toc-link docs-toc-link-h3">product.registered</a>
+            <a href="#product-verified" class="docs-toc-link docs-toc-link-h3">product.verified</a>
+            <a href="#transfer-initiated" class="docs-toc-link docs-toc-link-h3">transfer.initiated</a>
+            <a href="#transfer-completed" class="docs-toc-link docs-toc-link-h3">transfer.completed</a>
+            <a href="#payload" class="docs-toc-link">Webhook Payload Structure</a>
+            <a href="#verification" class="docs-toc-link">Verifying Webhook Signatures</a>
+            <a href="#retries" class="docs-toc-link">Retry Policy</a>
+            <a href="#best-practices" class="docs-toc-link">Best Practices</a>
+        </aside>
+    </div>
+
+    <!-- Search Modal -->
+    <div class="docs-search-modal" id="docsSearchModal">
+        <div class="docs-search-modal-content">
+            <div class="docs-search-modal-header">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="m21 21-4.35-4.35"/>
+                </svg>
+                <input type="text" placeholder="Search documentation..." id="docsSearchInput">
+                <button class="docs-search-modal-close" id="docsSearchClose">Esc</button>
+            </div>
+            <div class="docs-search-results" id="docsSearchResults">
+                <div class="docs-search-empty">Type to search documentation...</div>
+            </div>
+            <div class="docs-search-footer">
+                <span><kbd>↑</kbd><kbd>↓</kbd> to navigate</span>
+                <span><kbd>Enter</kbd> to select</span>
+                <span><kbd>Esc</kbd> to close</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+      <svg viewBox="0 0 24 24">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </button>
+
+    <script src="/js/shared.js" defer></script>
+    <script src="/docs/js/docs.js" defer></script>
+</body>
+</html>

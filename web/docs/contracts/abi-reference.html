@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABI Reference - TAG IT Network Documentation</title>
+    <meta name="description" content="Application Binary Interface (ABI) specifications for TAG IT smart contracts.">
+    <meta name="keywords" content="TAG IT ABI, smart contract ABI, ProductRegistry, TransferManager, Solidity">
+    <meta name="author" content="TAG IT Network">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="ABI Reference - TAG IT Network Documentation">
+    <meta property="og:description" content="Application Binary Interface (ABI) specifications for TAG IT smart contracts.">
+    <meta property="og:image" content="/assets/images/og-image.png">
+    <meta property="og:url" content="https://tagit.network/docs/contracts/abi-reference">
+    <meta property="og:type" content="article">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ABI Reference - TAG IT Network Documentation">
+    <meta name="twitter:description" content="Application Binary Interface (ABI) specifications for TAG IT smart contracts.">
+    <meta name="twitter:image" content="/assets/images/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/tagit_logo.png">
+    <link rel="apple-touch-icon" href="/assets/images/tagit_logo.png">
+
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/shared.css">
+    <link rel="stylesheet" href="/css/docs.css">
+</head>
+<body>
+    <!-- Skip to main content link for keyboard users -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Global Cyber Grid Background -->
+    <div class="cyber-grid-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <img src="/assets/images/tagit_logo.png" alt="TAG IT Network Logo" class="logo-img" width="40" height="40">
+        </div>
+        <span>TAG IT Network</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="/#features">Features</a>
+        <a href="/solutions">Solutions</a>
+        <a href="/technology">Technology</a>
+        <a href="/tokenomics">Tokenomics</a>
+        <a href="/docs" class="active">Docs</a>
+        <a href="/about">About</a>
+      </div>
+
+      <button class="nav-cta" id="connectWalletBtn" onclick="handleWalletClick()">
+        Connect Wallet
+      </button>
+
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="/#features">Features</a>
+      <a href="/solutions">Solutions</a>
+      <a href="/technology">Technology</a>
+      <a href="/tokenomics">Tokenomics</a>
+      <a href="/docs" class="active">Docs</a>
+      <a href="/about">About</a>
+      <button class="mobile-cta" onclick="handleWalletClick()">Connect Wallet</button>
+    </div>
+
+    <!-- Mobile Docs Header -->
+    <div class="docs-mobile-header">
+        <button class="docs-mobile-toggle" id="docsMobileToggle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+            <span>Documentation Menu</span>
+            <svg class="docs-mobile-toggle-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 9l6 6 6-6"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Docs Layout -->
+    <div class="docs-layout">
+        <!-- Left Sidebar -->
+        <aside class="docs-sidebar" id="docsSidebar">
+            <div class="docs-sidebar-header">
+                <a href="/docs">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                    Documentation
+                </a>
+            </div>
+
+            <nav>
+                <!-- Getting Started -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">Getting Started</div>
+                    <a href="/docs/getting-started/quick-start.html" class="docs-nav-link">Quick Start Guide</a>
+                    <a href="/docs/getting-started/platform-overview.html" class="docs-nav-link">Platform Overview</a>
+                    <a href="/docs/getting-started/first-integration.html" class="docs-nav-link">First Integration</a>
+                </div>
+
+                <!-- API Reference -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">API Reference</div>
+                    <a href="/docs/api/rest-api.html" class="docs-nav-link">REST API</a>
+                    <a href="/docs/api/graphql.html" class="docs-nav-link">GraphQL API</a>
+                    <a href="/docs/api/webhooks.html" class="docs-nav-link">Webhooks</a>
+                </div>
+
+                <!-- Smart Contracts -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">Smart Contracts</div>
+                    <a href="/docs/contracts/addresses.html" class="docs-nav-link">Contract Addresses</a>
+                    <a href="/docs/contracts/abi-reference.html" class="docs-nav-link active">ABI Reference</a>
+                    <a href="/docs/contracts/audits.html" class="docs-nav-link">Audit Reports</a>
+                </div>
+
+                <!-- NFC Integration -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">NFC Integration</div>
+                    <a href="/docs/nfc/chip-selection.html" class="docs-nav-link">Chip Selection</a>
+                    <a href="/docs/nfc/encoding-guide.html" class="docs-nav-link">Encoding Guide</a>
+                    <a href="/docs/nfc/mobile-sdk.html" class="docs-nav-link">Mobile SDK</a>
+                </div>
+
+                <!-- SDK & Libraries -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">SDK & Libraries</div>
+                    <a href="/docs/sdk/javascript.html" class="docs-nav-link">JavaScript SDK</a>
+                    <a href="/docs/sdk/python.html" class="docs-nav-link">Python SDK</a>
+                    <a href="/docs/sdk/mobile.html" class="docs-nav-link">Mobile SDKs</a>
+                </div>
+
+                <!-- Tutorials -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">Tutorials</div>
+                    <a href="/docs/tutorials/product-tagging.html" class="docs-nav-link">Product Tagging</a>
+                    <a href="/docs/tutorials/ownership-transfer.html" class="docs-nav-link">Ownership Transfer</a>
+                    <a href="/docs/tutorials/dispute-resolution.html" class="docs-nav-link">Dispute Resolution</a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="docs-content" id="main-content">
+            <div class="docs-breadcrumb">
+                <a href="/docs">Docs</a>
+                <span>/</span>
+                <a href="/docs/contracts/addresses">Smart Contracts</a>
+                <span>/</span>
+                <span>ABI Reference</span>
+            </div>
+
+            <h1>ABI Reference</h1>
+            <p class="docs-lead">Use these ABIs to interact with TAG IT smart contracts from your applications.</p>
+
+            <h2 id="product-registry">ProductRegistry ABI</h2>
+            <p>The ProductRegistry contract is the core contract for registering and verifying products on the TAG IT Network. Below are the key functions and their ABI specifications.</p>
+
+            <h3 id="register-function">registerProduct function</h3>
+            <p>Registers a new product on the blockchain with its metadata and NFC tag identifier.</p>
+
+            <pre><code class="language-solidity">// Solidity Function Signature
+function registerProduct(
+    bytes32 tagId,
+    string calldata productName,
+    string calldata serialNumber,
+    string calldata metadataURI
+) external returns (uint256 productId)</code></pre>
+
+            <p><strong>Parameters:</strong></p>
+            <ul>
+                <li><code>tagId</code> - Unique NFC tag identifier (32 bytes)</li>
+                <li><code>productName</code> - Human-readable product name</li>
+                <li><code>serialNumber</code> - Manufacturer serial number</li>
+                <li><code>metadataURI</code> - IPFS or HTTP URI pointing to extended metadata</li>
+            </ul>
+
+            <pre><code class="language-json">{
+  "name": "registerProduct",
+  "type": "function",
+  "stateMutability": "nonpayable",
+  "inputs": [
+    { "name": "tagId", "type": "bytes32" },
+    { "name": "productName", "type": "string" },
+    { "name": "serialNumber", "type": "string" },
+    { "name": "metadataURI", "type": "string" }
+  ],
+  "outputs": [
+    { "name": "productId", "type": "uint256" }
+  ]
+}</code></pre>
+
+            <h3 id="verify-function">verifyProduct function</h3>
+            <p>Verifies the authenticity of a product by its tag ID. Returns the product details and verification status.</p>
+
+            <pre><code class="language-solidity">// Solidity Function Signature
+function verifyProduct(
+    bytes32 tagId
+) external view returns (
+    bool isAuthentic,
+    uint256 productId,
+    address currentOwner,
+    uint256 registrationTimestamp
+)</code></pre>
+
+            <p><strong>Parameters:</strong></p>
+            <ul>
+                <li><code>tagId</code> - The NFC tag identifier to verify</li>
+            </ul>
+
+            <p><strong>Returns:</strong></p>
+            <ul>
+                <li><code>isAuthentic</code> - Whether the product is registered and valid</li>
+                <li><code>productId</code> - The unique product ID on-chain</li>
+                <li><code>currentOwner</code> - Address of the current product owner</li>
+                <li><code>registrationTimestamp</code> - Unix timestamp of product registration</li>
+            </ul>
+
+            <pre><code class="language-json">{
+  "name": "verifyProduct",
+  "type": "function",
+  "stateMutability": "view",
+  "inputs": [
+    { "name": "tagId", "type": "bytes32" }
+  ],
+  "outputs": [
+    { "name": "isAuthentic", "type": "bool" },
+    { "name": "productId", "type": "uint256" },
+    { "name": "currentOwner", "type": "address" },
+    { "name": "registrationTimestamp", "type": "uint256" }
+  ]
+}</code></pre>
+
+            <h3 id="get-product">getProduct function</h3>
+            <p>Retrieves full product details including metadata URI and transfer history count.</p>
+
+            <pre><code class="language-solidity">// Solidity Function Signature
+function getProduct(
+    uint256 productId
+) external view returns (
+    bytes32 tagId,
+    string memory productName,
+    string memory serialNumber,
+    string memory metadataURI,
+    address currentOwner,
+    uint256 transferCount,
+    bool isActive
+)</code></pre>
+
+            <pre><code class="language-json">{
+  "name": "getProduct",
+  "type": "function",
+  "stateMutability": "view",
+  "inputs": [
+    { "name": "productId", "type": "uint256" }
+  ],
+  "outputs": [
+    { "name": "tagId", "type": "bytes32" },
+    { "name": "productName", "type": "string" },
+    { "name": "serialNumber", "type": "string" },
+    { "name": "metadataURI", "type": "string" },
+    { "name": "currentOwner", "type": "address" },
+    { "name": "transferCount", "type": "uint256" },
+    { "name": "isActive", "type": "bool" }
+  ]
+}</code></pre>
+
+            <h2 id="transfer-manager">TransferManager ABI</h2>
+            <p>The TransferManager contract handles secure ownership transfers between parties with optional escrow functionality.</p>
+
+            <h3 id="initiate-transfer">initiateTransfer function</h3>
+            <p>Initiates a product ownership transfer to a new owner. The transfer must be completed by the recipient.</p>
+
+            <pre><code class="language-solidity">// Solidity Function Signature
+function initiateTransfer(
+    uint256 productId,
+    address newOwner,
+    uint256 escrowAmount,
+    uint256 expirationTime
+) external payable returns (bytes32 transferId)</code></pre>
+
+            <p><strong>Parameters:</strong></p>
+            <ul>
+                <li><code>productId</code> - ID of the product to transfer</li>
+                <li><code>newOwner</code> - Address of the intended recipient</li>
+                <li><code>escrowAmount</code> - Optional escrow amount in wei (0 for no escrow)</li>
+                <li><code>expirationTime</code> - Unix timestamp when the transfer offer expires</li>
+            </ul>
+
+            <pre><code class="language-json">{
+  "name": "initiateTransfer",
+  "type": "function",
+  "stateMutability": "payable",
+  "inputs": [
+    { "name": "productId", "type": "uint256" },
+    { "name": "newOwner", "type": "address" },
+    { "name": "escrowAmount", "type": "uint256" },
+    { "name": "expirationTime", "type": "uint256" }
+  ],
+  "outputs": [
+    { "name": "transferId", "type": "bytes32" }
+  ]
+}</code></pre>
+
+            <h3 id="complete-transfer">completeTransfer function</h3>
+            <p>Completes a pending transfer. Must be called by the designated new owner.</p>
+
+            <pre><code class="language-solidity">// Solidity Function Signature
+function completeTransfer(
+    bytes32 transferId,
+    bytes calldata signature
+) external returns (bool success)</code></pre>
+
+            <p><strong>Parameters:</strong></p>
+            <ul>
+                <li><code>transferId</code> - Unique transfer identifier returned by initiateTransfer</li>
+                <li><code>signature</code> - EIP-712 signature from the new owner confirming receipt</li>
+            </ul>
+
+            <pre><code class="language-json">{
+  "name": "completeTransfer",
+  "type": "function",
+  "stateMutability": "nonpayable",
+  "inputs": [
+    { "name": "transferId", "type": "bytes32" },
+    { "name": "signature", "type": "bytes" }
+  ],
+  "outputs": [
+    { "name": "success", "type": "bool" }
+  ]
+}</code></pre>
+
+            <h2 id="events">Contract Events</h2>
+            <p>TAG IT smart contracts emit events that can be monitored to track product registrations and transfers in real-time.</p>
+
+            <h3>ProductRegistered</h3>
+            <p>Emitted when a new product is successfully registered on the network.</p>
+
+            <pre><code class="language-solidity">event ProductRegistered(
+    uint256 indexed productId,
+    bytes32 indexed tagId,
+    address indexed owner,
+    string productName,
+    uint256 timestamp
+);</code></pre>
+
+            <pre><code class="language-json">{
+  "name": "ProductRegistered",
+  "type": "event",
+  "inputs": [
+    { "name": "productId", "type": "uint256", "indexed": true },
+    { "name": "tagId", "type": "bytes32", "indexed": true },
+    { "name": "owner", "type": "address", "indexed": true },
+    { "name": "productName", "type": "string", "indexed": false },
+    { "name": "timestamp", "type": "uint256", "indexed": false }
+  ]
+}</code></pre>
+
+            <h3>TransferInitiated</h3>
+            <p>Emitted when a product transfer is initiated by the current owner.</p>
+
+            <pre><code class="language-solidity">event TransferInitiated(
+    bytes32 indexed transferId,
+    uint256 indexed productId,
+    address indexed fromOwner,
+    address toOwner,
+    uint256 escrowAmount,
+    uint256 expirationTime
+);</code></pre>
+
+            <pre><code class="language-json">{
+  "name": "TransferInitiated",
+  "type": "event",
+  "inputs": [
+    { "name": "transferId", "type": "bytes32", "indexed": true },
+    { "name": "productId", "type": "uint256", "indexed": true },
+    { "name": "fromOwner", "type": "address", "indexed": true },
+    { "name": "toOwner", "type": "address", "indexed": false },
+    { "name": "escrowAmount", "type": "uint256", "indexed": false },
+    { "name": "expirationTime", "type": "uint256", "indexed": false }
+  ]
+}</code></pre>
+
+            <h3>TransferCompleted</h3>
+            <p>Emitted when a product transfer is successfully completed.</p>
+
+            <pre><code class="language-solidity">event TransferCompleted(
+    bytes32 indexed transferId,
+    uint256 indexed productId,
+    address indexed newOwner,
+    uint256 timestamp
+);</code></pre>
+
+            <pre><code class="language-json">{
+  "name": "TransferCompleted",
+  "type": "event",
+  "inputs": [
+    { "name": "transferId", "type": "bytes32", "indexed": true },
+    { "name": "productId", "type": "uint256", "indexed": true },
+    { "name": "newOwner", "type": "address", "indexed": true },
+    { "name": "timestamp", "type": "uint256", "indexed": false }
+  ]
+}</code></pre>
+
+            <h2 id="usage">Using ABIs with ethers.js</h2>
+            <p>Here's how to use the TAG IT ABIs with ethers.js to interact with the smart contracts:</p>
+
+            <pre><code class="language-javascript">import { ethers } from 'ethers';
+import ProductRegistryABI from './abis/ProductRegistry.json';
+import TransferManagerABI from './abis/TransferManager.json';
+
+// Contract addresses (Polygon Mainnet)
+const PRODUCT_REGISTRY_ADDRESS = '0x1234567890abcdef1234567890abcdef12345678';
+const TRANSFER_MANAGER_ADDRESS = '0xabcdef1234567890abcdef1234567890abcdef12';
+
+// Connect to provider
+const provider = new ethers.BrowserProvider(window.ethereum);
+const signer = await provider.getSigner();
+
+// Initialize contract instances
+const productRegistry = new ethers.Contract(
+  PRODUCT_REGISTRY_ADDRESS,
+  ProductRegistryABI,
+  signer
+);
+
+const transferManager = new ethers.Contract(
+  TRANSFER_MANAGER_ADDRESS,
+  TransferManagerABI,
+  signer
+);
+
+// Example: Register a new product
+async function registerProduct(tagId, name, serial, metadataURI) {
+  const tagIdBytes = ethers.encodeBytes32String(tagId);
+  const tx = await productRegistry.registerProduct(
+    tagIdBytes,
+    name,
+    serial,
+    metadataURI
+  );
+  const receipt = await tx.wait();
+  console.log('Product registered:', receipt.hash);
+  return receipt;
+}
+
+// Example: Verify a product
+async function verifyProduct(tagId) {
+  const tagIdBytes = ethers.encodeBytes32String(tagId);
+  const result = await productRegistry.verifyProduct(tagIdBytes);
+  return {
+    isAuthentic: result.isAuthentic,
+    productId: result.productId.toString(),
+    currentOwner: result.currentOwner,
+    registrationTimestamp: new Date(Number(result.registrationTimestamp) * 1000)
+  };
+}
+
+// Example: Listen for ProductRegistered events
+productRegistry.on('ProductRegistered', (productId, tagId, owner, productName, timestamp) => {
+  console.log('New product registered:', {
+    productId: productId.toString(),
+    tagId: tagId,
+    owner: owner,
+    productName: productName,
+    timestamp: new Date(Number(timestamp) * 1000)
+  });
+});</code></pre>
+
+            <div class="docs-callout docs-callout-info">
+                <div class="docs-callout-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 16v-4"/>
+                        <path d="M12 8h.01"/>
+                    </svg>
+                    Tip
+                </div>
+                <p>When using ethers.js v6, use <code>ethers.BrowserProvider</code> instead of the deprecated <code>ethers.providers.Web3Provider</code>.</p>
+            </div>
+
+            <h2 id="download">Download Full ABIs</h2>
+            <p>Download the complete ABI JSON files for integration into your projects:</p>
+
+            <ul>
+                <li><a href="/docs/contracts/abis/ProductRegistry.json" download>ProductRegistry.json</a> - Full ProductRegistry contract ABI</li>
+                <li><a href="/docs/contracts/abis/TransferManager.json" download>TransferManager.json</a> - Full TransferManager contract ABI</li>
+                <li><a href="/docs/contracts/abis/TagItToken.json" download>TagItToken.json</a> - TAG IT ERC-20 token ABI</li>
+                <li><a href="/docs/contracts/abis/all-contracts.zip" download>all-contracts.zip</a> - All ABIs in a single archive</li>
+            </ul>
+
+            <div class="docs-callout docs-callout-warning">
+                <div class="docs-callout-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                        <line x1="12" y1="9" x2="12" y2="13"/>
+                        <line x1="12" y1="17" x2="12.01" y2="17"/>
+                    </svg>
+                    Version Notice
+                </div>
+                <p>These ABIs are for contract version 2.0.0. Always verify you're using the correct ABI version for the deployed contracts. Check the <a href="/docs/contracts/addresses">Contract Addresses</a> page for version information.</p>
+            </div>
+
+            <!-- Page Navigation -->
+            <div class="docs-page-nav">
+                <a href="/docs/contracts/addresses.html" class="docs-page-nav-item prev">
+                    <span class="docs-page-nav-label">Previous</span>
+                    <span class="docs-page-nav-title">Contract Addresses</span>
+                </a>
+                <a href="/docs/contracts/audits.html" class="docs-page-nav-item next">
+                    <span class="docs-page-nav-label">Next</span>
+                    <span class="docs-page-nav-title">Audit Reports</span>
+                </a>
+            </div>
+
+            <!-- Edit Link -->
+            <a href="https://github.com/TAG-IT-NETWORK/tagit-docs" class="docs-edit-link" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                </svg>
+                Edit this page on GitHub
+            </a>
+        </main>
+
+        <!-- Right Sidebar - Table of Contents -->
+        <aside class="docs-toc">
+            <div class="docs-toc-title">On this page</div>
+            <a href="#product-registry" class="docs-toc-link">ProductRegistry ABI</a>
+            <a href="#register-function" class="docs-toc-link docs-toc-link-h3">registerProduct function</a>
+            <a href="#verify-function" class="docs-toc-link docs-toc-link-h3">verifyProduct function</a>
+            <a href="#get-product" class="docs-toc-link docs-toc-link-h3">getProduct function</a>
+            <a href="#transfer-manager" class="docs-toc-link">TransferManager ABI</a>
+            <a href="#initiate-transfer" class="docs-toc-link docs-toc-link-h3">initiateTransfer function</a>
+            <a href="#complete-transfer" class="docs-toc-link docs-toc-link-h3">completeTransfer function</a>
+            <a href="#events" class="docs-toc-link">Contract Events</a>
+            <a href="#usage" class="docs-toc-link">Using ABIs with ethers.js</a>
+            <a href="#download" class="docs-toc-link">Download Full ABIs</a>
+        </aside>
+    </div>
+
+    <!-- Search Modal -->
+    <div class="docs-search-modal" id="docsSearchModal">
+        <div class="docs-search-modal-content">
+            <div class="docs-search-modal-header">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="m21 21-4.35-4.35"/>
+                </svg>
+                <input type="text" placeholder="Search documentation..." id="docsSearchInput">
+                <button class="docs-search-modal-close" id="docsSearchClose">Esc</button>
+            </div>
+            <div class="docs-search-results" id="docsSearchResults">
+                <div class="docs-search-empty">Type to search documentation...</div>
+            </div>
+            <div class="docs-search-footer">
+                <span><kbd>↑</kbd><kbd>↓</kbd> to navigate</span>
+                <span><kbd>Enter</kbd> to select</span>
+                <span><kbd>Esc</kbd> to close</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+      <svg viewBox="0 0 24 24">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </button>
+
+    <script src="/js/shared.js" defer></script>
+    <script src="/docs/js/docs.js" defer></script>
+</body>
+</html>

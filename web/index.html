@@ -1,0 +1,1383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary Meta Tags -->
+  <title>TAG IT Network | RWA Infrastructure for Product Authentication</title>
+  <meta name="title" content="TAG IT Network | RWA Infrastructure for Product Authentication">
+  <meta name="description" content="The Real World Asset (RWA) layer for physical products. Tokenize luxury goods, pharmaceuticals, and supply chains with NFC + blockchain digital twins.">
+  <meta name="keywords" content="RWA, real world assets, tokenization, product authentication, digital twins, NFC blockchain, supply chain, luxury authentication, Web3, anti-counterfeiting">
+  <meta name="author" content="TAG IT Network">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tagit.network/">
+  <meta property="og:title" content="TAG IT Network | RWA Infrastructure for Product Authentication">
+  <meta property="og:description" content="The Real World Asset (RWA) layer for physical products. Tokenize and authenticate anything with NFC + blockchain.">
+  <meta property="og:image" content="https://tagit.network/assets/images/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://tagit.network/">
+  <meta name="twitter:title" content="TAG IT Network | RWA Infrastructure for Product Authentication">
+  <meta name="twitter:description" content="The Real World Asset (RWA) layer for physical products. Tokenize and authenticate anything with NFC + blockchain.">
+  <meta name="twitter:image" content="https://tagit.network/assets/images/og-image.png">
+
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "TAG IT Network",
+    "description": "Real World Asset (RWA) infrastructure for product authentication using NFC and blockchain technology",
+    "url": "https://tagit.network",
+    "sameAs": [
+      "https://twitter.com/TAGITNETWORK",
+      "https://github.com/TAG-IT-NETWORK"
+    ]
+  }
+  </script>
+
+  <!-- Performance: Preconnect to external origins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+  <!-- Fonts (display=swap for FOUT instead of FOIT) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/tagit_logo.png">
+  <link rel="apple-touch-icon" href="/assets/images/tagit_logo.png">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/css/shared.css">
+</head>
+<body>
+  <!-- Skip to main content link for keyboard users -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Noscript fallback -->
+  <noscript>
+    <div class="noscript-message">
+      This website requires JavaScript for animations and wallet features. Core content is still accessible.
+    </div>
+  </noscript>
+
+  <!-- Global Cyber Grid Background -->
+  <div class="cyber-grid-overlay"></div>
+  
+  <!-- ═══════════════════════════════════════════════════════════════
+       LOADING SCREEN
+       ═══════════════════════════════════════════════════════════════ -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-logo">
+      <img src="/assets/images/tagit_logo.png" alt="TAG IT Network" width="80" height="80">
+    </div>
+    <div class="loading-bar-container">
+      <div class="loading-bar"></div>
+    </div>
+    <div class="loading-text">Initializing</div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       PARALLAX BACKGROUND
+       ═══════════════════════════════════════════════════════════════ -->
+  <div class="parallax-wrapper">
+    <div class="parallax-grid" id="parallaxGrid"></div>
+    <div class="parallax-orbs" id="parallaxOrbs">
+      <div class="parallax-orb orb-1"></div>
+      <div class="parallax-orb orb-2"></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       NAVIGATION
+       ═══════════════════════════════════════════════════════════════ -->
+  <nav class="nav">
+    <a href="/" class="logo">
+      <div class="logo-icon">
+        <img src="/assets/images/tagit_logo.png" alt="TAG IT Network Logo" class="logo-img" width="40" height="40">
+      </div>
+      <span>TAG IT Network</span>
+    </a>
+    
+    <div class="nav-links">
+      <a href="/#features">Features</a>
+      <a href="/solutions">Solutions</a>
+      <a href="/technology">Technology</a>
+      <a href="/tokenomics">Tokenomics</a>
+      <a href="/docs">Docs</a>
+      <a href="/about">About</a>
+    </div>
+    
+    <button class="nav-cta" id="connectWalletBtn" onclick="handleWalletClick()">
+      Connect Wallet
+    </button>
+    
+    <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+  
+  <!-- Mobile Menu -->
+  <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/#features">Features</a>
+    <a href="/solutions">Solutions</a>
+    <a href="/technology">Technology</a>
+    <a href="/tokenomics">Tokenomics</a>
+    <a href="/docs">Docs</a>
+    <a href="/about">About</a>
+    <button class="mobile-cta" onclick="handleWalletClick()">Connect Wallet</button>
+  </div>
+  
+  <!-- ═══════════════════════════════════════════════════════════════
+       HERO SECTION
+       ═══════════════════════════════════════════════════════════════ -->
+  <main id="main-content">
+  <section id="hero">
+    <!-- Grid Background -->
+    <div class="grid-bg"></div>
+    
+    <!-- Circuit Board Background - Right side only -->
+    <div class="circuit-bg">
+      <svg viewBox="0 0 800 900" preserveAspectRatio="xMidYMid slice">
+        <path class="trace trace-blue" d="M0 200 H200 L250 250 H400 L450 200 H600 L650 250 H800" />
+        <path class="trace trace-green" d="M0 350 H150 L200 300 H350 L400 350 H550 L600 300 H800" />
+        <path class="trace trace-purple" d="M0 500 H250 L300 450 H500 L550 500 H800" />
+        <path class="trace trace-blue" d="M0 650 H100 L150 600 H300 L350 650 H500 L550 600 H700 L750 650 H800" />
+        <path class="trace trace-green" d="M300 250 V150 L350 100 V0" />
+        <path class="trace trace-purple" d="M500 350 V450 L550 500 V600" />
+        <path class="trace trace-blue" d="M200 500 V600 L250 650 V800" />
+        
+        <circle class="node node-blue pulse" cx="250" cy="250" r="8" style="animation-delay: 0s" />
+        <circle class="node node-blue pulse" cx="450" cy="200" r="8" style="animation-delay: 0.3s" />
+        <circle class="node node-green pulse" cx="200" cy="300" r="8" style="animation-delay: 0.6s" />
+        <circle class="node node-green pulse" cx="600" cy="300" r="8" style="animation-delay: 0.9s" />
+        <circle class="node node-purple pulse" cx="300" cy="450" r="8" style="animation-delay: 1.2s" />
+        <circle class="node node-purple pulse" cx="550" cy="500" r="8" style="animation-delay: 1.5s" />
+        <circle class="node node-blue pulse" cx="350" cy="650" r="8" style="animation-delay: 1.8s" />
+      </svg>
+    </div>
+    
+    <!-- Hero Content - Left Side -->
+    <div class="hero-content">
+      <div class="hero-badge hero-reveal hero-reveal-delay-1">
+        Powered by Ethereum L2
+      </div>
+      
+      <h1 class="hero-title hero-reveal hero-reveal-delay-2">
+        <span class="highlight">Authenticate</span> Every Product.<br>
+        Trust Every Transaction.
+      </h1>
+      
+      <p class="hero-subtitle hero-reveal hero-reveal-delay-3">
+        The <span class="highlight-rwa">RWA infrastructure</span> connecting physical products to blockchain —
+        from luxury goods to life-saving medicine.
+      </p>
+      
+      <div class="hero-ctas hero-reveal hero-reveal-delay-4">
+        <a href="/technology" class="btn btn-primary">Explore Technology →</a>
+        <a href="#features" class="btn btn-secondary">Learn More</a>
+      </div>
+      
+      <div class="stats-bar hero-reveal hero-reveal-delay-5">
+        <div class="stat">
+          <div class="stat-value">$0.08</div>
+          <div class="stat-label">Full Lifecycle</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">FREE</div>
+          <div class="stat-label">To Verify</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">0.28s</div>
+          <div class="stat-label">Scan Speed</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">50+ yrs</div>
+          <div class="stat-label">Permanence</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 3D Blockchain Cubes - Right Side -->
+    <div class="hero-3d hero-reveal hero-reveal-delay-3">
+      <div class="blockchain-cubes-v2">
+        <!-- Floating hash fragments -->
+        <div class="hash-fragment">0x7a3f...</div>
+        <div class="hash-fragment">0xB84F...</div>
+        <div class="hash-fragment">0x00FF...</div>
+        <div class="hash-fragment">0xD4FF...</div>
+        
+        <!-- Floating particles -->
+        <div class="cube-particle"></div>
+        <div class="cube-particle"></div>
+        <div class="cube-particle"></div>
+        <div class="cube-particle"></div>
+        <div class="cube-particle"></div>
+        
+        <!-- Connection lines SVG -->
+        <svg class="cube-connections" viewBox="0 0 600 500">
+          <defs>
+            <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#00D4FF;stop-opacity:0" />
+              <stop offset="50%" style="stop-color:#00D4FF;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#00D4FF;stop-opacity:0" />
+            </linearGradient>
+          </defs>
+          <!-- Center to surrounding connections -->
+          <line class="connection-line" x1="270" y1="190" x2="150" y2="100" />
+          <line class="connection-line" x1="270" y1="190" x2="420" y2="100" />
+          <line class="connection-line" x1="270" y1="190" x2="108" y2="225" />
+          <line class="connection-line" x1="270" y1="190" x2="468" y2="225" />
+          <line class="connection-line" x1="270" y1="190" x2="192" y2="325" />
+          <line class="connection-line" x1="270" y1="190" x2="390" y2="325" />
+          <line class="connection-line" x1="270" y1="190" x2="300" y2="400" />
+          <!-- Outer ring connections -->
+          <line class="connection-line" x1="150" y1="100" x2="420" y2="100" />
+          <line class="connection-line" x1="108" y1="225" x2="192" y2="325" />
+          <line class="connection-line" x1="468" y1="225" x2="390" y2="325" />
+        </svg>
+        
+        <!-- Cube cluster -->
+        <div class="cube-cluster-v2">
+          <!-- Center cube - GREEN (Verified/Minted) -->
+          <div class="cube-v2 large green" style="z-index: 10;">
+            <div class="face front"></div>
+            <div class="face back"></div>
+            <div class="face right"></div>
+            <div class="face left"></div>
+            <div class="face top"></div>
+            <div class="face bottom"></div>
+          </div>
+          
+          <!-- Surrounding CYAN cubes -->
+          <div class="cube-v2 cyan">
+            <div class="face front"></div>
+            <div class="face back"></div>
+            <div class="face right"></div>
+            <div class="face left"></div>
+            <div class="face top"></div>
+            <div class="face bottom"></div>
+          </div>
+          
+          <div class="cube-v2 small cyan">
+            <div class="face front"></div>
+            <div class="face back"></div>
+            <div class="face right"></div>
+            <div class="face left"></div>
+            <div class="face top"></div>
+            <div class="face bottom"></div>
+          </div>
+          
+          <div class="cube-v2 cyan">
+            <div class="face front"></div>
+            <div class="face back"></div>
+            <div class="face right"></div>
+            <div class="face left"></div>
+            <div class="face top"></div>
+            <div class="face bottom"></div>
+          </div>
+          
+          <div class="cube-v2 cyan">
+            <div class="face front"></div>
+            <div class="face back"></div>
+            <div class="face right"></div>
+            <div class="face left"></div>
+            <div class="face top"></div>
+            <div class="face bottom"></div>
+          </div>
+          
+          <div class="cube-v2 small cyan">
+            <div class="face front"></div>
+            <div class="face back"></div>
+            <div class="face right"></div>
+            <div class="face left"></div>
+            <div class="face top"></div>
+            <div class="face bottom"></div>
+          </div>
+          
+          <div class="cube-v2 cyan">
+            <div class="face front"></div>
+            <div class="face back"></div>
+            <div class="face right"></div>
+            <div class="face left"></div>
+            <div class="face top"></div>
+            <div class="face bottom"></div>
+          </div>
+          
+          <div class="cube-v2 small cyan">
+            <div class="face front"></div>
+            <div class="face back"></div>
+            <div class="face right"></div>
+            <div class="face left"></div>
+            <div class="face top"></div>
+            <div class="face bottom"></div>
+          </div>
+          
+          <div class="cube-v2 small cyan" style="left: 50%; top: 10%;">
+            <div class="face front"></div>
+            <div class="face back"></div>
+            <div class="face right"></div>
+            <div class="face left"></div>
+            <div class="face top"></div>
+            <div class="face bottom"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- ═══════════════════════════════════════════════════════════════
+       TRUST SIGNALS SECTION
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="trust-signals">
+    <!-- Animated scanning line -->
+    <div class="trust-scan-line"></div>
+    
+    <div class="trust-container">
+      
+      <!-- Section Header -->
+      <div class="trust-section-header fade-in">
+        <div class="trust-section-label">✦ Trusted Infrastructure</div>
+        <h2 class="trust-section-title">Powered By Industry Leaders</h2>
+        <p class="trust-section-subtitle">Enterprise-grade blockchain and hardware partners securing every digital twin</p>
+      </div>
+      
+      <!-- Built On: Blockchain Stack -->
+      <div class="trust-row fade-in">
+        <div class="trust-row-label">Blockchain Stack</div>
+        <div class="trust-logos">
+          <a href="https://ethereum.org" target="_blank" rel="noopener noreferrer" class="trust-logo" data-type="ethereum">
+            <div class="trust-logo-icon">
+              <img src="/assets/images/Ethereum-Logo.wine.svg" alt="Ethereum" width="40" height="40">
+            </div>
+            <div class="trust-logo-name">Ethereum</div>
+            <div class="trust-logo-role">L1 Settlement</div>
+          </a>
+          <a href="https://optimism.io" target="_blank" rel="noopener noreferrer" class="trust-logo" data-type="optimism">
+            <div class="trust-logo-icon">
+              <img src="/assets/images/optimism-ethereum-op-logo.svg" alt="OP Stack" width="40" height="40">
+            </div>
+            <div class="trust-logo-name">OP Stack</div>
+            <div class="trust-logo-role">L2 Execution</div>
+          </a>
+          <a href="https://eigenlayer.xyz" target="_blank" rel="noopener noreferrer" class="trust-logo" data-type="eigenda">
+            <div class="trust-logo-icon">
+              <img src="/assets/images/eigenDA.svg" alt="EigenDA" width="40" height="40">
+            </div>
+            <div class="trust-logo-name">EigenDA</div>
+            <div class="trust-logo-role">Data Availability</div>
+          </a>
+          <a href="https://chain.link" target="_blank" rel="noopener noreferrer" class="trust-logo" data-type="chainlink">
+            <div class="trust-logo-icon">
+              <img src="/assets/images/chainlink-link-logo.svg" alt="Chainlink" width="40" height="40">
+            </div>
+            <div class="trust-logo-name">Chainlink</div>
+            <div class="trust-logo-role">CCIP Interop</div>
+          </a>
+        </div>
+        
+        <!-- Chain Specs -->
+        <div class="chain-specs">
+          <div class="chain-spec">
+            <div class="chain-spec-value">~2s</div>
+            <div class="chain-spec-label">Block Time</div>
+          </div>
+          <div class="chain-spec">
+            <div class="chain-spec-value">2K+</div>
+            <div class="chain-spec-label">TPS</div>
+          </div>
+          <div class="chain-spec">
+            <div class="chain-spec-value">$0.001</div>
+            <div class="chain-spec-label">Per Verify</div>
+          </div>
+          <div class="chain-spec">
+            <div class="chain-spec-value">4+</div>
+            <div class="chain-spec-label">Chains</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Hardware Partners -->
+      <div class="trust-row fade-in">
+        <div class="trust-row-label">Hardware Partners</div>
+        <div class="trust-logos">
+          <a href="https://www.nxp.com" target="_blank" rel="noopener noreferrer" class="trust-logo" data-type="nxp">
+            <div class="trust-logo-icon">
+              <img src="/assets/images/NXP.svg" alt="NXP" width="40" height="40">
+            </div>
+            <div class="trust-logo-name">NXP Semiconductors</div>
+            <div class="trust-logo-role">NTAG 424 DNA</div>
+          </a>
+          <a href="https://www.infineon.com" target="_blank" rel="noopener noreferrer" class="trust-logo" data-type="infineon">
+            <div class="trust-logo-icon">
+              <img src="/assets/images/Infineon_Technologies-Logo.svg" alt="Infineon" width="40" height="40">
+            </div>
+            <div class="trust-logo-name">Infineon</div>
+            <div class="trust-logo-role">SLE78 / SECORA</div>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Security Certifications -->
+      <div class="trust-row fade-in">
+        <div class="trust-row-label">Security Certifications</div>
+        <div class="cert-badges">
+          <div class="cert-badge" data-cert="eal5">
+            <div class="cert-icon">🛡️</div>
+            <div class="cert-text">
+              <span class="cert-name">EAL5+</span>
+              <span class="cert-scope">Defense Grade</span>
+            </div>
+          </div>
+          <div class="cert-badge" data-cert="fips">
+            <div class="cert-icon">🔐</div>
+            <div class="cert-text">
+              <span class="cert-name">FIPS 140-3</span>
+              <span class="cert-scope">Cryptography</span>
+            </div>
+          </div>
+          <div class="cert-badge" data-cert="aes">
+            <div class="cert-icon">🔒</div>
+            <div class="cert-text">
+              <span class="cert-name">AES-128</span>
+              <span class="cert-scope">Encryption</span>
+            </div>
+          </div>
+          <div class="cert-badge" data-cert="iso">
+            <div class="cert-icon">📋</div>
+            <div class="cert-text">
+              <span class="cert-name">ISO 14443</span>
+              <span class="cert-scope">NFC Protocol</span>
+            </div>
+          </div>
+          <div class="cert-badge" data-cert="nfc">
+            <div class="cert-icon">📱</div>
+            <div class="cert-text">
+              <span class="cert-name">NFC Type 4</span>
+              <span class="cert-scope">Tag Standard</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+  
+  <!-- ═══════════════════════════════════════════════════════════════
+       FEATURES SECTION
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="features">
+    <div class="section-label fade-in">✦ Core Features</div>
+    <h2 class="section-title fade-in">Why TAG IT Network?</h2>
+    <p class="section-subtitle fade-in">
+      The complete infrastructure for blockchain-powered product authentication.
+    </p>
+    
+    <div class="features-grid">
+      <div class="feature-card fade-in stagger-1" data-feature="security" data-color="amber">
+        <div class="feature-icon">🔐</div>
+        <h3>Cryptographic Security</h3>
+        <p class="feature-tagline">Every product gets a unique cryptographic identity that's impossible to forge or duplicate.</p>
+        <span class="expand-indicator">▼</span>
+        <div class="feature-expanded-content">
+          <div class="feature-divider"></div>
+          <h4 class="feature-how-title">How It Works</h4>
+          <p class="feature-how-text">Each physical product is paired with an NFC chip containing a unique cryptographic key. When scanned, the chip signs a challenge from our network, proving authenticity without ever exposing the private key.</p>
+        </div>
+      </div>
+
+      <div class="feature-card fade-in stagger-2" data-feature="verification" data-color="cyan">
+        <div class="feature-icon">⚡</div>
+        <h3>Instant Verification</h3>
+        <p class="feature-tagline">Authenticate any product in under 0.3 seconds with a simple NFC tap.</p>
+        <span class="expand-indicator">▼</span>
+        <div class="feature-expanded-content">
+          <div class="feature-divider"></div>
+          <h4 class="feature-how-title">How It Works</h4>
+          <p class="feature-how-text">Our optimized verification flow uses edge caching and pre-computed merkle proofs to deliver instant results. The NFC chip responds to the challenge, and our network validates against the on-chain state in milliseconds.</p>
+        </div>
+      </div>
+
+      <div class="feature-card fade-in stagger-3" data-feature="traceability" data-color="cyan">
+        <div class="feature-icon">🔗</div>
+        <h3>Full Traceability</h3>
+        <p class="feature-tagline">Track the complete journey from manufacturer to consumer with immutable records.</p>
+        <span class="expand-indicator">▼</span>
+        <div class="feature-expanded-content">
+          <div class="feature-divider"></div>
+          <h4 class="feature-how-title">How It Works</h4>
+          <p class="feature-how-text">Every lifecycle event—from minting to claiming—is recorded on-chain with timestamps, locations, and actor signatures. This creates an immutable audit trail that can be verified by anyone, anytime.</p>
+        </div>
+      </div>
+
+      <div class="feature-card fade-in stagger-4" data-feature="ai" data-color="purple">
+        <div class="feature-icon">🤖</div>
+        <h3>AI-Powered Insights</h3>
+        <p class="feature-tagline">Machine learning detects anomalies and predicts supply chain issues before they occur.</p>
+        <span class="expand-indicator">▼</span>
+        <div class="feature-expanded-content">
+          <div class="feature-divider"></div>
+          <h4 class="feature-how-title">How It Works</h4>
+          <p class="feature-how-text">Our AI engine analyzes patterns across millions of verification events to detect counterfeiting attempts, predict supply chain disruptions, and optimize inventory management in real-time.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       RWA OPPORTUNITY SECTION
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="rwa-opportunity" class="rwa-section">
+
+    <div class="rwa-container">
+
+      <!-- Section Header -->
+      <div class="rwa-header">
+        <span class="section-label">
+          <span class="label-icon">✦</span>
+          THE OPPORTUNITY
+        </span>
+        <h2 class="rwa-title">
+          <span class="title-line">Real World Assets Are</span>
+          <span class="title-highlight">Going On-Chain</span>
+        </h2>
+        <p class="rwa-subtitle">BlackRock tokenizes treasury bonds. We tokenize everything you can hold.</p>
+      </div>
+
+      <!-- Big Stat with Glow Effect -->
+      <div class="rwa-stat-hero fade-in">
+        <div class="stat-glow"></div>
+        <div class="stat-ring stat-ring-1"></div>
+        <div class="stat-ring stat-ring-2"></div>
+        <div class="stat-ring stat-ring-3"></div>
+        <div class="stat-content">
+          <span class="stat-number" data-target="16"><span class="currency">$</span>0<span class="suffix">T+</span></span>
+        </div>
+        <span class="stat-label">PROJECTED RWA MARKET BY 2030</span>
+        <span class="stat-source">— Boston Consulting Group</span>
+      </div>
+
+      <!-- Market Cards with Circuit Connections -->
+      <div class="rwa-markets-wrapper">
+        <!-- Market Cards -->
+        <div class="rwa-markets">
+          <div class="market-card" data-tilt data-color="green">
+            <div class="card-glow"></div>
+            <div class="card-border"></div>
+            <div class="card-content">
+              <span class="market-value">$3.8T</span>
+              <span class="market-name">Luxury Goods</span>
+              <span class="market-desc">Counterfeiting costs brands $98B annually</span>
+              <div class="market-bar">
+                <div class="bar-fill" style="--fill-width: 75%"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="market-card" data-tilt data-color="blue">
+            <div class="card-glow"></div>
+            <div class="card-border"></div>
+            <div class="card-content">
+              <span class="market-value">$1.5T</span>
+              <span class="market-name">Pharmaceuticals</span>
+              <span class="market-desc">Fake drugs kill 1M+ people yearly</span>
+              <div class="market-bar">
+                <div class="bar-fill" style="--fill-width: 60%"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="market-card" data-tilt data-color="purple">
+            <div class="card-glow"></div>
+            <div class="card-border"></div>
+            <div class="card-content">
+              <span class="market-value">$8.2T</span>
+              <span class="market-name">Global Supply Chain</span>
+              <span class="market-desc">30% of recalls lack traceability</span>
+              <div class="market-bar">
+                <div class="bar-fill" style="--fill-width: 90%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Value Prop with Animation -->
+      <div class="rwa-value-prop fade-in">
+        <div class="value-text">
+          <h3>TAG IT Network is the <span class="text-gradient">Authentication Layer</span></h3>
+          <p>Every tokenized real-world asset needs proof of authenticity. We provide that proof — on-chain, immutable, and instant.</p>
+          <ul class="value-list">
+            <li class="value-item" data-delay="0">
+              <span class="check-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg></span>
+              <span>NFC chips bind physical → digital</span>
+            </li>
+            <li class="value-item" data-delay="100">
+              <span class="check-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg></span>
+              <span>Digital twins live on blockchain forever</span>
+            </li>
+            <li class="value-item" data-delay="200">
+              <span class="check-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg></span>
+              <span>Ownership transfers in seconds, not weeks</span>
+            </li>
+            <li class="value-item" data-delay="300">
+              <span class="check-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg></span>
+              <span>Verification with any smartphone</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Animated Flow Diagram -->
+        <div class="value-visual">
+          <div class="flow-diagram">
+            <div class="flow-item" data-step="1">
+              <div class="flow-icon-wrapper">
+                <div class="flow-pulse"></div>
+                <span class="flow-icon">◈</span>
+              </div>
+              <span class="flow-label">ASSET</span>
+            </div>
+
+            <div class="flow-connector">
+              <svg viewBox="0 0 100 20" class="connector-svg">
+                <defs>
+                  <linearGradient id="connectorGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#00FF88"/>
+                    <stop offset="100%" style="stop-color:#00D4FF"/>
+                  </linearGradient>
+                </defs>
+                <line x1="0" y1="10" x2="100" y2="10" stroke="url(#connectorGradient)" stroke-width="2" stroke-dasharray="8 4"/>
+              </svg>
+              <div class="data-packet"></div>
+            </div>
+
+            <div class="flow-item" data-step="2">
+              <div class="flow-icon-wrapper">
+                <div class="flow-pulse"></div>
+                <span class="flow-icon">◉</span>
+              </div>
+              <span class="flow-label">NFC</span>
+            </div>
+
+            <div class="flow-connector">
+              <svg viewBox="0 0 100 20" class="connector-svg">
+                <defs>
+                  <linearGradient id="connectorGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#00D4FF"/>
+                    <stop offset="100%" style="stop-color:#B84FFF"/>
+                  </linearGradient>
+                </defs>
+                <line x1="0" y1="10" x2="100" y2="10" stroke="url(#connectorGradient2)" stroke-width="2" stroke-dasharray="8 4"/>
+              </svg>
+              <div class="data-packet"></div>
+            </div>
+
+            <div class="flow-item" data-step="3">
+              <div class="flow-icon-wrapper">
+                <div class="flow-pulse"></div>
+                <span class="flow-icon">⬢</span>
+              </div>
+              <span class="flow-label">CHAIN</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="rwa-cta fade-in">
+        <a href="/solutions" class="btn-primary btn-glow">
+          <span>See Real-World Use Cases</span>
+          <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+          </svg>
+        </a>
+        <a href="/tokenomics" class="btn-secondary btn-glow">
+          <span>Explore $TAGIT Token</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       CAPABILITY MATRIX SECTION
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="hardware">
+    <div class="section-label fade-in">✦ Hardware Architecture</div>
+    <h2 class="section-title fade-in">NFC Chip Tiers</h2>
+    <p class="section-subtitle fade-in">
+      From mass-market authentication to military-grade custody — choose your security level.
+    </p>
+    
+    <div class="hardware-pyramid fade-in">
+      <!-- APEX: SIGMA BOY -->
+      <div class="pyramid-row apex">
+        <div class="hardware-card" data-tier="sigma">
+          <div class="hardware-card-header">
+            <span class="hardware-tier-badge">🚀 NEXT-GEN • 2030</span>
+            <span class="hardware-price">$200–2,000</span>
+          </div>
+          <h3 class="hardware-name">SIGMA BOY</h3>
+          <p class="hardware-tagline">The indestructible identity anchor — from Earth to Mars.</p>
+          <span class="hardware-expand-indicator">▼</span>
+          <div class="hardware-specs">
+            <div class="hardware-specs-inner">
+              <div class="spec-row">
+                <span class="spec-label">Security</span>
+                <span class="spec-value spec-highlight">EAL6+ / FIPS 140-3 L4</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Crypto</span>
+                <span class="spec-value">PQC (Kyber/Dilithium) + AES</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Temp Range</span>
+                <span class="spec-value">-269°C to +300°C</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Radiation</span>
+                <span class="spec-value">1 Mrad TID (space/nuclear)</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Special</span>
+                <span class="spec-value spec-highlight">PING MODE • On-chip AI</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- MID ROW: SOVEREIGN + FORTRESS -->
+      <div class="pyramid-row mid">
+        <div class="hardware-card" data-tier="sovereign">
+          <div class="hardware-card-header">
+            <span class="hardware-tier-badge">🛡️ Defense</span>
+            <span class="hardware-price">$8–25</span>
+          </div>
+          <h3 class="hardware-name">SOVEREIGN</h3>
+          <p class="hardware-tagline">Military-grade authentication for classified assets.</p>
+          <span class="hardware-expand-indicator">▼</span>
+          <div class="hardware-specs">
+            <div class="hardware-specs-inner">
+              <div class="spec-row">
+                <span class="spec-label">Chip</span>
+                <span class="spec-value">ICODE DNA / SLE78</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Security</span>
+                <span class="spec-value spec-highlight">EAL5+ / FIPS 140-3</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Use Case</span>
+                <span class="spec-value">Defense • Nuclear • Gov</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="hardware-card" data-tier="fortress">
+          <div class="hardware-card-header">
+            <span class="hardware-tier-badge">🏰 Enterprise</span>
+            <span class="hardware-price">$2–8</span>
+          </div>
+          <h3 class="hardware-name">FORTRESS</h3>
+          <p class="hardware-tagline">Enterprise-grade security for high-value assets.</p>
+          <span class="hardware-expand-indicator">▼</span>
+          <div class="hardware-specs">
+            <div class="hardware-specs-inner">
+              <div class="spec-row">
+                <span class="spec-label">Chip</span>
+                <span class="spec-value">NTAG 424 DNA</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Security</span>
+                <span class="spec-value spec-highlight">AES-128 + SUN MAC</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Use Case</span>
+                <span class="spec-value">Pharma • Luxury • Finance</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- BASE ROW: PRESTIGE + COMMERCIAL -->
+      <div class="pyramid-row base">
+        <div class="hardware-card" data-tier="prestige">
+          <div class="hardware-card-header">
+            <span class="hardware-tier-badge">💎 Premium</span>
+            <span class="hardware-price">$0.80–2</span>
+          </div>
+          <h3 class="hardware-name">PRESTIGE</h3>
+          <p class="hardware-tagline">Invisible luxury protection for premium brands.</p>
+          <span class="hardware-expand-indicator">▼</span>
+          <div class="hardware-specs">
+            <div class="hardware-specs-inner">
+              <div class="spec-row">
+                <span class="spec-label">Chip</span>
+                <span class="spec-value">NTAG 424 DNA micro</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Security</span>
+                <span class="spec-value spec-highlight">AES + Privacy Mode</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Use Case</span>
+                <span class="spec-value">Fashion • Art • Collectibles</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="hardware-card" data-tier="commercial">
+          <div class="hardware-card-header">
+            <span class="hardware-tier-badge">📦 Scale</span>
+            <span class="hardware-price">$0.15–0.50</span>
+          </div>
+          <h3 class="hardware-name">COMMERCIAL</h3>
+          <p class="hardware-tagline">Mass-market authentication at scale.</p>
+          <span class="hardware-expand-indicator">▼</span>
+          <div class="hardware-specs">
+            <div class="hardware-specs-inner">
+              <div class="spec-row">
+                <span class="spec-label">Chip</span>
+                <span class="spec-value">NTAG 216</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Security</span>
+                <span class="spec-value spec-highlight">HMAC server-side</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Use Case</span>
+                <span class="spec-value">Retail • Food • Logistics</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- ═══════════════════════════════════════════════════════════════
+       5-LAYER SECURITY SECTION
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="security">
+    <div class="security-container">
+      <!-- Header INSIDE the container -->
+      <div class="security-header">
+        <div class="section-label fade-in">✦ Defense in Depth</div>
+        <h2 class="fade-in">5-Layer Security Model</h2>
+        <p class="fade-in">Concentric layers of protection from governance to cryptography.</p>
+      </div>
+
+      <div class="security-diagram-container">
+        <div class="security-rings scale-in">
+          <div class="security-ring ring-5"><span class="ring-label">GOVERNANCE</span></div>
+          <div class="security-ring ring-4"><span class="ring-label">APPLICATION</span></div>
+          <div class="security-ring ring-3"><span class="ring-label">ACCESS</span></div>
+          <div class="security-ring ring-2"><span class="ring-label">CONTRACT</span></div>
+          <div class="security-ring ring-1"><span class="ring-label">CRYPTO</span></div>
+        </div>
+
+        <div class="security-legend">
+          <div class="legend-item layer-5 fade-in stagger-1">
+            <div class="legend-number">5</div>
+            <div class="legend-content">
+              <h4>Governance Layer</h4>
+              <p>Multi-house DAO, Timelocks, Emergency Council</p>
+            </div>
+          </div>
+          <div class="legend-item layer-4 fade-in stagger-2">
+            <div class="legend-number">4</div>
+            <div class="legend-content">
+              <h4>Application Layer</h4>
+              <p>Rate Limiting, WAF, DDoS Protection</p>
+            </div>
+          </div>
+          <div class="legend-item layer-3 fade-in stagger-3">
+            <div class="legend-number">3</div>
+            <div class="legend-content">
+              <h4>Access Control Layer</h4>
+              <p>BIDGES Badges, Capability Gates, ZK Proofs</p>
+            </div>
+          </div>
+          <div class="legend-item layer-2 fade-in stagger-4">
+            <div class="legend-number">2</div>
+            <div class="legend-content">
+              <h4>Smart Contract Layer</h4>
+              <p>Formal Verification, Reentrancy Guards, Audits</p>
+            </div>
+          </div>
+          <div class="legend-item layer-1 fade-in stagger-5">
+            <div class="legend-number">1</div>
+            <div class="legend-content">
+              <h4>Cryptography Layer</h4>
+              <p>ECDSA, Keccak256, PQC (Future)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- ═══════════════════════════════════════════════════════════════
+       TOKENOMICS TEASER - Links to full page
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="tokenomics" class="tokenomics-teaser">
+    <div class="section-label fade-in">✦ Token Economy</div>
+    <h2 class="section-title fade-in">$TAGIT Token</h2>
+    <p class="section-subtitle fade-in">
+      The utility token powering the TAG IT Network ecosystem.
+    </p>
+    <a href="/tokenomics" class="btn btn-primary">View Tokenomics →</a>
+  </section>
+  
+  <!-- ═══════════════════════════════════════════════════════════════
+       ABOUT / CTA SECTION
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="about">
+    <div class="section-label fade-in">✦ Our Mission</div>
+    <h2 class="section-title fade-in">Building the Trusted Technosphere</h2>
+    
+    <div class="about-content fade-in">
+      <p>
+        TAG IT Network is on a mission to eliminate counterfeiting and build trust 
+        in physical goods through blockchain technology. We believe every product 
+        deserves a verifiable identity.
+      </p>
+      <p>
+        Our team combines decades of experience in blockchain development, 
+        supply chain management, and enterprise security to create the most 
+        comprehensive product authentication platform in the world.
+      </p>
+    </div>
+    
+    <div class="cta-section scale-in">
+      <h2>Ready to Get Started?</h2>
+      <p>Join the future of product authentication. Contact us to learn how TAG IT Network can secure your supply chain.</p>
+      <div class="button-group">
+        <a href="#" class="btn btn-primary contact-modal-trigger">Contact Sales</a>
+        <a href="https://github.com/TAG-IT-NETWORK/tagit-docs" target="_blank" rel="noopener" class="btn btn-secondary">Read Documentation</a>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════════════════════════ -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon">
+            <img src="/assets/images/tagit_logo.png" alt="TAG IT Network Logo" class="logo-img" loading="lazy" width="40" height="40">
+          </div>
+          <span>TAG IT Network</span>
+        </div>
+        <p>Blockchain-powered product authentication for the modern world.</p>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#lifecycle">Life Cycle</a></li>
+          <li><a href="/solutions">Solutions</a></li>
+          <li><a href="/technology">Technology</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="https://github.com/TAG-IT-NETWORK/tagit-docs" target="_blank" rel="noopener">Documentation</a></li>
+          <li><a href="https://github.com/TAG-IT-NETWORK/tagit-docs" target="_blank" rel="noopener">API Reference</a></li>
+          <li><a href="https://github.com/TAG-IT-NETWORK/tagit-docs" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://www.youtube.com/@TAGITNetwork" target="_blank" rel="noopener">YouTube</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#" class="legal-trigger" data-modal="privacy">Privacy Policy</a></li>
+          <li><a href="#" class="legal-trigger" data-modal="terms">Terms of Service</a></li>
+          <li><a href="#" class="legal-trigger" data-modal="cookie">Cookie Policy</a></li>
+          <li><a href="/about#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>© 2026 TAG IT Network. All rights reserved.</p>
+      <div class="footer-socials">
+        <a href="https://x.com/TAGITNETWORK" target="_blank" rel="noopener" title="Twitter/X">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/106815890" target="_blank" rel="noopener" title="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@TAGITNetwork" target="_blank" rel="noopener" title="YouTube">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+        <a href="https://github.com/TAG-IT-NETWORK/tagit-docs" target="_blank" rel="noopener" title="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+        <a href="https://discord.gg/gAnkjGyh" target="_blank" rel="noopener" title="Discord">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Smooth scroll behavior for anchor links -->
+
+  <!-- Contact Modal -->
+  <div class="contact-modal-overlay" id="contactModalOverlay">
+    <div class="contact-modal">
+      <button class="contact-modal-close" id="contactModalClose">✕</button>
+      
+      <div class="contact-modal-header">
+        <div class="contact-modal-icon">📬</div>
+        <h3>Get In Touch</h3>
+        <p>We'd love to hear from you</p>
+      </div>
+      
+      <div class="contact-card address">
+        <div class="contact-card-icon">📍</div>
+        <div class="contact-card-content">
+          <h4>Headquarters</h4>
+          <p>
+            <strong>TAG IT NETWORK CORP</strong><br>
+            245 Riverside Avenue, Suite 100<br>
+            Jacksonville, FL 32202<br>
+            United States
+          </p>
+        </div>
+      </div>
+      
+      <div class="contact-card email">
+        <div class="contact-card-icon">✉️</div>
+        <div class="contact-card-content">
+          <h4>General Inquiries</h4>
+          <p><a href="mailto:info@tagit.network">info@tagit.network</a></p>
+        </div>
+      </div>
+      
+      <div class="contact-modal-footer">
+        <p>Follow us for updates</p>
+        <div class="contact-socials">
+          <a href="https://x.com/TAGITNETWORK" target="_blank" rel="noopener" title="Twitter/X">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/106815890" target="_blank" rel="noopener" title="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@TAGITNetwork" target="_blank" rel="noopener" title="YouTube">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="https://github.com/TAG-IT-NETWORK/tagit-docs" target="_blank" rel="noopener" title="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </a>
+          <a href="https://discord.gg/gAnkjGyh" target="_blank" rel="noopener" title="Discord">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Privacy Policy Modal -->
+  <div class="legal-modal-overlay" id="privacyModalOverlay">
+    <div class="legal-modal">
+      <button class="legal-modal-close" data-close-modal>✕</button>
+      
+      <div class="legal-modal-header">
+        <h3><span>🔒</span> Privacy Policy</h3>
+        <p class="effective-date">Effective Date: September 29, 2025</p>
+      </div>
+      
+      <div class="legal-modal-content">
+        <p class="legal-intro">
+          TAG IT Network ("TAG IT," "we," "us," or "our") operates the <a href="https://www.tagit.network">https://www.tagit.network</a> website and related services (the "Service"). This page informs you of our policies regarding the collection, use, and disclosure of Personal Data when you use our Service. We will not use or share your information with anyone except as described in this Privacy Policy.
+        </p>
+        
+        <div class="legal-section">
+          <h4>📋 Information Collection and Use</h4>
+          <p>While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you. Personally identifiable information may include, but is not limited to your name, email address, phone number ("Personal Data").</p>
+        </div>
+        
+        <div class="legal-section">
+          <h4>📊 Log Data</h4>
+          <p>We collect information that your browser sends whenever you visit our Service ("Log Data"). This Log Data may include information such as your IP address, browser type, browser version, the pages of our Service that you visit, the time and date of your visit, the time spent on those pages and other statistics.</p>
+        </div>
+        
+        <div class="legal-section">
+          <h4>🍪 Cookies</h4>
+          <p>Cookies are files with a small amount of data, which may include an anonymous unique identifier. Cookies are sent to your browser from a website and transferred to your device. We use "cookies" to collect information in order to improve our services for you. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent.</p>
+        </div>
+        
+        <div class="legal-section">
+          <h4>🛡️ Security</h4>
+          <p>We secure your personal information using encryption and access controls. Only authorized employees have access with two-factor authentication enforced. Servers are routinely patched and scanned for vulnerabilities.</p>
+        </div>
+        
+        <div class="legal-section">
+          <h4>™️ Third-Party Logos & Trademarks</h4>
+          <p>Our Service may display third-party logos, trademarks, and brand names. These trademarks are the property of their respective owners. Their display on our Service is intended solely to indicate platforms, technologies, or services that our products use, support, or interoperate with.</p>
+        </div>
+        
+        <div class="legal-section">
+          <h4>📝 Changes to This Privacy Policy</h4>
+          <p>This Privacy Policy is effective as of the "Effective Date" indicated at the top of this Privacy Policy and will remain in effect until updated or replaced. We reserve the right to update or modify this Privacy Policy from time to time with or without notice. Your continued use of the Service after any changes or revisions to this Privacy Policy shall indicate your agreement with the terms of such revised Privacy Policy.</p>
+        </div>
+        
+        <div class="legal-section">
+          <h4>✉️ Contact Us</h4>
+          <p>If you have any questions about this Privacy Policy, please contact us via email: <a href="mailto:info@tagit.network">info@tagit.network</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Terms of Service Modal -->
+  <div class="legal-modal-overlay" id="termsModalOverlay">
+    <div class="legal-modal">
+      <button class="legal-modal-close" data-close-modal>✕</button>
+      
+      <div class="legal-modal-header">
+        <h3><span>📜</span> Terms of Service</h3>
+        <p class="effective-date">Effective Date: September 29, 2025</p>
+      </div>
+      
+      <div class="legal-modal-content">
+        <p class="legal-intro">
+          Welcome to TAG IT Network. By accessing or using our website at <a href="https://www.tagit.network">https://www.tagit.network</a> and related services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our Service.
+        </p>
+        
+        <div class="legal-section">
+          <h4>📌 Acceptance of Terms</h4>
+          <p>By accessing and using the Service, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service and our Privacy Policy. We reserve the right to modify these terms at any time, and such modifications shall be effective immediately upon posting.</p>
+        </div>
+        
+        <div class="legal-section">
+          <h4>🔐 Use of Service</h4>
+          <p>You agree to use the Service only for lawful purposes and in accordance with these Terms. You agree not to use the Service in any way that violates any applicable federal, state, local, or international law or regulation, or to engage in any conduct that restricts or inhibits anyone's use or enjoyment of the Service.</p>
+        </div>
+        
+        <div class="legal-section">
+          <h4>💎 Intellectual Property</h4>
+          <p>The Service and its entire contents, features, and functionality (including but not limited to all information, software, text, displays, images, video, and audio) are owned by TAG IT Network, its licensors, or other providers and are protected by copyright, trademark, patent, trade secret, and other intellectual property laws.</p>
+        </div>
+        
+        <div class="legal-section">
+          <h4>🪙 Token Disclaimer</h4>
+          <p>The $TAGIT token is a utility token intended solely for use within the TAG IT Network ecosystem. It is not intended to be a security, investment contract, or any form of financial instrument. Purchasing, holding, or using $TAGIT tokens does not grant any ownership, equity, or voting rights in TAG IT Network or any affiliated entities.</p>
+        </div>
+        
+        <div class="legal-section">
+          <h4>⚠️ Limitation of Liability</h4>
+          <p>In no event shall TAG IT Network, its directors, employees, partners, agents, suppliers, or affiliates be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the Service.</p>
+        </div>
+        
+        <div class="legal-section">
+          <h4>⚖️ Governing Law</h4>
+          <p>These Terms shall be governed by and construed in accordance with the laws of the State of Florida, United States, without regard to its conflict of law provisions. Any legal action or proceeding arising under these Terms shall be brought exclusively in the federal or state courts located in Duval County, Florida.</p>
+        </div>
+        
+        <div class="legal-section">
+          <h4>✉️ Contact Us</h4>
+          <p>If you have any questions about these Terms of Service, please contact us via email: <a href="mailto:info@tagit.network">info@tagit.network</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cookie Policy Modal -->
+  <div class="legal-modal-overlay" id="cookieModalOverlay">
+    <div class="legal-modal">
+      <button class="legal-modal-close" data-close-modal>✕</button>
+      
+      <div class="legal-modal-header">
+        <h3><span>🍪</span> Cookie Policy</h3>
+        <p class="effective-date">Effective Date: September 29, 2025</p>
+      </div>
+      
+      <div class="legal-modal-content">
+        <p class="legal-intro">
+          This Cookie Policy explains how TAG IT Network ("we," "us," or "our") uses cookies and similar technologies when you visit our website at <a href="https://www.tagit.network">https://www.tagit.network</a>. By using our website, you consent to our use of cookies as described in this policy.
+        </p>
+        
+        <div class="legal-section">
+          <h4>🤔 What Are Cookies?</h4>
+          <p>Cookies are small text files that are placed on your device (computer, smartphone, or tablet) when you visit a website. They are widely used to make websites work more efficiently and provide information to website owners. Cookies help us recognize your device and remember your preferences.</p>
+        </div>
+        
+        <div class="legal-section">
+          <h4>📂 Types of Cookies We Use</h4>
+          <p><strong>Essential Cookies:</strong> These cookies are necessary for the website to function properly. They enable basic features like page navigation and access to secure areas.<br><br>
+          <strong>Analytics Cookies:</strong> These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously.<br><br>
+          <strong>Preference Cookies:</strong> These cookies remember your settings and preferences to provide a more personalized experience.</p>
+        </div>
+        
+        <div class="legal-section">
+          <h4>🎛️ Managing Cookies</h4>
+          <p>Most web browsers allow you to control cookies through their settings. You can set your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you disable cookies, some features of our website may not function properly.</p>
+        </div>
+        
+        <div class="legal-section">
+          <h4>🔄 Third-Party Cookies</h4>
+          <p>We may use third-party services that set their own cookies, such as analytics providers. These third parties have their own privacy policies and cookie practices. We do not have control over these third-party cookies.</p>
+        </div>
+        
+        <div class="legal-section">
+          <h4>📝 Updates to This Policy</h4>
+          <p>We may update this Cookie Policy from time to time to reflect changes in our practices or for operational, legal, or regulatory reasons. We encourage you to review this policy periodically for the latest information.</p>
+        </div>
+        
+        <div class="legal-section">
+          <h4>✉️ Contact Us</h4>
+          <p>If you have any questions about our use of cookies, please contact us via email: <a href="mailto:info@tagit.network">info@tagit.network</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Wallet Connection Modal -->
+  <div class="wallet-modal-overlay" id="walletModal">
+    <div class="wallet-modal">
+      <button class="wallet-modal-close" onclick="closeWalletModal()" aria-label="Close modal">×</button>
+
+      <!-- Connect State -->
+      <div id="walletConnectState">
+        <div class="wallet-modal-header">
+          <h3>Connect Wallet</h3>
+          <p>Connect your wallet to interact with TAG IT Network</p>
+        </div>
+
+        <div class="wallet-option" onclick="connectMetaMask()" role="button" tabindex="0">
+          <div class="wallet-option-icon">
+            <svg width="28" height="28" viewBox="0 0 35 33" fill="none">
+              <path d="M32.96 1l-13.14 9.72 2.45-5.73L32.96 1z" fill="#E17726" stroke="#E17726"/>
+              <path d="M2.66 1l13.02 9.82-2.33-5.83L2.66 1zm25.57 22.53l-3.5 5.34 7.49 2.06 2.14-7.28-6.13-.12zm-26.96.12l2.13 7.28 7.47-2.06-3.48-5.34-6.12.12z" fill="#E27625" stroke="#E27625"/>
+              <path d="M10.47 14.51l-2.08 3.14 7.4.34-.24-7.97-5.08 4.49zm14.68 0l-5.16-4.59-.17 8.07 7.4-.34-2.07-3.14z" fill="#E27625" stroke="#E27625"/>
+              <path d="M10.87 28.87l4.49-2.16-3.88-3.02-.61 5.18zm9.4-2.16l4.46 2.16-.58-5.18-3.88 3.02z" fill="#E27625" stroke="#E27625"/>
+            </svg>
+          </div>
+          <div class="wallet-option-info">
+            <h4>MetaMask</h4>
+            <p>Connect using browser extension</p>
+          </div>
+          <span class="wallet-option-arrow">→</span>
+        </div>
+
+        <div class="wallet-option" onclick="connectWalletConnect()" role="button" tabindex="0">
+          <div class="wallet-option-icon">
+            <svg width="28" height="28" viewBox="0 0 400 400" fill="none">
+              <path d="M81.9 156.7c59.7-58.4 156.5-58.4 216.2 0l7.2 7c3 2.9 3 7.6 0 10.5l-24.6 24.1c-1.5 1.5-3.9 1.5-5.4 0l-9.9-9.7c-41.6-40.8-109.1-40.8-150.8 0l-10.6 10.4c-1.5 1.5-3.9 1.5-5.4 0l-24.6-24.1c-3-2.9-3-7.6 0-10.5l7.9-7.7zm267.1 49.8l21.9 21.4c3 2.9 3 7.6 0 10.5l-98.8 96.8c-3 2.9-7.8 2.9-10.8 0l-70.1-68.6c-.7-.7-1.9-.7-2.7 0l-70.1 68.6c-3 2.9-7.8 2.9-10.8 0L8.9 238.4c-3-2.9-3-7.6 0-10.5l21.9-21.4c3-2.9 7.8-2.9 10.8 0l70.1 68.6c.7.7 1.9.7 2.7 0l70.1-68.6c3-2.9 7.8-2.9 10.8 0l70.1 68.6c.7.7 1.9.7 2.7 0l70.1-68.6c3-3 7.8-3 10.8 0z" fill="#3B99FC"/>
+            </svg>
+          </div>
+          <div class="wallet-option-info">
+            <h4>WalletConnect</h4>
+            <p>Scan with your mobile wallet</p>
+          </div>
+          <span class="wallet-option-arrow">→</span>
+        </div>
+
+        <div class="wallet-option" onclick="connectCoinbase()" role="button" tabindex="0">
+          <div class="wallet-option-icon">
+            <svg width="28" height="28" viewBox="0 0 1024 1024" fill="none">
+              <circle cx="512" cy="512" r="512" fill="#0052FF"/>
+              <path d="M512 256c-141.4 0-256 114.6-256 256s114.6 256 256 256 256-114.6 256-256-114.6-256-256-256zm-70.7 326.6c-10.6 0-19.2-8.6-19.2-19.2v-102.8c0-10.6 8.6-19.2 19.2-19.2h141.4c10.6 0 19.2 8.6 19.2 19.2v102.8c0 10.6-8.6 19.2-19.2 19.2H441.3z" fill="#fff"/>
+            </svg>
+          </div>
+          <div class="wallet-option-info">
+            <h4>Coinbase Wallet</h4>
+            <p>Connect using Coinbase</p>
+          </div>
+          <span class="wallet-option-arrow">→</span>
+        </div>
+
+        <p class="wallet-modal-note">
+          By connecting, you agree to TAG IT Network's Terms of Service
+        </p>
+      </div>
+
+      <!-- Connected State -->
+      <div id="walletConnectedState" style="display: none;">
+        <div class="wallet-modal-header">
+          <h3>Wallet Connected</h3>
+          <p>Your wallet is connected to TAG IT Network</p>
+        </div>
+
+        <div class="wallet-connected-info">
+          <div class="address-container">
+            <div class="address-full" id="fullAddress">0x0000...0000</div>
+            <div class="address-actions">
+              <button onclick="copyAddress()" class="action-btn" title="Copy address">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                </svg>
+              </button>
+              <button onclick="openExplorer()" class="action-btn" title="View on explorer">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                  <polyline points="15 3 21 3 21 9"/>
+                  <line x1="10" y1="14" x2="21" y2="3"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div id="networkInfo" class="network-info-container"></div>
+
+          <div class="network-switch-section">
+            <label for="networkSelector">Switch Network:</label>
+            <select id="networkSelector" class="network-selector"></select>
+          </div>
+
+          <button class="wallet-disconnect-btn" onclick="disconnectWallet()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+              <polyline points="16 17 21 12 16 7"/>
+              <line x1="21" y1="12" x2="9" y2="12"/>
+            </svg>
+            Disconnect Wallet
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Wallet Connection Script -->
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+
+  <!-- Main JavaScript -->
+  <script src="/js/shared.js" defer></script>
+
+</body>
+</html>

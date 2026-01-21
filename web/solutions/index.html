@@ -1,0 +1,1788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solutions — TAG IT Network</title>
+
+  <!-- Performance: Preconnect to external origins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="TAG IT Network industry solutions - Blockchain-powered authentication for retail, agriculture, healthcare, manufacturing, defense, and government sectors.">
+  <meta name="keywords" content="blockchain authentication, supply chain, anti-counterfeiting, NFC, retail, healthcare, agriculture, manufacturing">
+  <meta name="author" content="TAG IT Network">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tagit.network/solutions">
+  <meta property="og:title" content="Solutions — TAG IT Network">
+  <meta property="og:description" content="Blockchain-powered authentication solutions for every industry.">
+  <meta property="og:image" content="https://tagit.network/assets/images/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Solutions — TAG IT Network">
+  <meta name="twitter:description" content="Blockchain-powered authentication solutions for every industry.">
+  <meta name="twitter:image" content="https://tagit.network/assets/images/og-image.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/tagit_logo.png">
+  <link rel="apple-touch-icon" href="/assets/images/tagit_logo.png">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/css/shared.css">
+</head>
+<body>
+  <!-- Skip to main content link for keyboard users -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Noscript fallback -->
+  <noscript>
+    <div class="noscript-message">
+      This website requires JavaScript for some features. Core content is still accessible.
+    </div>
+  </noscript>
+
+  <!-- Global Cyber Grid Background -->
+  <div class="cyber-grid-overlay"></div>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <a href="/" class="logo">
+      <div class="logo-icon">
+        <img src="/assets/images/tagit_logo.png" alt="TAG IT Network Logo" class="logo-img" loading="lazy" width="40" height="40">
+      </div>
+      <span>TAG IT Network</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="/#features">Features</a>
+      <a href="/solutions" class="active">Solutions</a>
+      <a href="/technology">Technology</a>
+      <a href="/tokenomics">Tokenomics</a>
+      <a href="/docs">Docs</a>
+      <a href="/about">About</a>
+    </div>
+
+    <button class="nav-cta" id="connectWalletBtn" onclick="handleWalletClick()">
+      Connect Wallet
+    </button>
+
+    <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/#features">Features</a>
+    <a href="/solutions" class="active">Solutions</a>
+    <a href="/technology">Technology</a>
+    <a href="/tokenomics">Tokenomics</a>
+    <a href="/docs">Docs</a>
+    <a href="/about">About</a>
+    <button class="mobile-cta" onclick="handleWalletClick()">Connect Wallet</button>
+  </div>
+
+  <main id="main-content">
+  <!-- Hero Section -->
+  <section class="page-hero">
+    <div class="page-hero-content">
+      <span class="section-label">
+        <span class="label-icon">◈</span>
+        Industry Solutions
+      </span>
+      <h1 class="page-hero-title">
+        Authentication for <span class="highlight">Every Sector</span>
+      </h1>
+      <p class="page-hero-subtitle">
+        Blockchain-powered product verification and supply chain transparency across industries.
+        One platform, infinite possibilities.
+      </p>
+    </div>
+  </section>
+
+  <!-- Solutions Grid -->
+  <section id="solutions-grid">
+    <div class="solutions-grid">
+
+      <!-- Retail & Consumer Goods -->
+      <div class="solution-card fade-in" data-sector="retail">
+        <div class="solution-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+        </div>
+        <h3>Retail & Consumer Goods</h3>
+        <p class="solution-description">Protect brands and consumers with instant authentication.</p>
+        <ul class="solution-features">
+          <li>Luxury goods authentication</li>
+          <li>Anti-counterfeiting protection</li>
+          <li>Supply chain transparency</li>
+          <li>Customer engagement via NFC</li>
+          <li>Warranty verification</li>
+        </ul>
+        <div class="solution-stat">
+          <span class="stat-number">$500B+</span>
+          <span class="stat-label">Annual counterfeit market</span>
+        </div>
+        <span class="learn-more">Learn more →</span>
+      </div>
+
+      <!-- Agriculture -->
+      <div class="solution-card fade-in stagger-1" data-sector="agriculture">
+        <div class="solution-icon agriculture-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 21V10"/>
+            <path d="M8 10C8 8 9.5 6 12 6C14.5 6 16 8 16 10"/>
+            <path d="M6 14C6 12 8 10 12 10C16 10 18 12 18 14"/>
+            <path d="M4 18C4 16 7 14 12 14C17 14 20 16 20 18"/>
+          </svg>
+        </div>
+        <h3>Agriculture</h3>
+        <p class="solution-description">Farm-to-table traceability for food safety and trust.</p>
+        <ul class="solution-features">
+          <li>Farm-to-table traceability</li>
+          <li>Organic certification verification</li>
+          <li>Pesticide/chemical tracking</li>
+          <li>Harvest date verification</li>
+          <li>Geographic origin proof</li>
+        </ul>
+        <div class="solution-stat">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Origin traceability</span>
+        </div>
+        <span class="learn-more">Learn more →</span>
+      </div>
+
+      <!-- Healthcare -->
+      <div class="solution-card fade-in stagger-2" data-sector="healthcare">
+        <div class="solution-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+          </svg>
+        </div>
+        <h3>Healthcare</h3>
+        <p class="solution-description">Ensure patient safety with verified pharmaceuticals.</p>
+        <ul class="solution-features">
+          <li>Pharmaceutical authentication</li>
+          <li>Medical device tracking</li>
+          <li>Prescription verification</li>
+          <li>Recall management</li>
+          <li>Cold chain monitoring</li>
+        </ul>
+        <div class="solution-stat">
+          <span class="stat-number">1M+</span>
+          <span class="stat-label">Lives at risk from fake drugs</span>
+        </div>
+        <span class="learn-more">Learn more →</span>
+      </div>
+
+      <!-- Manufacturing -->
+      <div class="solution-card fade-in stagger-3" data-sector="manufacturing">
+        <div class="solution-icon manufacturing-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+          </svg>
+        </div>
+        <h3>Manufacturing</h3>
+        <p class="solution-description">Track parts and ensure quality across the supply chain.</p>
+        <ul class="solution-features">
+          <li>Parts provenance tracking</li>
+          <li>Quality control verification</li>
+          <li>Warranty management</li>
+          <li>Counterfeit prevention</li>
+          <li>Compliance documentation</li>
+        </ul>
+        <div class="solution-stat">
+          <span class="stat-number">24/7</span>
+          <span class="stat-label">Real-time tracking</span>
+        </div>
+        <span class="learn-more">Learn more →</span>
+      </div>
+
+      <!-- Military & Defense -->
+      <div class="solution-card fade-in stagger-4" data-sector="military">
+        <div class="solution-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <h3>Military & Defense</h3>
+        <p class="solution-description">Secure equipment tracking with classified-grade verification.</p>
+        <ul class="solution-features">
+          <li>Equipment lifecycle tracking</li>
+          <li>Classified asset management</li>
+          <li>Chain of custody verification</li>
+          <li>Secure decommissioning</li>
+          <li>Tamper-evident sealing</li>
+        </ul>
+        <div class="solution-stat">
+          <span class="stat-number">Zero</span>
+          <span class="stat-label">Tolerance for compromise</span>
+        </div>
+        <span class="learn-more">Learn more →</span>
+      </div>
+
+      <!-- Government -->
+      <div class="solution-card fade-in stagger-5" data-sector="government">
+        <div class="solution-icon government-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="22" x2="21" y2="22"/>
+            <line x1="6" y1="18" x2="6" y2="11"/>
+            <line x1="10" y1="18" x2="10" y2="11"/>
+            <line x1="14" y1="18" x2="14" y2="11"/>
+            <line x1="18" y1="18" x2="18" y2="11"/>
+            <polygon points="12 2 20 7 4 7"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+            <line x1="4" y1="7" x2="20" y2="7"/>
+          </svg>
+        </div>
+        <h3>Government</h3>
+        <p class="solution-description">Transparent public asset management and document verification.</p>
+        <ul class="solution-features">
+          <li>Document authentication</li>
+          <li>Asset tracking</li>
+          <li>Regulatory compliance</li>
+          <li>Public records verification</li>
+          <li>Cross-agency coordination</li>
+        </ul>
+        <div class="solution-stat">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Audit trail transparency</span>
+        </div>
+        <span class="learn-more">Learn more →</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Real-World Use Cases - Two Column Journey -->
+  <section id="use-cases" class="journey-section">
+    <!-- Header -->
+    <div class="journey-header">
+      <span class="section-label">✦ REAL-WORLD USE CASES</span>
+      <h2 class="section-title">Follow the Journey</h2>
+      <p class="section-subtitle">See exactly how TAG IT protects products from creation to resale</p>
+    </div>
+
+    <div class="journey-layout">
+      <!-- LEFT: Navigation Sidebar -->
+      <aside class="journey-nav">
+        <div class="nav-group">
+          <h4 class="nav-group-title">Industry</h4>
+          <ul class="industry-list">
+            <li class="industry-item active" data-industry="luxury">
+              <span class="industry-icon">👜</span>
+              <span class="industry-name">Luxury Retail</span>
+            </li>
+            <li class="industry-item" data-industry="agriculture">
+              <span class="industry-icon">🥛</span>
+              <span class="industry-name">Agriculture</span>
+            </li>
+            <li class="industry-item" data-industry="pharma">
+              <span class="industry-icon">💊</span>
+              <span class="industry-name">Pharmaceutical</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="nav-group">
+          <h4 class="nav-group-title">Stage</h4>
+          <ol class="stage-list">
+            <li class="stage-item active" data-stage="1">
+              <span class="stage-dot"></span>
+              <span class="stage-name">Birth</span>
+            </li>
+            <li class="stage-item" data-stage="2">
+              <span class="stage-dot"></span>
+              <span class="stage-name">Journey</span>
+            </li>
+            <li class="stage-item" data-stage="3">
+              <span class="stage-dot"></span>
+              <span class="stage-name">Purchase</span>
+            </li>
+            <li class="stage-item" data-stage="4">
+              <span class="stage-dot"></span>
+              <span class="stage-name">Resale</span>
+            </li>
+            <li class="stage-item final" data-stage="5">
+              <span class="stage-dot"></span>
+              <span class="stage-name">Protected</span>
+            </li>
+          </ol>
+        </div>
+      </aside>
+
+      <!-- RIGHT: Content Panel -->
+      <main class="journey-content">
+
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <!-- LUXURY RETAIL - All 5 Stages -->
+        <!-- ═══════════════════════════════════════════════════════ -->
+
+        <!-- Luxury: Stage 1 - Birth -->
+        <article class="chapter-panel active" data-industry="luxury" data-stage="1">
+          <header class="chapter-header">
+            <span class="chapter-badge">Chapter 1</span>
+            <span class="chapter-location">📍 Paris, France</span>
+          </header>
+
+          <h3 class="chapter-title">Birth in the Atelier</h3>
+
+          <div class="explainer-block">
+            <h4>What Happens</h4>
+            <p>A master craftsman in Paris finishes a $15,000 handbag. Before it leaves the workshop, a TAG IT chip is sewn into the lining — invisible to thieves, but always verifiable by owners.</p>
+          </div>
+
+          <div class="explainer-block">
+            <h4>Why It Matters</h4>
+            <p>This is the moment of truth. The chip creates a permanent digital twin on the blockchain — like a birth certificate that can never be forged or lost.</p>
+          </div>
+
+          <div class="record-grid">
+            <div class="record-card">
+              <span class="record-icon">🏷️</span>
+              <div class="record-info">
+                <span class="record-label">Serial</span>
+                <code class="record-code">#LV-2024-847291</code>
+                <span class="record-meta">+ cryptographic signature</span>
+              </div>
+            </div>
+            <div class="record-card">
+              <span class="record-icon">👤</span>
+              <div class="record-info">
+                <span class="record-label">Craftsman ID</span>
+                <code class="record-code">0x7a3f...8b2c</code>
+                <span class="record-meta">anonymous, verified</span>
+              </div>
+            </div>
+            <div class="record-card">
+              <span class="record-icon">🐄</span>
+              <div class="record-info">
+                <span class="record-label">Italian Calfskin</span>
+                <code class="record-code">#IT-CAL-0892</code>
+                <span class="record-meta">Tuscany tannery</span>
+              </div>
+            </div>
+            <div class="record-card">
+              <span class="record-icon">✨</span>
+              <div class="record-info">
+                <span class="record-label">Gold Hardware</span>
+                <code class="record-code">#GLD-7721</code>
+                <span class="record-meta">+ purity cert</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="risk-callout">
+            <span class="risk-icon">⚠️</span>
+            <p><strong>Without TAG IT:</strong> Counterfeiters copy the design. No way to prove yours is real.</p>
+          </div>
+        </article>
+
+        <!-- Luxury: Stage 2 - Journey -->
+        <article class="chapter-panel" data-industry="luxury" data-stage="2">
+          <header class="chapter-header">
+            <span class="chapter-badge">Chapter 2</span>
+            <span class="chapter-location">📍 Milan → New York</span>
+          </header>
+
+          <h3 class="chapter-title">Crossing Borders</h3>
+
+          <div class="explainer-block">
+            <h4>What Happens</h4>
+            <p>The bag travels from Paris to a flagship store in Manhattan. Every scan at customs, warehouses, and receiving docks is logged automatically.</p>
+          </div>
+
+          <div class="explainer-block">
+            <h4>Why It Matters</h4>
+            <p>You get a complete travel history. If the bag ever "disappears" in transit, you know exactly where it was last seen.</p>
+          </div>
+
+          <div class="record-grid">
+            <div class="record-card">
+              <span class="record-icon">🛃</span>
+              <div class="record-info">
+                <span class="record-label">Customs Clearance</span>
+                <code class="record-code">#EU-EXP-29847</code>
+                <span class="record-meta">Milan, Italy</span>
+              </div>
+            </div>
+            <div class="record-card">
+              <span class="record-icon">📦</span>
+              <div class="record-info">
+                <span class="record-label">Warehouse Check-in</span>
+                <code class="record-code">#WH-JFK-0156</code>
+                <span class="record-meta">JFK Logistics Hub</span>
+              </div>
+            </div>
+            <div class="record-card">
+              <span class="record-icon">🏪</span>
+              <div class="record-info">
+                <span class="record-label">Store Receiving</span>
+                <code class="record-code">#NYC-5TH-2847</code>
+                <span class="record-meta">5th Avenue Flagship</span>
+              </div>
+            </div>
+            <div class="record-card">
+              <span class="record-icon">🌡️</span>
+              <div class="record-info">
+                <span class="record-label">Condition Log</span>
+                <code class="record-code">68°F / 45% RH</code>
+                <span class="record-meta">climate controlled</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="risk-callout">
+            <span class="risk-icon">⚠️</span>
+            <p><strong>Without TAG IT:</strong> Bags vanish in shipping. Insurance claims take months. Stolen goods resurface on grey markets.</p>
+          </div>
+        </article>
+
+        <!-- Luxury: Stage 3 - Purchase -->
+        <article class="chapter-panel" data-industry="luxury" data-stage="3">
+          <header class="chapter-header">
+            <span class="chapter-badge">Chapter 3</span>
+            <span class="chapter-location">📍 New York, USA</span>
+          </header>
+
+          <h3 class="chapter-title">New Owner, Verified</h3>
+
+          <div class="explainer-block">
+            <h4>What Happens</h4>
+            <p>Sarah buys the bag. She taps it with her phone and claims ownership. The blockchain now shows her as the verified owner — no paperwork needed.</p>
+          </div>
+
+          <div class="explainer-block">
+            <h4>Why It Matters</h4>
+            <p>Ownership transfer takes 3 seconds, not 3 weeks. Sarah can prove she bought it legitimately, forever.</p>
+          </div>
+
+          <div class="record-grid">
+            <div class="record-card">
+              <span class="record-icon">👛</span>
+              <div class="record-info">
+                <span class="record-label">Owner Wallet</span>
+                <code class="record-code">0x8f2d...4a91</code>
+                <span class="record-meta">Sarah M.</span>
+              </div>
+            </div>
+            <div class="record-card">
+              <span class="record-icon">🕐</span>
+              <div class="record-info">
+                <span class="record-label">Purchase Time</span>
+                <code class="record-code">2024-03-15</code>
+                <span class="record-meta">14:32:07 EST</span>
+              </div>
+            </div>
+            <div class="record-card">
+              <span class="record-icon">📍</span>
+              <div class="record-info">
+                <span class="record-label">Store Location</span>
+                <code class="record-code">#NYC-5TH-001</code>
+                <span class="record-meta">5th Ave Flagship</span>
+              </div>
+            </div>
+            <div class="record-card">
+              <span class="record-icon">💰</span>
+              <div class="record-info">
+                <span class="record-label">Price Paid</span>
+                <code class="record-code">$15,200 USD</code>
+                <span class="record-meta">verified transaction</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="risk-callout">
+            <span class="risk-icon">⚠️</span>
+            <p><strong>Without TAG IT:</strong> Paper receipts fade. Stores close. "Proof of purchase" becomes impossible after a few years.</p>
+          </div>
+        </article>
+
+        <!-- Luxury: Stage 4 - Resale -->
+        <article class="chapter-panel" data-industry="luxury" data-stage="4">
+          <header class="chapter-header">
+            <span class="chapter-badge">Chapter 4</span>
+            <span class="chapter-location">📍 Online Marketplace</span>
+          </header>
+
+          <h3 class="chapter-title">Trusted Resale</h3>
+
+          <div class="explainer-block">
+            <h4>What Happens</h4>
+            <p>3 years later, Sarah sells the bag. The buyer scans it before paying and sees the complete history: original craftsman, every owner, no red flags.</p>
+          </div>
+
+          <div class="explainer-block">
+            <h4>Why It Matters</h4>
+            <p>Buyers pay premium prices for verified authenticity. Sarah gets 40% more than she would without proof.</p>
+          </div>
+
+          <div class="record-grid">
+            <div class="record-card">
+              <span class="record-icon">🔗</span>
+              <div class="record-info">
+                <span class="record-label">Ownership Chain</span>
+                <code class="record-code">2 owners</code>
+                <span class="record-meta">full history verified</span>
+              </div>
+            </div>
+            <div class="record-card">
+              <span class="record-icon">📋</span>
+              <div class="record-info">
+                <span class="record-label">Condition Report</span>
+                <code class="record-code">Excellent</code>
+                <span class="record-meta">minor patina</span>
+              </div>
+            </div>
+            <div class="record-card">
+              <span class="record-icon">✅</span>
+              <div class="record-info">
+                <span class="record-label">Authenticity Score</span>
+                <code class="record-code">100%</code>
+                <span class="record-meta">blockchain verified</span>
+              </div>
+            </div>
+            <div class="record-card">
+              <span class="record-icon">📈</span>
+              <div class="record-info">
+                <span class="record-label">Market Value</span>
+                <code class="record-code">$12,800</code>
+                <span class="record-meta">+40% vs unverified</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="risk-callout">
+            <span class="risk-icon">⚠️</span>
+            <p><strong>Without TAG IT:</strong> Resale markets flooded with fakes. Buyers skeptical. Authentic bags sell at fake prices.</p>
+          </div>
+        </article>
+
+        <!-- Luxury: Stage 5 - Protected -->
+        <article class="chapter-panel" data-industry="luxury" data-stage="5">
+          <header class="chapter-header">
+            <span class="chapter-badge">Chapter 5</span>
+            <span class="chapter-location">📍 Anywhere</span>
+          </header>
+
+          <h3 class="chapter-title">Lifetime Protection</h3>
+
+          <div class="explainer-block">
+            <h4>What Happens</h4>
+            <p>10 years later, the bag is stolen. The owner flags it in the app. Now anyone who scans it sees: "REPORTED STOLEN — Do not purchase."</p>
+          </div>
+
+          <div class="explainer-block">
+            <h4>Why It Matters</h4>
+            <p>Stolen luxury goods become unsellable. Thieves can't profit. Some items get returned when fences discover they're worthless.</p>
+          </div>
+
+          <div class="record-grid">
+            <div class="record-card">
+              <span class="record-icon">🚨</span>
+              <div class="record-info">
+                <span class="record-label">Flag Status</span>
+                <code class="record-code flagged">STOLEN</code>
+                <span class="record-meta">reported 2034-06-12</span>
+              </div>
+            </div>
+            <div class="record-card">
+              <span class="record-icon">📅</span>
+              <div class="record-info">
+                <span class="record-label">Report Date</span>
+                <code class="record-code">2034-06-12</code>
+                <span class="record-meta">08:15:33 UTC</span>
+              </div>
+            </div>
+            <div class="record-card">
+              <span class="record-icon">📍</span>
+              <div class="record-info">
+                <span class="record-label">Last Known</span>
+                <code class="record-code">Brooklyn, NY</code>
+                <span class="record-meta">home location</span>
+              </div>
+            </div>
+            <div class="record-card">
+              <span class="record-icon">📞</span>
+              <div class="record-info">
+                <span class="record-label">Recovery Contact</span>
+                <code class="record-code">NYPD #28471</code>
+                <span class="record-meta">case filed</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="risk-callout">
+            <span class="risk-icon">⚠️</span>
+            <p><strong>Without TAG IT:</strong> Stolen goods disappear forever. No recovery. Thieves profit with zero consequences.</p>
+          </div>
+        </article>
+
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <!-- AGRICULTURE - All 5 Stages -->
+        <!-- ═══════════════════════════════════════════════════════ -->
+
+        <!-- Agriculture: Stage 1 - Birth -->
+        <article class="chapter-panel" data-industry="agriculture" data-stage="1">
+          <header class="chapter-header">
+            <span class="chapter-badge">Chapter 1</span>
+            <span class="chapter-location">📍 South Island, New Zealand</span>
+          </header>
+
+          <h3 class="chapter-title">From Pasture to Processor</h3>
+
+          <div class="explainer-block">
+            <h4>What Happens</h4>
+            <p>A2 grass-fed milk is collected from a certified herd. The batch gets a TAG IT chip at the dairy — linking it to the exact farm, cows, and collection time.</p>
+          </div>
+
+          <div class="explainer-block">
+            <h4>Why It Matters</h4>
+            <p>If there's ever a contamination scare, regulators can trace the problem to a single farm in minutes, not weeks. Good farmers stay protected.</p>
+          </div>
+
+          <div class="record-grid">
+            <div class="record-card">
+              <span class="record-icon">🥛</span>
+              <div class="record-info">
+                <span class="record-label">Batch ID</span>
+                <code class="record-code">#NZ-A2-2024-0156</code>
+                <span class="record-meta">+ quality cert hash</span>
+              </div>
+            </div>
+            <div class="record-card">
+              <span class="record-icon">📍</span>
+              <div class="record-info">
+                <span class="record-label">Farm GPS</span>
+                <code class="record-code">-45.8788, 170.5028</code>
+                <span class="record-meta">South Island</span>
+              </div>
+            </div>
+            <div class="record-card">
+              <span class="record-icon">🐄</span>
+              <div class="record-info">
+                <span class="record-label">Herd Certification</span>
+                <code class="record-code">#NZOA-2847</code>
+                <span class="record-meta">A2 grass-fed verified</span>
+              </div>
+            </div>
+            <div class="record-card">
+              <span class="record-icon">🧪</span>
+              <div class="record-info">
+                <span class="record-label">Lab Results</span>
+                <code class="record-code safe">&lt;10K CFU/mL</code>
+                <span class="record-meta">Fat 4.2%, Protein 3.8%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="risk-callout">
+            <span class="risk-icon">⚠️</span>
+            <p><strong>Without TAG IT:</strong> Contamination recalls affect entire regions. Good farmers lose everything because of one bad actor.</p>
+          </div>
+        </article>
+
+        <!-- Agriculture: Stage 2 - Journey -->
+        <article class="chapter-panel" data-industry="agriculture" data-stage="2">
+          <header class="chapter-header">
+            <span class="chapter-badge">Chapter 2</span>
+            <span class="chapter-location">📍 Cold Chain Transit</span>
+          </header>
+
+          <h3 class="chapter-title">Temperature-Controlled Journey</h3>
+
+          <div class="explainer-block">
+            <h4>What Happens</h4>
+            <p>The milk travels in refrigerated trucks with IoT sensors. Every temperature reading, every stop, every door opening is recorded on-chain.</p>
+          </div>
+
+          <div class="explainer-block">
+            <h4>Why It Matters</h4>
+            <p>If milk spoils, you know exactly when the cold chain broke. No finger-pointing between drivers, warehouses, and stores.</p>
+          </div>
+
+          <div class="record-grid">
+            <div class="record-card">
+              <span class="record-icon">🌡️</span>
+              <div class="record-info">
+                <span class="record-label">Temp Range</span>
+                <code class="record-code safe">2-4°C</code>
+                <span class="record-meta">within spec entire journey</span>
+              </div>
+            </div>
+            <div class="record-card">
+              <span class="record-icon">🚛</span>
+              <div class="record-info">
+                <span class="record-label">Carrier ID</span>
+                <code class="record-code">#NZ-COLD-847</code>
+                <span class="record-meta">certified reefer</span>
+              </div>
+            </div>
+            <div class="record-card">
+              <span class="record-icon">🚪</span>
+              <div class="record-info">
+                <span class="record-label">Door Events</span>
+                <code class="record-code">3 opens</code>
+                <span class="record-meta">all under 2 min</span>
+              </div>
+            </div>
+            <div class="record-card">
+              <span class="record-icon">⏱️</span>
+              <div class="record-info">
+                <span class="record-label">Transit Time</span>
+                <code class="record-code">18.5 hours</code>
+                <span class="record-meta">farm to processor</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="risk-callout">
+            <span class="risk-icon">⚠️</span>
+            <p><strong>Without TAG IT:</strong> Spoiled products reach shelves. No way to prove who broke the cold chain. Everyone blames everyone.</p>
+          </div>
+        </article>
+
+        <!-- Agriculture: Stage 3 - Purchase -->
+        <article class="chapter-panel" data-industry="agriculture" data-stage="3">
+          <header class="chapter-header">
+            <span class="chapter-badge">Chapter 3</span>
+            <span class="chapter-location">📍 Auckland Supermarket</span>
+          </header>
+
+          <h3 class="chapter-title">Consumer Confidence</h3>
+
+          <div class="explainer-block">
+            <h4>What Happens</h4>
+            <p>A parent picks up a carton of milk. They scan the QR code and see: the exact farm, the cow welfare certification, the lab results, the unbroken cold chain.</p>
+          </div>
+
+          <div class="explainer-block">
+            <h4>Why It Matters</h4>
+            <p>Premium products deserve premium proof. Parents buying A2 milk for sensitive children can verify it's actually A2 — not a cheap substitute.</p>
+          </div>
+
+          <div class="record-grid">
+            <div class="record-card">
+              <span class="record-icon">✅</span>
+              <div class="record-info">
+                <span class="record-label">A2 Verified</span>
+                <code class="record-code safe">AUTHENTIC</code>
+                <span class="record-meta">DNA tested herd</span>
+              </div>
+            </div>
+            <div class="record-card">
+              <span class="record-icon">🌿</span>
+              <div class="record-info">
+                <span class="record-label">Grass-Fed</span>
+                <code class="record-code">95%+ pasture</code>
+                <span class="record-meta">certified organic</span>
+              </div>
+            </div>
+            <div class="record-card">
+              <span class="record-icon">📅</span>
+              <div class="record-info">
+                <span class="record-label">Days Fresh</span>
+                <code class="record-code">4 days</code>
+                <span class="record-meta">from collection</span>
+              </div>
+            </div>
+            <div class="record-card">
+              <span class="record-icon">🏷️</span>
+              <div class="record-info">
+                <span class="record-label">Retail Price</span>
+                <code class="record-code">$8.50 NZD</code>
+                <span class="record-meta">premium verified</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="risk-callout">
+            <span class="risk-icon">⚠️</span>
+            <p><strong>Without TAG IT:</strong> Consumers pay premium prices on faith. No way to verify "grass-fed" or "organic" claims are real.</p>
+          </div>
+        </article>
+
+        <!-- Agriculture: Stage 4 - Recall -->
+        <article class="chapter-panel" data-industry="agriculture" data-stage="4">
+          <header class="chapter-header">
+            <span class="chapter-badge">Chapter 4</span>
+            <span class="chapter-location">📍 Supply Chain Network</span>
+          </header>
+
+          <h3 class="chapter-title">Precision Recalls</h3>
+
+          <div class="explainer-block">
+            <h4>What Happens</h4>
+            <p>A contamination issue is detected. Instead of recalling all milk from the region, regulators trace it to 3 specific batches from 1 farm. Targeted recall, minimal waste.</p>
+          </div>
+
+          <div class="explainer-block">
+            <h4>Why It Matters</h4>
+            <p>Precision saves millions. Unaffected farmers keep selling. Consumers trust the system because recalls are surgical, not panic-driven.</p>
+          </div>
+
+          <div class="record-grid">
+            <div class="record-card">
+              <span class="record-icon">🎯</span>
+              <div class="record-info">
+                <span class="record-label">Recall Scope</span>
+                <code class="record-code">3 batches</code>
+                <span class="record-meta">not 3,000</span>
+              </div>
+            </div>
+            <div class="record-card">
+              <span class="record-icon">🏭</span>
+              <div class="record-info">
+                <span class="record-label">Source Isolated</span>
+                <code class="record-code">Farm #NZ-847</code>
+                <span class="record-meta">equipment fault</span>
+              </div>
+            </div>
+            <div class="record-card">
+              <span class="record-icon">⏱️</span>
+              <div class="record-info">
+                <span class="record-label">Response Time</span>
+                <code class="record-code">47 minutes</code>
+                <span class="record-meta">detection to recall</span>
+              </div>
+            </div>
+            <div class="record-card">
+              <span class="record-icon">💰</span>
+              <div class="record-info">
+                <span class="record-label">Waste Prevented</span>
+                <code class="record-code">$2.1M NZD</code>
+                <span class="record-meta">vs blanket recall</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="risk-callout">
+            <span class="risk-icon">⚠️</span>
+            <p><strong>Without TAG IT:</strong> One contaminated batch = entire region recalled. Millions in waste. Consumer panic. Good farms destroyed.</p>
+          </div>
+        </article>
+
+        <!-- Agriculture: Stage 5 - Protected -->
+        <article class="chapter-panel" data-industry="agriculture" data-stage="5">
+          <header class="chapter-header">
+            <span class="chapter-badge">Chapter 5</span>
+            <span class="chapter-location">📍 Global Markets</span>
+          </header>
+
+          <h3 class="chapter-title">Export Confidence</h3>
+
+          <div class="explainer-block">
+            <h4>What Happens</h4>
+            <p>New Zealand dairy exports to 50+ countries. Each shipment carries immutable proof of origin, handling, and safety. Import officials scan and approve in seconds.</p>
+          </div>
+
+          <div class="explainer-block">
+            <h4>Why It Matters</h4>
+            <p>Trade disputes disappear when provenance is on-chain. "Is this really from New Zealand?" becomes a 3-second verification, not a 3-week investigation.</p>
+          </div>
+
+          <div class="record-grid">
+            <div class="record-card">
+              <span class="record-icon">🌏</span>
+              <div class="record-info">
+                <span class="record-label">Export Markets</span>
+                <code class="record-code">50+ countries</code>
+                <span class="record-meta">instant verification</span>
+              </div>
+            </div>
+            <div class="record-card">
+              <span class="record-icon">📜</span>
+              <div class="record-info">
+                <span class="record-label">Compliance</span>
+                <code class="record-code safe">AUTO-PASS</code>
+                <span class="record-meta">FDA, EU, China CIQ</span>
+              </div>
+            </div>
+            <div class="record-card">
+              <span class="record-icon">⏱️</span>
+              <div class="record-info">
+                <span class="record-label">Customs Time</span>
+                <code class="record-code">8 minutes</code>
+                <span class="record-meta">vs 3 days average</span>
+              </div>
+            </div>
+            <div class="record-card">
+              <span class="record-icon">🛡️</span>
+              <div class="record-info">
+                <span class="record-label">Fraud Blocked</span>
+                <code class="record-code">100%</code>
+                <span class="record-meta">origin spoofing impossible</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="risk-callout">
+            <span class="risk-icon">⚠️</span>
+            <p><strong>Without TAG IT:</strong> Counterfeit "New Zealand" products flood Asian markets. Real exporters lose premium positioning.</p>
+          </div>
+        </article>
+
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <!-- PHARMACEUTICAL - All 5 Stages -->
+        <!-- ═══════════════════════════════════════════════════════ -->
+
+        <!-- Pharma: Stage 1 - Birth -->
+        <article class="chapter-panel" data-industry="pharma" data-stage="1">
+          <header class="chapter-header">
+            <span class="chapter-badge">Chapter 1</span>
+            <span class="chapter-location">📍 Basel, Switzerland</span>
+          </header>
+
+          <h3 class="chapter-title">Born in the Lab</h3>
+
+          <div class="explainer-block">
+            <h4>What Happens</h4>
+            <p>A batch of life-saving insulin is manufactured. Each vial gets a unique TAG IT chip linking it to the exact production line, quality tests, and raw material sources.</p>
+          </div>
+
+          <div class="explainer-block">
+            <h4>Why It Matters</h4>
+            <p>Counterfeit medications kill over 1 million people annually. A chip that proves "this came from a real lab" is literally life or death.</p>
+          </div>
+
+          <div class="record-grid">
+            <div class="record-card">
+              <span class="record-icon">💊</span>
+              <div class="record-info">
+                <span class="record-label">Batch ID</span>
+                <code class="record-code">#CH-INS-2024-8847</code>
+                <span class="record-meta">GMP certified</span>
+              </div>
+            </div>
+            <div class="record-card">
+              <span class="record-icon">🏭</span>
+              <div class="record-info">
+                <span class="record-label">Facility</span>
+                <code class="record-code">Basel Plant #3</code>
+                <span class="record-meta">FDA inspected</span>
+              </div>
+            </div>
+            <div class="record-card">
+              <span class="record-icon">🧬</span>
+              <div class="record-info">
+                <span class="record-label">Potency Test</span>
+                <code class="record-code safe">99.7%</code>
+                <span class="record-meta">within USP spec</span>
+              </div>
+            </div>
+            <div class="record-card">
+              <span class="record-icon">📅</span>
+              <div class="record-info">
+                <span class="record-label">Expiry</span>
+                <code class="record-code">2026-03-15</code>
+                <span class="record-meta">24-month shelf life</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="risk-callout">
+            <span class="risk-icon">⚠️</span>
+            <p><strong>Without TAG IT:</strong> Counterfeit insulin enters supply chains. Patients inject sugar water thinking it's medicine. People die.</p>
+          </div>
+        </article>
+
+        <!-- Pharma: Stage 2 - Journey -->
+        <article class="chapter-panel" data-industry="pharma" data-stage="2">
+          <header class="chapter-header">
+            <span class="chapter-badge">Chapter 2</span>
+            <span class="chapter-location">📍 Cold Chain: Switzerland → USA</span>
+          </header>
+
+          <h3 class="chapter-title">Ultra-Cold Transit</h3>
+
+          <div class="explainer-block">
+            <h4>What Happens</h4>
+            <p>Insulin requires strict 2-8°C storage. The shipment crosses oceans in specialized containers with continuous temperature monitoring — every reading stored on-chain.</p>
+          </div>
+
+          <div class="explainer-block">
+            <h4>Why It Matters</h4>
+            <p>Insulin exposed to heat becomes ineffective. Patients could inject compromised medication with no visible signs of damage. Continuous chain-of-custody prevents this.</p>
+          </div>
+
+          <div class="record-grid">
+            <div class="record-card">
+              <span class="record-icon">🌡️</span>
+              <div class="record-info">
+                <span class="record-label">Temp Log</span>
+                <code class="record-code safe">2.1-6.8°C</code>
+                <span class="record-meta">847 readings, all pass</span>
+              </div>
+            </div>
+            <div class="record-card">
+              <span class="record-icon">✈️</span>
+              <div class="record-info">
+                <span class="record-label">Air Freight</span>
+                <code class="record-code">#LX-PHARM-2847</code>
+                <span class="record-meta">Swiss WorldCargo</span>
+              </div>
+            </div>
+            <div class="record-card">
+              <span class="record-icon">⚠️</span>
+              <div class="record-info">
+                <span class="record-label">Excursions</span>
+                <code class="record-code safe">0</code>
+                <span class="record-meta">no temp breaches</span>
+              </div>
+            </div>
+            <div class="record-card">
+              <span class="record-icon">🔒</span>
+              <div class="record-info">
+                <span class="record-label">Tamper Seal</span>
+                <code class="record-code safe">INTACT</code>
+                <span class="record-meta">continuous monitoring</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="risk-callout">
+            <span class="risk-icon">⚠️</span>
+            <p><strong>Without TAG IT:</strong> Temperature excursions go undetected. Degraded medications reach patients. No accountability.</p>
+          </div>
+        </article>
+
+        <!-- Pharma: Stage 3 - Purchase -->
+        <article class="chapter-panel" data-industry="pharma" data-stage="3">
+          <header class="chapter-header">
+            <span class="chapter-badge">Chapter 3</span>
+            <span class="chapter-location">📍 Chicago Pharmacy</span>
+          </header>
+
+          <h3 class="chapter-title">Patient Verification</h3>
+
+          <div class="explainer-block">
+            <h4>What Happens</h4>
+            <p>Maria picks up her insulin prescription. The pharmacist scans it, confirming: authentic manufacturer, unbroken cold chain, valid expiry, no recall flags.</p>
+          </div>
+
+          <div class="explainer-block">
+            <h4>Why It Matters</h4>
+            <p>Maria has Type 1 diabetes. Her life depends on this medication being real and effective. A 3-second scan gives her certainty no paper document ever could.</p>
+          </div>
+
+          <div class="record-grid">
+            <div class="record-card">
+              <span class="record-icon">✅</span>
+              <div class="record-info">
+                <span class="record-label">Authenticity</span>
+                <code class="record-code safe">VERIFIED</code>
+                <span class="record-meta">matches manufacturer record</span>
+              </div>
+            </div>
+            <div class="record-card">
+              <span class="record-icon">❄️</span>
+              <div class="record-info">
+                <span class="record-label">Cold Chain</span>
+                <code class="record-code safe">UNBROKEN</code>
+                <span class="record-meta">factory to pharmacy</span>
+              </div>
+            </div>
+            <div class="record-card">
+              <span class="record-icon">📅</span>
+              <div class="record-info">
+                <span class="record-label">Expiry Status</span>
+                <code class="record-code safe">18 months left</code>
+                <span class="record-meta">well within date</span>
+              </div>
+            </div>
+            <div class="record-card">
+              <span class="record-icon">🚫</span>
+              <div class="record-info">
+                <span class="record-label">Recall Status</span>
+                <code class="record-code safe">CLEAR</code>
+                <span class="record-meta">no active recalls</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="risk-callout">
+            <span class="risk-icon">⚠️</span>
+            <p><strong>Without TAG IT:</strong> Patients can't distinguish real from fake. Counterfeit medications look identical. Trust is blind faith.</p>
+          </div>
+        </article>
+
+        <!-- Pharma: Stage 4 - Diversion -->
+        <article class="chapter-panel" data-industry="pharma" data-stage="4">
+          <header class="chapter-header">
+            <span class="chapter-badge">Chapter 4</span>
+            <span class="chapter-location">📍 Secondary Market</span>
+          </header>
+
+          <h3 class="chapter-title">Stopping Diversion</h3>
+
+          <div class="explainer-block">
+            <h4>What Happens</h4>
+            <p>Criminals try to resell stolen or expired medications. When a suspicious pharmacy scans the vial, they see: "FLAGGED - Already dispensed in Chicago" or "EXPIRED - Do not use."</p>
+          </div>
+
+          <div class="explainer-block">
+            <h4>Why It Matters</h4>
+            <p>Pharmaceutical diversion is a $75 billion criminal enterprise. TAG IT makes stolen or expired meds worthless — they can't be resold because buyers can verify.</p>
+          </div>
+
+          <div class="record-grid">
+            <div class="record-card">
+              <span class="record-icon">🚨</span>
+              <div class="record-info">
+                <span class="record-label">Diversion Alert</span>
+                <code class="record-code flagged">FLAGGED</code>
+                <span class="record-meta">already dispensed</span>
+              </div>
+            </div>
+            <div class="record-card">
+              <span class="record-icon">📍</span>
+              <div class="record-info">
+                <span class="record-label">Original Dispense</span>
+                <code class="record-code">Chicago, IL</code>
+                <span class="record-meta">2024-01-15</span>
+              </div>
+            </div>
+            <div class="record-card">
+              <span class="record-icon">🔍</span>
+              <div class="record-info">
+                <span class="record-label">Current Scan</span>
+                <code class="record-code">Miami, FL</code>
+                <span class="record-meta">suspicious location</span>
+              </div>
+            </div>
+            <div class="record-card">
+              <span class="record-icon">👮</span>
+              <div class="record-info">
+                <span class="record-label">Auto-Report</span>
+                <code class="record-code">DEA notified</code>
+                <span class="record-meta">investigation triggered</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="risk-callout">
+            <span class="risk-icon">⚠️</span>
+            <p><strong>Without TAG IT:</strong> Stolen medications resold freely. Expired drugs relabeled. Criminal networks profit from patient desperation.</p>
+          </div>
+        </article>
+
+        <!-- Pharma: Stage 5 - Protected -->
+        <article class="chapter-panel" data-industry="pharma" data-stage="5">
+          <header class="chapter-header">
+            <span class="chapter-badge">Chapter 5</span>
+            <span class="chapter-location">📍 Global Health Security</span>
+          </header>
+
+          <h3 class="chapter-title">Pandemic Ready</h3>
+
+          <div class="explainer-block">
+            <h4>What Happens</h4>
+            <p>During a health crisis, governments need to track every vaccine dose. TAG IT provides real-time visibility: where doses are, who received them, which batches have issues.</p>
+          </div>
+
+          <div class="explainer-block">
+            <h4>Why It Matters</h4>
+            <p>COVID showed us what happens without traceability: wasted doses, counterfeit vaccines, no way to link adverse events to specific batches. Never again.</p>
+          </div>
+
+          <div class="record-grid">
+            <div class="record-card">
+              <span class="record-icon">💉</span>
+              <div class="record-info">
+                <span class="record-label">Doses Tracked</span>
+                <code class="record-code">50M+</code>
+                <span class="record-meta">real-time visibility</span>
+              </div>
+            </div>
+            <div class="record-card">
+              <span class="record-icon">🗑️</span>
+              <div class="record-info">
+                <span class="record-label">Waste Prevented</span>
+                <code class="record-code">12%</code>
+                <span class="record-meta">vs untracked programs</span>
+              </div>
+            </div>
+            <div class="record-card">
+              <span class="record-icon">🔗</span>
+              <div class="record-info">
+                <span class="record-label">Adverse Event Link</span>
+                <code class="record-code safe">INSTANT</code>
+                <span class="record-meta">batch → patient</span>
+              </div>
+            </div>
+            <div class="record-card">
+              <span class="record-icon">🌍</span>
+              <div class="record-info">
+                <span class="record-label">Countries</span>
+                <code class="record-code">120+</code>
+                <span class="record-meta">interoperable system</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="risk-callout">
+            <span class="risk-icon">⚠️</span>
+            <p><strong>Without TAG IT:</strong> Vaccine nationalism. Counterfeit doses. No adverse event tracking. Public trust collapses.</p>
+          </div>
+        </article>
+
+        <!-- Navigation Buttons -->
+        <div class="chapter-nav">
+          <button class="btn-secondary btn-prev" disabled>← Previous</button>
+          <button class="btn-primary btn-next">Next Stage →</button>
+        </div>
+      </main>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section id="solutions-cta" class="cta-section">
+    <div class="cta-content">
+      <h2>Ready to implement TAG IT in your industry?</h2>
+      <p>Contact our team to discuss your specific use case and get started with a pilot program.</p>
+      <div class="button-group">
+        <a href="/about#contact" class="btn btn-primary">Contact Us</a>
+        <a href="/technology" class="btn btn-secondary">View Technology</a>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <!-- Solution Modal -->
+  <div class="solution-modal-overlay" id="solutionOverlay"></div>
+  <div class="solution-modal" id="solutionModal">
+    <button class="modal-close" id="modalClose" aria-label="Close modal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18"/>
+        <line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+    <div class="modal-header">
+      <div class="solution-icon" id="modalIcon"></div>
+      <h3 id="modalTitle"></h3>
+    </div>
+    <p class="modal-tagline" id="modalTagline"></p>
+    <p class="modal-description" id="modalDescription"></p>
+    <h4 class="modal-section-title">Use Cases</h4>
+    <ul class="use-cases-list" id="modalUseCases"></ul>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon">
+            <img src="/assets/images/tagit_logo.png" alt="TAG IT Network Logo" class="logo-img" loading="lazy" width="40" height="40">
+          </div>
+          <span>TAG IT Network</span>
+        </div>
+        <p>Blockchain-powered product authentication for the modern world.</p>
+      </div>
+
+      <div class="footer-column">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#lifecycle">Life Cycle</a></li>
+          <li><a href="/solutions">Solutions</a></li>
+          <li><a href="/technology">Technology</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="https://github.com/TAG-IT-NETWORK/tagit-docs" target="_blank" rel="noopener">Documentation</a></li>
+          <li><a href="https://github.com/TAG-IT-NETWORK/tagit-docs" target="_blank" rel="noopener">API Reference</a></li>
+          <li><a href="https://github.com/TAG-IT-NETWORK/tagit-docs" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://www.youtube.com/@TAGITNetwork" target="_blank" rel="noopener">YouTube</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#" class="legal-trigger" data-modal="privacy">Privacy Policy</a></li>
+          <li><a href="#" class="legal-trigger" data-modal="terms">Terms of Service</a></li>
+          <li><a href="#" class="legal-trigger" data-modal="cookie">Cookie Policy</a></li>
+          <li><a href="/about#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 TAG IT Network. All rights reserved.</p>
+      <div class="footer-socials">
+        <a href="https://x.com/TAGITNETWORK" target="_blank" rel="noopener" title="Twitter/X">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/106815890" target="_blank" rel="noopener" title="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@TAGITNetwork" target="_blank" rel="noopener" title="YouTube">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+        <a href="https://github.com/TAG-IT-NETWORK/tagit-docs" target="_blank" rel="noopener" title="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+        <a href="https://discord.gg/gAnkjGyh" target="_blank" rel="noopener" title="Discord">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Privacy Policy Modal -->
+  <div class="legal-modal-overlay" id="privacyModalOverlay">
+    <div class="legal-modal">
+      <button class="legal-modal-close" data-close-modal>✕</button>
+      
+      <div class="legal-modal-header">
+        <h3><span>🔒</span> Privacy Policy</h3>
+        <p class="effective-date">Effective Date: September 29, 2025</p>
+      </div>
+      
+      <div class="legal-modal-content">
+        <p class="legal-intro">
+          TAG IT Network ("TAG IT," "we," "us," or "our") operates the <a href="https://www.tagit.network">https://www.tagit.network</a> website and related services (the "Service"). This page informs you of our policies regarding the collection, use, and disclosure of Personal Data when you use our Service. We will not use or share your information with anyone except as described in this Privacy Policy.
+        </p>
+        
+        <div class="legal-section">
+          <h4>📋 Information Collection and Use</h4>
+          <p>While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you. Personally identifiable information may include, but is not limited to your name, email address, phone number ("Personal Data").</p>
+        </div>
+        
+        <div class="legal-section">
+          <h4>📊 Log Data</h4>
+          <p>We collect information that your browser sends whenever you visit our Service ("Log Data"). This Log Data may include information such as your IP address, browser type, browser version, the pages of our Service that you visit, the time and date of your visit, the time spent on those pages and other statistics.</p>
+        </div>
+        
+        <div class="legal-section">
+          <h4>🍪 Cookies</h4>
+          <p>Cookies are files with a small amount of data, which may include an anonymous unique identifier. Cookies are sent to your browser from a website and transferred to your device. We use "cookies" to collect information in order to improve our services for you. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent.</p>
+        </div>
+        
+        <div class="legal-section">
+          <h4>🛡️ Security</h4>
+          <p>We secure your personal information using encryption and access controls. Only authorized employees have access with two-factor authentication enforced. Servers are routinely patched and scanned for vulnerabilities.</p>
+        </div>
+        
+        <div class="legal-section">
+          <h4>™️ Third-Party Logos & Trademarks</h4>
+          <p>Our Service may display third-party logos, trademarks, and brand names. These trademarks are the property of their respective owners. Their display on our Service is intended solely to indicate platforms, technologies, or services that our products use, support, or interoperate with.</p>
+        </div>
+        
+        <div class="legal-section">
+          <h4>📝 Changes to This Privacy Policy</h4>
+          <p>This Privacy Policy is effective as of the "Effective Date" indicated at the top of this Privacy Policy and will remain in effect until updated or replaced. We reserve the right to update or modify this Privacy Policy from time to time with or without notice. Your continued use of the Service after any changes or revisions to this Privacy Policy shall indicate your agreement with the terms of such revised Privacy Policy.</p>
+        </div>
+        
+        <div class="legal-section">
+          <h4>✉️ Contact Us</h4>
+          <p>If you have any questions about this Privacy Policy, please contact us via email: <a href="mailto:info@tagit.network">info@tagit.network</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Terms of Service Modal -->
+  <div class="legal-modal-overlay" id="termsModalOverlay">
+    <div class="legal-modal">
+      <button class="legal-modal-close" data-close-modal>✕</button>
+      
+      <div class="legal-modal-header">
+        <h3><span>📜</span> Terms of Service</h3>
+        <p class="effective-date">Effective Date: September 29, 2025</p>
+      </div>
+      
+      <div class="legal-modal-content">
+        <p class="legal-intro">
+          Welcome to TAG IT Network. By accessing or using our website at <a href="https://www.tagit.network">https://www.tagit.network</a> and related services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our Service.
+        </p>
+        
+        <div class="legal-section">
+          <h4>📌 Acceptance of Terms</h4>
+          <p>By accessing and using the Service, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service and our Privacy Policy. We reserve the right to modify these terms at any time, and such modifications shall be effective immediately upon posting.</p>
+        </div>
+        
+        <div class="legal-section">
+          <h4>🔐 Use of Service</h4>
+          <p>You agree to use the Service only for lawful purposes and in accordance with these Terms. You agree not to use the Service in any way that violates any applicable federal, state, local, or international law or regulation, or to engage in any conduct that restricts or inhibits anyone's use or enjoyment of the Service.</p>
+        </div>
+        
+        <div class="legal-section">
+          <h4>💎 Intellectual Property</h4>
+          <p>The Service and its entire contents, features, and functionality (including but not limited to all information, software, text, displays, images, video, and audio) are owned by TAG IT Network, its licensors, or other providers and are protected by copyright, trademark, patent, trade secret, and other intellectual property laws.</p>
+        </div>
+        
+        <div class="legal-section">
+          <h4>🪙 Token Disclaimer</h4>
+          <p>The $TAGIT token is a utility token intended solely for use within the TAG IT Network ecosystem. It is not intended to be a security, investment contract, or any form of financial instrument. Purchasing, holding, or using $TAGIT tokens does not grant any ownership, equity, or voting rights in TAG IT Network or any affiliated entities.</p>
+        </div>
+        
+        <div class="legal-section">
+          <h4>⚠️ Limitation of Liability</h4>
+          <p>In no event shall TAG IT Network, its directors, employees, partners, agents, suppliers, or affiliates be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the Service.</p>
+        </div>
+        
+        <div class="legal-section">
+          <h4>⚖️ Governing Law</h4>
+          <p>These Terms shall be governed by and construed in accordance with the laws of the State of Florida, United States, without regard to its conflict of law provisions. Any legal action or proceeding arising under these Terms shall be brought exclusively in the federal or state courts located in Duval County, Florida.</p>
+        </div>
+        
+        <div class="legal-section">
+          <h4>✉️ Contact Us</h4>
+          <p>If you have any questions about these Terms of Service, please contact us via email: <a href="mailto:info@tagit.network">info@tagit.network</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cookie Policy Modal -->
+  <div class="legal-modal-overlay" id="cookieModalOverlay">
+    <div class="legal-modal">
+      <button class="legal-modal-close" data-close-modal>✕</button>
+      
+      <div class="legal-modal-header">
+        <h3><span>🍪</span> Cookie Policy</h3>
+        <p class="effective-date">Effective Date: September 29, 2025</p>
+      </div>
+      
+      <div class="legal-modal-content">
+        <p class="legal-intro">
+          This Cookie Policy explains how TAG IT Network ("we," "us," or "our") uses cookies and similar technologies when you visit our website at <a href="https://www.tagit.network">https://www.tagit.network</a>. By using our website, you consent to our use of cookies as described in this policy.
+        </p>
+        
+        <div class="legal-section">
+          <h4>🤔 What Are Cookies?</h4>
+          <p>Cookies are small text files that are placed on your device (computer, smartphone, or tablet) when you visit a website. They are widely used to make websites work more efficiently and provide information to website owners. Cookies help us recognize your device and remember your preferences.</p>
+        </div>
+        
+        <div class="legal-section">
+          <h4>📂 Types of Cookies We Use</h4>
+          <p><strong>Essential Cookies:</strong> These cookies are necessary for the website to function properly. They enable basic features like page navigation and access to secure areas.<br><br>
+          <strong>Analytics Cookies:</strong> These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously.<br><br>
+          <strong>Preference Cookies:</strong> These cookies remember your settings and preferences to provide a more personalized experience.</p>
+        </div>
+        
+        <div class="legal-section">
+          <h4>🎛️ Managing Cookies</h4>
+          <p>Most web browsers allow you to control cookies through their settings. You can set your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you disable cookies, some features of our website may not function properly.</p>
+        </div>
+        
+        <div class="legal-section">
+          <h4>🔄 Third-Party Cookies</h4>
+          <p>We may use third-party services that set their own cookies, such as analytics providers. These third parties have their own privacy policies and cookie practices. We do not have control over these third-party cookies.</p>
+        </div>
+        
+        <div class="legal-section">
+          <h4>📝 Updates to This Policy</h4>
+          <p>We may update this Cookie Policy from time to time to reflect changes in our practices or for operational, legal, or regulatory reasons. We encourage you to review this policy periodically for the latest information.</p>
+        </div>
+        
+        <div class="legal-section">
+          <h4>✉️ Contact Us</h4>
+          <p>If you have any questions about our use of cookies, please contact us via email: <a href="mailto:info@tagit.network">info@tagit.network</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Wallet Connection Modal -->
+  <div class="wallet-modal-overlay" id="walletModal">
+    <div class="wallet-modal">
+      <button class="wallet-modal-close" onclick="closeWalletModal()" aria-label="Close modal">×</button>
+
+      <div id="walletConnectState">
+        <div class="wallet-modal-header">
+          <h3>Connect Wallet</h3>
+          <p>Connect your wallet to interact with TAG IT Network</p>
+        </div>
+
+        <div class="wallet-option" onclick="connectMetaMask()" role="button" tabindex="0">
+          <div class="wallet-option-icon">🦊</div>
+          <div class="wallet-option-info">
+            <h4>MetaMask</h4>
+            <p>Connect using browser extension</p>
+          </div>
+          <span class="wallet-option-arrow">→</span>
+        </div>
+
+        <div class="wallet-option" onclick="connectWalletConnect()" role="button" tabindex="0">
+          <div class="wallet-option-icon">🔗</div>
+          <div class="wallet-option-info">
+            <h4>WalletConnect</h4>
+            <p>Scan with your mobile wallet</p>
+          </div>
+          <span class="wallet-option-arrow">→</span>
+        </div>
+
+        <div class="wallet-option" onclick="connectCoinbase()" role="button" tabindex="0">
+          <div class="wallet-option-icon">💰</div>
+          <div class="wallet-option-info">
+            <h4>Coinbase Wallet</h4>
+            <p>Connect using Coinbase</p>
+          </div>
+          <span class="wallet-option-arrow">→</span>
+        </div>
+
+        <p class="wallet-modal-note">By connecting, you agree to TAG IT Network's Terms of Service</p>
+      </div>
+
+      <div id="walletConnectedState" style="display: none;">
+        <div class="wallet-modal-header">
+          <h3>Wallet Connected</h3>
+          <p>Your wallet is connected to TAG IT Network</p>
+        </div>
+        <div class="wallet-connected-info">
+          <div class="address-full" id="fullAddress">0x0000...0000</div>
+          <div id="networkInfo"></div>
+          <button class="wallet-disconnect-btn" onclick="disconnectWallet()">Disconnect Wallet</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- Scripts -->
+  <script src="/js/shared.js" defer></script>
+
+  <style>
+    /* Page-specific styles */
+    .page-hero {
+      padding: 160px 48px 32px;
+      text-align: center;
+      position: relative;
+      background: radial-gradient(ellipse at center top, var(--blue-10) 0%, transparent 50%);
+    }
+
+    #solutions-grid {
+      padding-top: 32px;
+    }
+
+    .page-hero-title {
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 24px;
+    }
+
+    .page-hero-subtitle {
+      font-size: 18px;
+      color: var(--muted-gray);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .solutions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 32px;
+      padding: 0 48px 32px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    /* Reduce gap between solutions grid and journey section */
+    .journey-section {
+      padding-top: 32px;
+    }
+
+    .solution-card {
+      background: var(--carbon-gray);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 16px;
+      padding: 32px;
+      transition: all 0.3s ease;
+    }
+
+    .solution-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--blue-30);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+
+    .solution-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 12px;
+      background: rgba(0,212,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      color: var(--accent, var(--electric-blue));
+    }
+
+    .solution-icon svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .solution-card h3 {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .solution-description {
+      color: var(--muted-gray);
+      margin-bottom: 20px;
+      font-size: 15px;
+    }
+
+    .solution-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 24px 0;
+    }
+
+    .solution-features li {
+      padding: 8px 0;
+      padding-left: 24px;
+      position: relative;
+      color: var(--neutral-white);
+      font-size: 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .solution-features li:before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--circuit-green);
+    }
+
+    .solution-features li:last-child {
+      border-bottom: none;
+    }
+
+    .solution-stat {
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .stat-number {
+      display: block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--electric-blue);
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--muted-gray);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Steps */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      max-width: 1000px;
+      margin: 48px auto 0;
+      padding: 0 48px;
+    }
+
+    .step-card {
+      background: var(--carbon-gray);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 16px;
+      padding: 32px;
+      text-align: left;
+    }
+
+    .step-number {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--blue-30);
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .step-card h3 {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    .step-card p {
+      color: var(--muted-gray);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* CTA */
+    .cta-section {
+      padding: 100px 48px;
+      text-align: center;
+      background: linear-gradient(180deg, transparent, var(--blue-5), transparent);
+    }
+
+    .cta-content h2 {
+      font-size: 36px;
+      margin-bottom: 16px;
+    }
+
+    .cta-content p {
+      color: var(--muted-gray);
+      margin-bottom: 32px;
+      font-size: 18px;
+    }
+
+    /* Active nav state */
+    .nav-links a.active {
+      color: var(--electric-blue);
+    }
+
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      .page-hero {
+        padding: 120px 24px 60px;
+      }
+      .solutions-grid {
+        padding: 0 24px 60px;
+        grid-template-columns: 1fr;
+      }
+      .steps-grid {
+        padding: 0 24px;
+      }
+      .cta-section {
+        padding: 60px 24px;
+      }
+    }
+  </style>
+</body>
+</html>

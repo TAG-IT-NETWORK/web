@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFC Encoding Guide - TAG IT Network Documentation</title>
+    <meta name="description" content="Learn how to encode NFC chips with TAG IT authentication data.">
+    <meta name="keywords" content="TAG IT NFC encoding, NFC chip programming, authentication data, NDEF records">
+    <meta name="author" content="TAG IT Network">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="NFC Encoding Guide - TAG IT Network Documentation">
+    <meta property="og:description" content="Learn how to encode NFC chips with TAG IT authentication data.">
+    <meta property="og:image" content="/assets/images/og-image.png">
+    <meta property="og:url" content="https://tagit.network/docs/nfc/encoding-guide">
+    <meta property="og:type" content="article">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NFC Encoding Guide - TAG IT Network Documentation">
+    <meta name="twitter:description" content="Learn how to encode NFC chips with TAG IT authentication data.">
+    <meta name="twitter:image" content="/assets/images/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/tagit_logo.png">
+    <link rel="apple-touch-icon" href="/assets/images/tagit_logo.png">
+
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/shared.css">
+    <link rel="stylesheet" href="/css/docs.css">
+</head>
+<body>
+    <!-- Skip to main content link for keyboard users -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Global Cyber Grid Background -->
+    <div class="cyber-grid-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <img src="/assets/images/tagit_logo.png" alt="TAG IT Network Logo" class="logo-img" width="40" height="40">
+        </div>
+        <span>TAG IT Network</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="/#features">Features</a>
+        <a href="/solutions">Solutions</a>
+        <a href="/technology">Technology</a>
+        <a href="/tokenomics">Tokenomics</a>
+        <a href="/docs" class="active">Docs</a>
+        <a href="/about">About</a>
+      </div>
+
+      <button class="nav-cta" id="connectWalletBtn" onclick="handleWalletClick()">
+        Connect Wallet
+      </button>
+
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="/#features">Features</a>
+      <a href="/solutions">Solutions</a>
+      <a href="/technology">Technology</a>
+      <a href="/tokenomics">Tokenomics</a>
+      <a href="/docs" class="active">Docs</a>
+      <a href="/about">About</a>
+      <button class="mobile-cta" onclick="handleWalletClick()">Connect Wallet</button>
+    </div>
+
+    <!-- Mobile Docs Header -->
+    <div class="docs-mobile-header">
+        <button class="docs-mobile-toggle" id="docsMobileToggle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+            <span>Documentation Menu</span>
+            <svg class="docs-mobile-toggle-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 9l6 6 6-6"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Docs Layout -->
+    <div class="docs-layout">
+        <!-- Left Sidebar -->
+        <aside class="docs-sidebar" id="docsSidebar">
+            <div class="docs-sidebar-header">
+                <a href="/docs">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                    Documentation
+                </a>
+            </div>
+
+            <nav>
+                <!-- Getting Started -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">Getting Started</div>
+                    <a href="/docs/getting-started/quick-start.html" class="docs-nav-link">Quick Start Guide</a>
+                    <a href="/docs/getting-started/platform-overview.html" class="docs-nav-link">Platform Overview</a>
+                    <a href="/docs/getting-started/first-integration.html" class="docs-nav-link">First Integration</a>
+                </div>
+
+                <!-- API Reference -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">API Reference</div>
+                    <a href="/docs/api/rest-api.html" class="docs-nav-link">REST API</a>
+                    <a href="/docs/api/graphql.html" class="docs-nav-link">GraphQL API</a>
+                    <a href="/docs/api/webhooks.html" class="docs-nav-link">Webhooks</a>
+                </div>
+
+                <!-- Smart Contracts -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">Smart Contracts</div>
+                    <a href="/docs/contracts/addresses.html" class="docs-nav-link">Contract Addresses</a>
+                    <a href="/docs/contracts/abi-reference.html" class="docs-nav-link">ABI Reference</a>
+                    <a href="/docs/contracts/audits.html" class="docs-nav-link">Audit Reports</a>
+                </div>
+
+                <!-- NFC Integration -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">NFC Integration</div>
+                    <a href="/docs/nfc/chip-selection.html" class="docs-nav-link">Chip Selection</a>
+                    <a href="/docs/nfc/encoding-guide.html" class="docs-nav-link active">Encoding Guide</a>
+                    <a href="/docs/nfc/mobile-sdk.html" class="docs-nav-link">Mobile SDK</a>
+                </div>
+
+                <!-- SDK & Libraries -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">SDK & Libraries</div>
+                    <a href="/docs/sdk/javascript.html" class="docs-nav-link">JavaScript SDK</a>
+                    <a href="/docs/sdk/python.html" class="docs-nav-link">Python SDK</a>
+                    <a href="/docs/sdk/mobile.html" class="docs-nav-link">Mobile SDKs</a>
+                </div>
+
+                <!-- Tutorials -->
+                <div class="docs-nav-section">
+                    <div class="docs-nav-section-title">Tutorials</div>
+                    <a href="/docs/tutorials/product-tagging.html" class="docs-nav-link">Product Tagging</a>
+                    <a href="/docs/tutorials/ownership-transfer.html" class="docs-nav-link">Ownership Transfer</a>
+                    <a href="/docs/tutorials/dispute-resolution.html" class="docs-nav-link">Dispute Resolution</a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="docs-content" id="main-content">
+            <div class="docs-breadcrumb">
+                <a href="/docs">Docs</a>
+                <span>/</span>
+                <a href="/docs/nfc/chip-selection">NFC Integration</a>
+                <span>/</span>
+                <span>Encoding Guide</span>
+            </div>
+
+            <h1>NFC Encoding Guide</h1>
+            <p class="docs-lead">Properly encoding NFC chips ensures secure, tamper-proof product authentication.</p>
+
+            <h2 id="prerequisites">Prerequisites</h2>
+            <p>Before you begin encoding NFC chips, ensure you have the following:</p>
+            <ul>
+                <li><strong>NFC Writer Device</strong> - A compatible NFC reader/writer (ACR122U, SCL3711, or similar)</li>
+                <li><strong>TAG IT Approved Chips</strong> - NTAG 424 DNA or similar secure NFC chips</li>
+                <li><strong>TAG IT Encoding Software</strong> - Download from your dashboard or use the SDK</li>
+                <li><strong>API Access</strong> - Valid API credentials with encoding permissions</li>
+                <li><strong>Secure Environment</strong> - Encoding should be performed in a controlled environment</li>
+            </ul>
+
+            <div class="docs-callout docs-callout-info">
+                <div class="docs-callout-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 16v-4"/>
+                        <path d="M12 8h.01"/>
+                    </svg>
+                    Note
+                </div>
+                <p>For production encoding, we recommend using our certified encoding stations. Contact sales for enterprise solutions.</p>
+            </div>
+
+            <h2 id="encoding-flow">Encoding Flow</h2>
+            <p>The TAG IT encoding process follows these steps to ensure secure chip initialization:</p>
+            <ol>
+                <li><strong>Initialize Session</strong> - Authenticate with the TAG IT API and create an encoding session</li>
+                <li><strong>Read Chip UID</strong> - Capture the unique identifier from the blank NFC chip</li>
+                <li><strong>Generate Keys</strong> - Request cryptographic keys from the TAG IT key management system</li>
+                <li><strong>Write NDEF Records</strong> - Program the authentication URL and metadata</li>
+                <li><strong>Configure Security</strong> - Set up counters, signatures, and access controls</li>
+                <li><strong>Lock Configuration</strong> - Permanently lock security settings to prevent tampering</li>
+                <li><strong>Register on Blockchain</strong> - Create the on-chain product record</li>
+                <li><strong>Verify Encoding</strong> - Perform a test scan to confirm successful encoding</li>
+            </ol>
+
+            <pre><code class="language-javascript">// Complete encoding flow example
+import { TagIt } from '@tagit/sdk';
+
+const tagit = new TagIt({
+  apiKey: process.env.TAGIT_API_KEY,
+  network: 'mainnet'
+});
+
+async function encodeNFCChip(chipUID, productData) {
+  // Step 1: Create encoding session
+  const session = await tagit.encoding.createSession({
+    chipUID: chipUID,
+    productData: productData
+  });
+
+  // Step 2: Generate cryptographic keys
+  const keys = await tagit.encoding.generateKeys(session.id);
+
+  // Step 3: Prepare NDEF payload
+  const ndefPayload = await tagit.encoding.prepareNDEF({
+    sessionId: session.id,
+    authUrl: `https://verify.tagit.network/${session.tagId}`,
+    metadata: productData
+  });
+
+  // Step 4: Write to chip (requires NFC hardware)
+  const writeResult = await nfcWriter.write(ndefPayload);
+
+  // Step 5: Configure security features
+  await tagit.encoding.configureSecurity({
+    sessionId: session.id,
+    enableCounter: true,
+    enableSignature: true,
+    lockConfig: true
+  });
+
+  // Step 6: Register on blockchain
+  const registration = await tagit.encoding.register(session.id);
+
+  return {
+    tagId: session.tagId,
+    txHash: registration.txHash,
+    verifyUrl: ndefPayload.authUrl
+  };
+}</code></pre>
+
+            <h2 id="data-format">Data Format</h2>
+            <p>TAG IT uses NDEF (NFC Data Exchange Format) records to store authentication data on chips.</p>
+
+            <h3>NDEF Record Structure</h3>
+            <p>Each TAG IT chip contains the following NDEF records:</p>
+
+            <pre><code class="language-json">{
+  "records": [
+    {
+      "type": "U",
+      "id": "tagit-auth",
+      "payload": "https://verify.tagit.network/t/ABC123XYZ"
+    },
+    {
+      "type": "T",
+      "id": "tagit-meta",
+      "payload": {
+        "v": "1.0",
+        "sig": "base64_encoded_signature",
+        "cnt": "rolling_counter_value"
+      }
+    }
+  ]
+}</code></pre>
+
+            <h3>URL Structure</h3>
+            <p>The authentication URL follows this format:</p>
+            <pre><code class="language-text">https://verify.tagit.network/t/{TAG_ID}?s={SIGNATURE}&c={COUNTER}
+
+Parameters:
+- TAG_ID: Unique 12-character alphanumeric identifier
+- SIGNATURE: CMAC signature (16 bytes, hex encoded)
+- COUNTER: Rolling counter value (3 bytes, hex encoded)</code></pre>
+
+            <h2 id="security-features">Security Features</h2>
+            <p>TAG IT NFC chips incorporate multiple security layers to prevent counterfeiting and tampering.</p>
+
+            <h3 id="signatures">Cryptographic Signatures</h3>
+            <p>Each scan generates a unique CMAC (Cipher-based Message Authentication Code) signature using AES-128:</p>
+
+            <pre><code class="language-javascript">// Signature verification on server
+async function verifySignature(tagId, signature, counter) {
+  const chip = await tagit.chips.get(tagId);
+
+  // Reconstruct the message that was signed
+  const message = Buffer.concat([
+    Buffer.from(chip.uid, 'hex'),
+    Buffer.from(counter, 'hex'),
+    Buffer.from(tagId)
+  ]);
+
+  // Verify using the chip's secret key
+  const isValid = await tagit.crypto.verifyCMAC({
+    key: chip.authKey,
+    message: message,
+    signature: signature
+  });
+
+  return isValid;
+}</code></pre>
+
+            <div class="docs-callout docs-callout-warning">
+                <div class="docs-callout-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                        <line x1="12" y1="9" x2="12" y2="13"/>
+                        <line x1="12" y1="17" x2="12.01" y2="17"/>
+                    </svg>
+                    Security Warning
+                </div>
+                <p>Authentication keys are never exposed. All signature verification happens server-side through the TAG IT API.</p>
+            </div>
+
+            <h3 id="counters">Rolling Counters</h3>
+            <p>A monotonically increasing counter prevents replay attacks:</p>
+            <ul>
+                <li>Counter increments with every tap/scan</li>
+                <li>Server tracks expected counter range</li>
+                <li>Out-of-sequence counters trigger fraud alerts</li>
+                <li>Counter is included in signature calculation</li>
+            </ul>
+
+            <pre><code class="language-javascript">// Counter validation logic
+async function validateCounter(tagId, receivedCounter) {
+  const chip = await tagit.chips.get(tagId);
+  const counterValue = parseInt(receivedCounter, 16);
+
+  // Counter must be greater than last seen
+  if (counterValue <= chip.lastCounter) {
+    throw new Error('Replay attack detected: counter too low');
+  }
+
+  // Counter shouldn't jump too far (indicates cloning attempt)
+  if (counterValue > chip.lastCounter + 1000) {
+    await tagit.alerts.create({
+      type: 'COUNTER_ANOMALY',
+      tagId: tagId,
+      details: { expected: chip.lastCounter + 1, received: counterValue }
+    });
+  }
+
+  // Update stored counter
+  await tagit.chips.updateCounter(tagId, counterValue);
+  return true;
+}</code></pre>
+
+            <h3 id="tamper-detection">Tamper Detection</h3>
+            <p>TAG IT chips can detect physical tampering attempts:</p>
+            <ul>
+                <li><strong>Configuration Lock</strong> - Security settings cannot be modified after encoding</li>
+                <li><strong>Memory Protection</strong> - Critical data areas are write-protected</li>
+                <li><strong>UID Verification</strong> - Hardware UID cannot be cloned or modified</li>
+                <li><strong>Originality Check</strong> - Verify chip is genuine manufacturer hardware</li>
+            </ul>
+
+            <h2 id="batch-encoding">Batch Encoding</h2>
+            <p>For manufacturing environments, TAG IT supports high-volume batch encoding:</p>
+
+            <pre><code class="language-javascript">// Batch encoding for manufacturing
+import { TagIt, BatchEncoder } from '@tagit/sdk';
+
+const tagit = new TagIt({ apiKey: process.env.TAGIT_API_KEY });
+
+async function batchEncode(products) {
+  // Create batch session
+  const batch = await tagit.encoding.createBatch({
+    name: 'Production Run 2024-001',
+    quantity: products.length,
+    productTemplate: {
+      brand: 'Premium Brand',
+      category: 'Luxury Goods'
+    }
+  });
+
+  const encoder = new BatchEncoder({
+    tagit: tagit,
+    batchId: batch.id,
+    onProgress: (progress) => {
+      console.log(`Encoded ${progress.completed}/${progress.total}`);
+    },
+    onError: (error, chip) => {
+      console.error(`Failed to encode ${chip.uid}: ${error.message}`);
+    }
+  });
+
+  // Process each chip
+  for (const product of products) {
+    await encoder.encodeNext({
+      serialNumber: product.serialNumber,
+      metadata: product.metadata
+    });
+  }
+
+  // Finalize batch and get report
+  const report = await encoder.finalize();
+
+  console.log(`Batch complete: ${report.successful}/${report.total} chips encoded`);
+  console.log(`Blockchain TX: ${report.registrationTxHash}`);
+
+  return report;
+}</code></pre>
+
+            <div class="docs-callout docs-callout-info">
+                <div class="docs-callout-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 16v-4"/>
+                        <path d="M12 8h.01"/>
+                    </svg>
+                    Enterprise Feature
+                </div>
+                <p>Batch encoding with parallel processing is available on Business and Enterprise plans. Contact sales for encoding station hardware.</p>
+            </div>
+
+            <h2 id="verification">Verifying Encoded Tags</h2>
+            <p>After encoding, always verify that tags are properly programmed:</p>
+
+            <pre><code class="language-javascript">// Post-encoding verification
+async function verifyEncodedTag(tagId) {
+  const verification = await tagit.encoding.verify(tagId);
+
+  const checks = {
+    ndefValid: verification.ndef.valid,
+    signatureValid: verification.security.signatureEnabled,
+    counterValid: verification.security.counterEnabled,
+    configLocked: verification.security.configurationLocked,
+    blockchainRegistered: verification.blockchain.registered,
+    urlAccessible: verification.connectivity.urlReachable
+  };
+
+  const allPassed = Object.values(checks).every(v => v === true);
+
+  if (!allPassed) {
+    console.error('Verification failed:', checks);
+    throw new Error('Tag encoding verification failed');
+  }
+
+  console.log('Tag verified successfully:', {
+    tagId: tagId,
+    verifyUrl: verification.urls.verify,
+    txHash: verification.blockchain.txHash
+  });
+
+  return verification;
+}</code></pre>
+
+            <h3>Testing Checklist</h3>
+            <ul>
+                <li>Scan tag with mobile device and verify redirect works</li>
+                <li>Confirm product details display correctly on verification page</li>
+                <li>Perform multiple scans and verify counter increments</li>
+                <li>Check blockchain explorer for registration transaction</li>
+                <li>Test with TAG IT mobile app for full verification flow</li>
+            </ul>
+
+            <h2 id="troubleshooting">Troubleshooting</h2>
+            <p>Common issues and their solutions:</p>
+
+            <h3>Encoding Fails</h3>
+            <ul>
+                <li><strong>Check chip compatibility</strong> - Ensure using TAG IT approved NFC chips</li>
+                <li><strong>Verify writer connection</strong> - Confirm NFC writer is properly connected</li>
+                <li><strong>Check API credentials</strong> - Ensure API key has encoding permissions</li>
+                <li><strong>Retry with new chip</strong> - Some chips may be defective</li>
+            </ul>
+
+            <h3>Verification Fails After Encoding</h3>
+            <ul>
+                <li><strong>Wait for blockchain confirmation</strong> - Registration may take 1-2 minutes</li>
+                <li><strong>Check network connectivity</strong> - Ensure device has internet access</li>
+                <li><strong>Verify URL format</strong> - Check that NDEF URL is correctly formatted</li>
+            </ul>
+
+            <h3>Counter Anomalies</h3>
+            <ul>
+                <li><strong>Multiple rapid scans</strong> - Allow 1 second between scans</li>
+                <li><strong>Counter jump detected</strong> - May indicate attempted cloning, investigate</li>
+                <li><strong>Counter not incrementing</strong> - Check chip security configuration</li>
+            </ul>
+
+            <div class="docs-callout docs-callout-success">
+                <div class="docs-callout-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                    Need Help?
+                </div>
+                <p>For encoding support, contact our technical team at <a href="#">support@tagit.network</a> or visit the <a href="#">Developer Forum</a>.</p>
+            </div>
+
+            <!-- Page Navigation -->
+            <div class="docs-page-nav">
+                <a href="/docs/nfc/chip-selection.html" class="docs-page-nav-item prev">
+                    <span class="docs-page-nav-label">Previous</span>
+                    <span class="docs-page-nav-title">Chip Selection</span>
+                </a>
+                <a href="/docs/nfc/mobile-sdk.html" class="docs-page-nav-item next">
+                    <span class="docs-page-nav-label">Next</span>
+                    <span class="docs-page-nav-title">Mobile SDK</span>
+                </a>
+            </div>
+
+            <!-- Edit Link -->
+            <a href="https://github.com/TAG-IT-NETWORK/tagit-docs" class="docs-edit-link" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                </svg>
+                Edit this page on GitHub
+            </a>
+        </main>
+
+        <!-- Right Sidebar - Table of Contents -->
+        <aside class="docs-toc">
+            <div class="docs-toc-title">On this page</div>
+            <a href="#prerequisites" class="docs-toc-link">Prerequisites</a>
+            <a href="#encoding-flow" class="docs-toc-link">Encoding Flow</a>
+            <a href="#data-format" class="docs-toc-link">Data Format</a>
+            <a href="#security-features" class="docs-toc-link">Security Features</a>
+            <a href="#signatures" class="docs-toc-link docs-toc-link-h3">Cryptographic Signatures</a>
+            <a href="#counters" class="docs-toc-link docs-toc-link-h3">Rolling Counters</a>
+            <a href="#tamper-detection" class="docs-toc-link docs-toc-link-h3">Tamper Detection</a>
+            <a href="#batch-encoding" class="docs-toc-link">Batch Encoding</a>
+            <a href="#verification" class="docs-toc-link">Verifying Encoded Tags</a>
+            <a href="#troubleshooting" class="docs-toc-link">Troubleshooting</a>
+        </aside>
+    </div>
+
+    <!-- Search Modal -->
+    <div class="docs-search-modal" id="docsSearchModal">
+        <div class="docs-search-modal-content">
+            <div class="docs-search-modal-header">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="m21 21-4.35-4.35"/>
+                </svg>
+                <input type="text" placeholder="Search documentation..." id="docsSearchInput">
+                <button class="docs-search-modal-close" id="docsSearchClose">Esc</button>
+            </div>
+            <div class="docs-search-results" id="docsSearchResults">
+                <div class="docs-search-empty">Type to search documentation...</div>
+            </div>
+            <div class="docs-search-footer">
+                <span><kbd>↑</kbd><kbd>↓</kbd> to navigate</span>
+                <span><kbd>Enter</kbd> to select</span>
+                <span><kbd>Esc</kbd> to close</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+      <svg viewBox="0 0 24 24">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </button>
+
+    <script src="/js/shared.js" defer></script>
+    <script src="/docs/js/docs.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,2047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tokenomics — TAG IT Network</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <meta name="description" content="$TAGIT Token - Powering the authentication economy. Learn about tokenomics, staking, governance, and DAO structure.">
+  <meta name="keywords" content="TAGIT token, tokenomics, DAO, governance, staking, cryptocurrency, blockchain">
+  <meta name="author" content="TAG IT Network">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tagit.network/tokenomics">
+  <meta property="og:title" content="Tokenomics — TAG IT Network">
+  <meta property="og:description" content="$TAGIT Token - Powering the authentication economy.">
+  <meta property="og:image" content="https://tagit.network/assets/images/og-image.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tokenomics — TAG IT Network">
+  <meta name="twitter:image" content="https://tagit.network/assets/images/og-image.png">
+
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/tagit_logo.png">
+  <link rel="apple-touch-icon" href="/assets/images/tagit_logo.png">
+  <link rel="stylesheet" href="/css/shared.css">
+
+  <style>
+    /* Page Hero - Green Glow Variant */
+    .page-hero {
+      padding: 160px 48px 80px;
+      text-align: center;
+      background: radial-gradient(ellipse at center top, rgba(0, 255, 136, 0.1) 0%, transparent 50%);
+    }
+    
+    /* Hero Title Row - Logo + Title Inline */
+    .hero-title-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+    
+    .page-hero-title {
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 700;
+      margin: 0;
+    }
+    .page-hero-subtitle {
+      font-size: 18px;
+      color: var(--muted-gray);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .token-icon-wrapper {
+      display: flex;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    
+    /* Logo with Pulse Ring Animation */
+    .token-logo-container {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .token-logo-img {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      position: relative;
+      z-index: 2;
+      animation: logoFloat 3s ease-in-out infinite;
+    }
+    
+    @keyframes logoFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    
+    /* Pulse Rings */
+    .pulse-ring {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80px;
+      height: 80px;
+      border: 2px solid var(--circuit-green);
+      border-radius: 50%;
+      animation: pulseRing 2.5s ease-out infinite;
+      opacity: 0;
+    }
+    
+    .pulse-ring:nth-child(2) {
+      animation-delay: 0.8s;
+    }
+    
+    .pulse-ring:nth-child(3) {
+      animation-delay: 1.6s;
+    }
+    
+    @keyframes pulseRing {
+      0% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0;
+      }
+    }
+    
+    /* Glow Effect Behind Logo */
+    .token-logo-glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80px;
+      height: 80px;
+      background: radial-gradient(circle, rgba(0, 255, 136, 0.4) 0%, transparent 70%);
+      border-radius: 50%;
+      filter: blur(15px);
+      z-index: 1;
+      animation: glowPulse 3s ease-in-out infinite;
+    }
+    
+    @keyframes glowPulse {
+      0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+      50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+    }
+
+    /* Tokenomics Section Container */
+    #tokenomics {
+      padding: 0 48px 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Genesis Counter Hero */
+    .genesis-hero {
+      text-align: center;
+      padding: 40px 0;
+    }
+    .genesis-number {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: clamp(48px, 10vw, 80px);
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--circuit-green), var(--electric-blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.02em;
+    }
+    .genesis-tagline {
+      font-size: 14px;
+      color: var(--muted-gray);
+      margin-top: 8px;
+    }
+    .genesis-tagline span {
+      color: var(--electric-blue);
+      font-weight: 600;
+    }
+
+    /* Token Hero Card */
+    .token-hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      padding: 32px 40px;
+      background: var(--carbon-gray);
+      border: 1px solid rgba(0, 255, 136, 0.2);
+      border-radius: 16px;
+      max-width: 520px;
+      margin: 32px auto;
+    }
+    .token-symbol {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--circuit-green);
+      padding: 16px 24px;
+      background: rgba(0, 255, 136, 0.1);
+      border-radius: 12px;
+      border: 1px solid rgba(0, 255, 136, 0.3);
+    }
+    .token-info p {
+      font-size: 14px;
+      color: var(--muted-gray);
+      white-space: nowrap;
+    }
+
+    /* Token Metrics Grid */
+    .token-metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 16px;
+      max-width: 800px;
+      margin: 32px auto;
+      padding: 0 24px;
+    }
+    .metric-card {
+      background: var(--carbon-gray);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .metric-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(0, 212, 255, 0.3);
+    }
+    .metric-card[data-color="green"] { border-color: rgba(0, 255, 136, 0.3); }
+    .metric-card[data-color="amber"] { border-color: rgba(255, 165, 2, 0.3); }
+    .metric-card[data-color="red"] { border-color: rgba(255, 71, 87, 0.3); }
+    .metric-card[data-color="purple"] { border-color: rgba(184, 79, 255, 0.3); }
+
+    .metric-icon {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+    .metric-label {
+      font-size: 12px;
+      color: var(--muted-gray);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+    }
+    .metric-value {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--neutral-white);
+    }
+    .metric-tag {
+      display: inline-block;
+      font-size: 10px;
+      padding: 2px 8px;
+      background: rgba(0, 212, 255, 0.1);
+      border-radius: 100px;
+      color: var(--electric-blue);
+      margin-top: 8px;
+    }
+
+    /* Immutable Rules Row */
+    .token-rules-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin: 32px auto;
+      max-width: 800px;
+    }
+    .rule-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      background: rgba(255, 71, 87, 0.05);
+      border: 1px solid rgba(255, 71, 87, 0.2);
+      border-radius: 100px;
+      font-size: 13px;
+      color: var(--neutral-white);
+    }
+    .lock-icon {
+      font-size: 14px;
+    }
+
+    /* Staking Card */
+    .staking-card {
+      background: var(--carbon-gray);
+      border: 1px solid rgba(0, 212, 255, 0.2);
+      border-radius: 16px;
+      padding: 24px;
+      max-width: 600px;
+      margin: 32px auto;
+    }
+    .staking-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .stake-icon {
+      font-size: 24px;
+    }
+    .staking-header h4 {
+      font-size: 18px;
+      margin: 0;
+    }
+    .staking-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .stake-item {
+      text-align: center;
+    }
+    .stake-item-label {
+      font-size: 11px;
+      color: var(--muted-gray);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+    }
+    .stake-item-value {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--electric-blue);
+    }
+    .stake-item-value.small {
+      font-size: 12px;
+    }
+
+    /* Distribution Section */
+    .distribution-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      max-width: 1100px;
+      margin: 48px auto;
+      padding: 0 24px;
+    }
+
+    /* Pie Chart */
+    .pie-chart-container {
+      position: relative;
+      width: 420px;
+      height: 420px;
+      margin: 0 auto;
+      padding: 30px;
+      background: var(--carbon-gray);
+      border: 1px solid rgba(0, 212, 255, 0.2);
+      border-radius: 50%;
+      box-shadow: 0 0 40px rgba(0, 212, 255, 0.1);
+    }
+    .pie-chart-svg {
+      width: 100%;
+      height: 100%;
+      transform: rotate(-90deg);
+    }
+    .pie-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    .pie-center-value {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--neutral-white);
+    }
+    .pie-center-label {
+      font-size: 16px;
+      color: var(--muted-gray);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* Distribution Legend */
+    .distribution-legend {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .legend-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 18px;
+      background: var(--carbon-gray);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .legend-row:hover {
+      background: rgba(0, 212, 255, 0.05);
+    }
+    .legend-color {
+      width: 14px;
+      height: 14px;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+    .legend-info {
+      flex: 1;
+    }
+    .legend-name {
+      font-size: 15px;
+      font-weight: 600;
+    }
+    .legend-vesting {
+      font-size: 12px;
+      color: var(--muted-gray);
+    }
+    .legend-pct {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 18px;
+      font-weight: 700;
+      text-align: right;
+    }
+    .legend-tokens {
+      font-size: 12px;
+      color: var(--muted-gray);
+      text-align: right;
+    }
+
+    /* Subsection Labels */
+    .subsection-label {
+      margin-top: 64px;
+      display: flex;
+      justify-content: center;
+    }
+    .subsection-title {
+      font-size: 42px;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    /* Token Utility Section - Expandable Glass Cards */
+    .token-utility {
+      padding: 80px 48px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .token-utility .section-header {
+      text-align: center;
+    }
+    .token-utility .section-label {
+      justify-content: center;
+    }
+    .token-utility .section-subtitle {
+      max-width: 900px;
+      margin: 16px auto 0;
+      color: var(--muted-gray);
+      font-size: 16px;
+      line-height: 1.7;
+      text-align: center;
+    }
+    
+    /* Expandable Cards Grid */
+    .expand-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    
+    /* Glass Card Base */
+    .glass-card {
+      position: relative;
+      background: linear-gradient(135deg, rgba(20, 25, 35, 0.8), rgba(15, 20, 30, 0.9));
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .glass-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    }
+    
+    .glass-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at var(--glow-x, 50%) var(--glow-y, 0%), var(--card-glow, rgba(0, 212, 255, 0.15)) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+    }
+    
+    .glass-card:hover::after {
+      opacity: 1;
+    }
+    
+    .glass-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 40px var(--card-glow, rgba(0, 212, 255, 0.1));
+    }
+    
+    .glass-card.expanded {
+      grid-column: span 2;
+    }
+    
+    /* Card Color Variants */
+    .glass-card[data-color="green"] { --card-glow: rgba(0, 255, 136, 0.2); --card-accent: var(--circuit-green); }
+    .glass-card[data-color="blue"] { --card-glow: rgba(0, 212, 255, 0.2); --card-accent: var(--electric-blue); }
+    .glass-card[data-color="purple"] { --card-glow: rgba(184, 79, 255, 0.2); --card-accent: var(--neon-purple); }
+    .glass-card[data-color="amber"] { --card-glow: rgba(255, 165, 2, 0.2); --card-accent: var(--warning-amber); }
+    
+    /* Card Header (Always Visible) */
+    .glass-card-header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 28px 32px;
+    }
+    
+    .glass-card-icon {
+      width: 64px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      font-size: 28px;
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    
+    .glass-card-icon::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(from 0deg, transparent, var(--card-accent, var(--electric-blue)), transparent 30%);
+      animation: iconRotate 4s linear infinite;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .glass-card:hover .glass-card-icon::before {
+      opacity: 0.3;
+    }
+    
+    @keyframes iconRotate {
+      to { transform: rotate(360deg); }
+    }
+    
+    .glass-card-title-wrap {
+      flex: 1;
+    }
+    
+    .glass-card-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      background: linear-gradient(135deg, var(--neutral-white), var(--card-accent, var(--electric-blue)));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .glass-card-tagline {
+      font-size: 14px;
+      color: var(--muted-gray);
+      font-family: 'JetBrains Mono', monospace;
+    }
+    
+    .glass-card-toggle {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      color: var(--muted-gray);
+      font-size: 20px;
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+    }
+    
+    .glass-card:hover .glass-card-toggle {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--card-accent, var(--electric-blue));
+    }
+    
+    .glass-card.expanded .glass-card-toggle {
+      transform: rotate(180deg);
+      background: var(--card-accent, var(--electric-blue));
+      color: var(--deep-carbon);
+    }
+    
+    /* Card Content (Expandable) */
+    .glass-card-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), padding 0.5s ease;
+    }
+    
+    .glass-card.expanded .glass-card-content {
+      max-height: 600px;
+    }
+    
+    .glass-card-inner {
+      padding: 0 32px 32px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    .glass-card-text {
+      color: var(--muted-gray);
+      font-size: 15px;
+      line-height: 1.8;
+      margin-top: 24px;
+    }
+    
+    .glass-card-text strong {
+      color: var(--neutral-white);
+    }
+    
+    /* Feature Pills */
+    .feature-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    
+    .feature-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 100px;
+      font-size: 13px;
+      color: var(--neutral-white);
+      transition: all 0.3s ease;
+    }
+    
+    .feature-pill:hover {
+      background: rgba(var(--card-accent, 0, 212, 255), 0.1);
+      border-color: var(--card-accent, var(--electric-blue));
+    }
+    
+    .feature-pill .pill-icon {
+      font-size: 14px;
+    }
+    
+    /* Stat Row */
+    .stat-row {
+      display: flex;
+      gap: 24px;
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    .stat-item {
+      text-align: center;
+      flex: 1;
+    }
+    
+    .stat-value {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--card-accent, var(--electric-blue));
+      margin-bottom: 4px;
+    }
+    
+    .stat-label {
+      font-size: 11px;
+      color: var(--muted-gray);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    
+    /* Responsive */
+    @media (max-width: 900px) {
+      .expand-grid {
+        grid-template-columns: 1fr;
+      }
+      .glass-card.expanded {
+        grid-column: span 1;
+      }
+    }
+
+    /* DAO Section - Circuit Board */
+    .dao-section {
+      padding: 80px 48px;
+      max-width: 1400px;
+      margin: 0 auto;
+      border-top: 1px solid rgba(0, 212, 255, 0.1);
+    }
+    .dao-section .section-header {
+      text-align: center;
+    }
+    .dao-section .section-label {
+      justify-content: center;
+    }
+    .dao-section .section-subtitle {
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Circuit Board Container */
+    .circuit-board {
+      position: relative;
+      max-width: 1100px;
+      margin: 60px auto 0;
+      padding: 40px 20px;
+    }
+
+    /* Central DAO Hub */
+    .dao-hub {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+
+    .dao-hub-core {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      background: linear-gradient(135deg, rgba(0, 212, 255, 0.15), rgba(0, 255, 136, 0.15));
+      border: 2px solid rgba(0, 212, 255, 0.5);
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 
+        0 0 40px rgba(0, 212, 255, 0.3),
+        inset 0 0 30px rgba(0, 212, 255, 0.1);
+      animation: hubGlow 3s ease-in-out infinite;
+    }
+
+    @keyframes hubGlow {
+      0%, 100% { box-shadow: 0 0 40px rgba(0, 212, 255, 0.3), inset 0 0 30px rgba(0, 212, 255, 0.1); }
+      50% { box-shadow: 0 0 60px rgba(0, 212, 255, 0.5), inset 0 0 40px rgba(0, 212, 255, 0.2); }
+    }
+
+    .dao-hub-core::before {
+      content: '';
+      position: absolute;
+      inset: -8px;
+      border: 1px solid rgba(0, 212, 255, 0.3);
+      border-radius: 50%;
+      animation: hubRing 2s ease-out infinite;
+    }
+
+    .dao-hub-core::after {
+      content: '';
+      position: absolute;
+      inset: -16px;
+      border: 1px solid rgba(0, 255, 136, 0.2);
+      border-radius: 50%;
+      animation: hubRing 2s ease-out infinite 0.5s;
+    }
+
+    @keyframes hubRing {
+      0% { transform: scale(1); opacity: 0.8; }
+      100% { transform: scale(1.3); opacity: 0; }
+    }
+
+    .dao-hub-icon {
+      font-size: 32px;
+      margin-bottom: 4px;
+    }
+
+    .dao-hub-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--electric-blue);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+    }
+
+    /* Circuit Traces - Vertical lines from hub */
+    .circuit-traces {
+      position: absolute;
+      top: 140px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 60px;
+      background: linear-gradient(180deg, var(--electric-blue), transparent);
+      opacity: 0.6;
+    }
+
+    .circuit-traces::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: 100%;
+      background: var(--circuit-green);
+      filter: blur(4px);
+      animation: tracePulse 2s ease-in-out infinite;
+    }
+
+    @keyframes tracePulse {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.8; }
+    }
+
+    /* House Cards Grid */
+    .houses-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+      position: relative;
+    }
+
+    /* Horizontal trace line behind cards */
+    .houses-grid::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 5%;
+      right: 5%;
+      height: 2px;
+      background: linear-gradient(90deg, 
+        transparent, 
+        rgba(0, 212, 255, 0.4) 10%, 
+        rgba(0, 255, 136, 0.4) 50%, 
+        rgba(0, 212, 255, 0.4) 90%, 
+        transparent
+      );
+      transform: translateY(-50%);
+      z-index: 0;
+    }
+
+    /* Node dots on trace line */
+    .houses-grid::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 8px;
+      height: 8px;
+      background: var(--circuit-green);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 
+        -220px 0 0 rgba(0, 212, 255, 0.8),
+        -110px 0 0 rgba(0, 255, 136, 0.8),
+        110px 0 0 rgba(184, 79, 255, 0.8),
+        220px 0 0 rgba(255, 165, 2, 0.8);
+      z-index: 1;
+      animation: nodePulse 2s ease-in-out infinite;
+    }
+
+    @keyframes nodePulse {
+      0%, 100% { filter: blur(0px); }
+      50% { filter: blur(2px); }
+    }
+
+    /* House Card - Glass Style */
+    .house-card {
+      position: relative;
+      background: linear-gradient(135deg, rgba(20, 25, 35, 0.9), rgba(15, 20, 30, 0.95));
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 24px 16px;
+      text-align: center;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 5;
+      overflow: hidden;
+    }
+
+    .house-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    }
+
+    /* Vertical trace from card to horizontal line */
+    .house-card::after {
+      content: '';
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      width: 2px;
+      height: 30px;
+      background: linear-gradient(180deg, transparent, var(--card-accent, var(--electric-blue)));
+      transform: translateX(-50%);
+      opacity: 0.5;
+      transition: all 0.4s ease;
+    }
+
+    .house-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--card-accent, var(--electric-blue));
+      box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.4), 
+        0 0 30px var(--card-glow, rgba(0, 212, 255, 0.15)),
+        inset 0 0 30px var(--card-glow, rgba(0, 212, 255, 0.05));
+    }
+
+    .house-card:hover::after {
+      opacity: 1;
+      height: 40px;
+      box-shadow: 0 0 10px var(--card-accent, var(--electric-blue));
+    }
+
+    /* Card color variants */
+    .house-card[data-house="gov"] {
+      --card-glow: rgba(0, 150, 255, 0.2);
+      --card-accent: #0096FF;
+    }
+    .house-card[data-house="enterprise"] {
+      --card-glow: rgba(0, 255, 136, 0.2);
+      --card-accent: var(--circuit-green);
+    }
+    .house-card[data-house="holders"] {
+      --card-glow: rgba(184, 79, 255, 0.2);
+      --card-accent: var(--neon-purple);
+    }
+    .house-card[data-house="dev"] {
+      --card-glow: rgba(0, 212, 255, 0.2);
+      --card-accent: var(--electric-blue);
+    }
+    .house-card[data-house="legal"] {
+      --card-glow: rgba(255, 165, 2, 0.2);
+      --card-accent: var(--warning-amber);
+    }
+
+    /* Card icon with glow */
+    .house-icon-wrap {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 16px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+    }
+
+    .house-icon-glow {
+      position: absolute;
+      inset: -10px;
+      background: radial-gradient(circle, var(--card-glow, rgba(0, 212, 255, 0.3)) 0%, transparent 70%);
+      filter: blur(15px);
+      opacity: 0.6;
+      transition: all 0.4s ease;
+    }
+
+    .house-card:hover .house-icon-glow {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+
+    .house-icon {
+      font-size: 28px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .house-card h3 {
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--neutral-white);
+      white-space: nowrap;
+    }
+
+    .house-card p {
+      color: var(--muted-gray);
+      font-size: 11px;
+      line-height: 1.4;
+      margin-bottom: 16px;
+      min-height: 30px;
+    }
+
+    /* Voting Power Display */
+    .house-power-wrap {
+      position: relative;
+    }
+
+    .house-power-bar {
+      width: 100%;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 2px;
+      overflow: hidden;
+      margin-bottom: 8px;
+    }
+
+    .house-power-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--card-accent, var(--electric-blue)), rgba(255, 255, 255, 0.3));
+      border-radius: 2px;
+      box-shadow: 0 0 8px var(--card-glow, rgba(0, 212, 255, 0.5));
+      transition: width 0.8s ease-out;
+    }
+
+    .house-power-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--card-accent, var(--electric-blue));
+    }
+
+    .house-power-text {
+      font-size: 10px;
+      color: var(--muted-gray);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* Responsive */
+    @media (max-width: 1000px) {
+      .houses-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .houses-grid::before,
+      .houses-grid::after {
+        display: none;
+      }
+      .house-card::after {
+        display: none;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .houses-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+      .dao-hub-core {
+        width: 100px;
+        height: 100px;
+      }
+      .circuit-traces {
+        display: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .houses-grid {
+        grid-template-columns: 1fr;
+      }
+      .house-card {
+        padding: 20px;
+      }
+    }
+
+    /* CTA Section */
+    .cta-section {
+      padding: 100px 48px;
+      text-align: center;
+      background: linear-gradient(180deg, transparent, rgba(0, 255, 136, 0.05), transparent);
+      border-top: 1px solid rgba(0, 212, 255, 0.1);
+    }
+    .cta-section h2 { font-size: 36px; margin-bottom: 16px; }
+    .cta-section p { color: var(--muted-gray); margin-bottom: 32px; font-size: 18px; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+    /* Active Nav State */
+    .nav-links a.active { color: var(--electric-blue); }
+    .nav-links a.active::after { width: 100%; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .page-hero {
+        padding: 140px 24px 60px;
+      }
+      .hero-title-row {
+        flex-direction: column;
+        gap: 16px;
+      }
+      #tokenomics {
+        padding: 0 24px 60px;
+      }
+      .token-metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0;
+      }
+      .distribution-section {
+        grid-template-columns: 1fr;
+        padding: 0;
+      }
+      .staking-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .token-utility, .dao-section, .cta-section {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Skip to main content link for keyboard users -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Noscript fallback -->
+  <noscript>
+    <div class="noscript-message">
+      This website requires JavaScript for some features. Core content is still accessible.
+    </div>
+  </noscript>
+
+  <div class="cyber-grid-overlay"></div>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <a href="/" class="logo">
+      <div class="logo-icon">
+        <img src="/assets/images/tagit_logo.png" alt="TAG IT Network Logo" class="logo-img" width="40" height="40">
+      </div>
+      <span>TAG IT Network</span>
+    </a>
+    <div class="nav-links">
+      <a href="/#features">Features</a>
+      <a href="/solutions">Solutions</a>
+      <a href="/technology">Technology</a>
+      <a href="/tokenomics" class="active">Tokenomics</a>
+      <a href="/docs">Docs</a>
+      <a href="/about">About</a>
+    </div>
+    <button class="nav-cta" id="connectWalletBtn" onclick="handleWalletClick()">Connect Wallet</button>
+    <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/#features">Features</a>
+    <a href="/solutions">Solutions</a>
+    <a href="/technology">Technology</a>
+    <a href="/tokenomics" class="active">Tokenomics</a>
+    <a href="/docs">Docs</a>
+    <a href="/about">About</a>
+    <button class="mobile-cta" onclick="handleWalletClick()">Connect Wallet</button>
+  </div>
+
+  <main id="main-content">
+    <!-- Hero -->
+    <section class="page-hero">
+      <div class="hero-title-row">
+        <div class="token-icon-wrapper">
+          <div class="token-logo-container">
+            <div class="token-logo-glow"></div>
+            <span class="pulse-ring"></span>
+            <span class="pulse-ring"></span>
+            <span class="pulse-ring"></span>
+            <img src="/assets/images/tagit_logo.png" alt="TAG IT Token" class="token-logo-img">
+          </div>
+        </div>
+        <h1 class="page-hero-title">
+          <span class="highlight">$TAGIT</span> Token
+        </h1>
+      </div>
+      <p class="page-hero-subtitle">
+        Powering the RWA Authentication Layer
+      </p>
+    </section>
+
+    <!-- Token Utility Section - Expandable Glass Cards (Moved Up) -->
+    <section class="token-utility">
+      <div class="section-header text-center">
+        <span class="section-label"><span class="label-icon">⚡</span> Token Utility</span>
+        <h2 class="section-title">Four Pillars of Value</h2>
+        <p class="section-subtitle">
+          TAGIT is a pure utility token — the fuel that powers the TAG IT Network's verification ecosystem.
+        </p>
+      </div>
+
+      <div class="expand-grid">
+        <!-- Card 1: Network Fuel -->
+        <div class="glass-card" data-color="green" onclick="toggleCard(this)">
+          <div class="glass-card-header">
+            <div class="glass-card-icon">⛽</div>
+            <div class="glass-card-title-wrap">
+              <h3 class="glass-card-title">Network Fuel</h3>
+              <span class="glass-card-tagline">Pure Utility • Zero Speculation</span>
+            </div>
+            <div class="glass-card-toggle">▼</div>
+          </div>
+          <div class="glass-card-content">
+            <div class="glass-card-inner">
+              <p class="glass-card-text">
+                Every token spent enables <strong>product authentication</strong>, <strong>custody transfers</strong>, and <strong>AI-powered fraud detection</strong>. Every token earned rewards manufacturers, verifiers, and supply chain participants for securing the world's most trusted product authentication network.
+              </p>
+              <div class="feature-pills">
+                <span class="feature-pill"><span class="pill-icon">✓</span> Mint Digital Twins</span>
+                <span class="feature-pill"><span class="pill-icon">✓</span> Bind NFC Chips</span>
+                <span class="feature-pill"><span class="pill-icon">✓</span> Verify Authenticity</span>
+                <span class="feature-pill"><span class="pill-icon">✓</span> Transfer Custody</span>
+              </div>
+              <div class="stat-row">
+                <div class="stat-item">
+                  <div class="stat-value">100</div>
+                  <div class="stat-label">Min Stake</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-value">7 Days</div>
+                  <div class="stat-label">Cooldown</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-value">50%</div>
+                  <div class="stat-label">Emission Share</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Trust & Transparency -->
+        <div class="glass-card" data-color="blue" onclick="toggleCard(this)">
+          <div class="glass-card-header">
+            <div class="glass-card-icon">🔍</div>
+            <div class="glass-card-title-wrap">
+              <h3 class="glass-card-title">Trust & Transparency</h3>
+              <span class="glass-card-tagline">Immutable • Auditable • Predictable</span>
+            </div>
+            <div class="glass-card-toggle">▼</div>
+          </div>
+          <div class="glass-card-content">
+            <div class="glass-card-inner">
+              <p class="glass-card-text">
+                Built for transparency, designed for longevity. With a genesis supply of <strong>7,777,777,333 TAGIT</strong> and an immutable <strong>3.33% inflation floor</strong>, our tokenomics are mathematically predictable and governance-auditable. All smart contracts deployed on <strong>OP Stack</strong> with Ethereum L1 settlement security.
+              </p>
+              <div class="feature-pills">
+                <span class="feature-pill"><span class="pill-icon">🔒</span> Audited Contracts</span>
+                <span class="feature-pill"><span class="pill-icon">⛓️</span> OP Stack L2</span>
+                <span class="feature-pill"><span class="pill-icon">🏛️</span> Multi-stakeholder DAO</span>
+                <span class="feature-pill"><span class="pill-icon">🇺🇸</span> U.S. Gov Oversight</span>
+              </div>
+              <div class="stat-row">
+                <div class="stat-item">
+                  <div class="stat-value">7.77B</div>
+                  <div class="stat-label">Genesis Supply</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-value">3.33%</div>
+                  <div class="stat-label">Inflation Floor</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-value">30%</div>
+                  <div class="stat-label">Gov Vote Weight</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Utility-First -->
+        <div class="glass-card" data-color="purple" onclick="toggleCard(this)">
+          <div class="glass-card-header">
+            <div class="glass-card-icon">⚙️</div>
+            <div class="glass-card-title-wrap">
+              <h3 class="glass-card-title">Utility-First Design</h3>
+              <span class="glass-card-tagline">No Yield Promises • Just Work</span>
+            </div>
+            <div class="glass-card-toggle">▼</div>
+          </div>
+          <div class="glass-card-content">
+            <div class="glass-card-inner">
+              <p class="glass-card-text">
+                <strong>No yield promises. No reflections. Just work.</strong> TAGIT tokens are spent for verification services, staked to unlock enterprise features, and earned by contributing to network security — not held for speculation. Our programmatic <strong>burn mechanism (33.3% of protocol fees)</strong> creates organic scarcity as network usage grows.
+              </p>
+              <div class="feature-pills">
+                <span class="feature-pill"><span class="pill-icon">🔥</span> 33.3% Fee Burn</span>
+                <span class="feature-pill"><span class="pill-icon">📉</span> Deflationary Model</span>
+                <span class="feature-pill"><span class="pill-icon">🎯</span> Usage-Based Value</span>
+                <span class="feature-pill"><span class="pill-icon">🚫</span> Zero Reflections</span>
+              </div>
+              <div class="stat-row">
+                <div class="stat-item">
+                  <div class="stat-value">33.3%</div>
+                  <div class="stat-label">Default Burn</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-value">3.33%</div>
+                  <div class="stat-label">Min Burn Floor</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-value">~$900K</div>
+                  <div class="stat-label">Deflation Point</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Investor Protection -->
+        <div class="glass-card" data-color="amber" onclick="toggleCard(this)">
+          <div class="glass-card-header">
+            <div class="glass-card-icon">🛡️</div>
+            <div class="glass-card-title-wrap">
+              <h3 class="glass-card-title">Investor Protection</h3>
+              <span class="glass-card-tagline">Compliance-First • KYC/AML • Timelocks</span>
+            </div>
+            <div class="glass-card-toggle">▼</div>
+          </div>
+          <div class="glass-card-content">
+            <div class="glass-card-inner">
+              <p class="glass-card-text">
+                <strong>Compliance-first token design:</strong> All primary sales require KYC/AML verification, knowledge attestation, and jurisdiction eligibility checks. Vesting schedules are <strong>immutable</strong> (team: 4-year vest with 1-year cliff). Treasury operations are DAO-controlled with <strong>multi-sig + timelock security</strong>.
+              </p>
+              <div class="feature-pills">
+                <span class="feature-pill"><span class="pill-icon">✅</span> KYC/AML Required</span>
+                <span class="feature-pill"><span class="pill-icon">📜</span> Knowledge Attestation</span>
+                <span class="feature-pill"><span class="pill-icon">⏰</span> Timelock Security</span>
+                <span class="feature-pill"><span class="pill-icon">🔐</span> Multi-Sig Treasury</span>
+              </div>
+              <div class="stat-row">
+                <div class="stat-item">
+                  <div class="stat-value">4 Years</div>
+                  <div class="stat-label">Team Vesting</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-value">1 Year</div>
+                  <div class="stat-label">Cliff Period</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-value">100%</div>
+                  <div class="stat-label">Compliant</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         TOKENOMICS SECTION - FROM HOME PAGE
+         ═══════════════════════════════════════════════════════════════ -->
+    <section id="tokenomics">
+      <!-- Genesis Counter Hero - Compact -->
+      <div class="genesis-hero fade-in">
+        <div class="genesis-number" id="genesisCounter">0</div>
+        <div class="genesis-tagline"><span>Seven Sevens</span> + <span>Triple Threes</span></div>
+      </div>
+
+      <!-- Core Metrics Grid - Compact 4-column -->
+      <div class="token-metrics-grid">
+        <div class="metric-card fade-in" data-color="green">
+          <div class="metric-icon">📈</div>
+          <div class="metric-label">Inflation</div>
+          <div class="metric-value">3.33%</div>
+          <span class="metric-tag">Triple 3s</span>
+        </div>
+        <div class="metric-card fade-in" data-color="amber">
+          <div class="metric-icon">🔥</div>
+          <div class="metric-label">Default Burn</div>
+          <div class="metric-value">33.3%</div>
+          <span class="metric-tag">Triple 3s</span>
+        </div>
+        <div class="metric-card fade-in" data-color="red">
+          <div class="metric-icon">🛡️</div>
+          <div class="metric-label">Min Burn</div>
+          <div class="metric-value">3.33%</div>
+          <span class="metric-tag">Floor</span>
+        </div>
+        <div class="metric-card fade-in" data-color="purple">
+          <div class="metric-icon">⏱️</div>
+          <div class="metric-label">Double Time</div>
+          <div class="metric-value">21yr</div>
+          <span class="metric-tag">3 × 7</span>
+        </div>
+      </div>
+
+      <!-- Immutable Rules Row -->
+      <div class="token-rules-row fade-in">
+        <div class="rule-badge">
+          <span class="lock-icon">🔒</span>
+          <span>No Vesting Acceleration</span>
+        </div>
+        <div class="rule-badge">
+          <span class="lock-icon">🔒</span>
+          <span>No Extra Minting</span>
+        </div>
+        <div class="rule-badge">
+          <span class="lock-icon">🔒</span>
+          <span>Burn Floor Immutable</span>
+        </div>
+      </div>
+
+      <!-- Staking Details Card -->
+      <div class="staking-card fade-in">
+        <div class="staking-header">
+          <span class="stake-icon">⚡</span>
+          <h4>Staking Details</h4>
+        </div>
+        <div class="staking-grid">
+          <div class="stake-item">
+            <div class="stake-item-label">Min Stake</div>
+            <div class="stake-item-value">100 TAGIT</div>
+          </div>
+          <div class="stake-item">
+            <div class="stake-item-label">Cooldown</div>
+            <div class="stake-item-value">7 Days</div>
+          </div>
+          <div class="stake-item">
+            <div class="stake-item-label">Reward Sources</div>
+            <div class="stake-item-value small">Emissions 50% • Fees 25% • Slashing var</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Distribution Section -->
+      <div class="section-label subsection-label fade-in">✦ Allocation</div>
+      <h3 class="section-title subsection-title fade-in">Token Distribution</h3>
+
+      <div class="distribution-section">
+        <!-- Pie Chart -->
+        <div class="pie-chart-container scale-in">
+          <svg class="pie-chart-svg" viewBox="0 0 200 200">
+            <!-- Pie segments as filled arcs -->
+            <g id="pieSegments">
+              <!-- Segments will be created via JS -->
+            </g>
+          </svg>
+          <div class="pie-center">
+            <div class="pie-center-value">7.77B</div>
+            <div class="pie-center-label">TAGIT</div>
+          </div>
+        </div>
+
+        <!-- Distribution Legend -->
+        <div class="distribution-legend">
+          <div class="legend-row ecosystem fade-in stagger-1" data-segment="ecosystem">
+            <div class="legend-color" style="background: var(--circuit-green);"></div>
+            <div class="legend-info">
+              <div class="legend-name">Ecosystem</div>
+              <div class="legend-vesting">5-year emission</div>
+            </div>
+            <div>
+              <div class="legend-pct">35%</div>
+              <div class="legend-tokens">2.72B tokens</div>
+            </div>
+          </div>
+
+          <div class="legend-row presale fade-in stagger-2" data-segment="presale">
+            <div class="legend-color" style="background: var(--electric-blue);"></div>
+            <div class="legend-info">
+              <div class="legend-name">Presale</div>
+              <div class="legend-vesting">TGE 20%, 12mo linear</div>
+            </div>
+            <div>
+              <div class="legend-pct">20%</div>
+              <div class="legend-tokens">1.56B tokens</div>
+            </div>
+          </div>
+
+          <div class="legend-row treasury fade-in stagger-3" data-segment="treasury">
+            <div class="legend-color" style="background: var(--neon-purple);"></div>
+            <div class="legend-info">
+              <div class="legend-name">Treasury</div>
+              <div class="legend-vesting">DAO-controlled</div>
+            </div>
+            <div>
+              <div class="legend-pct">15%</div>
+              <div class="legend-tokens">1.17B tokens</div>
+            </div>
+          </div>
+
+          <div class="legend-row dao fade-in stagger-4" data-segment="dao">
+            <div class="legend-color" style="background: var(--warning-amber);"></div>
+            <div class="legend-info">
+              <div class="legend-name">DAO</div>
+              <div class="legend-vesting">Locked to contracts</div>
+            </div>
+            <div>
+              <div class="legend-pct">15%</div>
+              <div class="legend-tokens">1.17B tokens</div>
+            </div>
+          </div>
+
+          <div class="legend-row development fade-in stagger-5" data-segment="development">
+            <div class="legend-color" style="background: var(--muted-gray);"></div>
+            <div class="legend-info">
+              <div class="legend-name">Development</div>
+              <div class="legend-vesting">4yr vest, 1yr cliff</div>
+            </div>
+            <div>
+              <div class="legend-pct">10%</div>
+              <div class="legend-tokens">778M tokens</div>
+            </div>
+          </div>
+
+          <div class="legend-row team fade-in stagger-6" data-segment="team">
+            <div class="legend-color" style="background: var(--danger-red);"></div>
+            <div class="legend-info">
+              <div class="legend-name">Team</div>
+              <div class="legend-vesting">4yr vest, 1yr cliff</div>
+            </div>
+            <div>
+              <div class="legend-pct">5%</div>
+              <div class="legend-tokens">389M tokens</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DAO Governance Section - Circuit Board -->
+    <section class="dao-section">
+      <div class="section-header text-center">
+        <span class="section-label"><span class="label-icon">🏛</span> DAO Governance</span>
+        <h2 class="section-title">5-House Governance</h2>
+        <p class="section-subtitle">Balanced representation ensures all stakeholders have a voice in protocol governance.</p>
+      </div>
+
+      <div class="circuit-board">
+        <!-- Central DAO Hub -->
+        <div class="dao-hub">
+          <div class="dao-hub-core">
+            <span class="dao-hub-icon">⬡</span>
+            <span class="dao-hub-label">DAO</span>
+          </div>
+        </div>
+
+        <!-- Circuit trace from hub to grid -->
+        <div class="circuit-traces"></div>
+
+        <!-- House Cards Grid -->
+        <div class="houses-grid">
+          <div class="house-card fade-in" data-house="gov">
+            <div class="house-icon-wrap">
+              <div class="house-icon-glow"></div>
+              <span class="house-icon">🛡️</span>
+            </div>
+            <h3>Gov & Military</h3>
+            <p>National security alignment</p>
+            <div class="house-power-wrap">
+              <div class="house-power-bar">
+                <div class="house-power-fill" style="width: 100%;"></div>
+              </div>
+              <span class="house-power-label">30%</span>
+            </div>
+          </div>
+
+          <div class="house-card fade-in stagger-1" data-house="enterprise">
+            <div class="house-icon-wrap">
+              <div class="house-icon-glow"></div>
+              <span class="house-icon">🏭</span>
+            </div>
+            <h3>Enterprise</h3>
+            <p>Brand partners & OEMs</p>
+            <div class="house-power-wrap">
+              <div class="house-power-bar">
+                <div class="house-power-fill" style="width: 100%;"></div>
+              </div>
+              <span class="house-power-label">30%</span>
+            </div>
+          </div>
+
+          <div class="house-card fade-in stagger-2" data-house="holders">
+            <div class="house-icon-wrap">
+              <div class="house-icon-glow"></div>
+              <span class="house-icon">👥</span>
+            </div>
+            <h3>Token Holders</h3>
+            <p>Community participants</p>
+            <div class="house-power-wrap">
+              <div class="house-power-bar">
+                <div class="house-power-fill" style="width: 67%;"></div>
+              </div>
+              <span class="house-power-label">20%</span>
+            </div>
+          </div>
+
+          <div class="house-card fade-in stagger-3" data-house="dev">
+            <div class="house-icon-wrap">
+              <div class="house-icon-glow"></div>
+              <span class="house-icon">💻</span>
+            </div>
+            <h3>Development</h3>
+            <p>Core protocol builders</p>
+            <div class="house-power-wrap">
+              <div class="house-power-bar">
+                <div class="house-power-fill" style="width: 33%;"></div>
+              </div>
+              <span class="house-power-label">10%</span>
+            </div>
+          </div>
+
+          <div class="house-card fade-in stagger-4" data-house="legal">
+            <div class="house-icon-wrap">
+              <div class="house-icon-glow"></div>
+              <span class="house-icon">⚖️</span>
+            </div>
+            <h3>Compliance</h3>
+            <p>Regulatory oversight</p>
+            <div class="house-power-wrap">
+              <div class="house-power-bar">
+                <div class="house-power-fill" style="width: 33%;"></div>
+              </div>
+              <span class="house-power-label">10%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <h2>Ready to Get Started?</h2>
+      <p>Join the future of product authentication. Get on the waitlist for early access to $TAGIT token and governance participation.</p>
+      <div class="button-group">
+        <a href="#" class="btn btn-primary">Join Waitlist</a>
+        <a href="https://github.com/TAG-IT-NETWORK/tagit-docs" target="_blank" rel="noopener" class="btn btn-secondary">Read Documentation</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon">
+            <img src="/assets/images/tagit_logo.png" alt="TAG IT Network Logo" class="logo-img" loading="lazy" width="40" height="40">
+          </div>
+          <span>TAG IT Network</span>
+        </div>
+        <p>Blockchain-powered product authentication for the modern world.</p>
+      </div>
+
+      <div class="footer-column">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="/#features">Features</a></li>
+          <li><a href="/#lifecycle">Life Cycle</a></li>
+          <li><a href="/solutions">Solutions</a></li>
+          <li><a href="/technology">Technology</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="https://github.com/TAG-IT-NETWORK/tagit-docs" target="_blank" rel="noopener">Documentation</a></li>
+          <li><a href="https://github.com/TAG-IT-NETWORK/tagit-docs" target="_blank" rel="noopener">API Reference</a></li>
+          <li><a href="https://github.com/TAG-IT-NETWORK/tagit-docs" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://www.youtube.com/@TAGITNetwork" target="_blank" rel="noopener">YouTube</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#" class="legal-trigger" data-modal="privacy">Privacy Policy</a></li>
+          <li><a href="#" class="legal-trigger" data-modal="terms">Terms of Service</a></li>
+          <li><a href="#" class="legal-trigger" data-modal="cookie">Cookie Policy</a></li>
+          <li><a href="/about#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 TAG IT Network. All rights reserved.</p>
+      <div class="footer-socials">
+        <a href="https://x.com/TAGITNETWORK" target="_blank" rel="noopener" title="Twitter/X">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/106815890" target="_blank" rel="noopener" title="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@TAGITNetwork" target="_blank" rel="noopener" title="YouTube">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+        <a href="https://github.com/TAG-IT-NETWORK/tagit-docs" target="_blank" rel="noopener" title="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+        <a href="https://discord.gg/gAnkjGyh" target="_blank" rel="noopener" title="Discord">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Privacy Policy Modal -->
+  <div class="legal-modal-overlay" id="privacyModalOverlay">
+    <div class="legal-modal">
+      <button class="legal-modal-close" data-close-modal>✕</button>
+
+      <div class="legal-modal-header">
+        <h3><span>🔒</span> Privacy Policy</h3>
+        <p class="effective-date">Effective Date: September 29, 2025</p>
+      </div>
+
+      <div class="legal-modal-content">
+        <p class="legal-intro">
+          TAG IT Network ("TAG IT," "we," "us," or "our") operates the <a href="https://www.tagit.network">https://www.tagit.network</a> website and related services (the "Service"). This page informs you of our policies regarding the collection, use, and disclosure of Personal Data when you use our Service. We will not use or share your information with anyone except as described in this Privacy Policy.
+        </p>
+
+        <div class="legal-section">
+          <h4>📋 Information Collection and Use</h4>
+          <p>While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you. Personally identifiable information may include, but is not limited to your name, email address, phone number ("Personal Data").</p>
+        </div>
+
+        <div class="legal-section">
+          <h4>📊 Log Data</h4>
+          <p>We collect information that your browser sends whenever you visit our Service ("Log Data"). This Log Data may include information such as your IP address, browser type, browser version, the pages of our Service that you visit, the time and date of your visit, the time spent on those pages and other statistics.</p>
+        </div>
+
+        <div class="legal-section">
+          <h4>🍪 Cookies</h4>
+          <p>Cookies are files with a small amount of data, which may include an anonymous unique identifier. Cookies are sent to your browser from a website and transferred to your device. We use "cookies" to collect information in order to improve our services for you. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent.</p>
+        </div>
+
+        <div class="legal-section">
+          <h4>🛡️ Security</h4>
+          <p>We secure your personal information using encryption and access controls. Only authorized employees have access with two-factor authentication enforced. Servers are routinely patched and scanned for vulnerabilities.</p>
+        </div>
+
+        <div class="legal-section">
+          <h4>📝 Changes to This Privacy Policy</h4>
+          <p>This Privacy Policy is effective as of the "Effective Date" indicated at the top of this Privacy Policy and will remain in effect until updated or replaced. We reserve the right to update or modify this Privacy Policy from time to time with or without notice. Your continued use of the Service after any changes or revisions to this Privacy Policy shall indicate your agreement with the terms of such revised Privacy Policy.</p>
+        </div>
+
+        <div class="legal-section">
+          <h4>✉️ Contact Us</h4>
+          <p>If you have any questions about this Privacy Policy, please contact us via email: <a href="mailto:info@tagit.network">info@tagit.network</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Terms of Service Modal -->
+  <div class="legal-modal-overlay" id="termsModalOverlay">
+    <div class="legal-modal">
+      <button class="legal-modal-close" data-close-modal>✕</button>
+
+      <div class="legal-modal-header">
+        <h3><span>📜</span> Terms of Service</h3>
+        <p class="effective-date">Effective Date: September 29, 2025</p>
+      </div>
+
+      <div class="legal-modal-content">
+        <p class="legal-intro">
+          Welcome to TAG IT Network. By accessing or using our website at <a href="https://www.tagit.network">https://www.tagit.network</a> and related services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our Service.
+        </p>
+
+        <div class="legal-section">
+          <h4>📌 Acceptance of Terms</h4>
+          <p>By accessing and using the Service, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service and our Privacy Policy. We reserve the right to modify these terms at any time, and such modifications shall be effective immediately upon posting.</p>
+        </div>
+
+        <div class="legal-section">
+          <h4>🔐 Use of Service</h4>
+          <p>You agree to use the Service only for lawful purposes and in accordance with these Terms. You agree not to use the Service in any way that violates any applicable federal, state, local, or international law or regulation, or to engage in any conduct that restricts or inhibits anyone's use or enjoyment of the Service.</p>
+        </div>
+
+        <div class="legal-section">
+          <h4>💎 Intellectual Property</h4>
+          <p>The Service and its entire contents, features, and functionality (including but not limited to all information, software, text, displays, images, video, and audio) are owned by TAG IT Network, its licensors, or other providers and are protected by copyright, trademark, patent, trade secret, and other intellectual property laws.</p>
+        </div>
+
+        <div class="legal-section">
+          <h4>🪙 Token Disclaimer</h4>
+          <p>The $TAGIT token is a utility token intended solely for use within the TAG IT Network ecosystem. It is not intended to be a security, investment contract, or any form of financial instrument. Purchasing, holding, or using $TAGIT tokens does not grant any ownership, equity, or voting rights in TAG IT Network or any affiliated entities.</p>
+        </div>
+
+        <div class="legal-section">
+          <h4>⚠️ Limitation of Liability</h4>
+          <p>In no event shall TAG IT Network, its directors, employees, partners, agents, suppliers, or affiliates be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the Service.</p>
+        </div>
+
+        <div class="legal-section">
+          <h4>⚖️ Governing Law</h4>
+          <p>These Terms shall be governed by and construed in accordance with the laws of the State of Florida, United States, without regard to its conflict of law provisions. Any legal action or proceeding arising under these Terms shall be brought exclusively in the federal or state courts located in Duval County, Florida.</p>
+        </div>
+
+        <div class="legal-section">
+          <h4>✉️ Contact Us</h4>
+          <p>If you have any questions about these Terms of Service, please contact us via email: <a href="mailto:info@tagit.network">info@tagit.network</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cookie Policy Modal -->
+  <div class="legal-modal-overlay" id="cookieModalOverlay">
+    <div class="legal-modal">
+      <button class="legal-modal-close" data-close-modal>✕</button>
+
+      <div class="legal-modal-header">
+        <h3><span>🍪</span> Cookie Policy</h3>
+        <p class="effective-date">Effective Date: September 29, 2025</p>
+      </div>
+
+      <div class="legal-modal-content">
+        <p class="legal-intro">
+          This Cookie Policy explains how TAG IT Network ("we," "us," or "our") uses cookies and similar technologies when you visit our website at <a href="https://www.tagit.network">https://www.tagit.network</a>. By using our website, you consent to our use of cookies as described in this policy.
+        </p>
+
+        <div class="legal-section">
+          <h4>🤔 What Are Cookies?</h4>
+          <p>Cookies are small text files that are placed on your device (computer, smartphone, or tablet) when you visit a website. They are widely used to make websites work more efficiently and provide information to website owners. Cookies help us recognize your device and remember your preferences.</p>
+        </div>
+
+        <div class="legal-section">
+          <h4>📂 Types of Cookies We Use</h4>
+          <p><strong>Essential Cookies:</strong> These cookies are necessary for the website to function properly. They enable basic features like page navigation and access to secure areas.<br><br>
+          <strong>Analytics Cookies:</strong> These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously.<br><br>
+          <strong>Preference Cookies:</strong> These cookies remember your settings and preferences to provide a more personalized experience.</p>
+        </div>
+
+        <div class="legal-section">
+          <h4>🎛️ Managing Cookies</h4>
+          <p>Most web browsers allow you to control cookies through their settings. You can set your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you disable cookies, some features of our website may not function properly.</p>
+        </div>
+
+        <div class="legal-section">
+          <h4>🔄 Third-Party Cookies</h4>
+          <p>We may use third-party services that set their own cookies, such as analytics providers. These third parties have their own privacy policies and cookie practices. We do not have control over these third-party cookies.</p>
+        </div>
+
+        <div class="legal-section">
+          <h4>📝 Updates to This Policy</h4>
+          <p>We may update this Cookie Policy from time to time to reflect changes in our practices or for operational, legal, or regulatory reasons. We encourage you to review this policy periodically for the latest information.</p>
+        </div>
+
+        <div class="legal-section">
+          <h4>✉️ Contact Us</h4>
+          <p>If you have any questions about our use of cookies, please contact us via email: <a href="mailto:info@tagit.network">info@tagit.network</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Wallet Connection Modal -->
+  <div class="wallet-modal-overlay" id="walletModal">
+    <div class="wallet-modal">
+      <button class="wallet-modal-close" onclick="closeWalletModal()" aria-label="Close modal">×</button>
+
+      <div id="walletConnectState">
+        <div class="wallet-modal-header">
+          <h3>Connect Wallet</h3>
+          <p>Connect your wallet to interact with TAG IT Network</p>
+        </div>
+
+        <div class="wallet-option" onclick="connectMetaMask()" role="button" tabindex="0">
+          <div class="wallet-option-icon">🦊</div>
+          <div class="wallet-option-info">
+            <h4>MetaMask</h4>
+            <p>Connect using browser extension</p>
+          </div>
+          <span class="wallet-option-arrow">→</span>
+        </div>
+
+        <div class="wallet-option" onclick="connectWalletConnect()" role="button" tabindex="0">
+          <div class="wallet-option-icon">🔗</div>
+          <div class="wallet-option-info">
+            <h4>WalletConnect</h4>
+            <p>Scan with your mobile wallet</p>
+          </div>
+          <span class="wallet-option-arrow">→</span>
+        </div>
+
+        <div class="wallet-option" onclick="connectCoinbase()" role="button" tabindex="0">
+          <div class="wallet-option-icon">💰</div>
+          <div class="wallet-option-info">
+            <h4>Coinbase Wallet</h4>
+            <p>Connect using Coinbase</p>
+          </div>
+          <span class="wallet-option-arrow">→</span>
+        </div>
+
+        <p class="wallet-modal-note">By connecting, you agree to TAG IT Network's Terms of Service</p>
+      </div>
+
+      <div id="walletConnectedState" style="display: none;">
+        <div class="wallet-modal-header">
+          <h3>Wallet Connected</h3>
+          <p>Your wallet is connected to TAG IT Network</p>
+        </div>
+        <div class="wallet-connected-info">
+          <div class="address-full" id="fullAddress">0x0000...0000</div>
+          <div id="networkInfo"></div>
+          <button class="wallet-disconnect-btn" onclick="disconnectWallet()">Disconnect Wallet</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg>
+  </button>
+
+  <script src="/js/shared.js" defer></script>
+
+  <!-- Tokenomics-specific JavaScript -->
+  <script>
+    // Genesis Counter Animation
+    function animateGenesisCounter() {
+      const counter = document.getElementById('genesisCounter');
+      if (!counter) return;
+
+      const target = 7777777333;
+      const duration = 2000; // 2 seconds
+      const steps = 60;
+      const stepDuration = duration / steps;
+      let current = 0;
+
+      const formatNumber = (num) => {
+        return num.toLocaleString('en-US');
+      };
+
+      const interval = setInterval(() => {
+        current += target / steps;
+        if (current >= target) {
+          current = target;
+          clearInterval(interval);
+        }
+        counter.textContent = formatNumber(Math.floor(current));
+      }, stepDuration);
+    }
+
+    // Pie Chart Creation
+    function createPieChart() {
+      const container = document.getElementById('pieSegments');
+      if (!container) return;
+
+      const segments = [
+        { pct: 35, color: '#00FF88' },   // Ecosystem - circuit-green
+        { pct: 20, color: '#00D4FF' },   // Presale - electric-blue
+        { pct: 15, color: '#B84FFF' },   // Treasury - neon-purple
+        { pct: 15, color: '#FFA502' },   // DAO - warning-amber
+        { pct: 10, color: '#8B95A5' },   // Development - muted-gray
+        { pct: 5, color: '#FF4757' }     // Team - danger-red
+      ];
+
+      let currentAngle = 0;
+      const radius = 90;
+      const cx = 100;
+      const cy = 100;
+
+      segments.forEach((seg, i) => {
+        const angle = (seg.pct / 100) * 360;
+        const startAngle = currentAngle;
+        const endAngle = currentAngle + angle;
+
+        const startRad = (startAngle - 90) * Math.PI / 180;
+        const endRad = (endAngle - 90) * Math.PI / 180;
+
+        const x1 = cx + radius * Math.cos(startRad);
+        const y1 = cy + radius * Math.sin(startRad);
+        const x2 = cx + radius * Math.cos(endRad);
+        const y2 = cy + radius * Math.sin(endRad);
+
+        const largeArc = angle > 180 ? 1 : 0;
+
+        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        path.setAttribute('d', `M ${cx} ${cy} L ${x1} ${y1} A ${radius} ${radius} 0 ${largeArc} 1 ${x2} ${y2} Z`);
+        path.setAttribute('fill', seg.color);
+        path.setAttribute('opacity', '0.9');
+        path.style.transition = 'opacity 0.3s ease';
+
+        // Add hover effect
+        path.addEventListener('mouseenter', () => {
+          path.setAttribute('opacity', '1');
+        });
+        path.addEventListener('mouseleave', () => {
+          path.setAttribute('opacity', '0.9');
+        });
+
+        container.appendChild(path);
+        currentAngle = endAngle;
+      });
+    }
+
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      animateGenesisCounter();
+      createPieChart();
+      initGlassCards();
+    });
+
+    // Expandable Glass Cards
+    function toggleCard(card) {
+      const wasExpanded = card.classList.contains('expanded');
+      
+      // Close all cards first
+      document.querySelectorAll('.glass-card').forEach(c => {
+        c.classList.remove('expanded');
+      });
+      
+      // Toggle clicked card (if it wasn't already expanded)
+      if (!wasExpanded) {
+        card.classList.add('expanded');
+        
+        // Smooth scroll to card
+        setTimeout(() => {
+          card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 100);
+      }
+    }
+
+    // Initialize glass card hover effects
+    function initGlassCards() {
+      document.querySelectorAll('.glass-card').forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = ((e.clientX - rect.left) / rect.width) * 100;
+          const y = ((e.clientY - rect.top) / rect.height) * 100;
+          card.style.setProperty('--glow-x', x + '%');
+          card.style.setProperty('--glow-y', y + '%');
+        });
+      });
+    }
+  </script>
+</body>
+</html>
