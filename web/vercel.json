@@ -1,0 +1,80 @@
+{
+  "version": 2,
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/css/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/js/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/solutions",
+      "destination": "/solutions/index.html"
+    },
+    {
+      "source": "/technology",
+      "destination": "/technology/index.html"
+    },
+    {
+      "source": "/tokenomics",
+      "destination": "/tokenomics/index.html"
+    },
+    {
+      "source": "/docs",
+      "destination": "/docs/index.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/about/index.html"
+    },
+    {
+      "source": "/docs/getting-started/:path",
+      "destination": "/docs/getting-started/:path.html"
+    },
+    {
+      "source": "/docs/api/:path",
+      "destination": "/docs/api/:path.html"
+    },
+    {
+      "source": "/docs/contracts/:path",
+      "destination": "/docs/contracts/:path.html"
+    },
+    {
+      "source": "/docs/nfc/:path",
+      "destination": "/docs/nfc/:path.html"
+    },
+    {
+      "source": "/docs/sdk/:path",
+      "destination": "/docs/sdk/:path.html"
+    },
+    {
+      "source": "/docs/tutorials/:path",
+      "destination": "/docs/tutorials/:path.html"
+    }
+  ]
+}
